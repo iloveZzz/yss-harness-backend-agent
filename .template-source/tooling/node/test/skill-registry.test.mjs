@@ -30,7 +30,7 @@ test("shadow registry cannot be marked as runtime consumed", () => {
 
 test("alias that collides with another id is rejected", () => {
   const data = registry();
-  data.skills = data.skills.map((skill) => skill.id === "yss-api-integration" ? { ...skill, aliases: ["tdd"] } : skill);
+  data.skills = data.skills.map((skill) => skill.id === "diagnosing-bugs" ? { ...skill, aliases: ["tdd"] } : skill);
   assert.throws(() => validateSkillRegistry(data), /alias 冲突/);
 });
 
@@ -59,14 +59,15 @@ test("skill invocation contract is required and derives impact triggers", () => 
 test("typed dependency metadata rejects unregistered skills", () => {
   const data = registry();
   data.skill_dependencies = structuredClone(data.skill_dependencies);
-  data.skill_dependencies["yss-domain"].push({ skill: "missing-static-dependency", type: "context-required" });
+  (data.skill_dependencies["tdd"] ??= []).push({ skill: "missing-static-dependency", type: "context-required" });
   assert.throws(() => validateSkillRegistry(data), /依赖引用了未登记技能/);
 });
 
 test("context-required typed dependencies reject cycles", () => {
   const data = registry();
   data.skill_dependencies = structuredClone(data.skill_dependencies);
-  data.skill_dependencies["alibaba-java-code-style"] = [{ skill: "yss-domain", type: "context-required" }];
+  data.skill_dependencies["tdd"] = [{ skill: "diagnosing-bugs", type: "context-required" }];
+  data.skill_dependencies["diagnosing-bugs"] = [{ skill: "tdd", type: "context-required" }];
   assert.throws(() => validateSkillRegistry(data), /context-required 依赖存在循环/);
 });
 
@@ -79,6 +80,7 @@ test("实现合同编译器合同不得重复 typed dependency 事实", () => {
 
 test("platform aliases resolve lifecycle external runtime entries", () => {
   const data = registry();
+  data.platform_skills.push({id: "test-platform", root: ".codex/skills", layer: "specialist", instance_default_discoverable: false, aliases: ["product-design:index"]});
   const route = {
     primary_skill: "product-design:index",
     supporting_skills: [],
@@ -116,13 +118,13 @@ test("prototype design route requires independent prototype-review", () => {
   };
   assert.throws(() => validateSkillRegistry(data, {
     lifecycleContract: { work_unit_routes: { "work-unit.prototype-design": route } }
-  }), /prototype-review/);
+  }), /生命周期路由引用了未登记技能/);
 });
 
 test("deprecated skills require migration and cleanup metadata", () => {
   const data = registry();
-  data.skills = data.skills.map((skill) => skill.id === "yss-api-integration"
-    ? { ...skill, maturity: "deprecated", replaced_by: "yss-page-module-development" }
+  data.skills = data.skills.map((skill) => skill.id === "diagnosing-bugs"
+    ? { ...skill, maturity: "deprecated", replaced_by: "tdd" }
     : skill);
   assert.throws(() => validateSkillRegistry(data), /migration_deadline/);
 });
@@ -130,15 +132,15 @@ test("deprecated skills require migration and cleanup metadata", () => {
 test("frontend conditional routes require registered skills", () => {
   const data = registry();
   const route = {
-    primary_skill: "yss-ui",
+    primary_skill: "tdd",
     supporting_skills: [],
-    skills: ["yss-ui"],
+    skills: ["tdd"],
     applies_when: "ready_for_agent",
     not_applicable_reason: "not_ready",
     frontend_route: {
-      primary_skill: "yss-ui",
-      page_generation_skill: "yss-page-module-development",
-      page_orchestration_skill: "yss-page-module-development",
+      primary_skill: "tdd",
+      page_generation_skill: "tdd",
+      page_orchestration_skill: "tdd",
       conditional_skills: { api_impact: ["missing-api-skill"] },
       not_applicable_reasons: { api_impact: "no_api_impact" }
     }

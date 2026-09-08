@@ -137,8 +137,3 @@
 | `yss-validation` | `yss-exception` | `component-dependency` | — |
 | `yss-security-algorithm` | `yss-exception` | `component-dependency` | — |
 | `yss-exception` | `yss-dto` | `context-required` | — |
-| `yss-page-module-development` | `yss-components` | `context-conditional` | `components` |
-| `yss-page-module-development` | `yss-hook` | `context-conditional` | `hooks` |
-| `yss-page-module-development` | `yss-formily` | `context-conditional` | `form` |
-| `yss-page-module-development` | `yss-api-integration` | `context-conditional` | `api` |
-| `yss-api-integration` | `yss-openapi-governance` | `context-conditional` | `regeneration` |

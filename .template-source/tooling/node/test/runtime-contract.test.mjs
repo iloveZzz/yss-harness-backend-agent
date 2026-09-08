@@ -157,7 +157,7 @@ test("public skill export preserves its portable manifest and blocks workstation
     assert.ok(manifest.skills.every((skill) => Array.isArray(skill.files) && skill.files.includes("SKILL.md")));
     assert.equal(catalogue.$schema, "https://skills.sh/schemas/skills.sh.schema.json");
     assert.equal(catalogue.notGrouped, "bottom");
-    const exported = await (await import("node:fs/promises")).readFile(path.join(output, "skills/yss-design-system/SKILL.md"), "utf8");
+    const exported = await (await import("node:fs/promises")).readFile(path.join(output, "skills/yss-application/SKILL.md"), "utf8");
     assert.doesNotMatch(exported, /\/Users\/zhudaoming|\.agents\/skills/);
   } finally {
     await rm(output, { recursive: true, force: true });

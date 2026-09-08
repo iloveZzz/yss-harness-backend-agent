@@ -50,8 +50,8 @@ test("digital human roles are runtime-agnostic and grok is only an adapter", asy
   missingSigners.gate_policy.digital_human_review[0].countersigners = [];
   assert.throws(() => validateDigitalHumanRoles(missingSigners, deps), /countersigners/);
   const defaults = taskPackageDefaults("role.frontend-agent");
-  assert.ok(defaults.core_skills.includes("yss-ui"));
-  assert.ok(defaults.forbidden_skills.includes("yss-domain"));
+  assert.ok(defaults.core_skills.includes("code-review"));
+  assert.ok(defaults.forbidden_skills.includes("harness-orchestrator"));
 });
 
 test("approval records reject the wrong signer and approved countersign gates need approval_ref", async () => {

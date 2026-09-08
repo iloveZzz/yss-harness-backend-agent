@@ -29,8 +29,6 @@ const releaseBaseline = [
   "scripts/verify-frontend-implementation-evidence --allow-template docs/process/templates/frontend-implementation-verification-template.yaml",
   "scripts/verify-subagent-task-package-scenarios",
   "scripts/verify-digital-human-task-package-scenarios",
-  "scripts/verify-digital-human-task-package .template-source/evidence/maintenance/digital-human-task-package-review-task.yaml",
-  "scripts/verify-digital-human-task-package .template-source/evidence/maintenance/lifecycle-ticket-transition-review-task-package.yaml",
   "scripts/verify-maintenance-checkpoint .template-source/evidence/maintenance/yss-tactical-design-l3-checkpoint-2026-08-27.yaml",
   "scripts/verify-lifecycle-scenarios",
   "scripts/verify-lifecycle-transition-scenarios",
@@ -45,7 +43,6 @@ const releaseBaseline = [
   "scripts/generate-yss-skill-boundaries --check",
   "scripts/audit-yss-backend-skills --check",
   "scripts/verify-retired-skill-ids",
-  "scripts/verify-yss-ui-scenarios",
   "scripts/verify-openapi-yaml-first-scenarios",
   "scripts/verify-openapi-json-handoff-scenarios"
 ].sort();

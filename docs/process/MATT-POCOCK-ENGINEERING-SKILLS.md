@@ -7,3 +7,7 @@ Matt Pocock Engineering Skills 提供轻量的澄清、实现、TDD、诊断和�
 - Matt user-invoked 的 `grill-with-docs`、`to-spec`、`to-tickets` 和 `implement` 必须由用户显式启动，任何 skill 不得自动调用它们；YSS 生命周期只准备、校验和验收其结果。所有 Matt model-invoked skill 仍须遵守 `AGENTS.md` 的阶段、门禁和证据要求，并只能在生命周期允许的工作单元中调用。
 - `template-source` 只执行模板维护流程，不生成具体产品 Spec、原型、OpenAPI 或垂直切片 Ticket。
 - Agent 完成工作单元后返回可核验的 evidence refs、变更资产、验证命令、残余风险和下一路由。
+
+## 后端模板专项适配（2026-09-08）
+
+`prototype` 保留后端逻辑、状态、算法与接口假设试验，移除产品 UI 分支；`ask-matt` / `wayfinder` 的调用同步收窄。试验不能改写上游业务规则、替代 Slice Contract 或自行提交 Git。来源 revision 与 upstream/effective hash 继续由 skills-lock.json 保存。

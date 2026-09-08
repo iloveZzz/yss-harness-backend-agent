@@ -1,6 +1,6 @@
 import { mkdirSync, writeFileSync, readFileSync } from 'node:fs';
 import path from 'node:path';
-import { sealVisualBaseline } from '../../../.agents/skills/yss-prototype-stage/scripts/visual-baseline-contract.mjs';
+import { sealVisualBaseline } from '../../lib/visual-baseline-contract.mjs';
 import { parseContextSource, resolveContextTermRefs } from '../../lib/context-contract.mjs';
 import { read, hash, digest, json, files, sourceApprovalPolicy, treeDigest } from '../../lib/strategic-handoff-io.mjs';
 import { countersignRuleForGate } from '../../lib/digital-human-roles.mjs';

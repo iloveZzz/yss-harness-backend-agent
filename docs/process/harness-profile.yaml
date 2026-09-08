@@ -59,3 +59,47 @@ execution:
   side: backend
   terminal_conclusion: backend-deliverable
   business_acceptance_owner: registered-coordinating-project
+skill_scope:
+  policy: local-workflow-only
+  retired_local_skills:
+  - component-selection-imports
+  - file-export-download
+  - formily-foundation
+  - formily-linkage-effects
+  - formily-mode-slot-detail
+  - formily-step-flow
+  - frontend-agent
+  - frontend-commit
+  - page-form-module
+  - page-list-module
+  - page-skeleton
+  - prototype-page-acceptance
+  - prototype-review
+  - theme-token-usage
+  - vue3-best-practices
+  - yedit-table-usage
+  - yss-antd-design
+  - yss-api-integration
+  - yss-components
+  - yss-design-system
+  - yss-formily
+  - yss-formily-schema-generator
+  - yss-frontend-scaffold-generator
+  - yss-hook
+  - yss-microapp-commit
+  - yss-page-module-development
+  - yss-prototype-stage
+  - yss-ui
+  - yss-use-table-height
+  - yss-use-tree-height
+  - ytable-usage
+  - ytree-usage
+  optional_skills:
+  - id: setup-ts-deep-modules
+    default_distributed: false
+    activation: explicit-need
+    reason: 当前 Java 交付流程无调用；有 TypeScript 后端或工具链需要时按需接入。
+  - id: data-analytics
+    default_distributed: false
+    activation: explicit-need
+    reason: 当前主流程无调用；数据质量、SQL 核验或专题分析有需要时按需接入。

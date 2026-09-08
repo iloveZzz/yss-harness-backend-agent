@@ -3,7 +3,7 @@ import { mkdtempSync, mkdirSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
-import { sealVisualBaseline } from "../.agents/skills/yss-prototype-stage/scripts/visual-baseline-contract.mjs";
+import { sealVisualBaseline } from "./lib/visual-baseline-contract.mjs";
 
 const repoRoot = path.resolve(import.meta.dirname, "..");
 const root = mkdtempSync(path.join(tmpdir(), "yss-strategic-import-"));

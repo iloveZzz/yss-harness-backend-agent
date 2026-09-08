@@ -70,8 +70,8 @@ const profiles = {
   },
   openapiJson: {
     message: "OpenAPI YAML-first JSON handoff scenarios passed",
-    files: ["docs/api/templates/openapi-json-export-record-template.md", ".agents/skills/yss-api-integration/SKILL.md"],
-    markers: [[".agents/skills/yss-api-integration/SKILL.md", "SHA-256"]]
+    files: ["docs/api/templates/openapi-json-export-record-template.md", ".agents/skills/yss-openapi-governance/SKILL.md"],
+    markers: [[".agents/skills/yss-openapi-governance/SKILL.md", "SHA-256"]]
   },
   yssDtoWire: {
     message: "YSS DTO OpenAPI wire-shape scenarios passed",

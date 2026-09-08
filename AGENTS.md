@@ -59,7 +59,7 @@ README、用户指南和 `CLAUDE.md` 只解释或指向上述事实，不定义�
 ## 7. 实现硬门禁
 
 - 实现前读取 `docs/process/implementation-repo-integration.md`，登记目标仓、项目根、分支、CI、验证命令和回滚点；再由 `yss-implementation-contract-compiler` 编译最小技能集与合同草案。编译器不批准合同、不设置状态、不宣布完成。
-- 无可复用后端工程时，`harness-orchestrator` 根据当前 Tactical Design 给出 `domain-driven` / `layered-mvc` 推荐并由用户逐项目确认；确认后分别使用 `yss-ddd-scaffold-generator` / `yss-layered-mvc-scaffold-generator`。前端使用 `yss-frontend-scaffold-generator`。
+- 无可复用后端工程时，`harness-orchestrator` 根据当前 Tactical Design 给出 `domain-driven` / `layered-mvc` 推荐并由用户逐项目确认；确认后分别使用 `yss-ddd-scaffold-generator` / `yss-layered-mvc-scaffold-generator`。前端工程回交前端项目。
 - 脚手架仅在 `scaffold_status=required`、`scaffold-architecture-decisions.yaml` 已确认且批准、schema v3 生成合同已持久化后运行；生成器无交互、无回退，只产机械骨架。既有工程不覆盖，DDD / MVC 转换另立迁移工作单元；业务行为回到合同编译器并使用 `behavior-tdd`。
 - UI 影响切片在 `ready-for-agent` 前必须有通过校验的 `frontend_implementation_plan`，实现后补齐 `frontend_implementation_verification`，包含截图 / 视觉、状态与交互、console warning 和真实命令退出码证据。
 - 前端测试、type-check、构建优先 `pnpm`；后端优先项目根 `./mvnw`。缺失时记录受控例外和实际命令。
@@ -68,7 +68,7 @@ README、用户指南和 `CLAUDE.md` 只解释或指向上述事实，不定义�
 ## 8. 专项入口
 
 - 技术事实、标准或第三方行为影响决策时使用 `research`；竞品、市场或用户口碑事实使用 `competitive-intelligence`。
-- 原型和设计使用 `yss-design-system` → `yss-prototype-stage`；当前兼容路线用 `yss-antd-design` 记录版本事实。生产前端改用 `yss-ui`，原型阶段不得调用 `yss-ui`。
+- 原型原件由战略设计项目维护，生产前端由前端项目实现；本仓只读消费页面与接口需求，不加载前端或产品原型构建技能。`prototype` 仅用于后端逻辑、状态、算法和接口假设试验，不能替代合同及实现门禁。
 - Bug、测试失败或性能回退先用 `diagnosing-bugs` 建立复现，再使用 `tdd`；业务行为默认按 `behavior-tdd` 逐切片实现，不适用时记录理由和可执行验证。
 - 四个专业 Agent 不另起生命周期、不批准自己起草的合同，也不替实现者完成独立验证；协同边界见 `docs/agents/digital-human-roles.yaml`。
 

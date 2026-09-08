@@ -6,7 +6,7 @@ import { parseContextSource, parseContextContract, resolveContextTermRefs } from
 import { countersignRuleForGate } from './digital-human-roles.mjs';
 import { validateApprovalRecord } from './approval-record.mjs';
 import { treeDigest } from './strategic-handoff-io.mjs';
-import { validateVisualBaseline } from '../../.agents/skills/yss-prototype-stage/scripts/visual-baseline-contract.mjs';
+import { validateVisualBaseline } from './visual-baseline-contract.mjs';
 import { extractTraceability, compareIndexes } from './strategic-handoff-rules.mjs';
 const MAX_BYTES = 512 * 1024 * 1024;
 const own = (a,b) => JSON.stringify(canonical(a)) === JSON.stringify(canonical(b));

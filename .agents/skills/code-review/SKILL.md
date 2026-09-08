@@ -7,7 +7,7 @@ Review of a pinned candidate against a fixed point on two core axes, plus UI fid
 
 - **Standards** — does the code conform to this repo's documented coding standards?
 - **Spec** — does the code faithfully implement the originating issue / spec?
-- **UI fidelity** (only when the change has UI impact) — does the candidate match the confirmed prototype and `yss-design-system` / `yss-ui`? Type-check or claiming "already aligned" is not a pass. Invoke those skills' verification notes; do not collapse this axis into Standards or Spec.
+- **跨端输入** — 页面与视觉基线作为后端接口需求的只读输入；UI 实现及还原审查回交前端项目。
 
 Standards and Spec run as **parallel sub-agents** so they don't pollute each other's context, then this skill aggregates their findings. When UI is in scope, add a separate UI fidelity pass after those two reports (do not merge it into either axis).
 
