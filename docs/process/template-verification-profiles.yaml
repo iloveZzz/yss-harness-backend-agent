@@ -168,6 +168,8 @@ syntax_files:
 - scripts/run-template-verification
 - scripts/verify-template-verification-scenarios
 routing:
+- patterns: [".agents/skills/yss-technical-design/**", ".agents/skills/yss-mvc-design/**", "scripts/lib/technical-design-boundary.mjs"]
+  groups: [technical-design, implementation]
 - patterns:
   - scripts/*backend-delivery*
   - scripts/*frontend-delivery*
@@ -280,6 +282,10 @@ routing:
   groups:
   - hygiene
 groups:
+  technical-design:
+    commands:
+      - { run: "node .agents/skills/yss-technical-design/scripts/generate-schema.mjs --check" }
+      - { run: "node .agents/skills/yss-technical-design/tests/run-scenarios.mjs" }
   frontend-delivery:
     commands:
     - run: scripts/verify-frontend-delivery-scenarios

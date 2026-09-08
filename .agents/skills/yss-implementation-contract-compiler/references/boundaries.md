@@ -48,6 +48,8 @@
 | `scaffold.ddd` | `yss-ddd-scaffold-generator` | `integration`, `component-maintenance` |
 | `scaffold.layered-mvc` | `yss-layered-mvc-scaffold-generator` | `integration`, `component-maintenance` |
 | `migration.springboot3` | `yss-up-springboot3` | `guidance`, `integration`, `troubleshooting`, `component-maintenance`, `review-input` |
+| `architecture.technical-design` | `yss-technical-design` | `guidance`, `integration`, `review-input` |
+| `architecture.mvc-design` | `yss-mvc-design` | `guidance`, `integration`, `review-input` |
 
 ## Narrow Recipes
 
@@ -137,3 +139,6 @@
 | `yss-validation` | `yss-exception` | `component-dependency` | — |
 | `yss-security-algorithm` | `yss-exception` | `component-dependency` | — |
 | `yss-exception` | `yss-dto` | `context-required` | — |
+| `yss-technical-design` | `yss-tactical-design` | `coordination-only` | `domain-driven` |
+| `yss-technical-design` | `yss-mvc-design` | `coordination-only` | `layered-mvc` |
+| `yss-mvc-design` | `yss-openapi-draft-review` | `review-only` | `api-impact` |

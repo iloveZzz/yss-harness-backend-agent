@@ -499,3 +499,11 @@ frontend_delivery_readiness:
   verifier: scripts/verify-frontend-delivery
   output_binding: frontend.delivery
   inputs_verified_is_implementation_approval: false
+
+technical_design_consumption:
+  when: backend-technical-design-impact
+  binding: resolution.technical_design
+  required: [ref, version, digest]
+  architecture_match: resolution.architecture_identity.architecture_family
+  verification: node .agents/skills/yss-technical-design/scripts/validate-technical-design.mjs <contract> --root <target> --slice <slice-id>
+  legacy_ddd: explicit-read-only

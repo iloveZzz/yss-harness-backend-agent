@@ -18,7 +18,7 @@ lifecycle:
   entry_work_unit: work-unit.harness-entry
   allowed_work_units:
   - work-unit.harness-entry
-  - work-unit.tactical-design
+  - work-unit.technical-design
   - work-unit.slice-contract
   - work-unit.slice-implementation
   - work-unit.verification
