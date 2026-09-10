@@ -67,7 +67,7 @@ README、用户指南和 `CLAUDE.md` 只解释或指向上述事实，不定义�
 
 ## 8. 专项入口
 
-- 技术事实、标准或第三方行为影响决策时使用 `research`；竞品、市场或用户口碑事实使用 `competitive-intelligence`。
+- 技术事实、标准或第三方行为影响决策时使用 `yss-research`；竞品、市场或用户口碑事实使用 `competitive-intelligence`。
 - 原型原件由战略设计项目维护，生产前端由前端项目实现；本仓只读消费页面与接口需求，不加载前端或产品原型构建技能。`prototype` 仅用于后端逻辑、状态、算法和接口假设试验，不能替代合同及实现门禁。
 - Bug、测试失败或性能回退先用 `diagnosing-bugs` 建立复现，再使用 `tdd`；业务行为默认按 `behavior-tdd` 逐切片实现，不适用时记录理由和可执行验证。
 - 四个专业 Agent 不另起生命周期、不批准自己起草的合同，也不替实现者完成独立验证；协同边界见 `docs/agents/digital-human-roles.yaml`。

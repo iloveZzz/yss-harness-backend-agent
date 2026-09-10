@@ -113,7 +113,7 @@ roles:
       - architecture-agent
       - yss-technical-design
       - codebase-design
-      - research
+      - yss-research
       - tdd
     forbidden_skills:
       - harness-orchestrator
@@ -140,7 +140,7 @@ roles:
       - evidence.frontend-verification
     core_skills:
       - code-review
-      - research
+      - yss-research
     forbidden_skills:
       - harness-orchestrator
       - architecture-agent
@@ -211,7 +211,7 @@ roles:
       - tdd
       - diagnosing-bugs
       - code-review
-      - research
+      - yss-research
     forbidden_skills:
       - harness-orchestrator
       - architecture-agent
