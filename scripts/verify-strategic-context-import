@@ -6,7 +6,7 @@ import { parseArgs } from "node:util";
 import { fileURLToPath } from "node:url";
 import { parseDocument } from "./vendor/yaml.mjs";
 import { parseContextContract } from "./lib/context-contract.mjs";
-import { validateVisualBaseline } from "../.agents/skills/yss-prototype-stage/scripts/visual-baseline-contract.mjs";
+import { validateVisualBaseline } from "./lib/visual-baseline-contract.mjs";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const schemaPath = path.join(repoRoot, "docs/process/schemas/strategic-design-handoff.schema.json");

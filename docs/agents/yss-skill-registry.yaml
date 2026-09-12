@@ -99,7 +99,11 @@ capability_contract:
     - dependency-topology
     - skill-id
 capabilities:
-  - { id: writing.lifecycle-document, primary_skill: i-have-adhd, task_modes: [guidance] }
+  - {
+      id: writing.lifecycle-document,
+      primary_skill: i-have-adhd,
+      task_modes: [ guidance ]
+    }
   - id: layer.mvc-service
     primary_skill: yss-application
     architecture_family: layered-mvc
@@ -459,21 +463,53 @@ recipes:
       - quality.java-code-style
 skill_dependencies:
   test-agent:
-    - { skill: i-have-adhd, type: context-conditional, when: lifecycle-document-output }
+    - {
+        skill: i-have-adhd,
+        type: context-conditional,
+        when: lifecycle-document-output
+      }
   backend-agent:
-    - { skill: i-have-adhd, type: context-conditional, when: lifecycle-document-output }
+    - {
+        skill: i-have-adhd,
+        type: context-conditional,
+        when: lifecycle-document-output
+      }
   architecture-agent:
-    - { skill: i-have-adhd, type: context-conditional, when: lifecycle-document-output }
+    - {
+        skill: i-have-adhd,
+        type: context-conditional,
+        when: lifecycle-document-output
+      }
   code-review:
-    - { skill: i-have-adhd, type: context-conditional, when: lifecycle-document-output }
+    - {
+        skill: i-have-adhd,
+        type: context-conditional,
+        when: lifecycle-document-output
+      }
   yss-implementation-contract-compiler:
-    - { skill: i-have-adhd, type: context-conditional, when: lifecycle-document-output }
+    - {
+        skill: i-have-adhd,
+        type: context-conditional,
+        when: lifecycle-document-output
+      }
   yss-openapi-governance:
-    - { skill: i-have-adhd, type: context-conditional, when: lifecycle-document-output }
+    - {
+        skill: i-have-adhd,
+        type: context-conditional,
+        when: lifecycle-document-output
+      }
   yss-research:
-    - { skill: i-have-adhd, type: context-conditional, when: lifecycle-document-output }
+    - {
+        skill: i-have-adhd,
+        type: context-conditional,
+        when: lifecycle-document-output
+      }
   harness-orchestrator:
-    - { skill: i-have-adhd, type: context-conditional, when: lifecycle-document-output }
+    - {
+        skill: i-have-adhd,
+        type: context-conditional,
+        when: lifecycle-document-output
+      }
   yss-ddd-scaffold-generator:
     - skill: yss-backend-scaffold-parent
       type: context-required
@@ -561,7 +597,11 @@ skill_dependencies:
     - skill: yss-dto
       type: context-required
   yss-technical-design:
-    - { skill: i-have-adhd, type: context-conditional, when: lifecycle-document-output }
+    - {
+        skill: i-have-adhd,
+        type: context-conditional,
+        when: lifecycle-document-output
+      }
     - skill: yss-tactical-design
       type: coordination-only
       when: domain-driven
@@ -609,8 +649,8 @@ invocation_contract:
   overrides:
     i-have-adhd:
       invocation_mode: model
-      trigger_conditions: [lifecycle-document-output]
-      exclusion_conditions: [code-only-work, command-only-work, unrelated-conversation, user-disabled]
+      trigger_conditions: [ lifecycle-document-output ]
+      exclusion_conditions: [ code-only-work, command-only-work, unrelated-conversation, user-disabled ]
       primary_output: document-writing-assistance
 agent_runtime_roots:
   claude: .claude/skills
@@ -620,7 +660,14 @@ agent_runtime_roots:
   qoder: .qoder/skills
   trae: .trae/skills
 skills:
-  - { id: i-have-adhd, layer: core, maturity: supported, instance_default_discoverable: true, aliases: [], impacts: [writing] }
+  - {
+      id: i-have-adhd,
+      layer: core,
+      maturity: supported,
+      instance_default_discoverable: true,
+      aliases: [],
+      impacts: [ writing ]
+    }
   - id: alibaba-java-code-style
     layer: specialist
     maturity: supported
@@ -815,7 +862,7 @@ skills:
     layer: core
     maturity: supported
     instance_default_discoverable: true
-    aliases: [research]
+    aliases: [ research ]
     impacts:
       - discovery
   - id: resolving-merge-conflicts
@@ -1152,3 +1199,23 @@ external_skills:
     source: cross-repo-reference
   - id: yss-frontend-scaffold-generator
     source: cross-repo-reference
+existing_project_profiles:
+  existing-domain-driven-maven:
+    source_kind: existing-registration
+    architecture_family: domain-driven
+    build_system: maven
+    maturity: supported
+    required_roles:
+      - domain
+      - application
+      - infrastructure
+      - web
+  existing-layered-mvc-maven:
+    source_kind: existing-registration
+    architecture_family: layered-mvc
+    build_system: maven
+    maturity: supported
+    required_roles:
+      - application
+      - persistence
+      - web
