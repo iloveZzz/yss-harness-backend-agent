@@ -3,12 +3,9 @@
   "generatedBy": "scripts/update-skill-lock",
   "canonicalRoot": ".agents/skills",
   "projectionRoots": [
-    ".claude/skills",
     ".codex/skills",
     ".cursor/skills",
-    ".pi/skills",
-    ".qoder/skills",
-    ".trae/skills"
+    ".pi/skills"
   ],
   "sources": {
     "mattpocock/skills": {
@@ -30,12 +27,9 @@
         "effectiveHash": "ffeea0ac5a5873caa65701e93aaccc6ac1775db1c526d07a20668c989105cc73",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "archify": {
@@ -48,12 +42,9 @@
         "adaptationRef": "docs/agents/archify-integration.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "architecture-agent": {
@@ -63,12 +54,9 @@
         "effectiveHash": "3494f4a4d616d40aef13ba07eb304032834e99104a31aa3a874841184056f0c1",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "ask-matt": {
@@ -81,12 +69,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "backend-agent": {
@@ -96,12 +81,9 @@
         "effectiveHash": "e1e359739688f043bb49c6e2b6fa160bb85fd7579432b56d52afdca3f80ba20f",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "code-review": {
@@ -114,12 +96,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "codebase-design": {
@@ -132,12 +111,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "competitive-intelligence": {
@@ -147,12 +123,9 @@
         "effectiveHash": "d4b83600889b6045182232f0c11a9d6a563030b5f60faa4385a7886843ef0109",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "cross-repo-implementation-routing": {
@@ -162,12 +135,9 @@
         "effectiveHash": "d987e88e4c9fa4cd48081ba41359faa7d58b2e194f1fcd98c17677a9a6292629",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "diagnosing-bugs": {
@@ -180,12 +150,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "dispatching-parallel-agents": {
@@ -195,12 +162,9 @@
         "effectiveHash": "375d7445c2b7fb800f526e5cf486d9eb90b1258b0a0efd55eb4eeb0a41deb05e",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "domain-modeling": {
@@ -213,12 +177,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "grill-me": {
@@ -231,12 +192,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "grill-with-docs": {
@@ -249,12 +207,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "grilling": {
@@ -267,12 +222,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "handoff": {
@@ -285,12 +237,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "harness-orchestrator": {
@@ -300,12 +249,9 @@
         "effectiveHash": "a0822b46b3a5b63a076d7a73046959421bcd84fcb9c233de2e5c38b24268fe94",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "i-have-adhd": {
@@ -318,12 +264,9 @@
         "adaptationRef": ".agents/skills/i-have-adhd/references/yss-adaptation.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "implement": {
@@ -336,12 +279,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "implementation-repo-onboarding": {
@@ -351,12 +291,9 @@
         "effectiveHash": "905e97faee589bcc283cc299a05e795d75a3028440f7059f0115ebe80a266b3c",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "improve-codebase-architecture": {
@@ -369,12 +306,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "java-backend-commit": {
@@ -384,12 +318,9 @@
         "effectiveHash": "ba9551b8985d1e173bed7d3567ef82080622a9c887239088e4ae0a5d34ba85e3",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "llm-wiki": {
@@ -399,12 +330,9 @@
         "effectiveHash": "6a3966de860a48f3688907d8002b799fe8a110bd9b62956cb18b2a2e2fbf094b",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "lombok": {
@@ -415,12 +343,9 @@
         "upstreamHash": "b27bd55f695271de1c22fbdc1c4c4520ed48f05e6352eb760bfc32822139475e",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "loop-me": {
@@ -433,12 +358,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "maintaining-skills": {
@@ -448,12 +370,9 @@
         "effectiveHash": "8389e34653e247ebcf4b1a7fb0a40fa3a72c46faecc81b4d6dff4c42c76a59bf",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "mapstruct": {
@@ -464,12 +383,9 @@
         "upstreamHash": "50dcb3a41a92bb42b6714e8ab9fd1e7149fa89774a05c6e21c7711368dbb6443",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "migrate-to-shoehorn": {
@@ -482,12 +398,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "prototype": {
@@ -500,12 +413,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "resolving-merge-conflicts": {
@@ -518,12 +428,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "scaffold-exercises": {
@@ -536,12 +443,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "setup-matt-pocock-skills": {
@@ -554,12 +458,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "setup-pre-commit": {
@@ -572,12 +473,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "tdd": {
@@ -590,12 +488,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "teach": {
@@ -608,12 +503,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "test-agent": {
@@ -623,12 +515,9 @@
         "effectiveHash": "55b6994433eaf0bc0ac2d72eda3df1f4bbbb49d605eb64d76a24f159e52821d7",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "to-questionnaire": {
@@ -641,12 +530,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "to-spec": {
@@ -659,12 +545,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "to-tickets": {
@@ -677,12 +560,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "triage": {
@@ -695,12 +575,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "using-git-worktrees": {
@@ -710,12 +587,9 @@
         "effectiveHash": "e6306e69246610dc203c8639584542e16bfbb0b09d0adddac533ca009fa93180",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "wait-what": {
@@ -728,12 +602,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "wayfinder": {
@@ -746,12 +617,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "writing-beats": {
@@ -764,12 +632,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "writing-for-agents": {
@@ -782,12 +647,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "writing-fragments": {
@@ -800,12 +662,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "writing-shape": {
@@ -818,12 +677,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-application": {
@@ -833,12 +689,9 @@
         "effectiveHash": "6e4c72d653e6e17065b957fe64ed62883280eb1a4c1b0ef0f025676cd41cacab",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-audit-log": {
@@ -848,12 +701,9 @@
         "effectiveHash": "c4b97680eeedd99d976ed700715af252d9644a1d746d15c0721bec08c6a79587",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-cache": {
@@ -863,12 +713,9 @@
         "effectiveHash": "b9fcbb6fc991046e12f5eb420c5b1c6ac398337a6a5be9d3d318df2cc655e4af",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-ddd-scaffold-generator": {
@@ -878,12 +725,9 @@
         "effectiveHash": "674ee65c26c4ea9c7027709e195e470bac621615652312561ede36bb7ac19371",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-distributed-id": {
@@ -893,12 +737,9 @@
         "effectiveHash": "3bae646015bd7a9cd2596d81ed0c7d6834bd1c96a0bcd1404021592c801d095d",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-domain": {
@@ -908,12 +749,9 @@
         "effectiveHash": "21a7389552637efb026782ad8c813256be0f03b38cd99afeac51527ac579560e",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-dto": {
@@ -923,12 +761,9 @@
         "effectiveHash": "ced3347bb5de5250262d923e948d26a7d919f8b4d0aedf2d8d75044220d08eab",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-excel-mvc": {
@@ -938,12 +773,9 @@
         "effectiveHash": "d5ac37a7a8cbe8f07f01818986fb3a690ed0bdd9272631f78e03e84feb1ea18e",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-exception": {
@@ -953,12 +785,9 @@
         "effectiveHash": "2163a4c1f29ceed031647c3b655740bb6eb1b89ea4701a1b200783b4a6f88d8b",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-implementation-contract-compiler": {
@@ -968,12 +797,9 @@
         "effectiveHash": "1870c3e81f66531607aaf8c9c131de3595e9d26463b03566f8b8d4253316a2c7",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-layered-mvc-scaffold-generator": {
@@ -983,27 +809,21 @@
         "effectiveHash": "06550b76b9e4447649f5d11d5e65fa920552a5192a1bbbef2988b472ca48383f",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-mvc-data-analysis-project-initializer": {
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-mvc-data-analysis-project-initializer/SKILL.md",
-        "effectiveHash": "a845b54fc9ea2fb6c3a8819d54202a495139fa28e6b01b08654e76941a931199",
+        "effectiveHash": "f4244d48bc8725c00fcf98fc6e9e6218ebc3e2e58e40d0b7a320b8e56f42b4bb",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-mvc-design": {
@@ -1013,12 +833,9 @@
         "effectiveHash": "5a8151976c9f3aef7215e2efce50bc09cb17f65d22dfcf11e4542154a292c805",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-mybatis": {
@@ -1028,12 +845,9 @@
         "effectiveHash": "55b99b85b1ebfa683b7179b0d21fae5a028630cc33b0be4a9f2fd9bb39c217a1",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-openapi-draft-review": {
@@ -1043,12 +857,9 @@
         "effectiveHash": "fa3016e145778e73f0a1e83017b009fe92941b221cc7c5bb8f2666e6c99d9376",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-openapi-governance": {
@@ -1058,12 +869,9 @@
         "effectiveHash": "32937908f41680f194e9d2a433c3666d3cc9ef9aee0a7933fe2831951c6dfb13",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-repository": {
@@ -1073,12 +881,9 @@
         "effectiveHash": "412d2bcc8bc39e9d4c697a3a25d39dd552533aa0340094e88c6d2a0460d591eb",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-research": {
@@ -1088,12 +893,9 @@
         "effectiveHash": "4c3bdc9cb27bf8ef4141dfb730d52dbb473e76f0d4060b023311ccc63b2dc89e",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-resilience4j": {
@@ -1103,12 +905,9 @@
         "effectiveHash": "c0da30d4e94cfd549e9fe28a28b4f3b394f95fcf2467453d241c503b1cc3663a",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-security-algorithm": {
@@ -1118,12 +917,9 @@
         "effectiveHash": "69df10338971e12ac6aa2200fd12036fc7031173d82f8175bec58b857c36002a",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-skill-source-index-refresh": {
@@ -1133,12 +929,9 @@
         "effectiveHash": "e8d820a249f1422ce5c5863910f1c1648ab85bd90707a6ed43b8ba34f81f9774",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-tactical-design": {
@@ -1148,12 +941,9 @@
         "effectiveHash": "884346f3f99bc92d8ecc7175f761321f7e39b384bee1d1e694c63165bd859f39",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-technical-design": {
@@ -1163,12 +953,9 @@
         "effectiveHash": "562aeb6e5666521d3541f7f2d06ef41f613ce7c785dc7b88c1a8f940842158e4",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-up-springboot3": {
@@ -1178,12 +965,9 @@
         "effectiveHash": "0f9ff3f8fed5f22865b90813beba84f256a0b7ff0b23397d860a9abbac49c59d",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-userinfo": {
@@ -1193,12 +977,9 @@
         "effectiveHash": "6ee4fda65aeb371f7df06be7f65675c83a08e94effc60562a126243b0917270d",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-validation": {
@@ -1208,12 +989,9 @@
         "effectiveHash": "045a6080e8b11b91c2cb7cd3e55be2d79554c18f6f9356f85486d4e22c3705d1",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-web-controller": {
@@ -1223,12 +1001,9 @@
         "effectiveHash": "64e3a51db0a1235e0b6b78c1854107283c9a0bca43bff8968b6eb8efe1636a48",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       }
     },
