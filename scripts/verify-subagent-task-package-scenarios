@@ -1,20 +1,29 @@
 #!/usr/bin/env node
 import assert from "node:assert/strict";
-import { existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { ROOT } from "./lib/lifecycle-registry.mjs";
 import { generateTaskPackageDefaults, validateTaskPackage, validateTaskPackageSet } from "./lib/task-package.mjs";
+import { isTemplateSource } from "./lib/repository-mode.mjs";
+import { buildDecisionFixture } from "./fixtures/user-decision/build-fixture.mjs";
 
 const scratchDir = "docs/.scratch";
 const fixtureDir = `${scratchDir}/_verify-task-package`;
 const contractRef = `${fixtureDir}/slice-contract.json`;
 const evidenceRef = `${fixtureDir}/evidence.json`;
 const maintenanceRef = `${fixtureDir}/maintenance.json`;
+const technicalDesignRef = `${fixtureDir}/technical-design.json`;
+const dataDecisionRef = `${fixtureDir}/data-architecture-decision.json`;
+const apiDecisionRef = `${fixtureDir}/api-contract-decision.json`;
+const engineeringPackageRef = `${fixtureDir}/engineering-contract-package.json`;
+const engineeringApprovalRef = `${fixtureDir}/engineering-contract-approval.json`;
 const contractFile = path.join(ROOT, contractRef);
 const evidenceFile = path.join(ROOT, evidenceRef);
 const maintenanceFile = path.join(ROOT, maintenanceRef);
 const createdScratch = !existsSync(path.join(ROOT, scratchDir));
+const templateSource = isTemplateSource(ROOT);
 
 const contract = {
   schema_version: 2,
@@ -69,6 +78,20 @@ function writeFixtures() {
   writeFileSync(contractFile, JSON.stringify(contract));
   writeFileSync(evidenceFile, JSON.stringify({ ok: true }));
   writeFileSync(maintenanceFile, JSON.stringify(maintenance));
+  const evidenceDigest = `sha256:${createHash("sha256").update(readFileSync(evidenceFile)).digest("hex")}`;
+  const apiDecision = { schema_version: 1, kind: "api-contract-decision", decision_id: "api-contract.task-package", decision_version: "v1", status: "approved", current_version: true, impact: "not-applicable", assessment_ref: evidenceRef, assessment_digest: evidenceDigest, evidence_refs: [evidenceRef], reason: "任务包夹具不新增或修改 API" };
+  writeFileSync(path.join(ROOT, apiDecisionRef), `${JSON.stringify(apiDecision, null, 2)}\n`);
+  const apiDigest = `sha256:${createHash("sha256").update(readFileSync(path.join(ROOT, apiDecisionRef))).digest("hex")}`;
+  const technicalDesign = { schema_version: 2, kind: "technical-design-contract", technical_design_id: "technical-design.task-package", version: "v1", status: "approved", current_version: true };
+  const dataDecision = { schema_version: 1, kind: "data-architecture-decision", decision_id: "data-architecture.task-package", decision_version: "v1", status: "approved", current_version: true, impact: "not-applicable" };
+  writeFileSync(path.join(ROOT, technicalDesignRef), `${JSON.stringify(technicalDesign, null, 2)}\n`);
+  writeFileSync(path.join(ROOT, dataDecisionRef), `${JSON.stringify(dataDecision, null, 2)}\n`);
+  const technicalDigest = `sha256:${createHash("sha256").update(readFileSync(path.join(ROOT, technicalDesignRef))).digest("hex")}`;
+  const dataDigest = `sha256:${createHash("sha256").update(readFileSync(path.join(ROOT, dataDecisionRef))).digest("hex")}`;
+  const engineeringPackage = { schema_version: 1, kind: "engineering-contract-package", project_id: "backend", technical_design: { ref: technicalDesignRef, version: "v1", digest: technicalDigest }, data_architecture_decision: { ref: dataDecisionRef, version: "v1", digest: dataDigest, impact: "not-applicable" }, api_contract_decision: { ref: apiDecisionRef, version: "v1", digest: apiDigest, impact: "not-applicable" } };
+  writeFileSync(path.join(ROOT, engineeringPackageRef), `${JSON.stringify(engineeringPackage, null, 2)}\n`);
+  const decision = buildDecisionFixture(path.join(ROOT, fixtureDir, "engineering-decision"), { boundary: "gate.engineering-contract-approved", scope: ["backend"], subjectRef: path.join(ROOT, engineeringPackageRef) });
+  writeFileSync(path.join(ROOT, engineeringApprovalRef), `${JSON.stringify({ schema_version: 1, gate_id: "gate.engineering-contract-approved", decision: "approved", actor_kind: "digital-human", role_id: "role.test-agent", runtime_id: "runtime.generic", principal_ref: "synthetic-test-reviewer", subject_ref: decision.requirement.subject_ref, approval_scope: decision.requirement.scope, drafter_role_id: "role.architecture-agent", user_decision_ref: decision.ref, artifact_bindings: [{ id: technicalDesign.technical_design_id, version: "v1", digest: technicalDigest }, { id: dataDecision.decision_id, version: "v1", digest: dataDigest }, { id: apiDecision.decision_id, version: "v1", digest: apiDigest }], evidence_refs: [evidenceRef] }, null, 2)}\n`);
 }
 
 function packageBase(roleId, taskId, workUnitId, kind, contractFields, stageId) {
@@ -96,12 +119,22 @@ function packageBase(roleId, taskId, workUnitId, kind, contractFields, stageId) 
 }
 
 function lifecyclePackage() {
-  return packageBase("role.architecture-agent", "task-tactical-design", "work-unit.technical-design", "lifecycle-work-unit", {
+  const value = packageBase("role.architecture-agent", "task-tactical-design", "work-unit.technical-design", "lifecycle-work-unit", {
     lifecycle_ref: "docs/process/lifecycle-registry.yaml",
     artifact_refs: ["artifact.tactical-design"],
     gate_refs: ["gate.technical-design-approved"],
     contract_id: "lifecycle-tactical-design"
   }, "stage.technical-design");
+  const artifactBinding = (ref) => ({ status: "approved", current_version: true, ref, version: "v1", digest: `sha256:${createHash("sha256").update(readFileSync(path.join(ROOT, ref))).digest("hex")}` });
+  value.transition_evidence = {
+    strategic_handoff_consumption: { result: "inputs-verified", ready_for_agent: false, ref: evidenceRef },
+    context_reconciliation: { status: "reconciled", ref: evidenceRef },
+    technical_design: artifactBinding(technicalDesignRef),
+    data_architecture_decision: { ...artifactBinding(dataDecisionRef), impact: "not-applicable" },
+    api_contract_decision: { status: "approved", current_version: true, ref: apiDecisionRef, version: "v1", digest: `sha256:${createHash("sha256").update(readFileSync(path.join(ROOT, apiDecisionRef))).digest("hex")}`, impact: "not-applicable" },
+    engineering_contract_approval_ref: engineeringApprovalRef
+  };
+  return value;
 }
 
 function templatePackage() {
@@ -149,7 +182,7 @@ function completedResult(pkg, overrides = {}) {
     violation: [],
     new_impacts: [],
     stale_candidates: [],
-    next_route: "work-unit.slice-contract",
+    next_route: "work-unit.implementation-repository-preparation",
     blocking_signals: [],
     ...overrides
   };
@@ -170,8 +203,8 @@ try {
   const backend = slicePackage("role.backend-agent", "task-backend", "work-unit.slice-backend", "apps/backend/todo/");
   const testing = slicePackage("role.test-agent", "task-test", "work-unit.slice-test", "tests/todo/");
   testing.execution_state = "Verifier";
-  [tactical, maintenance, frontend, backend, testing].forEach((pkg) => validateTaskPackage(pkg));
-  validateTaskPackageSet([frontend, backend, testing]);
+  [tactical, ...(templateSource ? [maintenance, frontend] : []), backend, testing].forEach((pkg) => validateTaskPackage(pkg));
+  validateTaskPackageSet([...(templateSource ? [frontend] : []), backend, testing]);
 
   const completed = lifecyclePackage();
   completed.workflow_status = "resolved";
@@ -192,11 +225,11 @@ try {
   mustFail((value) => { value.contract.slice_contract_ref = contractRef; }, /不得携带专项合同引用/, "lifecycle-slice-ref");
   mustFail((value) => { delete value.contract.lifecycle_ref; }, /lifecycle_ref/, "lifecycle-missing-ref");
   mustFail((value) => { value.contract.kind = "slice-implementation"; delete value.contract.slice_contract_ref; }, /slice_contract_ref/, "slice-missing-ref");
-  mustFail((value) => { value.contract.kind = "template-maintenance"; delete value.contract.maintenance_ref; }, /maintenance_ref/, "maintenance-missing-ref");
+  if (templateSource) mustFail((value) => { value.contract.kind = "template-maintenance"; delete value.contract.maintenance_ref; }, /maintenance_ref/, "maintenance-missing-ref");
   mustFail((value) => { value.contract.status = "stale"; }, /stale 任务包必须暂停/, "stale-not-paused");
   mustFail((value) => { value.runtime_id = "runtime.unknown"; }, /未知 runtime_id/, "unknown-runtime");
   mustFail((value) => { value.skill_source.core_skills = ["forbidden-skill"]; }, /core_skills 必须与角色注册表完全一致/, "skill-source-mismatch");
-  mustFail((value) => { value.stage_id = "stage.technical-design"; }, /未覆盖 stage_id/, "role-stage-mismatch", () => slicePackage("role.frontend-agent", "task-stage", "work-unit.slice-frontend", "apps/frontend/todo/"));
+  if (templateSource) mustFail((value) => { value.stage_id = "stage.technical-design"; }, /未覆盖 stage_id/, "role-stage-mismatch", () => slicePackage("role.frontend-agent", "task-stage", "work-unit.slice-frontend", "apps/frontend/todo/"));
   mustFail((value) => { value.result = { result: "blocked", changed_files: ["docs/../secret.txt"] }; }, /超出 allowed_write_paths|越出仓库/, "write-path-traversal");
   mustFail((value) => { value.execution_state = "Reviewer"; value.review_context = { implementation_actor_id: value.actor_id }; }, /不同 actor_id/, "reviewer-implementer-conflict");
   mustFail((value) => { value.workflow_status = "resolved"; value.verification_results = [{ command: "scripts/verify-template", exit_code: 0, executed_at: "now", evidence_ref: evidenceRef }]; value.result = completedResult(value, { new_impacts: ["api-change"] }); }, /new_impacts 必须为空/, "completed-new-impact");

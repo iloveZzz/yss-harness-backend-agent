@@ -257,8 +257,9 @@ tdd_modes:
     - verification_commands
     - behavior_tests_after_generation
 scaffold_contract_schema:
-  schema_version: 3
-  identity: service-engineering-baseline
+  schema_version: 4
+  schema_ref: docs/process/schemas/project-scaffold-contract.schema.json
+  identity: project-engineering-baseline
   compiled_by: yss-implementation-contract-compiler
   approved_by: harness-orchestrator
   status_by_owner:
@@ -273,6 +274,9 @@ scaffold_contract_schema:
   required:
   - contract_id
   - contract_version
+  - kind
+  - delivery_role
+  - scaffold_kind
   - scaffold_request_id
   - status
   - compiler_draft_ref
@@ -284,6 +288,8 @@ scaffold_contract_schema:
   - scaffold_status
   - project_name
   - target_output_dir
+  - repository_scope
+  - init_git
   - base_package
   - architecture_family
   - generator_skill
@@ -299,6 +305,30 @@ scaffold_contract_schema:
   - approval
   - work_unit
   - generation_policy
+  - design_prerequisites
+  design_prerequisites:
+    required:
+    - technical_design
+    - data_architecture_decision
+    - api_contract_decision
+    - engineering_contract_approval_ref
+    artifact_binding:
+    - ref
+    - version
+    - digest
+    data_impact_modes:
+    - required
+    - not-applicable
+    api_impact_modes:
+    - required
+    - not-applicable
+    api_required_closure:
+    - openapi_yaml
+    - validation_record
+    - independent_draft_review
+    - freeze
+    api_same_original_bytes: true
+    approval_gate: gate.engineering-contract-approved
   architecture_decision:
     artifact: scaffold-architecture-decisions.yaml
     status: lifecycle-approved
@@ -409,6 +439,7 @@ scaffold_contract_schema:
   unsupported_inputs:
     schema_v1: reject-no-auto-upgrade
     schema_v2_for_new_generation: reject-read-only-history
+    schema_v3_for_new_generation: reject-historical-read-only
     slice_id: forbidden-as-scaffold-identity
     existing_project: reject-no-scaffold-migration
   lifecycle_boundary:
@@ -444,7 +475,7 @@ scaffold_contract_schema:
     - mechanical_config
     - wrapper
     - bootstrap_entrypoint
-    - manifest_v3
+    - manifest_v4
     - architecture_rules
     - test_infrastructure
     forbidden_when:

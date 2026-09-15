@@ -16,11 +16,12 @@ export const CONTROL_ROLES = ["role.harness-orchestrator"];
 export const ALLOWED_WORK_UNITS = [
   "work-unit.harness-entry",
   "work-unit.technical-design",
+  "work-unit.implementation-repository-preparation",
   "work-unit.slice-contract",
   "work-unit.slice-implementation",
   "work-unit.verification",
 ];
-export const ALLOWED_STAGES = ["stage.harness-entry", "stage.technical-design", "stage.slice-contract", "stage.slice-implementation", "stage.verification"];
+export const ALLOWED_STAGES = ["stage.harness-entry", "stage.technical-design", "stage.implementation-repository-preparation", "stage.slice-contract", "stage.slice-implementation", "stage.verification"];
 export const CONSUMER_CAPABILITIES = ["backend-technical-design"];
 export const FORBIDDEN_WORK_UNITS = [
   "work-unit.ssot-update",
@@ -98,7 +99,7 @@ export function validateHarnessProfile(profile = loadHarnessProfile(), {
   const stageIds = new Set((lifecycle.stages || []).map((stage) => stage.id));
   const workUnitIds = new Set((lifecycle.work_units || []).map((unit) => unit.id));
   if (!equalArray(profile.lifecycle?.allowed_work_units, ALLOWED_WORK_UNITS)) {
-    fail("lifecycle.allowed_work_units 必须是五阶段开发落地工作单元");
+    fail("lifecycle.allowed_work_units 必须是包含仓库准备的开发落地工作单元");
   }
   if (!equalArray(profile.lifecycle?.allowed_stages, ALLOWED_STAGES)) fail("lifecycle.allowed_stages 必须严格匹配后端交付阶段");
   if (!equalArray(profile.lifecycle?.forbidden_work_units, FORBIDDEN_WORK_UNITS)) {
@@ -147,11 +148,18 @@ export function validateHarnessProfile(profile = loadHarnessProfile(), {
   }
   const handoff = profile.upstream?.strategic_design_handoff;
   if (handoff?.schema_ref !== "docs/process/schemas/strategic-design-handoff.schema.json"
-    || !equalArray(handoff?.accepted_schema_versions, [3, 4])
-    || handoff?.current_schema_version !== 4
-    || handoff?.ui_impact_requires_visual_baseline_schema_version !== 1
-    || handoff?.stale_baseline_policy !== "block-and-reroute") {
-    fail("upstream.strategic_design_handoff 必须兼容 v3、以 Handoff v4 为当前版本并固定 Visual Baseline v1 与 stale 阻断策略");
+    || !equalArray(handoff?.accepted_schema_versions, [3, 4, 5])
+    || handoff?.current_schema_version !== 5
+    || handoff?.current_import_receipt_schema_version !== 3
+    || handoff?.accepted_next_work_unit !== "work-unit.technical-design"
+    || handoff?.ready_for_agent !== false) {
+    fail("upstream.strategic_design_handoff 必须兼容 v3/v4、以 Handoff v5/Import Receipt v3 为当前版本，接收后进入技术设计并保持 ready_for_agent=false");
+  }
+  if (handoff?.ui_impact_requires_visual_baseline_schema_version !== 1) {
+    fail("upstream.strategic_design_handoff 的 UI 影响必须绑定 Visual Baseline v1");
+  }
+  if (handoff?.stale_baseline_policy !== "block-and-reroute") {
+    fail("upstream.strategic_design_handoff 的过期 Visual Baseline 必须 block-and-reroute");
   }
   if (!equalArray(profile.handoff?.consumer_capabilities, CONSUMER_CAPABILITIES)) fail("handoff.consumer_capabilities 必须为 backend-technical-design");
 
@@ -187,8 +195,11 @@ export const harnessProfileContract = Object.freeze({
   consumer_capabilities: CONSUMER_CAPABILITIES,
   forbidden_work_units: FORBIDDEN_WORK_UNITS,
   strategic_design_handoff: Object.freeze({
-    accepted_schema_versions: [3, 4],
-    current_schema_version: 4,
+    accepted_schema_versions: [3, 4, 5],
+    current_schema_version: 5,
+    import_receipt_schema_version: 3,
+    accepted_next_work_unit: "work-unit.technical-design",
+    ready_for_agent: false,
     visual_baseline_schema_version: 1,
     stale_baseline_policy: "block-and-reroute",
   }),

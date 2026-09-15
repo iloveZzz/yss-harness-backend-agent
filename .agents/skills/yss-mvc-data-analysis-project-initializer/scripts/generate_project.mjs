@@ -54,7 +54,7 @@ export async function initialize(options) {
     await put(path.join(projectRoot, ".artifact-workspace.yaml"), `schema_version: 1\nkind: service\nservice_id: ${options.projectName}`);
     await cp(path.join(root, "scripts/lib"), path.join(projectRoot, "scripts/lib"), { recursive: true });
     await cp(path.join(root, "scripts/vendor"), path.join(projectRoot, "scripts/vendor"), { recursive: true });
-    for (const name of ["repository-mode", "implementation-path-policy", "repository-scope-policy", "generate-lifecycle-artifacts", "node-generate-lifecycle-artifacts.mjs", "verify-lifecycle-registry", "node-verify-lifecycle-registry.mjs", "verify-lifecycle-checkpoint", "verify-context-reconciliation", "verify-approval-record", "verify-digital-human-task-package", "verify-yss-dto-openapi-profile", "verify-frontend-implementation-evidence"]) {
+    for (const name of ["repository-mode", "implementation-path-policy", "repository-scope-policy", "generate-lifecycle-artifacts", "node-generate-lifecycle-artifacts.mjs", "verify-lifecycle-registry", "node-verify-lifecycle-registry.mjs", "verify-lifecycle-checkpoint", "verify-context-reconciliation", "verify-approval-record", "verify-user-decision", "verify-digital-human-task-package", "verify-yss-dto-openapi-profile", "verify-frontend-implementation-evidence"]) {
       await cp(path.join(root, "scripts", name), path.join(projectRoot, "scripts", name));
     }
     const lockDigest = await sharedTools(path.resolve(options.outputDir), contract);
@@ -71,7 +71,7 @@ export async function initialize(options) {
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   try {
     const options = parseArgs(process.argv.slice(2));
-    if (options.help) process.stdout.write("使用批准的 MVC schema v3 合同与 Maven 坐标参数；输出独立数据分析项目，无数据库/Mock 选项。\n");
+    if (options.help) process.stdout.write("使用批准且绑定技术/数据设计的 MVC schema v4 合同与 Maven 坐标参数；输出独立数据分析项目，无数据库/Mock 选项。\n");
     else await initialize(options);
   } catch (error) { process.stderr.write(`数据分析项目初始化失败: ${error.message}\n`); process.exitCode = 1; }
 }

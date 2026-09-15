@@ -1,6 +1,6 @@
 # 需求定义 (Requirements) — 从想法到可执行定义
 
-> 当前分支默认链路是 Harness Agent 五阶段。本目录保存 Spec、用户故事和垂直切片资产；Discovery 结论作为 Harness Entry 的上游输入，而不是本仓默认主阶段。
+> 当前分支默认链路是 Harness Agent 六阶段。本目录保存 Spec、用户故事和垂直切片资产；Discovery 结论作为 Harness Entry 的上游输入，而不是本仓默认主阶段。
 
 ---
 

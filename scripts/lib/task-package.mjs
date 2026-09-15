@@ -86,7 +86,14 @@ function validateCommon(value, registry, lifecycle) {
     }
     if (value.result.result_schema !== "workflow-execution-result-v1") fail("result_schema 必须为 workflow-execution-result-v1");
     if (value.result.work_unit !== value.work_unit_id) fail("Workflow Execution Result.work_unit 必须与任务包 work_unit_id 一致");
-    const routeResult = validateNextRoute(value.result.work_unit, value.result.next_route, value);
+    const transitionState = value.transition_evidence ? { ...value, ...value.transition_evidence } : value;
+    const routeResult = validateNextRoute(value.result.work_unit, value.result.next_route, transitionState, {
+      exists: (ref) => {
+        if (typeof ref !== "string" || /^https?:\/\//.test(ref)) return false;
+        try { return existsSync(assertSafeRelativePath(ref, "Workflow Execution Result evidence ref")); }
+        catch { return false; }
+      }
+    });
     if (routeResult.result !== "allowed") fail(`Workflow Execution Result next_route 非法: ${routeResult.blocking_signals.join(", ")}`);
     value.expected_evidence_files.forEach((ref) => assertReadableEvidenceRef(ref, "expected_evidence_files"));
     if (value.verification_results.length === 0) fail("已完成任务必须包含 verification_results");

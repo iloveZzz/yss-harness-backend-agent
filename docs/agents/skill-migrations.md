@@ -2,6 +2,12 @@
 
 本文记录已退役技能入口的迁移路径。退役技能不保留物理目录、投影或 lock 条目；本文件是历史名称的唯一持久兼容说明。
 
+## DDD 分层包装入口收敛（2026-09-15）
+
+以下嵌套包装已硬退役，不保留 alias、物理入口或投影：`yss-backend-scaffold-adapter`、`yss-application-layer-reference`、`yss-domain-layer-reference`、`yss-infrastructure-layer-reference`、`yss-web-layer-reference`。旧 `yss-mvc-scaffold-generator` 同样不作为 Backend Agent 能力分发；数据分析初始化使用 `yss-mvc-data-analysis-project-initializer`，通用 MVC 使用 `yss-layered-mvc-scaffold-generator`。
+
+DDD 脚手架只保留已登记并被生成合同消费的 `yss-backend-scaffold-parent`。生成后的分层实现从 `yss-ddd-scaffold-generator/references/layer-skill-routing.md` 路由到顶层权威 Skill。旧 ID 只允许存在于本迁移记录、retired/obsolete 清单、负向测试和不可变历史证据中。
+
 ## 研究入口收敛（2026-09-11）
 
 `research` 物理 Skill 迁移到 `yss-research`；仅保留 `research` 作为兼容 alias。Registry、角色配置、投影和 lock 使用新的 canonical ID，历史冻结证据不改写。
@@ -54,3 +60,7 @@
 ## 技术设计分支升级
 
 新流程使用 `work-unit.technical-design` / `stage.technical-design` / `gate.technical-design-approved`；原 DDD 工作单元、阶段和批准门禁 ID 退役且不复用。历史记录保留原字节，继续推进时由编排器核对当前输入后重新路由，不自动改状态。`artifact.tactical-design` 与 `evidence.tactical-design-review` 仍仅表示 DDD；新合同使用通用技术设计 ID。`tactical_design_current_or_not_applicable_recorded` 是既有就绪协议字段，读取时代表适用且当前的设计或有理由的不适用；不凭布尔值替代实际合同校验。
+
+## 2026-09-14：HTML 原型与 Provider 退役
+
+`yss-antdv-next-design`、`yss-antd-design` 从当前技能、默认生成路线及分发中移除。新原型使用 `yss-prototype-stage` 的 html-css-js 适配器；历史原型、fact pack、截图及用户决定保持只读。在途继续演进时新建 HTML 工作版本，重新验证并确认；普通同步不直接删除消费项目的历史或用户修改资产。

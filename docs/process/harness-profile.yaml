@@ -18,6 +18,7 @@ lifecycle:
   allowed_stages:
   - stage.harness-entry
   - stage.technical-design
+  - stage.implementation-repository-preparation
   - stage.slice-contract
   - stage.slice-implementation
   - stage.verification
@@ -25,6 +26,7 @@ lifecycle:
   allowed_work_units:
   - work-unit.harness-entry
   - work-unit.technical-design
+  - work-unit.implementation-repository-preparation
   - work-unit.slice-contract
   - work-unit.slice-implementation
   - work-unit.verification
@@ -42,8 +44,11 @@ upstream:
   discovery_is_default: false
   strategic_design_handoff:
     schema_ref: docs/process/schemas/strategic-design-handoff.schema.json
-    accepted_schema_versions: [3, 4]
-    current_schema_version: 4
+    accepted_schema_versions: [3, 4, 5]
+    current_schema_version: 5
+    current_import_receipt_schema_version: 3
+    accepted_next_work_unit: work-unit.technical-design
+    ready_for_agent: false
     ui_impact_requires_visual_baseline_schema_version: 1
     stale_baseline_policy: block-and-reroute
   compatibility_skills:

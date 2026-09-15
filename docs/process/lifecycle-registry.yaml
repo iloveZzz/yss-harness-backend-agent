@@ -18,7 +18,11 @@ stages:
   - id: stage.technical-design
     name: 技术设计
     goal: 按已确认的 DDD 或 MVC 架构把批准需求细化为可实现、可验证的设计。
-    exit_criteria: Technical Design Contract 已批准；无技术设计影响时已记录 not-applicable 及原因。
+    exit_criteria: 后端 Technical Design Contract 已批准且当前；数据影响为真时数据架构已批准，否则有可核验的不适用记录；gate.engineering-contract-approved 已通过。
+  - id: stage.implementation-repository-preparation
+    name: 实现仓库准备
+    goal: 在已批准的技术/数据设计之后接入既有仓库或生成纯机械后端骨架。
+    exit_criteria: Implementation Repository Preparation Result v2 当前且通过；新生成仅使用 Scaffold Contract/Manifest v4，历史 v3 已完成恢复对账。
   - id: stage.slice-contract
     name: Slice Contract
     goal: 将战术设计和冻结契约编译为一个跨前后端测试的实现合同。
@@ -69,6 +73,9 @@ evidence:
   - id: evidence.approval-record
     name: 人工批准记录
     description: 高风险架构、OpenAPI Freeze 或合并裁决的可追溯记录。
+  - id: evidence.implementation-repository-preparation
+    name: 实现仓库准备证据
+    description: 设计门禁绑定、仓库接入或脚手架 Manifest、验证及历史恢复对账证据。
 
 gates:
   - id: gate.frontend-delivery-inputs-verified
@@ -91,6 +98,11 @@ gates:
     stage: stage.technical-design
     trigger: 存在不可逆或跨边界高风险架构取舍。
     evidence: [evidence.architecture-decision, evidence.approval-record]
+  - id: gate.engineering-contract-approved
+    name: 工程合同批准
+    stage: stage.technical-design
+    trigger: 进入实现仓库准备或生成后端脚手架前。
+    evidence: [evidence.technical-design-review, evidence.architecture-decision, evidence.approval-record]
   - id: gate.slice-contract-approved
     name: Slice Contract 批准
     stage: stage.slice-contract
@@ -144,8 +156,16 @@ artifacts:
     trigger: 存在 API 影响且需要进入 Freeze 审查。
   - id: artifact.data-architecture
     name: 数据架构
-    stage: stage.slice-contract
+    stage: stage.technical-design
     trigger: 存在数据模型、存储或一致性影响。
+  - id: artifact.data-architecture-decision
+    name: 数据架构影响决定
+    stage: stage.technical-design
+    trigger: 每个后端交付；required 绑定数据架构，not-applicable 绑定评估、原因和证据。
+  - id: artifact.implementation-repository-preparation-result
+    name: 实现仓库准备结果
+    stage: stage.implementation-repository-preparation
+    trigger: Technical Design 与工程合同批准后、Slice Contract 编译前。
   - id: artifact.slice-implementation-contract
     name: Slice Implementation Contract
     stage: stage.slice-contract
@@ -183,7 +203,13 @@ work_units:
     scope: project-instance
     input: Spec、战略设计、状态矩阵、API / 数据约束和工程约束。
     output: Technical Design Contract、架构决策和测试 seam。
-    completion: 架构已确认且技术设计已批准，或无技术设计影响已记录 not-applicable。
+    completion: 架构已确认；后端 Technical Design 已批准且当前；数据架构决定完整；工程合同批准记录真实、当前并绑定资产摘要。
+  - id: work-unit.implementation-repository-preparation
+    name: 实现仓库准备
+    scope: project-instance
+    input: Strategic Handoff 消费结果、Context reconciliation、批准且当前的 Technical Design、Data Architecture Decision、工程合同批准和实现仓库位置。
+    output: Repository Onboarding Result，或 Scaffold Contract/Manifest v4 与 empty-scaffold-verified 证据；汇总 Preparation Result v2。
+    completion: 既有仓库接入完成或纯机械骨架验证完成；历史 v3 仅在所有权未改、设计补齐和恢复批准通过时复用；提前业务代码保持 blocked。
   - id: work-unit.slice-contract
     name: Slice Contract 编译与批准
     scope: project-instance

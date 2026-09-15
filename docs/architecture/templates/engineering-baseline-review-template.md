@@ -59,7 +59,7 @@ owner: ai
 | 检查项 | 结论 | 证据 / 备注 |
 |---|---|---|
 | 原型确认已完成，或已记录 `not-applicable` 原因 | 是 / 否 / 不适用 | `prototype_confirmation` |
-| `scaffold_status=required` 时先由 Agent 推荐 DDD/MVC、用户逐项目确认并持久化选择，再由 实现合同编译器 编译 schema v3 合同并经 Harness Orchestrator 批准，最后使用匹配生成器 | 是 / 否 / 不适用 | `scaffold-architecture-decisions.yaml`、decision digest、`contract_id` / `contract_version`、批准/持久化引用和生成结果 |
+| `scaffold_status=required` 时先确认 DDD/MVC，再完成 Technical Design、Data Architecture Decision 和工程合同批准，由 实现合同编译器 编译 schema v4 合同并经 Harness Orchestrator 批准，最后使用匹配生成器 | 是 / 否 / 不适用 | 架构决定、技术/数据设计 digest、工程批准、`contract_id` / `contract_version`、Manifest v4 和仓库准备 v2 |
 | 脚手架生成结果只包含工程结构、配置和机械模板 | 是 / 否 | 禁止生成业务行为 |
 | 生成器输入、预期文件和实际 `./mvnw validate` / `./mvnw test` / `./mvnw package` 已留证 | 是 / 否 | 每条命令记录 `exit_code`、`duration_ms`、stdout/stderr 引用和执行时间；打印命令不算证据 |
 | `yss-backend-scaffold-parent` 基线校验已完成并重新进入 `yss-implementation-contract-compiler` | 是 / 否 / 不适用 |  |

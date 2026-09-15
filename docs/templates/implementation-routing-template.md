@@ -41,7 +41,7 @@ owner: ai
 | 未使用 `app/backend/`、`app/frontend/` 及其子路径 | 是 / 否 / 不适用 | 命中即阻断生成和实现 |
 | 原型确认后先完成后端脚手架，再进入业务代码路由 | 是 / 否 / 不适用 | `backend_scaffold_policy_satisfied` |
 | 后端脚手架架构已推荐、逐项目确认并批准 | 是 / 否 / 不适用 | `scaffold-architecture-decisions.yaml`；本体默认与全部子项目覆盖均可见 |
-| 后端脚手架合同字段完整且版本当前 | 是 / 否 / 不适用 | schema v3：架构 decision ref/id/digest、`architecture_family`、`generator_skill`、模块闭包、项目/输出目录、Maven 坐标、Profile、initialize-only、允许写路径、证据与验证命令 |
+| 后端脚手架合同字段完整且版本当前 | 是 / 否 / 不适用 | schema v4：架构 decision ref/id/digest、Technical Design、Data Architecture Decision、工程合同批准、模块闭包、项目/输出目录、Maven 坐标、Profile、initialize-only、允许写路径、证据与验证命令 |
 | 后端构建 / 测试 / OpenAPI / CI 命令均使用项目根目录 `./mvnw ...`，或已记录受控例外 | 是 / 否 / 不适用 | 裸 `mvn ...` 默认为规范偏离 |
 | 持久化文档正文和章节标题已转换为中文，仅保留必要英文技术标识 / metadata | 是 / 否 | 英文 skill / 模板不得原样落地为交付文档 |
 | YSS skill 路由已完成 | 是 / 否 |  |
@@ -253,7 +253,7 @@ owner: ai
 
 | 项 | 内容 |
 |---|---|
-| 前置 | 工程基线、实现仓库和脚手架目标已确认；架构选择已由用户确认并经 Harness Orchestrator 批准；实现合同编译器 schema v3 脚手架合同 draft 已批准并持久化为结构化 JSON，生成器通过 `--contract-file` 消费 |
+| 前置 | 技术/数据设计已批准且当前；工程合同批准记录真实并绑定资产摘要；实现仓库和脚手架目标已确认；实现合同编译器 schema v4 脚手架合同 draft 已批准并持久化为结构化 JSON，生成器通过 `--contract-file` 消费 |
 | 生成器 | `domain-driven` → `yss-ddd-scaffold-generator`；`layered-mvc` → `yss-layered-mvc-scaffold-generator` |
 | 模式 | `controlled-generation` |
 | Java / Maven 身份 | `base_package` 与 Maven `group_id` 分开登记；项目版本、父 POM GAV、`yss-components.version` 进入批准合同并原样传给 CLI |
@@ -340,7 +340,7 @@ owner: ai
 - [ ] 后端切片如适用，已填写 `Backend Slice Implementation Contract`，并且 required skills、禁止模式、证据文件、延期 seam 和验证命令完整。
 - [ ] 受影响外部实现仓库已登记，并绑定分支、MR / PR、CI 和验证命令。
 - [ ] 受影响 frontend / backend 工程存在性已判定；0-1 缺失工程已登记 `scaffold_status=required`、确认外部脚手架目标并路由对应脚手架 skill。
-- [ ] backend `scaffold_status=required` 时，Agent 推荐、本体默认、全部子项目确认 / 覆盖及批准记录已持久化，schema v3 合同与决策 digest 当前。
+- [ ] backend `scaffold_status=required` 时，架构确认、Technical Design、Data Architecture Decision、工程合同批准及 schema v4 合同均已持久化且 digest 当前。
 - [ ] 原型确认后已满足 `backend_scaffold_policy_satisfied`；脚手架只生成工程骨架，所有后续生成代码均经批准合同和 YSS skill 路由。
 - [ ] DDL / SQL / 数据库迁移及其他上游明确的人工确认结论已记录。
 - [ ] `seam-deferred` 若存在，已填写风险、责任人、后续 Ticket、验证计划和目标版本 / 发布日期。

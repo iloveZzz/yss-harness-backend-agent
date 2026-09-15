@@ -46,6 +46,7 @@ entry:
     - invalid-repository-mode
     - stale-upstream-input
 technical_design:
+  backend_delivery: required
   required_for_impacts:
     - backend_use_case
     - business_rule
@@ -58,9 +59,24 @@ technical_design:
     - domain_event
     - gateway_boundary
     - persistence_mapping
-  no_impact: not-applicable-with-reason
+  no_impact: forbidden-for-backend-delivery
   owner: role.architecture-agent
   review_by: role.test-agent
+  data_architecture_decision:
+    schema_version: 1
+    impact_modes: [required, not-applicable]
+    required_when_data_impact: [data_architecture_ref, data_architecture_digest, review_evidence_refs]
+    not_applicable_requires: [assessment_ref, assessment_digest, reason, evidence_refs]
+  api_contract_decision:
+    schema_version: 1
+    impact_modes: [required, not-applicable]
+    required_when_api_impact: [openapi_ref, openapi_version, openapi_digest, validation_record_ref, validation_record_digest, draft_review_ref, draft_review_digest, freeze_version, freeze_time]
+    same_draft_bytes_required_across: [openapi, validation, draft-review, freeze, engineering-approval]
+    validation_requires: [openapi-3.1, locked-redocly, exit-code-zero, all-checks-passed]
+    review_requires: [approved, no-blocking-findings, independent-review-evidence]
+    not_applicable_requires: [assessment_ref, assessment_digest, reason, evidence_refs]
+    placeholder_assets: forbidden
+  approval_gate: gate.engineering-contract-approved
 slice_contract:
   id: slice-implementation-contract-v2
   one_contract_per_slice: true
@@ -87,23 +103,44 @@ work_unit_routes:
     primary_skill: architecture-agent
     supporting_skills:
       - yss-technical-design
+      - yss-openapi-governance
+      - yss-openapi-draft-review
       - codebase-design
       - yss-research
       - tdd
     skills:
       - architecture-agent
       - yss-technical-design
+      - yss-openapi-governance
+      - yss-openapi-draft-review
       - codebase-design
       - yss-research
       - tdd
-    applies_when: backend_technical_design_impact
-    not_applicable_reason: no_backend_technical_design_impact
+    applies_when: backend_delivery_impact
+    not_applicable_reason: forbidden-for-backend-delivery
     architecture_route:
       domain-driven:
         - yss-tactical-design
         - domain-modeling
       layered-mvc:
         - yss-mvc-design
+  work-unit.implementation-repository-preparation:
+    primary_skill: harness-orchestrator
+    supporting_skills:
+      - implementation-repo-onboarding
+      - yss-implementation-contract-compiler
+      - yss-ddd-scaffold-generator
+      - yss-layered-mvc-scaffold-generator
+    skills:
+      - harness-orchestrator
+      - implementation-repo-onboarding
+      - yss-implementation-contract-compiler
+      - yss-ddd-scaffold-generator
+      - yss-layered-mvc-scaffold-generator
+    applies_when: approved_engineering_contract
+    not_applicable_reason: backend profile 中不可跳过；仅非后端且无实现仓库影响的其他 profile 可记录不适用
+    result_schema_version: 2
+    must_complete_before: work-unit.slice-contract
   work-unit.slice-contract:
     primary_skill: harness-orchestrator
     supporting_skills:
@@ -115,7 +152,7 @@ work_unit_routes:
       - architecture-agent
       - yss-implementation-contract-compiler
       - implementation-repo-onboarding
-    applies_when: approved_technical_design_and_frozen_contracts
+    applies_when: implementation_repository_preparation_completed_and_frozen_contracts
     not_applicable_reason: required_upstream_contract_not_current
   work-unit.slice-implementation:
     primary_skill: backend-agent
@@ -194,6 +231,7 @@ readiness:
     - data_architecture_or_no_data_impact_recorded
     - ui_inputs_or_no_ui_impact_recorded
     - implementation_repositories_and_commands_registered
+    - implementation_repository_preparation_completed
     - allowed_write_paths_registered
     - test_seams_and_acceptance_executable
     - task_packages_share_contract_version
@@ -269,11 +307,15 @@ backend_scaffold:
     domain-driven: yss-ddd-scaffold-generator
     layered-mvc: yss-layered-mvc-scaffold-generator
   contract_schema:
-    schema_version: 3
-    identity: service-engineering-baseline
+    schema_version: 4
+    schema_ref: docs/process/schemas/project-scaffold-contract.schema.json
+    identity: project-engineering-baseline
     required:
       - contract_id
       - contract_version
+      - kind
+      - delivery_role
+      - scaffold_kind
       - scaffold_request_id
       - status
       - compiler_draft_ref
@@ -285,6 +327,8 @@ backend_scaffold:
       - scaffold_status
       - project_name
       - target_output_dir
+      - repository_scope
+      - init_git
       - base_package
       - architecture_family
       - generator_skill
@@ -300,6 +344,11 @@ backend_scaffold:
       - approval
       - work_unit
       - generation_policy
+      - design_prerequisites
+    design_prerequisites:
+      required: [technical_design, data_architecture_decision, api_contract_decision, engineering_contract_approval_ref]
+      artifact_binding: [ref, version, digest]
+      approval_gate: gate.engineering-contract-approved
     status_by_owner:
       compiler:
         - draft
@@ -396,6 +445,7 @@ backend_scaffold:
     unsupported_inputs:
       schema_v1: reject-no-auto-upgrade
       schema_v2_for_new_generation: reject-read-only-history
+      schema_v3_for_new_generation: reject-historical-read-only
       slice_id: forbidden-as-scaffold-identity
       existing_project: reject-no-scaffold-migration
   required_inputs:
@@ -438,11 +488,21 @@ backend_scaffold:
     - scaffold_contract_persisted
     - scaffold_contract_persisted_ref
     - scaffold_contract_current_version
+    - technical_design_ref
+    - technical_design_version
+    - technical_design_digest
+    - data_architecture_decision_ref
+    - data_architecture_decision_version
+    - data_architecture_decision_digest
+    - api_contract_decision_ref
+    - api_contract_decision_version
+    - api_contract_decision_digest
+    - engineering_contract_approval_ref
   required_evidence:
     - scaffold_architecture_decision
     - generator_inputs
     - expected_files
-    - scaffold_generation_manifest_v3
+    - scaffold_generation_manifest_v4
     - generated_project_structure
     - generation_execution_result
     - verification_execution_result

@@ -44,6 +44,10 @@ required_files:
 - docs/process/schemas/lifecycle-checkpoint.schema.json
 - docs/process/schemas/frontend-implementation-evidence.schema.json
 - docs/process/schemas/scaffold-architecture-decisions.schema.json
+- docs/process/schemas/project-scaffold-contract.schema.json
+- docs/process/schemas/data-architecture-decision.schema.json
+- docs/process/schemas/api-contract-decision.schema.json
+- docs/process/schemas/implementation-repository-preparation-result.schema.json
 - docs/process/schemas/strategic-design-handoff.schema.json
 - docs/design/schemas/visual-baseline.schema.json
 - docs/design/templates/visual-baseline-template.yaml
@@ -100,6 +104,16 @@ required_files:
 - scripts/verify-maintenance-intensity-scenarios
 - scripts/verify-skill-registry
 - scripts/lib/implementation-contract-compiler.mjs
+- scripts/lib/backend-scaffold-prerequisites.mjs
+- scripts/lib/api-contract-decision.mjs
+- scripts/lib/openapi-draft-validation.mjs
+- scripts/lib/api-contract-decision.test.mjs
+- scripts/verify-openapi-draft-validation-record
+- scripts/lib/legacy-backend-scaffold-audit.mjs
+- scripts/lib/legacy-backend-scaffold-audit.test.mjs
+- scripts/audit-legacy-backend-scaffold
+- scripts/fixtures/backend-scaffold/design-prerequisites.mjs
+- scripts/fixtures/backend-scaffold/attach-design-prerequisites.mjs
 - scripts/generate-yss-skill-boundaries
 - scripts/audit-yss-backend-skills
 - scripts/verify-retired-skill-ids
@@ -151,6 +165,16 @@ syntax_files:
 - scripts/verify-instance-distribution-scenarios
 - scripts/verify-approval-record
 - scripts/lib/lifecycle-transition.mjs
+- scripts/lib/backend-scaffold-prerequisites.mjs
+- scripts/lib/api-contract-decision.mjs
+- scripts/lib/openapi-draft-validation.mjs
+- scripts/lib/api-contract-decision.test.mjs
+- scripts/verify-openapi-draft-validation-record
+- scripts/lib/legacy-backend-scaffold-audit.mjs
+- scripts/lib/legacy-backend-scaffold-audit.test.mjs
+- scripts/audit-legacy-backend-scaffold
+- scripts/fixtures/backend-scaffold/design-prerequisites.mjs
+- scripts/fixtures/backend-scaffold/attach-design-prerequisites.mjs
 - scripts/verify-lifecycle-scenarios
 - scripts/verify-lifecycle-transition-scenarios
 - scripts/verify-matt-yss-integration-scenarios
@@ -366,8 +390,11 @@ groups:
     - run: scripts/verify-scaffold-generator-scenarios
     - run: node --test .agents/skills/yss-ddd-scaffold-generator/scripts/scaffold-generator.test.mjs
     - run: node --test .agents/skills/yss-layered-mvc-scaffold-generator/scripts/scaffold-generator.test.mjs
+    - run: node --test scripts/lib/legacy-backend-scaffold-audit.test.mjs
+    - run: node --test scripts/lib/api-contract-decision.test.mjs
     - run: scripts/verify-prototype-backend-scaffold-scenarios
     - run: scripts/verify-matt-yss-integration-scenarios
+      when: template-source
     - run: scripts/verify-yss-implementation-contract-compiler-scenarios
     - run: scripts/generate-yss-skill-boundaries --check
     - run: scripts/audit-yss-backend-skills --check

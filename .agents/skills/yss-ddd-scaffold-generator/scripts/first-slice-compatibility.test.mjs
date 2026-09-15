@@ -1,3 +1,4 @@
+import { attachScaffoldDecisionFixture } from "../../../../scripts/fixtures/user-decision/build-fixture.mjs";
 import assert from "node:assert/strict";
 import { execFile } from "node:child_process";
 import { createHash } from "node:crypto";
@@ -6,6 +7,7 @@ import os from "node:os";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
+import { attachDesignPrerequisites } from "../../../../scripts/fixtures/backend-scaffold/design-prerequisites.mjs";
 
 import { generate as generateWeb, parseArgs as parseWebArgs } from "../../yss-web-controller/scripts/generate_controller.mjs";
 import { runFirstSliceVerification } from "./run_first_slice_verification.mjs";
@@ -17,7 +19,12 @@ const execute = (file, args, options = {}) => new Promise((resolve) => execFile(
 
 function scaffoldContract(output, decisionDigest) {
   return {
-    schema_version: 3,
+    schema_version: 4,
+    kind: "project-scaffold-contract",
+    delivery_role: "backend",
+    scaffold_kind: "backend-ddd",
+    repository_scope: "external-repository",
+    init_git: false,
     contract_id: "golden-scaffold-1",
     contract_version: 1,
     scaffold_request_id: "golden-request-1",
@@ -25,7 +32,7 @@ function scaffoldContract(output, decisionDigest) {
     compiler_draft_ref: "compiler-golden-1",
     lifecycle_approval_ref: "approval-golden-1",
     persisted_ref: "persisted-golden-1",
-    current_version: 1,
+    current_version: true,
     implementation_repository: "external",
     backend_repository: "external",
     scaffold_status: "required",
@@ -61,12 +68,18 @@ async function prepareGoldenProject(t) {
   const output = path.join(root, "implementation");
   await mkdir(output);
   const decisionFile = path.join(root, "scaffold-architecture-decisions.yaml");
-  const decisionText = `${JSON.stringify({ schema_version: 1, kind: "scaffold-architecture-decisions", template: false, status: "current", decisions: [{ decision_id: "scaffold-decision.golden-service", project_id: "golden-service", parent_project_id: null, status: "lifecycle-approved", recommended_architecture: "domain-driven", recommendation_reasons: ["golden first slice 需要领域边界"], confirmed_architecture: "domain-driven", override_reason: null, inheritance_mode: "root-default", inherited_from: null, platform_profile: "spring-boot-2.7-jdk8", architecture_profile: "target-domain-model", verification_database: "h2", production_database: "not-bound", requested_capabilities: [], resolved_modules: ["domain", "application", "infrastructure", "adapter", "bootstrap"], resolution_version: 1, user_confirmation: { confirmed_by: "tester", channel: "test", confirmation_ref: "test://golden-confirmation", confirmed_at: "2026-09-05T00:00:00Z", normalized_text: "确认使用 DDD" }, decision_inputs_digest: `sha256:${"1".repeat(64)}` }] }, null, 2)}\n`;
+  let decisionText = `${JSON.stringify({ schema_version: 1, kind: "scaffold-architecture-decisions", template: false, status: "current", decisions: [{ decision_id: "scaffold-decision.golden-service", project_id: "golden-service", parent_project_id: null, status: "lifecycle-approved", recommended_architecture: "domain-driven", recommendation_reasons: ["golden first slice 需要领域边界"], confirmed_architecture: "domain-driven", override_reason: null, inheritance_mode: "root-default", inherited_from: null, platform_profile: "spring-boot-2.7-jdk8", architecture_profile: "target-domain-model", verification_database: "h2", production_database: "not-bound", requested_capabilities: [], resolved_modules: ["domain", "application", "infrastructure", "adapter", "bootstrap"], resolution_version: 1, user_confirmation: { confirmed_by: "tester", channel: "test", confirmation_ref: "test://golden-confirmation", confirmed_at: "2026-09-05T00:00:00Z", normalized_text: "确认使用 DDD" }, decision_inputs_digest: `sha256:${"1".repeat(64)}` }] }, null, 2)}\n`;
+  const decisionSet = JSON.parse(decisionText);
+  decisionSet.decisions = decisionSet.decisions.map((decision) => attachScaffoldDecisionFixture(path.join(root, "user-decision"), decision));
+  decisionText = JSON.stringify(decisionSet, null, 2) + "\n";
   await writeFile(decisionFile, decisionText);
   const decisionDigest = `sha256:${createHash("sha256").update(decisionText).digest("hex")}`;
   const contractFile = path.join(root, "scaffold-contract.json");
-  await writeFile(contractFile, `${JSON.stringify(scaffoldContract(output, decisionDigest), null, 2)}\n`);
-  const args = ["--project-name", "golden-service", "--base-package", "com.yss.golden", "--output-dir", output, "--contract-id", "golden-scaffold-1", "--contract-version", "1", "--approval-ref", "approval-golden-1", "--compiler-draft-ref", "compiler-golden-1", "--persisted-ref", "persisted-golden-1", "--contract-file", contractFile, "--group-id", "com.yss.datamiddle", "--project-version", "1.0.0-SNAPSHOT", "--parent-group-id", "com.yss.datamiddle", "--parent-artifact-id", "yss-datamiddle-parent", "--parent-version", "2.0.0-SNAPSHOT", "--yss-components-version", "2.0.0-SNAPSHOT"];
+  const contract = scaffoldContract(output, decisionDigest);
+  contract.decision_ref = decisionFile;
+  attachDesignPrerequisites(root, contract);
+  await writeFile(contractFile, `${JSON.stringify(contract, null, 2)}\n`);
+  const args = ["--project-name", "golden-service", "--base-package", "com.yss.golden", "--output-dir", output, "--contract-id", "golden-scaffold-1", "--contract-version", "1", "--approval-ref", contract.lifecycle_approval_ref, "--compiler-draft-ref", "compiler-golden-1", "--persisted-ref", "persisted-golden-1", "--contract-file", contractFile, "--group-id", "com.yss.datamiddle", "--project-version", "1.0.0-SNAPSHOT", "--parent-group-id", "com.yss.datamiddle", "--parent-artifact-id", "yss-datamiddle-parent", "--parent-version", "2.0.0-SNAPSHOT", "--yss-components-version", "2.0.0-SNAPSHOT"];
   const generated = await execute(process.execPath, [generator, ...args]);
   assert.equal(generated.code, 0, generated.stderr);
   const project = path.join(output, "golden-service");

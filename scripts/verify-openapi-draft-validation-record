@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+import path from "node:path";
+import { parseArgs } from "node:util";
+import { fileURLToPath } from "node:url";
+import { validateOpenApiDraftValidationRecord } from "./lib/openapi-draft-validation.mjs";
+
+const templateRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+
+try {
+  const { values, positionals } = parseArgs({
+    options: { "allow-template": { type: "boolean" }, root: { type: "string", default: templateRoot } },
+    allowPositionals: true,
+    strict: true,
+  });
+  if (positionals.length !== 1) throw new TypeError("用法: scripts/verify-openapi-draft-validation-record [--allow-template] [--root <project>] <record.yaml>");
+  const result = validateOpenApiDraftValidationRecord(path.resolve(positionals[0]), {
+    root: path.resolve(values.root),
+    allowTemplate: values["allow-template"] === true,
+  });
+  process.stdout.write(result.template
+    ? "OpenAPI Draft validation record 模板验证通过\n"
+    : `OpenAPI Draft validation record 验证通过: ${result.record.draft.sha256}\n`);
+} catch (error) {
+  process.stderr.write(`OpenAPI Draft validation record 验证失败: ${error.message}\n`);
+  process.exitCode = 1;
+}

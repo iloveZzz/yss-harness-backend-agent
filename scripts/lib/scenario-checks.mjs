@@ -91,10 +91,11 @@ export function runScenario(name) {
     ensure(result.status === 0, result.stderr || result.stdout);
     const registry = parse("docs/process/lifecycle-registry.yaml");
     ensure(registry.status === "active", "新生命周期必须为 active");
-    ensure(JSON.stringify(registry.stages.map((stage) => stage.id)) === JSON.stringify(["stage.harness-entry", "stage.technical-design", "stage.slice-contract", "stage.slice-implementation", "stage.verification"]), "生命周期阶段不是五阶段 Harness Agent 流程");
+    ensure(JSON.stringify(registry.stages.map((stage) => stage.id)) === JSON.stringify(["stage.harness-entry", "stage.technical-design", "stage.implementation-repository-preparation", "stage.slice-contract", "stage.slice-implementation", "stage.verification"]), "生命周期阶段缺少实现仓库准备");
+    ensure(lifecycleTransitionContract.next_routes["work-unit.technical-design"]?.includes("work-unit.implementation-repository-preparation"), "技术设计后未固定进入实现仓库准备");
     ensure(lifecycleTransitionContract.next_routes["work-unit.slice-contract"].includes("work-unit.slice-implementation"), "Slice Contract 后未允许进入实现");
     ensure(validateNextRoute("work-unit.slice-implementation", "work-unit.verification").result === "allowed", "实现后未允许进入独立验证");
-    const flags = ["upstream_inputs_current_and_approved", "tactical_design_current_or_not_applicable_recorded", "api_freeze_or_no_api_impact_recorded", "data_architecture_or_no_data_impact_recorded", "ui_inputs_or_no_ui_impact_recorded", "implementation_repositories_and_commands_registered", "allowed_write_paths_registered", "test_seams_and_acceptance_executable", "task_packages_share_contract_version"];
+    const flags = ["upstream_inputs_current_and_approved", "tactical_design_current_or_not_applicable_recorded", "api_freeze_or_no_api_impact_recorded", "data_architecture_or_no_data_impact_recorded", "ui_inputs_or_no_ui_impact_recorded", "implementation_repositories_and_commands_registered", "implementation_repository_preparation_completed", "allowed_write_paths_registered", "test_seams_and_acceptance_executable", "task_packages_share_contract_version"];
     const valid = { status: "approved", current_version: true, readiness: Object.fromEntries(flags.map((key) => [key, true])), architecture: {}, frontend: {}, backend: {}, testing: {} };
     ensure(validateSliceContractReadiness(valid).result === "allowed", "完整就绪公式未通过正向场景");
     const blocked = structuredClone(valid);

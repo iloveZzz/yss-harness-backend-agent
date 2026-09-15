@@ -63,6 +63,7 @@ orchestrator:
   stages:
     - stage.harness-entry
     - stage.technical-design
+    - stage.implementation-repository-preparation
     - stage.slice-contract
     - stage.slice-implementation
     - stage.verification
@@ -97,6 +98,7 @@ roles:
     stages:
       - stage.harness-entry
       - stage.technical-design
+      - stage.implementation-repository-preparation
       - stage.slice-contract
       - stage.verification
     draft_artifact_ids:
@@ -157,6 +159,7 @@ roles:
     kind: digital-human
     title: 后端垂直切片 Agent
     stages:
+      - stage.implementation-repository-preparation
       - stage.slice-contract
       - stage.slice-implementation
       - stage.verification
@@ -196,6 +199,7 @@ roles:
     title: 独立测试与验证 Agent
     stages:
       - stage.technical-design
+      - stage.implementation-repository-preparation
       - stage.slice-contract
       - stage.slice-implementation
       - stage.verification
@@ -246,6 +250,14 @@ stage_groups:
       - role.frontend-agent
       - role.backend-agent
       - role.test-agent
+  - id: group.implementation-repository-preparation
+    name: 实现仓库准备
+    stage: stage.implementation-repository-preparation
+    members:
+      - role.harness-orchestrator
+      - role.architecture-agent
+      - role.backend-agent
+      - role.test-agent
   - id: group.slice-implementation
     name: 垂直切片实现
     stage: stage.slice-implementation
@@ -280,6 +292,10 @@ gate_policy:
     - gate.openapi-freeze-confirmed
     - gate.merge-approved
   digital_human_review:
+    - gate: gate.engineering-contract-approved
+      drafter: role.architecture-agent
+      countersigners:
+        - role.test-agent
     - gate: gate.technical-design-approved
       drafter: role.architecture-agent
       countersigners:

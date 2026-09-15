@@ -16,7 +16,7 @@ description: 编排后端专职 Harness 的输入接收、合同、任务派发�
 - 不起草领域行为、前端页面、后端业务代码或测试代码。
 - 不替专业 Agent 修改技术决策；遇到领域、交互、实现或可验证性冲突时暂停并升级。
 - 不批准自己生成的专业资产，不把 实现合同编译器 草案当成 approved，也不以聊天消息代替证据。
-- 只有当前版本 `Slice Implementation Contract` 满足就绪公式时，才能设置 `ready-for-agent`。
+- Strategic Handoff v5 导入成功只表示输入可消费，固定进入 `work-unit.technical-design` 并保持 `ready_for_agent:false`；只有仓库准备完成且当前 `Slice Implementation Contract` 满足就绪公式时，才能设置 `ready-for-agent`。
 
 ## 前端联合接收
 
@@ -26,11 +26,12 @@ description: 编排后端专职 Harness 的输入接收、合同、任务派发�
 
 1. 校验上游输入、仓库身份、实现仓库、影响面和当前合同版本。
 2. 在设计前确认架构来源：既有工程沿用当前登记；新工程基于批准需求和工程约束推荐 `domain-driven` 或 `layered-mvc`，展示所有子项目并取得用户逐项目确认，持久化 `scaffold-architecture-decisions.yaml`。不得从目录或默认值推断。
-3. 调度 `architecture-agent` 使用 `yss-technical-design`，按确认架构分别调用 DDD 或 MVC 专家，形成并审查 Technical Design Contract。后续脚手架消费同一个批准决定。
-4. 汇总四角色分区，按已确认架构编译 scaffold contract schema v3，并生成一个版本化 Slice Implementation Contract。
-5. 先调度 `test-agent` 建立测试 seam，再调度后端 Worker。
-6. 收集每个任务包的 `workflow-execution-result-v1`，重新执行 Fresh Verification。
-7. 由独立 `test-agent` 返回验证结论；没有阻塞信号时才关闭后端任务，整体切片由统一管理方验收。
+3. 调度 `architecture-agent` 使用 `yss-technical-design`，按确认架构分别调用 DDD 或 MVC 专家，形成并审查批准且当前的 Technical Design；数据与 API 均按影响强制，API 命中时完成 OpenAPI 3.1 Draft、锁定 Redocly Validation、独立 Review 和 Freeze，不命中时形成可核验的 API Contract Decision `not-applicable`；随后由同一个 `gate.engineering-contract-approved` 原子批准技术、数据与 API 设计。
+4. 进入 `work-unit.implementation-repository-preparation`。新工程编译并批准 schema v4 scaffold contract，生成器在任何写入前核验技术/数据设计与批准记录，只生成机械骨架；既有工程完成 onboarding。聚合并校验 Preparation Result v2。
+5. 仓库准备完成后，汇总四角色分区并生成一个版本化 Slice Implementation Contract。
+6. 先调度 `test-agent` 建立测试 seam，再调度后端 Worker。
+7. 收集每个任务包的 `workflow-execution-result-v1`，重新执行 Fresh Verification。
+8. 由独立 `test-agent` 返回验证结论；没有阻塞信号时才关闭后端任务，整体切片由统一管理方验收。
 
 ## 必须阻断的信号
 

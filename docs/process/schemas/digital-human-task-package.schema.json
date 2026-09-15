@@ -18,6 +18,45 @@
     "workflow_status": { "enum": ["not-started", "active", "paused", "resolved", "failed"] },
     "stage_id": { "type": "string", "pattern": "^stage\\.[a-z0-9][a-z0-9-]*$" },
     "feature_id": { "type": "string", "minLength": 1 },
+    "transition_evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["context_reconciliation", "technical_design", "data_architecture_decision", "api_contract_decision", "engineering_contract_approval_ref"],
+      "properties": {
+        "strategic_handoff_consumption": {
+          "type": "object", "additionalProperties": false,
+          "required": ["result", "ready_for_agent", "ref"],
+          "properties": {"result":{"const":"inputs-verified"},"ready_for_agent":{"const":false},"ref":{"type":"string","minLength":1}}
+        },
+        "approved_spec": {
+          "type": "object", "additionalProperties": false,
+          "required": ["status", "current_version", "ref"],
+          "properties": {"status":{"const":"approved"},"current_version":{"const":true},"ref":{"type":"string","minLength":1}}
+        },
+        "context_reconciliation": {
+          "type": "object", "additionalProperties": false,
+          "required": ["status", "ref"],
+          "properties": {"status":{"const":"reconciled"},"ref":{"type":"string","minLength":1}}
+        },
+        "technical_design": {"$ref":"#/$defs/approvedBinding"},
+        "data_architecture_decision": {
+          "allOf": [
+            {"$ref":"#/$defs/approvedBinding"},
+            {"type":"object","required":["impact"],"properties":{"impact":{"enum":["required","not-applicable"]}}}
+          ]
+        },
+        "api_contract_decision": {
+          "allOf": [
+            {"$ref":"#/$defs/approvedBinding"},
+            {"type":"object","required":["impact"],"properties":{"impact":{"enum":["required","not-applicable"]}}}
+          ]
+        },
+        "engineering_contract_approval_ref": {"type":"string","minLength":1}
+      },
+      "oneOf": [
+        {"required":["strategic_handoff_consumption"],"not":{"required":["approved_spec"]}},
+        {"required":["approved_spec"],"not":{"required":["strategic_handoff_consumption"]}}
+      ]
+    },
     "skill_source": {
       "type": "object", "additionalProperties": false,
       "required": ["registry_ref", "defaults_ref", "core_skills", "forbidden_skills"],
@@ -98,6 +137,17 @@
         "stale_candidates": { "type": "array", "items": { "type": "string", "minLength": 1 } },
         "next_route": { "type": ["string", "null"], "minLength": 1 },
         "blocking_signals": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      }
+    }
+  },
+  "$defs": {
+    "approvedBinding": {
+      "type":"object", "additionalProperties":false,
+      "required":["status","current_version","ref","version","digest"],
+      "properties": {
+        "status":{"const":"approved"}, "current_version":{"const":true},
+        "ref":{"type":"string","minLength":1}, "version":{"type":"string","pattern":"^v[1-9][0-9]*$"},
+        "digest":{"type":"string","pattern":"^sha256:[0-9a-f]{64}$"}, "impact":{"enum":["required","not-applicable"]}
       }
     }
   },
