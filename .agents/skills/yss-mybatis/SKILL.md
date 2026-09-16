@@ -75,3 +75,7 @@ description: 用于 YSS MyBatis 与 MyBatis-Plus 持久层规范、配置和排�
 - 仅在数据架构、Repository 策略和批准合同明确时使用。
 - Mapper/XML 骨架可受控生成；查询语义、分页、数据源切换和事务行为使用 `behavior-tdd`。
 - 按统一 `YSS Skill Execution Result` 返回 Mapper/XML/配置、集成测试、实际 `./mvnw ...` 结果和新增 SQL/DDL/索引影响。
+
+## 新脚手架平台约束
+
+消费批准切片架构身份中的 `platform_configuration`，与工程 Manifest 核对后使用对应 YSS 组件。Boot 2.7 使用 `javax` Web/Validation API；Boot 3.5/4.1 使用 `jakarta`。Boot 4 按 Jackson 3、对应自动配置和 starter 适配；不替换 `javax.sql` 等 Java SE 包。平台不一致、兼容条目缺失或候选未验证时回合同编译器阻断，不在业务实现中升级或替换组件。详见 仓库共享合同 `docs/engineering/backend-platforms.md`。

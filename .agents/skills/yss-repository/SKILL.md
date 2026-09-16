@@ -84,3 +84,7 @@ description: Use when generating or refactoring YSS Infrastructure persistence m
 - PO/Repository/Convertor 骨架可使用 `controlled-generation`；复杂过滤、分页语义、并发、事务和迁移行为必须拆为 `behavior-tdd`。
 - 写入仅限合同 `allowed_write_paths`，证据必须包含实际 PO、Repository、Convertor、GatewayImpl、测试和 `./mvnw ...` 结果。
 - 按统一 `YSS Skill Execution Result` 返回 `seam_deferred/deviations/new_impacts`；发现数据模型、DDL、SQL、索引或 API schema 变化时暂停并重路由。
+
+## 新脚手架平台约束
+
+消费批准切片架构身份中的 `platform_configuration`，与工程 Manifest 核对后使用对应 YSS 组件。Boot 2.7 使用 `javax` Web/Validation API；Boot 3.5/4.1 使用 `jakarta`。Boot 4 按 Jackson 3、对应自动配置和 starter 适配；不替换 `javax.sql` 等 Java SE 包。平台不一致、兼容条目缺失或候选未验证时回合同编译器阻断，不在业务实现中升级或替换组件。详见 仓库共享合同 `docs/engineering/backend-platforms.md`。

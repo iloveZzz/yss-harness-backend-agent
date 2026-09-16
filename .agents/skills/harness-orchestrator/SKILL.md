@@ -25,7 +25,7 @@ description: 编排后端专职 Harness 的输入接收、合同、任务派发�
 ## 主流程
 
 1. 校验上游输入、仓库身份、实现仓库、影响面和当前合同版本。
-2. 在设计前确认架构来源：既有工程沿用当前登记；新工程基于批准需求和工程约束推荐 `domain-driven` 或 `layered-mvc`，展示所有子项目并取得用户逐项目确认，持久化 `scaffold-architecture-decisions.yaml`。不得从目录或默认值推断。
+2. 在设计前确认架构来源：既有工程沿用当前登记；新工程基于批准需求和工程约束推荐 `domain-driven` 或 `layered-mvc`，运行 `scripts/backend-platforms`，把架构、Boot 精确补丁、Java 和 YSS 父 POM/BOM 一起展示；独立子项目可继承或覆盖，逐项目确认（可一次确认明确列出的多个项目），持久化 `scaffold-architecture-decisions.yaml`。不得从目录或默认值推断。
 3. 调度 `architecture-agent` 使用 `yss-technical-design`，按确认架构分别调用 DDD 或 MVC 专家，形成并审查批准且当前的 Technical Design；数据与 API 均按影响强制，API 命中时完成 OpenAPI 3.1 Draft、锁定 Redocly Validation、独立 Review 和 Freeze，不命中时形成可核验的 API Contract Decision `not-applicable`；随后由同一个 `gate.engineering-contract-approved` 原子批准技术、数据与 API 设计。
 4. 进入 `work-unit.implementation-repository-preparation`。新工程编译并批准 schema v4 scaffold contract，生成器在任何写入前核验技术/数据设计与批准记录，只生成机械骨架；既有工程完成 onboarding。聚合并校验 Preparation Result v2。
 5. 仓库准备完成后，汇总四角色分区并生成一个版本化 Slice Implementation Contract。
@@ -44,3 +44,5 @@ description: 编排后端专职 Harness 的输入接收、合同、任务派发�
 ## 后端专职 profile
 
 先消费 `docs/process/harness-profile.yaml` 的职责与输入条件，再依 `docs/process/frontend-backend-delivery.md` 接力。不得派发另一端实现任务；跨端输入评审必须只读。终点只关闭本端验证，整体业务验收由登记的统一管理方汇总。
+
+新 DDD/MVC 脚手架合同必须绑定 `platform_configuration` v2。仅清单中真实验证过的 YSS 组合可生成；缺兼容组件或证据时阻断，不替代为官方组件。已有当前批准展示摘要后复用；依赖配方变化重编合同，单纯补充同配置证据只重验。同一 Maven Reactor 平台一致，候选维护产物不可进入业务切片。详见 `docs/engineering/backend-platforms.md`。

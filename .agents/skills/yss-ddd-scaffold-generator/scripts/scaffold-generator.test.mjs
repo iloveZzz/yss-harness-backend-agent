@@ -16,7 +16,7 @@ import { attachDesignPrerequisites } from "../../../../scripts/fixtures/backend-
 const scripts = path.dirname(fileURLToPath(import.meta.url));
 const generator = path.join(scripts, "generate_scaffold.mjs");
 const workflow = path.join(scripts, "generate_and_verify_scaffold.mjs");
-const command = (args, options = {}) => new Promise((resolve) => execFile(process.execPath, [generator, ...args], { encoding: "utf8", ...options }, (error, stdout, stderr) => resolve({ code: error?.code ?? 0, stdout, stderr })));
+const command = (args, options = {}) => new Promise((resolve) => execFile(process.execPath, [path.resolve(scripts, "../../../../scripts/fixtures/backend-scaffold/generate-candidate.mjs"), generator, ...args], { encoding: "utf8", ...options }, (error, stdout, stderr) => resolve({ code: error?.code ?? 0, stdout, stderr })));
 const workflowCommand = (args, options = {}) => new Promise((resolve) => execFile(process.execPath, [workflow, ...args], { encoding: "utf8", ...options }, (error, stdout, stderr) => resolve({ code: error?.code ?? 0, stdout, stderr })));
 async function treeDigest(root) {
   const hash = createHash("sha256");
@@ -190,6 +190,50 @@ test("技术和数据设计齐全但缺少 API Decision 时在写文件前拒绝
   assert.equal(result.code, 1);
   assert.match(result.stderr, /API Contract Decision|api_contract_decision/);
   assert.equal(existsSync(path.join(data.output, "demo-service")), false);
+});
+
+test("API Draft、Validation、Review 或工程批准漂移时均在零写入状态阻断 DDD", async (t) => {
+  const mutations = [
+    ["OpenAPI YAML 摘要漂移", async (data) => writeFile(data.design.openapi.file, "\n# drift\n", { flag: "a" })],
+    ["Redocly Validation 失败", async (data) => {
+      const decision = JSON.parse(await readFile(data.design.api.file, "utf8"));
+      const validationFile = path.join(data.root, decision.validation_record.ref);
+      const validation = JSON.parse(await readFile(validationFile, "utf8"));
+      validation.status = "blocked";
+      validation.toolchain.exit_code = 1;
+      validation.checks.lint = "blocked";
+      await writeFile(validationFile, `${JSON.stringify(validation, null, 2)}\n`);
+      decision.validation_record.digest = `sha256:${createHash("sha256").update(await readFile(validationFile)).digest("hex")}`;
+      await writeFile(data.design.api.file, `${JSON.stringify(decision, null, 2)}\n`);
+      data.contract.design_prerequisites.api_contract_decision.digest = `sha256:${createHash("sha256").update(await readFile(data.design.api.file)).digest("hex")}`;
+      await writeFile(data.contractFile, `${JSON.stringify(data.contract, null, 2)}\n`);
+    }],
+    ["Draft Review blocked", async (data) => {
+      const decision = JSON.parse(await readFile(data.design.api.file, "utf8"));
+      const reviewFile = path.join(data.root, decision.draft_review.ref);
+      const review = JSON.parse(await readFile(reviewFile, "utf8"));
+      review.result = "blocked";
+      review.blocking_findings = ["breaking response"];
+      await writeFile(reviewFile, `${JSON.stringify(review, null, 2)}\n`);
+      decision.draft_review.digest = `sha256:${createHash("sha256").update(await readFile(reviewFile)).digest("hex")}`;
+      await writeFile(data.design.api.file, `${JSON.stringify(decision, null, 2)}\n`);
+      data.contract.design_prerequisites.api_contract_decision.digest = `sha256:${createHash("sha256").update(await readFile(data.design.api.file)).digest("hex")}`;
+      await writeFile(data.contractFile, `${JSON.stringify(data.contract, null, 2)}\n`);
+    }],
+    ["工程批准未绑定 API Decision", async (data) => {
+      const approval = JSON.parse(await readFile(data.design.approval.file, "utf8"));
+      approval.artifact_bindings = approval.artifact_bindings.filter((item) => !item.id.startsWith("api-contract."));
+      await writeFile(data.design.approval.file, `${JSON.stringify(approval, null, 2)}\n`);
+    }],
+  ];
+  for (const [name, mutate] of mutations) {
+    const data = await fixture({ apiImpact: "required" });
+    t.after(() => rm(data.root, { recursive: true, force: true }));
+    await mutate(data);
+    const result = await command(data.args);
+    assert.equal(result.code, 1, `${name}: ${result.stderr}`);
+    assert.equal(existsSync(path.join(data.output, "demo-service")), false, name);
+  }
 });
 
 test("schema v3 只读兼容但禁止用于 DDD 新生成", async (t) => {
