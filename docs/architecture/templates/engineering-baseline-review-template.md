@@ -20,7 +20,7 @@ owner: ai
 | 既有工程结构 |  |  |  |
 | YSS skill 路由 |  |  |  |
 | `prototype_confirmation` |  |  | UI 影响时必须是已确认；无 UI 影响记录 `not-applicable` 及原因 |
-| 后端脚手架登记 / 生成结果 |  |  | 记录 `scaffold_status`、目标目录、生成器输入、预期文件和 Execution Result |
+| 后端架构、平台与脚手架结果 |  |  | 新建工程记录 `gate.backend-architecture-platform-approved`、DDD / MVC、精确 Spring Boot / Java、目标目录、生成器输入和 Execution Result；既有工程记录登记值复用证据 |
 
 ## 2. 工程影响判断
 
@@ -59,7 +59,7 @@ owner: ai
 | 检查项 | 结论 | 证据 / 备注 |
 |---|---|---|
 | 原型确认已完成，或已记录 `not-applicable` 原因 | 是 / 否 / 不适用 | `prototype_confirmation` |
-| `scaffold_status=required` 时先确认 DDD/MVC，再完成 Technical Design、Data Architecture Decision 和工程合同批准，由 实现合同编译器 编译 schema v4 合同并经 Harness Orchestrator 批准，最后使用匹配生成器 | 是 / 否 / 不适用 | 架构决定、技术/数据设计 digest、工程批准、`contract_id` / `contract_version`、Manifest v4 和仓库准备 v2 |
+| `scaffold_status=required` 时通过 `gate.backend-architecture-platform-approved` 同时确认 DDD/MVC 与精确 Spring Boot 版本，再完成 Technical Design、Data Architecture Decision 和工程合同批准，由 实现合同编译器 编译 schema v4 合同并经 Harness Orchestrator 批准，最后使用匹配生成器；既有工程核验复用登记值 | 是 / 否 / 不适用 | gate、架构与平台决定、技术/数据设计 digest、工程批准、`contract_id` / `contract_version`、Manifest v4 和仓库准备 v2 |
 | 脚手架生成结果只包含工程结构、配置和机械模板 | 是 / 否 | 禁止生成业务行为 |
 | 生成器输入、预期文件和实际 `./mvnw validate` / `./mvnw test` / `./mvnw package` 已留证 | 是 / 否 | 每条命令记录 `exit_code`、`duration_ms`、stdout/stderr 引用和执行时间；打印命令不算证据 |
 | `yss-backend-scaffold-parent` 基线校验已完成并重新进入 `yss-implementation-contract-compiler` | 是 / 否 / 不适用 |  |

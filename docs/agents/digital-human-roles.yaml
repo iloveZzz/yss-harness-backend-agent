@@ -278,6 +278,7 @@ gate_policy:
   runtime_side_effect_approval: biological-human
   commercial_contract: biological-human
   unlisted_kept_biological:
+    - gate.backend-architecture-platform-approved
     - gate.high-risk-architecture-confirmed
     - gate.openapi-freeze-confirmed
     - gate.merge-approved
@@ -288,6 +289,7 @@ gate_policy:
     - gate.frontend-delivery-inputs-verified
     - gate.repository-identity-valid
   biological_human:
+    - gate.backend-architecture-platform-approved
     - gate.high-risk-architecture-confirmed
     - gate.openapi-freeze-confirmed
     - gate.merge-approved
@@ -328,7 +330,8 @@ user_decision_policy:
     - platform-message
     - session-export
     - user-confirmation-file
-  gates: []
+  gates:
+    - gate.backend-architecture-platform-approved
   work_units: {}
   conditional_decisions:
     - scaffold-choice

@@ -242,6 +242,7 @@ parallelism:
   verifier_must_differ_from_worker: true
 gates:
   architecture:
+    - gate.backend-architecture-platform-approved
     - gate.technical-design-approved
     - gate.slice-contract-approved
   implementation:
@@ -249,6 +250,7 @@ gates:
   verification:
     - gate.fresh-verification-passed
   human:
+    - gate.backend-architecture-platform-approved
     - gate.high-risk-architecture-confirmed
     - gate.openapi-freeze-confirmed
     - gate.merge-approved
@@ -268,6 +270,8 @@ re_route_on:
 scaffold_architecture_decision:
   applies_when: backend_scaffold_status_required
   owner: role.harness-orchestrator
+  gate: gate.backend-architecture-platform-approved
+  timing: after-impact-and-platform-candidate-resolution-before-ddd-or-mvc-branch-design
   evidence_file: scaffold-architecture-decisions.yaml
   schema_ref: docs/process/schemas/scaffold-architecture-decisions.schema.json
   recommendation:
@@ -289,6 +293,9 @@ scaffold_architecture_decision:
     choices:
       - domain-driven
       - layered-mvc
+    confirms_together:
+      - architecture_family
+      - exact_spring_boot_version
     user_confirmation_required: true
     silent_default: forbidden
     generator_interaction: forbidden
@@ -301,6 +308,11 @@ scaffold_architecture_decision:
     existing_or_initialized_project: no-regeneration
     architecture_switch: separate-migration-work-unit
     digest_change: stale-and-recompile
+  existing_repository:
+    gate_status: not-applicable
+    architecture_source: current-existing-registration
+    spring_boot_version_source: fixed-engineering-baseline-or-pom
+    user_reconfirmation: forbidden-unless-source-changes
 backend_scaffold:
   required_status: required
   generator_by_architecture:

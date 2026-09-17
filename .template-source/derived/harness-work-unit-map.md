@@ -6,7 +6,7 @@
 | 稳定 ID | 范围 | 工作单元 | 输入 | 输出 | 完成条件 |
 |---|---|---|---|---|---|
 | `work-unit.harness-entry` | project-instance | Harness 入口校验 | yss-project.yaml、CONTEXT.md 和已确认的上游输入。 | 影响面、仓库上下文和上游输入证据。 | 身份、输入版本和写入边界可解释。 |
-| `work-unit.technical-design` | project-instance | 技术设计 | Spec、战略设计、状态矩阵、API / 数据约束和工程约束。 | Technical Design Contract、架构决策和测试 seam。 | 架构已确认；后端 Technical Design 已批准且当前；数据架构决定完整；工程合同批准记录真实、当前并绑定资产摘要。 |
+| `work-unit.technical-design` | project-instance | 技术设计 | Spec、战略设计、状态矩阵、API / 数据约束和工程约束；新建后端的架构与平台候选，或既有工程当前登记的架构与固定工程基线。 | 新建后端的 DDD / MVC 与精确 Spring Boot 版本用户决定，或既有工程复用核验；Technical Design Contract、架构决策和测试 seam。 | 新建后端的 gate.backend-architecture-platform-approved 已通过，既有工程已核验复用并记录该门禁不适用；后端 Technical Design 已批准且当前；数据架构决定完整；工程合同批准记录真实、当前并绑定资产摘要。 |
 | `work-unit.implementation-repository-preparation` | project-instance | 实现仓库准备 | Strategic Handoff 消费结果、Context reconciliation、批准且当前的 Technical Design、Data Architecture Decision、工程合同批准和实现仓库位置。 | Repository Onboarding Result，或 Scaffold Contract/Manifest v4 与 empty-scaffold-verified 证据；汇总 Preparation Result v2。 | 既有仓库接入完成或纯机械骨架验证完成；历史 v3 仅在所有权未改、设计补齐和恢复批准通过时复用；提前业务代码保持 blocked。 |
 | `work-unit.slice-contract` | project-instance | Slice Contract 编译与批准 | 当前上游资产、Tactical Design、API / 数据 / UI 影响和实现仓库登记。 | 当前版本 Slice Implementation Contract 和四角色任务包草案。 | 合同通过校验并满足 ready-for-agent 公式。 |
 | `work-unit.slice-implementation` | project-instance | 垂直切片实现 | 已批准且版本当前的 Slice Implementation Contract。 | 前端、后端和测试实现及 YSS Skill Execution Result。 | 行为测试、工程验证、契约一致性和写入边界全部满足。 |

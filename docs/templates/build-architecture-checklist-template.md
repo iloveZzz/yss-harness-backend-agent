@@ -19,7 +19,7 @@ owner: ai
 | 系统 / 数据架构设计 |  |  |
 | 风险 / 回滚约束 | `AGENTS.md` |  |
 | Slice Implementation Contract |  | 填写 contract_id / contract_version / 生命周期批准状态 |
-| 后端脚手架策略 | `orchestration-contract.yaml` / `scaffold-architecture-decisions.yaml` |  | backend `scaffold_status=required` 时记录 DDD/MVC 推荐、逐项目用户确认、Technical Design、Data Architecture Decision、工程合同批准、schema v4 合同、实际生成器、预期文件、`./mvnw` 结果和仓库准备 v2 |
+| 后端脚手架策略 | `orchestration-contract.yaml` / `scaffold-architecture-decisions.yaml` |  | backend `scaffold_status=required` 时记录 `gate.backend-architecture-platform-approved`、DDD/MVC 推荐、精确 Spring Boot / Java、逐项目用户确认、Technical Design、Data Architecture Decision、工程合同批准、schema v4 合同、实际生成器、预期文件、`./mvnw` 结果和仓库准备 v2；既有工程记录登记值复用证据 |
 | 工程项目路径策略 | `docs/process/implementation-repo-integration.md` / 实现合同编译器 Contract |  | Harness 内必须是 `apps/backend/<project>/` 或 `apps/frontend/<project>/`；`apps/backend/`、`apps/frontend/` 仅为容器，`app/backend/`、`app/frontend/` 及其子路径阻断 |
 | 垂直切片工作单元 |  |  |
 | YSS Skill Execution Result |  | 每个 skill / work_unit 的结果文件引用 |

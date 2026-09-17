@@ -40,7 +40,7 @@ owner: ai
 | Harness 内项目根路径符合 `apps/<backend|frontend>/<project>/` | 是 / 否 / 不适用 | `apps/backend/`、`apps/frontend/` 仅为容器 |
 | 未使用 `app/backend/`、`app/frontend/` 及其子路径 | 是 / 否 / 不适用 | 命中即阻断生成和实现 |
 | 原型确认后先完成后端脚手架，再进入业务代码路由 | 是 / 否 / 不适用 | `backend_scaffold_policy_satisfied` |
-| 后端脚手架架构已推荐、逐项目确认并批准 | 是 / 否 / 不适用 | `scaffold-architecture-decisions.yaml`；本体默认与全部子项目覆盖均可见 |
+| 新建后端架构与精确 Spring Boot 版本已推荐、在同一次用户决定中逐项目确认并通过 `gate.backend-architecture-platform-approved`；既有工程已核验复用登记值 | 是 / 否 / 不适用 | `scaffold-architecture-decisions.yaml` 或既有工程登记 / 固定工程基线证据；本体默认与全部子项目覆盖均可见 |
 | 后端脚手架合同字段完整且版本当前 | 是 / 否 / 不适用 | schema v4：架构 decision ref/id/digest、Technical Design、Data Architecture Decision、工程合同批准、模块闭包、项目/输出目录、Maven 坐标、Profile、initialize-only、允许写路径、证据与验证命令 |
 | 后端构建 / 测试 / OpenAPI / CI 命令均使用项目根目录 `./mvnw ...`，或已记录受控例外 | 是 / 否 / 不适用 | 裸 `mvn ...` 默认为规范偏离 |
 | 持久化文档正文和章节标题已转换为中文，仅保留必要英文技术标识 / metadata | 是 / 否 | 英文 skill / 模板不得原样落地为交付文档 |
@@ -249,7 +249,7 @@ owner: ai
 
 ### 4.3 后端脚手架工作单元
 
-当 backend `scaffold_status=required` 时，先完成并批准架构选择，再登记一个 `controlled-generation` 工作单元：DDD 绑定 `primary_skill=yss-ddd-scaffold-generator`，MVC 绑定 `primary_skill=yss-layered-mvc-scaffold-generator`。DDD 后续追加 `yss-backend-scaffold-parent` 基线校验，两者都回到 `yss-implementation-contract-compiler` 重编译业务合同。`existing` / `initialized` 不重复全量生成；架构互转走独立迁移工作单元。
+当 backend `scaffold_status=required` 时，先通过 `gate.backend-architecture-platform-approved`，由用户在同一次决定中确认 DDD / MVC 与精确 Spring Boot 版本，再登记一个 `controlled-generation` 工作单元：DDD 绑定 `primary_skill=yss-ddd-scaffold-generator`，MVC 绑定 `primary_skill=yss-layered-mvc-scaffold-generator`。DDD 后续追加 `yss-backend-scaffold-parent` 基线校验，两者都回到 `yss-implementation-contract-compiler` 重编译业务合同。`existing` / `initialized` 核验并复用当前登记架构与固定工程基线/POM 中的实际版本，不重复询问或全量生成；架构互转或平台升级走独立迁移工作单元。
 
 | 项 | 内容 |
 |---|---|
@@ -340,7 +340,7 @@ owner: ai
 - [ ] 后端切片如适用，已填写 `Backend Slice Implementation Contract`，并且 required skills、禁止模式、证据文件、延期 seam 和验证命令完整。
 - [ ] 受影响外部实现仓库已登记，并绑定分支、MR / PR、CI 和验证命令。
 - [ ] 受影响 frontend / backend 工程存在性已判定；0-1 缺失工程已登记 `scaffold_status=required`、确认外部脚手架目标并路由对应脚手架 skill。
-- [ ] backend `scaffold_status=required` 时，架构确认、Technical Design、Data Architecture Decision、工程合同批准及 schema v4 合同均已持久化且 digest 当前。
+- [ ] backend `scaffold_status=required` 时，`gate.backend-architecture-platform-approved` 已同时确认 DDD / MVC 与精确 Spring Boot 版本，Technical Design、Data Architecture Decision、工程合同批准及 schema v4 合同均已持久化且 digest 当前；既有工程已记录复用证据。
 - [ ] 原型确认后已满足 `backend_scaffold_policy_satisfied`；脚手架只生成工程骨架，所有后续生成代码均经批准合同和 YSS skill 路由。
 - [ ] DDL / SQL / 数据库迁移及其他上游明确的人工确认结论已记录。
 - [ ] `seam-deferred` 若存在，已填写风险、责任人、后续 Ticket、验证计划和目标版本 / 发布日期。

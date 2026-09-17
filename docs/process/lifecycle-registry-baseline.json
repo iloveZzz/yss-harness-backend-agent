@@ -30,8 +30,9 @@
     "evidence.technical-design-review",
     "evidence.test-verification",
     "evidence.upstream-input-check",
-    "gate.fresh-verification-passed",
+    "gate.backend-architecture-platform-approved",
     "gate.engineering-contract-approved",
+    "gate.fresh-verification-passed",
     "gate.frontend-delivery-inputs-verified",
     "gate.high-risk-architecture-confirmed",
     "gate.merge-approved",
@@ -61,5 +62,5 @@
     "work-unit.technical-design",
     "work-unit.verification"
   ],
-  "semantic_sha256": "572bf0c449bd51369902d03733735ff14e332361f7028446131a8cf221625805"
+  "semantic_sha256": "031ae45d4e7778751264eb0215c1c75ce01bc969112985ca78e665cd581dc08a"
 }

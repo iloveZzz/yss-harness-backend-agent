@@ -10,7 +10,7 @@
 | 稳定 ID | 阶段 | 目标 | 退出标准 |
 |---|---|---|---|
 | `stage.harness-entry` | Harness 入口 | 校验仓库身份、上游输入、影响面和实现仓库上下文。 | 上游输入版本当前，影响面、项目根、分支、写入范围和验证命令可解释。 |
-| `stage.technical-design` | 技术设计 | 按已确认的 DDD 或 MVC 架构把批准需求细化为可实现、可验证的设计。 | 后端 Technical Design Contract 已批准且当前；数据影响为真时数据架构已批准，否则有可核验的不适用记录；gate.engineering-contract-approved 已通过。 |
+| `stage.technical-design` | 技术设计 | 按已确认的 DDD 或 MVC 架构把批准需求细化为可实现、可验证的设计。 | 新建后端的架构与精确 Spring Boot 版本已由用户确认，既有工程已核验并复用登记架构与实际版本；后端 Technical Design Contract 已批准且当前；数据影响为真时数据架构已批准，否则有可核验的不适用记录；gate.engineering-contract-approved 已通过。 |
 | `stage.implementation-repository-preparation` | 实现仓库准备 | 在已批准的技术/数据设计之后接入既有仓库或生成纯机械后端骨架。 | Implementation Repository Preparation Result v2 当前且通过；新生成仅使用 Scaffold Contract/Manifest v4，历史 v3 已完成恢复对账。 |
 | `stage.slice-contract` | Slice Contract | 将战术设计和冻结契约编译为一个跨前后端测试的实现合同。 | 合同版本当前、四个角色分区完整、写路径和验证命令明确，且就绪公式满足。 |
 | `stage.slice-implementation` | 垂直切片实现 | 由前端、后端和测试 Agent 按同一合同并行实现和验证。 | 行为实现、测试证据、契约一致性和写入边界均满足合同。 |
@@ -28,7 +28,8 @@
 | `gate.repository-identity-valid` | 仓库身份有效 | `stage.harness-entry` | 每次进入 Harness。 | 无 | `evidence.repository-identity-check` |
 | `gate.technical-design-approved` | Technical Design 批准 | `stage.technical-design` | 存在后端用例、规则、分层、状态、一致性或持久化设计影响。 | 无 | `evidence.technical-design-review`、`evidence.approval-record` |
 | `gate.high-risk-architecture-confirmed` | 高风险架构确认 | `stage.technical-design` | 存在不可逆或跨边界高风险架构取舍。 | 无 | `evidence.architecture-decision`、`evidence.approval-record` |
-| `gate.engineering-contract-approved` | 工程合同批准 | `stage.technical-design` | 进入实现仓库准备或生成后端脚手架前。 | 无 | `evidence.technical-design-review`、`evidence.architecture-decision`、`evidence.approval-record` |
+| `gate.backend-architecture-platform-approved` | 后端架构与平台批准 | `stage.technical-design` | 新建后端工程进入 DDD / MVC 技术设计分支前，由用户在同一次决定中确认 domain-driven / layered-mvc 和精确 Spring Boot 版本；既有工程核验并复用当前登记架构及固定工程基线/POM 中的实际 Spring Boot 版本，记录 not-applicable，不重复询问。 | 无 | `evidence.approval-record` |
+| `gate.engineering-contract-approved` | 工程合同批准 | `stage.technical-design` | 进入实现仓库准备或生成后端脚手架前。 | `gate.backend-architecture-platform-approved` | `evidence.technical-design-review`、`evidence.architecture-decision`、`evidence.approval-record` |
 | `gate.slice-contract-approved` | Slice Contract 批准 | `stage.slice-contract` | 任一 Agent 进入切片实现前。 | 无 | `evidence.contract-approval` |
 | `gate.slice-ready-for-agent` | 切片实现就绪 | `stage.slice-contract` | Slice Contract 满足完整就绪公式。 | 无 | `evidence.contract-approval` |
 | `gate.openapi-freeze-confirmed` | OpenAPI Freeze 确认 | `stage.slice-contract` | 切片有 API 影响且契约进入实现。 | 无 | `evidence.approval-record` |
