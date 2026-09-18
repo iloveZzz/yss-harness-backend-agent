@@ -226,12 +226,98 @@ test("component capabilities are nested by registry capability id and uncertifie
   assert.throws(() => resolveComponentCapabilities(binding, ["component.current-user-context"], "layered-mvc", { catalog }), error => error.code === "component-artifact-coordinate-conflict" && /^component-capability: component-artifact-coordinate-conflict:/.test(error.message));
   assert.throws(() => resolveComponentCapabilities(binding, ["contract.request-validation"], "domain-driven", { catalog }), error => error.code === "component-new-adoption-forbidden");
   const boot3 = catalog.compatibility.find(item => item.profile_id === "spring-boot-3.5-jdk17");
+  const boot3Profile = catalog.profiles.find(item => item.id === boot3.profile_id);
   assert.equal(boot3.status, "blocked");
+  assert.equal(boot3Profile.component_platform_line, "boot3-java17");
+  assert.equal(boot3Profile.spring_cloud_version, "2025.0.3");
+  assert.equal(boot3Profile.spring_cloud_alibaba_version, "2025.0.0.0");
+  assert.equal(boot3Profile.validation_namespace, "jakarta");
+  assert.equal(boot3Profile.jackson_major, 2);
+  assert.equal(boot3Profile.auto_configuration_imports_path, "META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports");
   assert.ok(Object.values(boot3.component_capabilities).every(item => item.artifacts.every(artifact => artifact.declared_version.startsWith("3."))));
+  assert.equal(boot3.component_capabilities["component.cache"].artifacts[0].declared_version, "3.1.0-SNAPSHOT");
+  assert.equal(boot3.component_capabilities["component.distributed-id"].artifacts[0].declared_version, "3.1.0-SNAPSHOT");
+  assert.deepEqual(boot3.component_capabilities["component.excel-import-export"].artifacts.map(item => item.artifact_id), ["yss-component-excel-mvc"]);
+  const validation = boot3.component_capabilities["contract.request-validation"];
+  assert.equal(validation.provider_kind, "platform-managed");
+  assert.deepEqual(validation.artifacts.map(item => `${item.group_id}:${item.artifact_id}:${item.declared_version}`), ["org.springframework.boot:spring-boot-starter-validation:3.5.16"]);
+  assert.ok(validation.artifacts.every(item => item.resolved_version === null && item.pom_sha256 === null && item.jar_sha256 === null && item.source_tree === null));
+  assert.deepEqual(validation.evidence, []);
+  assert.deepEqual(Object.keys(boot3.platform_artifact_bindings).sort(), ["bom", "parent"]);
+  for (const [role, item] of Object.entries(boot3.platform_artifact_bindings)) {
+    assert.equal(item.role, role);
+    assert.equal(item.status, "candidate");
+    assert.ok(item.declared_version.endsWith("-SNAPSHOT"));
+    for (const field of ["resolved_version", "published_at", "pom_sha256", "jar_sha256", "sources_jar_sha256", "source_tree"]) assert.equal(item[field], null);
+    assert.deepEqual(item.evidence, []);
+    assert.ok(item.blockers.length);
+  }
+  assert.deepEqual(boot3.external_snapshot_bindings, []);
+  assert.equal(boot3.external_artifact_bindings.length, 1);
+  assert.deepEqual(
+    boot3.external_artifact_bindings.map(item => `${item.group_id}:${item.artifact_id}:${item.declared_version}`),
+    ["org.apache.fesod:fesod-sheet:2.0.2-incubating"]
+  );
+  const fesod = boot3.external_artifact_bindings[0];
+  assert.equal(fesod.status, "resolved");
+  assert.equal(fesod.resolved_version, fesod.declared_version);
+  assert.equal(fesod.published_at, null);
+  assert.equal(fesod.pom_sha256, "sha256:9c1f7a78ad39264c4d2a2689251562192a6074a79291adfe6b1806f199ee8df1");
+  assert.equal(fesod.jar_sha256, "sha256:39d43ea6e6fcb26b712181869859c035d1cb0742a842e2758c8c58e79c112b4e");
+  assert.equal(fesod.sources_jar_sha256, "sha256:fb34dffa2a8844ea1033fc3896f497a55684842e98af428a9b7c5e29047a8b38");
+  assert.equal(fesod.source_tree, null);
+  assert.deepEqual(fesod.evidence, []);
+  assert.deepEqual(fesod.blockers, []);
   for (const profile of catalog.profiles.filter(item => !["spring-boot-2.7-jdk8", "spring-boot-3.5-jdk17"].includes(item.id))) {
     assert.equal(catalog.compatibility.some(item => item.profile_id === profile.id), false);
     assert.match(profile.candidate_blockers.join("\n"), /component-unavailable-for-platform/);
   }
+});
+
+test("Boot 3 catalog parser rejects drift in candidate and platform-managed bindings", async t => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "yss-boot3-catalog-")); t.after(() => rm(root, { recursive: true, force: true }));
+  await mkdir(path.join(root, "docs/engineering"), { recursive: true });
+  const original = loadBackendPlatforms();
+  const boot3Entry = original.compatibility.find(item => item.profile_id === "spring-boot-3.5-jdk17");
+  const boot3 = { ...structuredClone(original), compatibility: [structuredClone(boot3Entry)] };
+  const save = async value => writeFile(path.join(root, "docs/engineering/backend-platforms.json"), JSON.stringify(value));
+  await save(boot3);
+  assert.doesNotThrow(() => loadBackendPlatforms(root));
+
+  boot3.compatibility[0].platform_artifact_bindings.parent.artifact_id = "wrong-parent";
+  await save(boot3);
+  assert.throws(() => loadBackendPlatforms(root), error => error.code === "component-binding-drift");
+  boot3.compatibility[0].platform_artifact_bindings.parent.artifact_id = boot3.compatibility[0].parent.artifact_id;
+
+  boot3.compatibility[0].external_artifact_bindings[0].declared_version = "2.1.0-SNAPSHOT";
+  await save(boot3);
+  assert.throws(() => loadBackendPlatforms(root), error => error.code === "component-artifact-coordinate-conflict");
+  boot3.compatibility[0].external_artifact_bindings[0].declared_version = "2.0.2-incubating";
+
+  boot3.compatibility[0].component_capabilities["contract.request-validation"].artifacts[0].artifact_id = "legacy-validation";
+  await save(boot3);
+  assert.throws(() => loadBackendPlatforms(root), error => error.code === "component-binding-drift");
+  boot3.compatibility[0].component_capabilities["contract.request-validation"].artifacts[0].artifact_id = "spring-boot-starter-validation";
+
+  const cache = boot3.compatibility[0].component_capabilities["component.cache"];
+  cache.artifacts[0].declared_version = "3.0.0-SNAPSHOT";
+  cache.component_digest = componentCapabilityDigest(cache, "component.cache");
+  await save(boot3);
+  assert.throws(() => loadBackendPlatforms(root), error => error.code === "component-binding-drift");
+  cache.artifacts[0].declared_version = "3.1.0-SNAPSHOT";
+  cache.component_digest = componentCapabilityDigest(cache, "component.cache");
+
+  const excel = boot3.compatibility[0].component_capabilities["component.excel-import-export"];
+  excel.artifacts.push({ group_id: "com.yss.cloud", artifact_id: "yss-component-excel-starter", declared_version: "3.0.0-SNAPSHOT", resolved_version: null, pom_sha256: null, jar_sha256: null, source_tree: null });
+  excel.component_digest = componentCapabilityDigest(excel, "component.excel-import-export");
+  await save(boot3);
+  assert.throws(() => loadBackendPlatforms(root), error => error.code === "component-new-adoption-forbidden");
+  excel.artifacts.pop();
+  excel.component_digest = componentCapabilityDigest(excel, "component.excel-import-export");
+
+  boot3.profiles.find(item => item.id === "spring-boot-3.5-jdk17").component_platform_line = "boot3-java17-mainline";
+  await save(boot3);
+  assert.throws(() => loadBackendPlatforms(root), error => error.code === "component-platform-generation-mismatch");
 });
 
 test("artifact resolution evidence binds catalog coordinates and bytes", async t => {
@@ -368,6 +454,14 @@ test("backend-platforms require-profile exposes nested component blockers and ex
   assert.equal(output.required_profile.combinations[0].component_status.blocked, 11);
   assert.match(output.required_profile.combinations[0].component_capabilities["contract.dto-wire"].blockers.join("\n"), /component-evidence-missing/);
   assert.match(output.required_profile.blockers.join("\n"), /YSS combination .* is not verified/);
+
+  const boot3Result = spawnSync(path.resolve("scripts/backend-platforms"), ["--require-profile", "spring-boot-3.5-jdk17"], { encoding: "utf8" });
+  assert.equal(boot3Result.status, 1);
+  const boot3 = JSON.parse(boot3Result.stdout).required_profile.combinations[0];
+  assert.equal(boot3.component_capabilities["contract.request-validation"].provider_kind, "platform-managed");
+  assert.deepEqual(boot3.external_snapshot_bindings, []);
+  assert.equal(boot3.external_artifact_bindings[0].declared_version, "2.0.2-incubating");
+  assert.equal(boot3.platform_artifact_bindings.parent.declared_version, "3.0.0-SNAPSHOT");
 });
 
 test("resume never regenerates or accepts changed files, extra source or changed contracts", async t => {
