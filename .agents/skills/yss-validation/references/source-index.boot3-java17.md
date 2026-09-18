@@ -2,8 +2,8 @@
 
 Index schema: `backend-component-source-index-v2`
 Platform line: `boot3-java17`
-Generated: 2026-09-18T17:22:32.917Z
-Source commit: `5144140d5facf39859d4180d34e2cfe4fa2ea83d`
+Generated: 2026-09-18T18:40:26.031Z
+Source commit: `5041c41fbe96c25821bbc15f688c0521b8c97a3d`
 Component worktree: `clean`
 Component tree `yss-microservice-components/yss-component-validation-jsr303`: `aee5fea02f5de4d1e459679424f158d7537c5499`
 Indexed source root: resolved at refresh time; set `YSS_SOURCE_ROOT_BOOT3_JAVA17` to reproduce or refresh.

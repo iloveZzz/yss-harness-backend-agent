@@ -2,7 +2,7 @@
 
 Index schema: `backend-component-source-index-v2`
 Platform line: `boot2-java8`
-Generated: 2026-09-18T17:22:32.917Z
+Generated: 2026-09-18T18:40:26.031Z
 Source commit: `a3be2b2e33dca4545782e2b31894aaa00d0305cd`
 Component worktree: `clean`
 Component tree `yss-microservice-components/yss-component-validation-jsr303`: `fe5b36afb474afa41541fe1187a6828bdae080dc`
