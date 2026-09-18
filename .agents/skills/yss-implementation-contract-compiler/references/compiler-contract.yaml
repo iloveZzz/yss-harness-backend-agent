@@ -176,6 +176,14 @@ resolution_contract:
   - skill-id
   digest_change_status: stale
   stale_action: recompile-and-return-to-harness-approval
+  component_bindings:
+    when: any-required-capability-provider-kind-is-yss-component
+    platform_configuration: required-v2
+    catalog_source: docs/engineering/backend-platforms.json
+    required_fields: [component_bindings, component_bindings_digest]
+    exact_artifact_binding: [group_id, artifact_id, declared_version, resolved_version, pom_sha256, jar_sha256, source_tree]
+    digest_change_status: stale
+    old_contract_without_binding: stale-and-recompile-no-auto-upgrade
 impact_to_capabilities:
   system-data-architecture:
   - architecture.system-data
@@ -233,6 +241,7 @@ full_reroute_triggers:
 - invariant-impact
 - scaffold-architecture-decision-changed
 - scaffold-profile-or-module-closure-changed
+- component-binding-drift
 - new-write-path
 - new-repository
 - contract-violation
@@ -459,7 +468,6 @@ scaffold_contract_schema:
     - approved
     after_generation_by_architecture:
       domain-driven:
-      - yss-backend-scaffold-parent
       - yss-implementation-contract-compiler
       layered-mvc:
       - yss-implementation-contract-compiler
@@ -557,3 +565,14 @@ backend_platform_contract:
   new_generation_requires: [exact-boot-java, confirmed-decision, matching-yss-coordinates, verified-compatibility-entry]
   candidate_generation: maintenance-only
   candidate_downstream: blocked
+  component_capabilities:
+    registry_marker: provider-kind-yss-component
+    mapping_key: provider-binding-id
+    foundational_capabilities: [contract.dto-wire, contract.request-validation, contract.error-mapping, framework.mybatis]
+    specialized_capabilities: [component.cache, component.current-user-context, component.audit-log, component.excel-import-export, component.distributed-id, component.security-algorithm, component.gateway-resilience]
+    exact_artifact_evidence: [group_id, artifact_id, declared_version, resolved_version, pom_sha256, jar_sha256, source_tree]
+    verified_architecture_required: true
+    unlisted_or_blocked: component-unavailable-for-platform
+    missing_evidence: component-evidence-missing
+    coordinate_conflict: component-artifact-coordinate-conflict
+    drift: component-binding-drift

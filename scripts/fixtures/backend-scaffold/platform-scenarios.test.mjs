@@ -1,10 +1,11 @@
 import { platformSourceFingerprint, generatedTreeDigest, assertResumableCandidate } from "../../lib/backend-platform-provenance.mjs";
 import assert from "node:assert/strict";
 import test from "node:test";
+import { spawnSync } from "node:child_process";
 import { mkdtemp, mkdir, readFile, writeFile, rm, readdir } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import { loadBackendPlatforms, platformBinding, platformRecipeDigest, platformProfile, platformDigest, resolveBackendPlatform, assertJavaPlatform, assertContractPlatform } from "../../lib/backend-platform.mjs";
+import { loadBackendPlatforms, platformBinding, platformRecipeDigest, platformProfile, platformDigest, resolveBackendPlatform, resolveComponentCapabilities, componentCapabilityDigest, assertJavaPlatform, assertContractPlatform } from "../../lib/backend-platform.mjs";
 import { checkPlatformDependencies, checkPlatformTests, checkRuntimeArchive } from "../../lib/backend-platform-verification.mjs";
 import { fixtureCatalog } from "./platform-fixture.mjs";
 import { attachDesignPrerequisites } from "./design-prerequisites.mjs";
@@ -105,7 +106,7 @@ test("version, digest, namespace, YSS coordinates and decision mismatches are re
   assert.throws(() => resolveBackendPlatform(binding, { catalog }), /not verified/);
   for (const java of [8, 11, 21]) assert.throws(() => assertJavaPlatform(`Java version: ${java}.0.1`, binding), /JDK mismatch/);
   assert.doesNotThrow(() => assertJavaPlatform('openjdk version "17.0.16"', binding));
-  assert.equal(loadBackendPlatforms().compatibility.length, 0, "real combinations are not open without real evidence");
+  assert.ok(loadBackendPlatforms().compatibility.every(item => item.status !== "verified"), "real combinations are not open without real evidence");
 });
 
 function dependencyFixture(profile = profiles[3]) {
@@ -188,6 +189,185 @@ test("multiple exact patches coexist without rebinding earlier contracts", () =>
   assert.equal(platformProfile(old.id, catalog, next.spring_boot_version).spring_boot_version, "3.5.17");
   assert.throws(() => platformProfile(old.id, catalog), /multiple patches/);
   assert.throws(() => platformProfile(old.id, catalog, "3.5.x"), /unsupported/);
+});
+
+test("component capabilities are nested by registry capability id and uncertified profiles stay closed", () => {
+  const catalog = loadBackendPlatforms();
+  const expected = [
+    "contract.dto-wire", "contract.request-validation", "contract.error-mapping", "framework.mybatis",
+    "component.cache", "component.current-user-context", "component.audit-log", "component.excel-import-export",
+    "component.distributed-id", "component.security-algorithm", "component.gateway-resilience"
+  ];
+  assert.equal(catalog.schema_version, 2);
+  assert.equal(Object.hasOwn(catalog, "component_capabilities"), false);
+  assert.equal(Object.hasOwn(catalog, "component_capability_ids"), false);
+  assert.equal(catalog.compatibility.length, 2);
+  const entry = catalog.compatibility[0];
+  assert.equal(entry.profile_id, "spring-boot-2.7-jdk8");
+  assert.equal(entry.status, "blocked");
+  assert.equal(entry.artifact_resolution_evidence.report_id, "aliyun-maven-artifact-resolution-2026-09-18");
+  assert.match(entry.artifact_resolution_evidence.digest, /^sha256:[a-f0-9]{64}$/);
+  assert.deepEqual(Object.keys(entry.component_capabilities), expected);
+  for (const item of Object.values(entry.component_capabilities)) {
+    assert.equal(item.status, "blocked");
+    assert.deepEqual(item.verified_architectures, []);
+    assert.deepEqual(item.evidence, []);
+    for (const artifact of item.artifacts) assert.deepEqual(Object.keys(artifact), ["group_id", "artifact_id", "declared_version", "resolved_version", "pom_sha256", "jar_sha256", "source_tree"]);
+  }
+  assert.equal(entry.component_capabilities["component.cache"].artifacts[0].declared_version, "3.0.0-SNAPSHOT");
+  assert.match(entry.component_capabilities["contract.dto-wire"].artifacts[0].resolved_version, /^2\.0\.0-\d{8}\.\d{6}-\d+$/);
+  assert.match(entry.component_capabilities["contract.dto-wire"].artifacts[0].source_tree, /^[a-f0-9]{40}$/);
+  assert.equal(entry.component_capabilities["component.cache"].artifacts[0].source_tree, null);
+  assert.match(entry.component_capabilities["component.cache"].blockers.join("\n"), /component-artifact-coordinate-conflict/);
+  assert.match(entry.component_capabilities["component.current-user-context"].blockers.join("\n"), /component-artifact-coordinate-conflict/);
+  const binding = platformBinding(catalog.profiles[0], entry);
+  assert.throws(() => resolveComponentCapabilities(binding, ["contract.dto-wire"], "domain-driven", { catalog }), error => error.code === "component-evidence-missing" && /^component-capability: component-evidence-missing:/.test(error.message));
+  assert.throws(() => resolveComponentCapabilities(binding, ["component.cache"], "domain-driven", { catalog }), error => error.code === "component-platform-generation-mismatch" && /^component-capability: component-platform-generation-mismatch:/.test(error.message));
+  assert.throws(() => resolveComponentCapabilities(binding, ["component.current-user-context"], "layered-mvc", { catalog }), error => error.code === "component-artifact-coordinate-conflict" && /^component-capability: component-artifact-coordinate-conflict:/.test(error.message));
+  assert.throws(() => resolveComponentCapabilities(binding, ["contract.request-validation"], "domain-driven", { catalog }), error => error.code === "component-new-adoption-forbidden");
+  const boot3 = catalog.compatibility.find(item => item.profile_id === "spring-boot-3.5-jdk17");
+  assert.equal(boot3.status, "blocked");
+  assert.ok(Object.values(boot3.component_capabilities).every(item => item.artifacts.every(artifact => artifact.declared_version.startsWith("3."))));
+  for (const profile of catalog.profiles.filter(item => !["spring-boot-2.7-jdk8", "spring-boot-3.5-jdk17"].includes(item.id))) {
+    assert.equal(catalog.compatibility.some(item => item.profile_id === profile.id), false);
+    assert.match(profile.candidate_blockers.join("\n"), /component-unavailable-for-platform/);
+  }
+});
+
+test("artifact resolution evidence binds catalog coordinates and bytes", async t => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "yss-artifact-resolution-"));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const catalog = loadBackendPlatforms();
+  const binding = catalog.compatibility[0].artifact_resolution_evidence;
+  await mkdir(path.join(root, "docs/engineering"), { recursive: true });
+  await mkdir(path.dirname(path.join(root, binding.ref)), { recursive: true });
+  await writeFile(path.join(root, "docs/engineering/backend-platforms.json"), JSON.stringify(catalog, null, 2));
+  const evidence = await readFile(path.resolve(binding.ref));
+  await writeFile(path.join(root, binding.ref), evidence);
+  assert.doesNotThrow(() => loadBackendPlatforms(root));
+  await writeFile(path.join(root, binding.ref), Buffer.concat([evidence, Buffer.from("\n")]));
+  assert.throws(() => loadBackendPlatforms(root), error => error.code === "component-binding-drift");
+});
+
+test("component adoption, platform generation and retirement evidence expose stable failure codes", async t => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "yss-component-policy-")); t.after(() => rm(root, { recursive: true, force: true }));
+  const f = await verifiedComponentFixture(root);
+  const options = { catalog: f.catalog, root, requirePlatformVerified: false };
+  const item = f.entry.component_capabilities[f.capabilityId];
+  item.lifecycle = "deprecated";
+  item.adoption_policy = "forbidden";
+  item.replacement_gav = "org.springframework.boot:spring-boot-starter-validation";
+  item.component_digest = componentCapabilityDigest(item, f.capabilityId);
+  assert.throws(() => resolveComponentCapabilities(f.binding, [f.capabilityId], "domain-driven", options), error => error.code === "component-new-adoption-forbidden");
+
+  item.lifecycle = "active";
+  item.adoption_policy = "allowed";
+  item.artifacts[0].declared_version = "3.0.0-SNAPSHOT";
+  item.component_digest = componentCapabilityDigest(item, f.capabilityId);
+  assert.throws(() => resolveComponentCapabilities(f.binding, [f.capabilityId], "domain-driven", options), error => error.code === "component-platform-generation-mismatch");
+
+  item.artifacts[0].declared_version = "2.0.0-SNAPSHOT";
+  item.lifecycle = "retired";
+  item.retirement_evidence = [];
+  item.component_digest = componentCapabilityDigest(item, f.capabilityId);
+  assert.throws(() => resolveComponentCapabilities(f.binding, [f.capabilityId], "domain-driven", options), error => error.code === "component-retirement-evidence-missing");
+});
+
+async function verifiedComponentFixture(root) {
+  const catalog = loadBackendPlatforms();
+  const profile = catalog.profiles[0];
+  const contract = { profiles: { platform: profile.id }, maven_coordinates: { parent: { group_id: "test", artifact_id: "parent", version: "test-only" }, yss_components_version: "test-only" } };
+  const platformCatalog = fixtureCatalog(contract);
+  const entry = platformCatalog.compatibility[0];
+  const binding = platformBinding(profile, entry);
+  const artifact = {
+    group_id: "com.yss.cloud", artifact_id: "yss-component-dto",
+    declared_version: "2.0.0-SNAPSHOT", resolved_version: "2.0.0-20260918.123456-1",
+    pom_sha256: platformDigest("synthetic component pom"), jar_sha256: platformDigest("synthetic component jar"),
+    source_tree: "1".repeat(40)
+  };
+  const capabilityId = "contract.dto-wire";
+  const capability = { status: "verified", verified_architectures: ["domain-driven"], artifacts: [artifact], evidence: [], blockers: [] };
+  capability.component_digest = componentCapabilityDigest(capability, capabilityId);
+  const report = { schema_version: 1, kind: "backend-component-capability-evidence", status: "passed", capability_id: capabilityId, compatibility_id: entry.id, profile_id: profile.id, spring_boot_version: profile.spring_boot_version, architecture_family: "domain-driven", component_digest: capability.component_digest, artifacts: capability.artifacts };
+  const bytes = JSON.stringify(report);
+  await writeFile(path.join(root, "component-report.json"), bytes);
+  capability.evidence = [{ architecture_family: "domain-driven", ref: "component-report.json", digest: platformDigest(bytes) }];
+  entry.component_capabilities = { [capabilityId]: capability };
+  return { catalog: platformCatalog, binding, capability, capabilityId, entry };
+}
+
+test("component capability resolver returns exact serializable bindings and fails closed", async t => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "yss-component-capability-")); t.after(() => rm(root, { recursive: true, force: true }));
+  const f = await verifiedComponentFixture(root);
+  const options = { catalog: f.catalog, root, requirePlatformVerified: false };
+  const resolved = resolveComponentCapabilities(f.binding, [f.capabilityId], "domain-driven", options);
+  assert.deepEqual(resolved, [{ capability_id: f.capabilityId, status: "verified", verified_architectures: ["domain-driven"], artifacts: f.capability.artifacts, evidence: f.capability.evidence, component_digest: f.capability.component_digest }]);
+  assert.doesNotThrow(() => JSON.stringify(resolved));
+  assert.throws(() => resolveComponentCapabilities(f.binding, ["component.cache"], "domain-driven", options), error => error.code === "component-unavailable-for-platform" && /^component-capability: component-unavailable-for-platform:/.test(error.message));
+  f.entry.component_capabilities[f.capabilityId].status = "blocked";
+  assert.throws(() => resolveComponentCapabilities(f.binding, [f.capabilityId], "domain-driven", options), /component-unavailable-for-platform/);
+  f.entry.component_capabilities[f.capabilityId].status = "verified";
+  assert.throws(() => resolveComponentCapabilities(f.binding, [f.capabilityId], "layered-mvc", options), /component-unavailable-for-platform/);
+  delete f.entry.component_capabilities[f.capabilityId].artifacts[0].jar_sha256;
+  assert.throws(() => resolveComponentCapabilities(f.binding, [f.capabilityId], "domain-driven", options), /component-evidence-missing/);
+});
+
+test("component capability resolver rejects coordinate conflicts and evidence drift", async t => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "yss-component-conflict-")); t.after(() => rm(root, { recursive: true, force: true }));
+  const f = await verifiedComponentFixture(root);
+  const secondId = "contract.error-mapping";
+  const second = structuredClone(f.capability);
+  second.artifacts[0].resolved_version = "2.0.0-20260918.123456-2";
+  second.component_digest = componentCapabilityDigest(second, secondId);
+  f.entry.component_capabilities[secondId] = second;
+  const options = { catalog: f.catalog, root, requirePlatformVerified: false };
+  assert.throws(() => resolveComponentCapabilities(f.binding, [f.capabilityId, secondId], "domain-driven", options), error => error.code === "component-artifact-coordinate-conflict");
+  delete f.entry.component_capabilities[secondId];
+  f.entry.component_capabilities[f.capabilityId].component_digest = platformDigest("stale component");
+  assert.throws(() => resolveComponentCapabilities(f.binding, [f.capabilityId], "domain-driven", options), error => error.code === "component-binding-drift");
+  f.entry.component_capabilities[f.capabilityId].component_digest = f.capability.component_digest;
+  await writeFile(path.join(root, "component-report.json"), "changed");
+  assert.throws(() => resolveComponentCapabilities(f.binding, [f.capabilityId], "domain-driven", options), error => error.code === "component-binding-drift" && /^component-capability: component-binding-drift:/.test(error.message));
+});
+
+test("resolved SNAPSHOT, POM/JAR digests and source tree are mandatory for verified components", async t => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "yss-component-artifact-")); t.after(() => rm(root, { recursive: true, force: true }));
+  const f = await verifiedComponentFixture(root);
+  const options = { catalog: f.catalog, root, requirePlatformVerified: false };
+  for (const field of ["resolved_version", "pom_sha256", "jar_sha256", "source_tree"]) {
+    const artifact = f.entry.component_capabilities[f.capabilityId].artifacts[0];
+    const original = artifact[field];
+    artifact[field] = null;
+    assert.throws(() => resolveComponentCapabilities(f.binding, [f.capabilityId], "domain-driven", options), /component-evidence-missing/);
+    artifact[field] = original;
+  }
+  const artifact = f.entry.component_capabilities[f.capabilityId].artifacts[0];
+  artifact.resolved_version = artifact.declared_version;
+  assert.throws(() => resolveComponentCapabilities(f.binding, [f.capabilityId], "domain-driven", options), error => error.code === "component-artifact-coordinate-conflict");
+});
+
+test("resolveBackendPlatform loads the catalog beneath an explicit root", async t => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "yss-platform-root-")); t.after(() => rm(root, { recursive: true, force: true }));
+  await mkdir(path.join(root, "docs/engineering"), { recursive: true });
+  const catalog = loadBackendPlatforms();
+  catalog.compatibility = [{ id: "root-local", profile_id: catalog.profiles[0].id, spring_boot_version: catalog.profiles[0].spring_boot_version, parent: { group_id: "root", artifact_id: "parent", version: "local" }, bom: { group_id: "com.yss.cloud", artifact_id: "yss-components-bom", version: "local" }, status: "candidate", capabilities: [], evidence: [] }];
+  await writeFile(path.join(root, "docs/engineering/backend-platforms.json"), JSON.stringify(catalog));
+  const binding = platformBinding(catalog.profiles[0], catalog.compatibility[0]);
+  assert.equal(resolveBackendPlatform(binding, { root, requireVerified: false }).entry.id, "root-local");
+});
+
+test("backend-platforms require-profile exposes nested component blockers and exits non-zero", () => {
+  const result = spawnSync(path.resolve("scripts/backend-platforms"), ["--require-profile", "spring-boot-2.7-jdk8"], { encoding: "utf8" });
+  assert.equal(result.status, 1);
+  const output = JSON.parse(result.stdout);
+  assert.equal(output.schema_version, 2);
+  assert.equal(output.requested_profile, "spring-boot-2.7-jdk8");
+  assert.equal(output.required_profile.selectable, false);
+  assert.equal(Object.keys(output.required_profile.combinations[0].component_capabilities).length, 11);
+  assert.equal(output.required_profile.combinations[0].component_status.blocked, 11);
+  assert.match(output.required_profile.combinations[0].component_capabilities["contract.dto-wire"].blockers.join("\n"), /component-evidence-missing/);
+  assert.match(output.required_profile.blockers.join("\n"), /YSS combination .* is not verified/);
 });
 
 test("resume never regenerates or accepts changed files, extra source or changed contracts", async t => {
