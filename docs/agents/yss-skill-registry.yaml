@@ -580,8 +580,6 @@ skill_dependencies:
     type: context-conditional
     when: lifecycle-document-output
   yss-ddd-scaffold-generator:
-  - skill: yss-backend-scaffold-parent
-    type: context-required
   - skill: alibaba-java-code-style
     type: context-required
   yss-layered-mvc-scaffold-generator:
@@ -1062,31 +1060,6 @@ skills:
   aliases: []
   impacts:
   - backend
-- id: yss-mvc-data-analysis-project-initializer
-  layer: specialist
-  maturity: deprecated
-  replacement_skill: yss-layered-mvc-scaffold-generator
-  deprecation:
-    new_use: forbidden
-    cleanup_status: migration-only
-    remove_after: 2026-12-17
-  instance_default_discoverable: false
-  aliases: []
-  impacts:
-  - backend
-- id: yss-mvc-design
-  layer: specialist
-  maturity: deprecated
-  replacement_skill: yss-technical-design
-  deprecation:
-    new_use: forbidden
-    cleanup_status: migration-only
-    remove_after: 2026-12-17
-  instance_default_discoverable: false
-  aliases: []
-  impacts:
-  - backend
-  - lifecycle
 - id: yss-mybatis
   layer: specialist
   maturity: supported
@@ -1191,8 +1164,6 @@ skills:
   - api
 platform_skills: []
 external_skills:
-- id: yss-backend-scaffold-parent
-  source: .agents/skills/yss-ddd-scaffold-generator/references/yss-backend-scaffold-parent/SKILL.md
 - id: frontend-agent
   source: cross-repo-reference
 - id: yss-ui
@@ -1237,17 +1208,13 @@ backend_skill_domains:
     yss-web-controller: layered-implementation
     yss-layered-mvc-scaffold-generator: engineering-initialization
     yss-implementation-contract-compiler: platform-governance-migration
-    architecture-agent: technical-design
-    backend-agent: layered-implementation
+    yss-skill-source-index-refresh: platform-governance-migration
     yss-tactical-design: technical-design
     yss-domain: layered-implementation
     yss-dto: wire-framework-contract
     yss-validation: wire-framework-contract
     yss-exception: wire-framework-contract
     yss-mybatis: wire-framework-contract
-    alibaba-java-code-style: wire-framework-contract
-    mapstruct: wire-framework-contract
-    lombok: wire-framework-contract
     yss-cache: component-capability
     yss-userinfo: component-capability
     yss-audit-log: component-capability
@@ -1258,9 +1225,7 @@ backend_skill_domains:
     yss-ddd-scaffold-generator: engineering-initialization
     yss-up-springboot3: platform-governance-migration
     yss-technical-design: technical-design
-  deprecated_skills:
-  - yss-mvc-data-analysis-project-initializer
-  - yss-mvc-design
+  deprecated_skills: []
 backend_source_index_contract:
   schema_version: 1
   owner_skill: yss-skill-source-index-refresh

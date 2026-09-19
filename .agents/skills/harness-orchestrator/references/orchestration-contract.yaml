@@ -541,7 +541,6 @@ backend_scaffold:
     - unapproved_force_overwrite
   after_generation_by_architecture:
     domain-driven:
-      - yss-backend-scaffold-parent
       - yss-implementation-contract-compiler
     layered-mvc:
       - yss-implementation-contract-compiler

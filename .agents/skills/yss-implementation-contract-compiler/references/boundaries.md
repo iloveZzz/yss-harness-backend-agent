@@ -118,7 +118,6 @@
 | `yss-openapi-governance` | `i-have-adhd` | `context-conditional` | `lifecycle-document-output` |
 | `yss-research` | `i-have-adhd` | `context-conditional` | `lifecycle-document-output` |
 | `harness-orchestrator` | `i-have-adhd` | `context-conditional` | `lifecycle-document-output` |
-| `yss-ddd-scaffold-generator` | `yss-backend-scaffold-parent` | `context-required` | — |
 | `yss-ddd-scaffold-generator` | `alibaba-java-code-style` | `context-required` | — |
 | `yss-layered-mvc-scaffold-generator` | `alibaba-java-code-style` | `context-required` | — |
 | `yss-domain` | `alibaba-java-code-style` | `context-required` | — |

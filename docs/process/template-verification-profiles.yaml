@@ -192,7 +192,7 @@ syntax_files:
 - scripts/run-template-verification
 - scripts/verify-template-verification-scenarios
 routing:
-- patterns: [".agents/skills/yss-technical-design/**", ".agents/skills/yss-mvc-design/**", "scripts/lib/technical-design-boundary.mjs"]
+- patterns: [".agents/skills/yss-technical-design/**", "scripts/lib/technical-design-boundary.mjs"]
   groups: [technical-design, implementation]
 - patterns:
   - scripts/*backend-delivery*
