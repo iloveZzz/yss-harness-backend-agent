@@ -16,6 +16,12 @@
     },
     "ayghri/i-have-adhd": {
       "revision": "7b9069b39972e269e61bd95c2f66ebb90cac6a02"
+    },
+    "iloveZzz/yss-ui": {
+      "revision": "c4d958f18cc947cb91cbe1bd48783fa4601cc18f"
+    },
+    "iloveZzz/yss-harness-design-agent": {
+      "revision": "e2a4e726c7a34ddbf2658749b3ceb4c913f4530e"
     }
   },
   "skills": {
@@ -24,7 +30,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/alibaba-java-code-style/SKILL.md",
-        "effectiveHash": "ffeea0ac5a5873caa65701e93aaccc6ac1775db1c526d07a20668c989105cc73",
+        "effectiveHash": "5ba8d937bd75a2405dc4292ecbf50fb658dcfeba180e8e31f99b1ad00a1cb75b",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -36,7 +42,7 @@
         "source": "tt-a1i/archify",
         "sourceType": "github",
         "skillPath": "archify/SKILL.md",
-        "effectiveHash": "44a0e97ff86ee69e90e4bbd67b6e6f89aa415891d4675b028620928d128bc437",
+        "effectiveHash": "1bd1b10fe185d6a6eef0b3ea79a6e885b5fd66c02a3b9faba01cd0be6c35cd2f",
         "sourceRevision": "199360cc6687a7857b54dd188d4922b09e466a4b",
         "upstreamHash": "202082693c0b6cfe5c9c428f46f323f4159bc96c9c98220fed57167dab4c222b",
         "adaptationRef": "docs/agents/archify-integration.md",
@@ -51,22 +57,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/architecture-agent/SKILL.md",
-        "effectiveHash": "3494f4a4d616d40aef13ba07eb304032834e99104a31aa3a874841184056f0c1",
-        "targets": [
-          ".agents/skills",
-          ".codex/skills",
-          ".cursor/skills",
-          ".pi/skills"
-        ]
-      },
-      "ask-matt": {
-        "source": "mattpocock/skills",
-        "sourceType": "github",
-        "skillPath": "skills/engineering/ask-matt/SKILL.md",
-        "effectiveHash": "605007c54707fa55457cc9c2a7f26829a16db8f9512c469dfccba70e569fc174",
-        "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
-        "upstreamHash": "0261a2abbd43cc5bb391878106cda2eb7c4eabdde9ba5701b51d831f6e98f658",
-        "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
+        "effectiveHash": "63bf4984a2603a7d884c7db0d82142dfc6007e50bfe411420a69af4c6d012024",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -78,7 +69,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/backend-agent/SKILL.md",
-        "effectiveHash": "e1e359739688f043bb49c6e2b6fa160bb85fd7579432b56d52afdca3f80ba20f",
+        "effectiveHash": "eaeb2f58e5d71f02492f38ed2482c7d66a72a3ae056f987bbccbb0b866167647",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -90,7 +81,7 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/engineering/code-review/SKILL.md",
-        "effectiveHash": "f7df99574d2dc3bc764587f3b13c272169d385835efceb9dd7f5573750d908ad",
+        "effectiveHash": "94e1935a94403fa88af25a553eead68f7ba5ec7d11186cc5dc06eaae49eaf94f",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "12daafb9c4f77deb3c3303dc2e6f8a3c2a0ff7928fc004af959ba18b8bd38068",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
@@ -105,7 +96,7 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/engineering/codebase-design/SKILL.md",
-        "effectiveHash": "dea14553fbcb4d43c65759cf4198c8cd61c017e39e53fe1d2abc9540f246c645",
+        "effectiveHash": "ac0b3fab747b74bcf9b5fd21425c10853417e2097a45cdda96734991e8a44bf5",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "9f457cc65ef2d70eb5b8a44a4dae2b139840078b6596a67ee8c4e95f5a0e6f5c",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
@@ -144,22 +135,10 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/engineering/diagnosing-bugs/SKILL.md",
-        "effectiveHash": "c2eed30155a02eae942534b4b95f1bf7ef227066e9e474a6a573cb7812628054",
+        "effectiveHash": "15b8e2836976665738db7057678cb3a9ff63a8ab8d82274594bd8b068a523915",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "bcdaec9e1033901c396437fcb102161d8ad3cd87632007aaf270b19e03e70117",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
-        "targets": [
-          ".agents/skills",
-          ".codex/skills",
-          ".cursor/skills",
-          ".pi/skills"
-        ]
-      },
-      "dispatching-parallel-agents": {
-        "source": "project",
-        "sourceType": "local",
-        "skillPath": ".agents/skills/dispatching-parallel-agents/SKILL.md",
-        "effectiveHash": "375d7445c2b7fb800f526e5cf486d9eb90b1258b0a0efd55eb4eeb0a41deb05e",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -171,7 +150,7 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/engineering/domain-modeling/SKILL.md",
-        "effectiveHash": "6bcb9c6af3a7a220d40eacf4a7f025501062d8b795c8c00e74991e7621761504",
+        "effectiveHash": "e670c36709c31c0801c0635397d2d9662d74bb777825b16d707f2902dd6fad0e",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "2bc3bb0a64ea9c6f5c3bcf78fc17f0fcdc7c062edc547ef006441de0b576d248",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
@@ -186,7 +165,7 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/productivity/grill-me/SKILL.md",
-        "effectiveHash": "93099c9750eee1b5cfb6d1fd124fc12dfa52ff35d55f32e6682a2cb57edc241b",
+        "effectiveHash": "916cf7ff0d81cf47fe578bd86695e09a53fbe8a4b371586e19dde6573549e88d",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "5a13e157f85835632b132390a162d234822658b6a544f31cc2578280062bd044",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
@@ -201,7 +180,7 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/engineering/grill-with-docs/SKILL.md",
-        "effectiveHash": "76f67ac711021f37e5a6d02fea68e37fc0444fa3b5b226e5642f243b1c02a7f8",
+        "effectiveHash": "8d3fbdd09fc1ab2efb8046e7d61f6d50ed9db88f8fefb17d0e2ca8c31ad8caa9",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "6b1292031c4f38a11309b9dad9be1141c1921c6edf86d1ae6da8b048fa71a349",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
@@ -216,7 +195,7 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/productivity/grilling/SKILL.md",
-        "effectiveHash": "8410fabc07f272f39567903bccf6108358a79e08542c888c00b0d5e47b9e0d3c",
+        "effectiveHash": "579b0a459f1ec960ef6a489811a285f74b4a19220d0bc8d0c1cde2c4d8bfaabb",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "0ca4cfe5105d79c6ef6755491492e056c43e88b82666376d8ecd7fac695d96e6",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
@@ -231,7 +210,7 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/productivity/handoff/SKILL.md",
-        "effectiveHash": "c97a305f5ca0b6fa21ca82a009ac5a553acd02aab63cf59de939f75ac7797393",
+        "effectiveHash": "4f7ef8b1c4e907fbf0de8e1533a16df3a991def76ef67dcb6c54fa6433d7f483",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "e5a44fccc710f5402deee06beaf5178397885765773375f186aefd179565f23f",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
@@ -246,7 +225,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/harness-orchestrator/SKILL.md",
-        "effectiveHash": "49020bc6a2f0d979b584522fc265b55b133fe9474c6aa6de1c30aa30e4887570",
+        "effectiveHash": "2679a912dbf7af9d23f7940b7fbade8f226cf1a9fc93914dc8a462b4faa39d74",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -258,7 +237,7 @@
         "source": "ayghri/i-have-adhd",
         "sourceType": "git",
         "skillPath": "skills/i-have-adhd/SKILL.md",
-        "effectiveHash": "bbfed7ace2613bbe1f5a52eba410fc48ff062955ee677de1c530d0f6b908336d",
+        "effectiveHash": "efabaa2a67780462997fdebadee3a9731a16368d158c79c9df5ae50e0983debf",
         "sourceRevision": "7b9069b39972e269e61bd95c2f66ebb90cac6a02",
         "upstreamHash": "4c88635cbcb4765b63528d608d27589596840708e89607fda9c9fa5726c11f7e",
         "adaptationRef": ".agents/skills/i-have-adhd/references/yss-adaptation.md",
@@ -273,7 +252,7 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/engineering/implement/SKILL.md",
-        "effectiveHash": "451c7a1f5ad800f11bb1d009fedde90361d82a835ed8d232648f5dc43f8f74b4",
+        "effectiveHash": "219f59dbfe734ac06ff1e29a21deaf82bbecbac3186fc1f9fcbb076dcf329d70",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "b49a049477c7eec7f8dd90745dbc3f27bf75617b832d5b5f33c55aab7638a12e",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
@@ -300,7 +279,7 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/engineering/improve-codebase-architecture/SKILL.md",
-        "effectiveHash": "98ca22a0717a1e659e9f4714d2c7fa27afdd3497243cd2290fe5a4e04e111e78",
+        "effectiveHash": "de5c5a6d6db3b1c665a4e82cf18dcaa4c39360b50b3ebaedf52e072f2614aada",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "86f5e0413fa5b42b8e954858a09ce5a73187c61169f1b3b199bc79416fd78086",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
@@ -315,7 +294,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/java-backend-commit/SKILL.md",
-        "effectiveHash": "354906d8615e707ebe6336742ba511a0655119cf8348cb79a1162f31b700bb59",
+        "effectiveHash": "25f147a114dbbb59c626d737bc284d972c9d51c29ef9160bb87001632ea8d78d",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -327,7 +306,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/llm-wiki/SKILL.md",
-        "effectiveHash": "0017eec25d6391f4ece7e13ff8bbe12b2b8150b1775b08eb8aa2ce60dfbdcd4e",
+        "effectiveHash": "a4d68df4005133466e75521ff98b03022341c0908809bfda491b74301993e96e",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -339,23 +318,8 @@
         "source": "claude-dev-suite/claude-dev-suite",
         "sourceType": "github",
         "skillPath": "skills/languages/lombok/SKILL.md",
-        "effectiveHash": "992ff940addfa8413ea5c59c3606ebd04933878c0fd0bdecf2dc602641c51bd5",
+        "effectiveHash": "3bfbafab4700d95bfa51a948fe6440140a4840450520ca012c654aa4b3c23759",
         "upstreamHash": "b27bd55f695271de1c22fbdc1c4c4520ed48f05e6352eb760bfc32822139475e",
-        "targets": [
-          ".agents/skills",
-          ".codex/skills",
-          ".cursor/skills",
-          ".pi/skills"
-        ]
-      },
-      "loop-me": {
-        "source": "mattpocock/skills",
-        "sourceType": "github",
-        "skillPath": "skills/in-progress/loop-me/SKILL.md",
-        "effectiveHash": "d7ddf6cf5a7e17dfa274c5a097e03b215a9259c7beea809a1d45ce183ad49bef",
-        "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
-        "upstreamHash": "a2cb563c12a44443f8f64b62e5af7168322931e2c04f05808c10e2944e6bae48",
-        "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -367,7 +331,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/maintaining-skills/SKILL.md",
-        "effectiveHash": "98dd89fca50ef2cc50b26831daa8501cd514fb9e23414299f1d2396a42c9f529",
+        "effectiveHash": "c9939b92e1914e9e9c7a07d3c28c94a5ba15407c0f69a662090c0bb84f74bc3b",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -379,23 +343,8 @@
         "source": "claude-dev-suite/claude-dev-suite",
         "sourceType": "github",
         "skillPath": "skills/languages/mapstruct/SKILL.md",
-        "effectiveHash": "2228eaef072f627ad69dfa8c1ddfc7f1257652e74a9930c19a6237c571be6351",
+        "effectiveHash": "bd5d4f1151d6a9c27ddffcc0da5879b88eb61eec609cf7ea490778213a8552f4",
         "upstreamHash": "50dcb3a41a92bb42b6714e8ab9fd1e7149fa89774a05c6e21c7711368dbb6443",
-        "targets": [
-          ".agents/skills",
-          ".codex/skills",
-          ".cursor/skills",
-          ".pi/skills"
-        ]
-      },
-      "migrate-to-shoehorn": {
-        "source": "mattpocock/skills",
-        "sourceType": "github",
-        "skillPath": "skills/misc/migrate-to-shoehorn/SKILL.md",
-        "effectiveHash": "292b384215d803b52e07a7f463586a4a4e9d1ad89ac0019600ec80af258a648d",
-        "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
-        "upstreamHash": "a556e54775ab12f2ee8a9ac898fd70de4ae07fd3819039bc8fce334f9e56b54f",
-        "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -422,24 +371,9 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/engineering/resolving-merge-conflicts/SKILL.md",
-        "effectiveHash": "2c01ba50b0c9707fed7c9080add996caa5e14f05c9f910ad19198b426e645986",
+        "effectiveHash": "b1fd57782c4699ca4b19dd4322e45c84c3e9d210d3b73d65f53230fe56ee779c",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "310fa72a34cddd1dd1a9790f9ebc17bf2c83caeae5cdf87e2485be8b1abec90e",
-        "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
-        "targets": [
-          ".agents/skills",
-          ".codex/skills",
-          ".cursor/skills",
-          ".pi/skills"
-        ]
-      },
-      "scaffold-exercises": {
-        "source": "mattpocock/skills",
-        "sourceType": "github",
-        "skillPath": "skills/misc/scaffold-exercises/SKILL.md",
-        "effectiveHash": "30b24d603cdb7e0c82263f264e0a9b52f01188683f7083df88512457b5a9ecb6",
-        "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
-        "upstreamHash": "3a1e2a2dd40691e229bae49d18b61e0304f12b6fe270dade1aadcb984c02d77e",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
@@ -452,24 +386,9 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
-        "effectiveHash": "6065de560faa1e99765df3b402eac3685050f70966a316724801fd140f664484",
+        "effectiveHash": "e3818961ce340fb1bec68123241b2a8baaa5b381e39bab75c1f7719d53fe09bc",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "80cd6b5be4f67913f1b10f5acd97fccaeb6401682ae7ff3a971460cb73d86cbe",
-        "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
-        "targets": [
-          ".agents/skills",
-          ".codex/skills",
-          ".cursor/skills",
-          ".pi/skills"
-        ]
-      },
-      "setup-pre-commit": {
-        "source": "mattpocock/skills",
-        "sourceType": "github",
-        "skillPath": "skills/misc/setup-pre-commit/SKILL.md",
-        "effectiveHash": "de068adf75caf27aae0e80f201c5f4f7eda4f279388120ffb8e6b58533acf34a",
-        "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
-        "upstreamHash": "89aaa5ee01b7ffdee592f2ab7a6853cebe20d7bf2479871698aeadf4d000204c",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
@@ -482,24 +401,9 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/engineering/tdd/SKILL.md",
-        "effectiveHash": "020e48193f19c303f462ac6c6bf16548f10e3b1f706df562f8fb8f6b3efb43a6",
+        "effectiveHash": "b6bbe6b93000fdfa708d88090f463a88755aa70056ce487bd7587ff96877b5b0",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "28b5e430968370f51b03b88b4b4a046286192733d2f45bd5b8049e16f45fd234",
-        "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
-        "targets": [
-          ".agents/skills",
-          ".codex/skills",
-          ".cursor/skills",
-          ".pi/skills"
-        ]
-      },
-      "teach": {
-        "source": "mattpocock/skills",
-        "sourceType": "github",
-        "skillPath": "skills/productivity/teach/SKILL.md",
-        "effectiveHash": "d646b14188296c5a2658360ac13e7236f1ec564ca4674052ad1c3d3c4fbba058",
-        "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
-        "upstreamHash": "7e67f13dc27781aad061d1eee61676c39c51d4d7ad6d7dc07ef943653c6e01ff",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
@@ -512,7 +416,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/test-agent/SKILL.md",
-        "effectiveHash": "55b6994433eaf0bc0ac2d72eda3df1f4bbbb49d605eb64d76a24f159e52821d7",
+        "effectiveHash": "fbad9047672ca4d715d8b36b04233d0be1c25e674fc45d89f8cc583c80920ab3",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -524,7 +428,7 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/productivity/to-questionnaire/SKILL.md",
-        "effectiveHash": "3d3e99445e02a976bca6107ff081eda1fd05c2d509224f57cdb5ae73de5075ce",
+        "effectiveHash": "17507a6727412ba31fcd948083478d140d0198d5febc636cdc094cfad7ae0f68",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "915ac22f1133fd4a7899ac6536e704cae57f1104d45745b32193d1572332868f",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
@@ -539,7 +443,7 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/engineering/to-spec/SKILL.md",
-        "effectiveHash": "cc76a65e084cb76f32a881e8e210d6d7045b4dcc8d6f478529158e20e5c919a0",
+        "effectiveHash": "7c4f7d5c27899d57e91f6fa5c8b2749280bcc1c326dcfabf862f8c9a29c14c95",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "f8041146ec1678c32304f46c9de99b73a4b5dadf664e35a8124be47c4cfe3196",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
@@ -554,7 +458,7 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/engineering/to-tickets/SKILL.md",
-        "effectiveHash": "292e1973b3d84f99a8797ace03887077ec2828c140261304657bc9257ca27c6a",
+        "effectiveHash": "9bed48c0570a2af80cc44dff4768f8ced1f741e1898753364646833ade9bf188",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "597a1a0af4f7391ab459a02a3f33576109b6bc61ecdc5e7e05149336858b4f29",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
@@ -569,7 +473,7 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/engineering/triage/SKILL.md",
-        "effectiveHash": "2b2e3cbc8be66e2fca6192a1ab044e93add247f65ef5eb51426a91f96c35f4e1",
+        "effectiveHash": "a249cdf5e4f6a6f714f7c8f315e91d2e136a923fcd54347eb34f122e40d79e39",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "461668611d1bd0eeb0533f347c11690a556c966a75938363a171914dcc42481a",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
@@ -596,7 +500,7 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/productivity/wait-what/SKILL.md",
-        "effectiveHash": "3fadeb8eea01fc56db5950144cc83ca1eaaf1410dfc94e72c58359470d871212",
+        "effectiveHash": "dee6440f7d82c08329a519fe5d58490e8adc7d5df12584e005b9e560a30ad025",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "3f2e7e2ce8820380c08df1d6f2d8dc6aaefe5c2857d00a7190990c62d4039316",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
@@ -611,24 +515,9 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/engineering/wayfinder/SKILL.md",
-        "effectiveHash": "b6a14c80299f9173bdefa044e1da6a0e381c7785317993ab515b8f129edcbc98",
+        "effectiveHash": "6bb16404a8dcaaa0b5dd4418021653dfe3143738d5d6ceb0eeacbce5ef328afe",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "93d2a866764b048ad641e82e27e7a1940fc370e7933470bffeb937fa1fb3922b",
-        "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
-        "targets": [
-          ".agents/skills",
-          ".codex/skills",
-          ".cursor/skills",
-          ".pi/skills"
-        ]
-      },
-      "writing-beats": {
-        "source": "mattpocock/skills",
-        "sourceType": "github",
-        "skillPath": "skills/in-progress/writing-beats/SKILL.md",
-        "effectiveHash": "9ce8e35b980128cee069da05b7213b1a223bdeed8c5478a4d8dd2fb318a9b6dd",
-        "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
-        "upstreamHash": "66a82ad5770ca0840a38e926b1aa97ec8acfe045a89ac5652c93b877dd368c41",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
@@ -641,39 +530,9 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/productivity/writing-for-agents/SKILL.md",
-        "effectiveHash": "ab9bd0b8194e79b371583548024d57781eda0f6797d39d64f0bdd81ba585b705",
+        "effectiveHash": "88b5fd77c40e9f0eef1616ffc07f9a75563c0b32f50a473976c01c1ca1d0000d",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "0071124a923559493bc8924a90fb87bceb048d31ad2ce785fa4281d7c506bfa7",
-        "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
-        "targets": [
-          ".agents/skills",
-          ".codex/skills",
-          ".cursor/skills",
-          ".pi/skills"
-        ]
-      },
-      "writing-fragments": {
-        "source": "mattpocock/skills",
-        "sourceType": "github",
-        "skillPath": "skills/in-progress/writing-fragments/SKILL.md",
-        "effectiveHash": "3be76523ce90b6ea60f884220ea250d898d438e7813f0907d7cc1016aab1e190",
-        "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
-        "upstreamHash": "46528d15fd7aed4814ba37b68cb78c735ac4a8dbf0dd8fbbff16e5a528fd538d",
-        "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
-        "targets": [
-          ".agents/skills",
-          ".codex/skills",
-          ".cursor/skills",
-          ".pi/skills"
-        ]
-      },
-      "writing-shape": {
-        "source": "mattpocock/skills",
-        "sourceType": "github",
-        "skillPath": "skills/in-progress/writing-shape/SKILL.md",
-        "effectiveHash": "d2036087f7b91f97d5b9a01b5d2e71017530030af878b3da6a9c7fc9b0190b15",
-        "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
-        "upstreamHash": "00519308a443c078a76566c7e19b4986367f5300305eb3e480120aac148afdc3",
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
@@ -686,7 +545,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-application/SKILL.md",
-        "effectiveHash": "6e4c72d653e6e17065b957fe64ed62883280eb1a4c1b0ef0f025676cd41cacab",
+        "effectiveHash": "6851c241438ae9a904515286ea2123037ce8649952a52dce364dccc19799f9e7",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -698,7 +557,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-audit-log/SKILL.md",
-        "effectiveHash": "c2ce3e78f4aab852f48818391e132323fc344a6ca41ea991b8adeff1cf5fb7c0",
+        "effectiveHash": "00685574996268f18e94c9a6aa2974f9f6ee81ccdc84dfe87134cb420335b6cf",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -710,7 +569,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-cache/SKILL.md",
-        "effectiveHash": "060bb374822820c29799db752d3e42b1a18837276413b2ca9cd76a83aea7025d",
+        "effectiveHash": "aa18e0996bdc49f0d7ee4a75f49f8ab765259ec3b60d6e9bfe871c3c2f6a8346",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -722,7 +581,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-ddd-scaffold-generator/SKILL.md",
-        "effectiveHash": "08b6d3cde4eb32ef41180c2222c7b442f0ccbf0c01bb7c22b4441c2ca106f369",
+        "effectiveHash": "e12077985398d14fa59337218f950285333dc92c854cc9a9946d1aa1d3aaeb92",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -734,7 +593,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-distributed-id/SKILL.md",
-        "effectiveHash": "0b3fde05c11c4d60f8379a99d4d79961e5b88d2f82063a5a724dd93f27115ced",
+        "effectiveHash": "717cf91b5087dad616ed79d1ff1f4ca8b793b74f672ca3f19ee733640c65fbd1",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -746,7 +605,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-domain/SKILL.md",
-        "effectiveHash": "21a7389552637efb026782ad8c813256be0f03b38cd99afeac51527ac579560e",
+        "effectiveHash": "e682e141ac6cdb9d97296f270e314a6c7d00ebf574f8a9aaba557dcd8f6553b7",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -758,7 +617,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-dto/SKILL.md",
-        "effectiveHash": "1109e1064ee11cd3cf23acfba5d1d180f86eac38339c45e7f4082810620f2e79",
+        "effectiveHash": "52f9f4c6c4b675918f84d1649ad76bbcc379ed683c072e95e418c33c7083133c",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -770,7 +629,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-excel-mvc/SKILL.md",
-        "effectiveHash": "10fc1b75e619a7ee9310d9a88563ebfbd8175371c6c767aa5df4fbb26e4fb439",
+        "effectiveHash": "e16f6b5f08ac533ccd7bb5e9b533a1774b0a31944c270667d7d90cfe2d07148a",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -782,7 +641,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-exception/SKILL.md",
-        "effectiveHash": "a6acb349c1a44088cb168a591bd5a021b8355e773de5c3986f1fcd31af9f575d",
+        "effectiveHash": "ee0ed28408ad623e97cc34425a41cc57c9dce090f1b1057100c4126ba935ebf9",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -794,7 +653,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-implementation-contract-compiler/SKILL.md",
-        "effectiveHash": "ab0cddf6473f7f3f59a7ba0605946cf070b15df97d1ffe744082e5edfed0832c",
+        "effectiveHash": "8d002159df7b0ed42a837b181a012b54994e323a70378e8b23b92173147f1c86",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -806,7 +665,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-layered-mvc-scaffold-generator/SKILL.md",
-        "effectiveHash": "7057805c73b9953518c81e9fadc468171df1a91fa4bc3a5a3c27ddbf661aab8a",
+        "effectiveHash": "226303f67649e8639ae5a565c7478a06add575a021529e1f0aabd59661a2498d",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -818,7 +677,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-mvc-data-analysis-project-initializer/SKILL.md",
-        "effectiveHash": "2f9b40d9fd325b66ada471d27d931ab15f5bcbaf58c2b01b3b01d26974a3072d",
+        "effectiveHash": "5d8711cc0b7fa5ccacbabc0916c7ef11bb82075db8b08260f08221c0cf91895c",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -830,7 +689,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-mvc-design/SKILL.md",
-        "effectiveHash": "5a8151976c9f3aef7215e2efce50bc09cb17f65d22dfcf11e4542154a292c805",
+        "effectiveHash": "790b1e1e3fae2aab9e4ff0e17d0f79fffa14c3a765134bb4952069bde892be14",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -842,7 +701,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-mybatis/SKILL.md",
-        "effectiveHash": "f31a11d0f8a4b4e1ffed5e50072641c7322fed372e2be889fa5be921b73680fb",
+        "effectiveHash": "ba5d6ff2f044df721b3c0da3f999a08002cd51e4bab38e5c3e6cdb1f15222f50",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -866,7 +725,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-openapi-governance/SKILL.md",
-        "effectiveHash": "53a9553e29ef0755030108b6c4aa510237f6d001d53a5483d1d816cc8a3c3613",
+        "effectiveHash": "4b228c755f085eb718d18884d62907a45601cf275ca0fb60f438fefcae0e671f",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -878,7 +737,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-repository/SKILL.md",
-        "effectiveHash": "2927cd203f7d1dbd3afc7811025c6b6124b945bb686eb16607b0b87e51708dbc",
+        "effectiveHash": "9cb33fbc026c574f06e7009690a36836768a1d2dbab47d3ca681fba52ca3e924",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -890,7 +749,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-research/SKILL.md",
-        "effectiveHash": "cb0fa1d978deaa36b80f6fcd495f50c198d7849ed49d16693dfa39f642034ebc",
+        "effectiveHash": "636363b4d4108a1799f6603af6f55ef4104c8668b32bab71d0d154e0b3b8e444",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -902,7 +761,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-resilience4j/SKILL.md",
-        "effectiveHash": "54a569713037c57a839264733a72a76b3722c17d75f272c6269b64c23f205082",
+        "effectiveHash": "525849a2df43a8665b056ac06deac6a733a9fd1aba95195bf5a85a419fc4de5b",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -914,7 +773,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-security-algorithm/SKILL.md",
-        "effectiveHash": "301acf5ad4e0ee4555e352e4731d067f2fc6336541bff6c8a15ec98243da103f",
+        "effectiveHash": "4dd8ccc16f6d24c0d9676d0ceb710a712ade1cee63493afba72d0d96b10251d8",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -926,7 +785,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-skill-source-index-refresh/SKILL.md",
-        "effectiveHash": "e8d820a249f1422ce5c5863910f1c1648ab85bd90707a6ed43b8ba34f81f9774",
+        "effectiveHash": "fd02c3fcc87295c1eb37ac7c5227116277e4acb5446979bd14813f96e48a2b8f",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -938,7 +797,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-tactical-design/SKILL.md",
-        "effectiveHash": "8c1bb1e2cad6fb811910ab91f712bf5223b8e9af1beed012053c8b2a7da874ce",
+        "effectiveHash": "fd692bd992ed7936f1f1d3fbeed9df3299bb4b3e9ff057a992e608a806665a89",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -950,7 +809,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-technical-design/SKILL.md",
-        "effectiveHash": "94423a69709aa72f9f1ac77691f8b341a7bcd181f989fb36b2b5e07f0b436e25",
+        "effectiveHash": "ee6abf1530844281c86fd87e18f12ffaadf6c368fe4bef1213b75d57bd9b6bde",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -962,7 +821,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-up-springboot3/SKILL.md",
-        "effectiveHash": "475396728dd965bbfd263654ec35dbf024ca2639c29a964d759549cfff739281",
+        "effectiveHash": "79c92c75a78c2bff672da225e8696b344852c5702590212a067d9891da0a955a",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -974,7 +833,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-userinfo/SKILL.md",
-        "effectiveHash": "daa8d7b2db370808c566e97bcde62398e6f8fff3a9c9171f93ab3709d10b5047",
+        "effectiveHash": "159305291157e7b8be38518899a59918a436d7929474cbbc0d5039cc1efb303e",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -986,7 +845,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-validation/SKILL.md",
-        "effectiveHash": "aa85fcce10c3566a7838fa76362314ab4aa3f1388a09c671d3b1fb073037f540",
+        "effectiveHash": "a28a6b6aee873c89c1549cfe4a7199f0fc8862c94a5839e0137b344a4c500eaf",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -998,7 +857,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-web-controller/SKILL.md",
-        "effectiveHash": "759c33156a8e513a241bcad5a7a577424b0adeec475cd7c71ac28a8c4f8cedda",
+        "effectiveHash": "4dc409830a4d9e1701d47b58cc1d3727d07261ff744b3deeacd4549acbc7d9a1",
         "targets": [
           ".agents/skills",
           ".codex/skills",

@@ -123,7 +123,7 @@ work_unit_routes:
         - yss-tactical-design
         - domain-modeling
       layered-mvc:
-        - yss-mvc-design
+        - yss-technical-design
   work-unit.implementation-repository-preparation:
     primary_skill: harness-orchestrator
     supporting_skills:
