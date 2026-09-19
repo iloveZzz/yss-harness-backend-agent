@@ -118,6 +118,7 @@
 | `yss-openapi-governance` | `i-have-adhd` | `context-conditional` | `lifecycle-document-output` |
 | `yss-research` | `i-have-adhd` | `context-conditional` | `lifecycle-document-output` |
 | `harness-orchestrator` | `i-have-adhd` | `context-conditional` | `lifecycle-document-output` |
+| `yss-ddd-scaffold-generator` | `yss-backend-scaffold-parent` | `context-required` | — |
 | `yss-ddd-scaffold-generator` | `alibaba-java-code-style` | `context-required` | — |
 | `yss-layered-mvc-scaffold-generator` | `alibaba-java-code-style` | `context-required` | — |
 | `yss-domain` | `alibaba-java-code-style` | `context-required` | — |
@@ -149,4 +150,3 @@
 | `yss-exception` | `yss-dto` | `context-required` | — |
 | `yss-technical-design` | `i-have-adhd` | `context-conditional` | `lifecycle-document-output` |
 | `yss-technical-design` | `yss-tactical-design` | `coordination-only` | `domain-driven` |
-| `yss-technical-design` | `yss-openapi-draft-review` | `review-only` | `api-impact` |
