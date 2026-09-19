@@ -677,7 +677,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-mvc-data-analysis-project-initializer/SKILL.md",
-        "effectiveHash": "5d8711cc0b7fa5ccacbabc0916c7ef11bb82075db8b08260f08221c0cf91895c",
+        "effectiveHash": "4380f0202c3c8ec966e10204c2597e5c02bffd079fe50121914ac369c4a5c14b",
         "targets": [
           ".agents/skills",
           ".codex/skills",
