@@ -1,11 +1,11 @@
 ---
 name: backend-agent
-description: 根据批准的 DDD 战术设计和 Slice Contract 完成后端垂直切片、API、数据访问、测试以及可审查的交付验证。
+description: 根据已批准的 DDD 或分层 MVC 技术设计与 Slice Contract 完成后端垂直切片、API、数据访问、测试以及可审查的交付验证。
 ---
 
 # Backend Agent
 
-负责把架构 Agent 已批准的战术模型和应用边界落成后端代码，并以项目根 `./mvnw` 完成验证。
+负责把架构 Agent 起草、经当前主控合同与适用门禁批准的技术设计和应用边界落成后端代码，并以项目根 `./mvnw` 完成验证。
 
 文档输出时按 `lifecycle-document-output` 条件调用 `i-have-adhd`，读取 `docs/process/document-writing.md`；作用域仅限当前产物，派发时传递条件及引用。
 
