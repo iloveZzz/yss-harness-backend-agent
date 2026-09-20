@@ -1,4 +1,4 @@
-package {{base_package}};
+package {{base_package}}.architecture;
 
 import com.tngtech.archunit.core.domain.JavaClass;
 import com.tngtech.archunit.core.domain.JavaClasses;
@@ -9,7 +9,7 @@ import com.tngtech.archunit.junit.ArchTest;
 
 /** 空骨架可无业务类型；首切片由批准合同传入职责包和必须加载的实际类型。 */
 @AnalyzeClasses(packages = "{{base_package}}", importOptions = ImportOption.DoNotIncludeTests.class)
-class ArchitectureRulesTest {
+class LayeredMvcArchitectureTest {
     private static boolean inPackage(JavaClass type, String prefixes) {
         for (String prefix : prefixes.split(",")) {
             if (!prefix.isEmpty() && (type.getPackageName().equals(prefix)
@@ -35,24 +35,17 @@ class ArchitectureRulesTest {
     @ArchTest
     static void boundaries(JavaClasses classes) {
         for (JavaClass origin : classes) {
-            boolean domain = role(origin, "domain", "{{base_package}}.domain");
-            boolean application = role(origin, "application", "{{base_package}}.application");
-            boolean infrastructure = role(origin, "infrastructure", "{{base_package}}.infrastructure");
+            boolean application = role(origin, "application", "{{base_package}}.service,{{base_package}}.core");
+            boolean infrastructure = role(origin, "infrastructure", "{{base_package}}.repository");
             for (Dependency dependency : origin.getDirectDependenciesFromSelf()) {
                 JavaClass target = dependency.getTargetClass();
                 boolean targetWeb = controller(target) || role(target, "web",
-                        "{{base_package}}.rest,{{base_package}}.adapter.web");
-                boolean targetInfrastructure = role(target, "infrastructure", "{{base_package}}.infrastructure");
-                boolean targetDomain = role(target, "domain", "{{base_package}}.domain");
-                reject(domain && (targetWeb || targetInfrastructure
-                        || role(target, "application", "{{base_package}}.application")
-                        || inPackage(target, "org.springframework,org.mybatis,com.baomidou,org.apache.ibatis,"
-                            + "com.fasterxml.jackson,io.swagger,javax.persistence,jakarta.persistence,"
-                            + "javax.validation,jakarta.validation,javax.servlet,jakarta.servlet,com.yss.cloud.dto,com.yss.cloud.exception")), dependency);
-                reject(application && (targetWeb || targetInfrastructure), dependency);
-                reject(infrastructure && targetWeb, dependency);
-                // Exception translators may translate Domain errors. Controllers may not invoke Domain directly.
-                reject(controller(origin) && (targetInfrastructure || targetDomain), dependency);
+                        "{{base_package}}.server,{{base_package}}.rest,{{base_package}}.adapter.web");
+                boolean targetInfrastructure = role(target, "infrastructure", "{{base_package}}.repository");
+                reject(application && targetWeb, dependency);
+                reject(infrastructure && (targetWeb || role(target, "application",
+                        "{{base_package}}.service,{{base_package}}.core")), dependency);
+                reject(controller(origin) && targetInfrastructure, dependency);
             }
         }
         if (Boolean.getBoolean("yss.firstSlice")) {

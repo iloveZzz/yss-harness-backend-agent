@@ -51,6 +51,7 @@
 | `migration.springboot3` | `yss-up-springboot3` | `guidance`, `integration`, `troubleshooting`, `component-maintenance`, `review-input` |
 | `architecture.technical-design` | `yss-technical-design` | `guidance`, `integration`, `review-input` |
 | `architecture.mvc-design` | `yss-technical-design` | `guidance`, `integration`, `review-input` |
+| `governance.backend-spec-conformance` | `yss-backend-spec-review` | `guidance`, `troubleshooting`, `review-input` |
 
 ## Narrow Recipes
 
@@ -79,6 +80,7 @@
 | `backend.ddd-scaffold` | `scaffold.ddd`, `quality.java-code-style` |
 | `backend.mvc-scaffold` | `scaffold.layered-mvc`, `quality.java-code-style` |
 | `backend.springboot3-migration` | `migration.springboot3`, `quality.java-code-style` |
+| `backend.spec-conformance` | `governance.backend-spec-conformance`, `quality.java-code-style` |
 
 ## Impact Entry Mapping
 
@@ -149,3 +151,6 @@
 | `yss-exception` | `yss-dto` | `context-required` | — |
 | `yss-technical-design` | `i-have-adhd` | `context-conditional` | `lifecycle-document-output` |
 | `yss-technical-design` | `yss-tactical-design` | `coordination-only` | `domain-driven` |
+| `yss-backend-spec-review` | `alibaba-java-code-style` | `context-required` | — |
+| `yss-backend-spec-review` | `yss-implementation-contract-compiler` | `coordination-only` | — |
+| `yss-backend-spec-review` | `code-review` | `review-only` | — |

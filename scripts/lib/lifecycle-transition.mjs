@@ -1,3 +1,4 @@
+import { validateBackendReview } from "./backend-review.mjs";
 import { enforceFrontendDelivery } from "./frontend-delivery-boundary.mjs";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
@@ -162,6 +163,11 @@ export function validateImplementationRepositoriesReady(state, { exists = () => 
 }
 
 export function validateNextRoute(currentWorkUnit, nextRoute, state, options = {}) {
+  if (currentWorkUnit === VERIFICATION_WORK_UNIT && nextRoute === null) {
+    try { validateBackendReview(state, { root: options.root || ROOT }); }
+    catch (error) { return blockedResult(["backend-review-incomplete"], [error.message]); }
+  }
+
   if (["work-unit.technical-design", CONTRACT_WORK_UNIT, IMPLEMENTATION_WORK_UNIT, VERIFICATION_WORK_UNIT].includes(nextRoute)) {
     try { enforceFrontendDelivery(state, { root: options.root, phase: nextRoute === IMPLEMENTATION_WORK_UNIT ? "implementation" : "inputs" }); }
     catch (error) { return blockedResult(["frontend-delivery-blocked"], [error.message]); }

@@ -1,7 +1,8 @@
 schema_version: 3
 registry_id: yss.skill-routing
 status: active
-description: 技能身份、capability、任务模式、类型化依赖、分层、别名和默认可发现性的 单一可执行注册表。实现合同编译器与 Harness 编排器只消费通过本表校验的 canonical 技能；skills-lock.json 继续独立持有来源、hash 与投影完整性。
+description: 技能身份、capability、任务模式、类型化依赖、分层、别名和默认可发现性的 单一可执行注册表。实现合同编译器与 Harness
+  编排器只消费通过本表校验的 canonical 技能；skills-lock.json 继续独立持有来源、hash 与投影完整性。
 canonical_content_root: .agents/skills
 architecture_profiles:
   target-domain-model:
@@ -428,6 +429,14 @@ capabilities:
   - guidance
   - integration
   - review-input
+- id: governance.backend-spec-conformance
+  primary_skill: yss-backend-spec-review
+  provider:
+    kind: none
+  task_modes:
+  - guidance
+  - troubleshooting
+  - review-input
 recipes:
 - id: backend.ddd-domain-behavior
   architecture_family: domain-driven
@@ -545,6 +554,10 @@ recipes:
 - id: backend.springboot3-migration
   capabilities:
   - migration.springboot3
+  - quality.java-code-style
+- id: backend.spec-conformance
+  capabilities:
+  - governance.backend-spec-conformance
   - quality.java-code-style
 skill_dependencies:
   test-agent:
@@ -670,6 +683,13 @@ skill_dependencies:
   - skill: yss-tactical-design
     type: coordination-only
     when: domain-driven
+  yss-backend-spec-review:
+  - skill: alibaba-java-code-style
+    type: context-required
+  - skill: yss-implementation-contract-compiler
+    type: coordination-only
+  - skill: code-review
+    type: review-only
 invocation_contract:
   schema_version: 2
   scope: discovery-only
@@ -1162,6 +1182,14 @@ skills:
   impacts:
   - backend
   - api
+- id: yss-backend-spec-review
+  layer: specialist
+  maturity: verified
+  instance_default_discoverable: false
+  aliases: []
+  impacts:
+  - backend
+  - quality
 platform_skills: []
 external_skills:
 - id: frontend-agent
@@ -1225,6 +1253,7 @@ backend_skill_domains:
     yss-ddd-scaffold-generator: engineering-initialization
     yss-up-springboot3: platform-governance-migration
     yss-technical-design: technical-design
+    yss-backend-spec-review: platform-governance-migration
   deprecated_skills: []
 backend_source_index_contract:
   schema_version: 1
