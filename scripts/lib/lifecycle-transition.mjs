@@ -1,3 +1,4 @@
+import { assertTrackingTransition } from './stage-tracking.mjs';
 import { validateBackendReview } from "./backend-review.mjs";
 import { enforceFrontendDelivery } from "./frontend-delivery-boundary.mjs";
 import { createHash } from "node:crypto";
@@ -163,6 +164,8 @@ export function validateImplementationRepositoriesReady(state, { exists = () => 
 }
 
 export function validateNextRoute(currentWorkUnit, nextRoute, state, options = {}) {
+  try { assertTrackingTransition(currentWorkUnit, nextRoute, state, { root: options.root || ROOT }); }
+  catch (error) { return blockedResult(['stage-tracking-blocked'], [error.message]); }
   if (currentWorkUnit === VERIFICATION_WORK_UNIT && nextRoute === null) {
     try { validateBackendReview(state, { root: options.root || ROOT }); }
     catch (error) { return blockedResult(["backend-review-incomplete"], [error.message]); }
