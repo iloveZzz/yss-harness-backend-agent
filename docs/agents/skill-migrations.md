@@ -2,6 +2,10 @@
 
 本文记录已退役技能入口的迁移路径。退役技能不保留物理目录、投影或 lock 条目；本文件是历史名称的唯一持久兼容说明。
 
+## `grill-me` 入口退役（2026-09-24）
+
+`grill-me` 仅转发到 `grilling`，现已硬退役。新请求直接使用 `grilling`；旧 ID 返回 `skill-retired`，不保留兼容目录、投影、Registry 或 lock 条目。历史候选与冻结证据只读保留。
+
 ## DDD 分层包装入口收敛（2026-09-15）
 
 以下嵌套包装已硬退役，不保留 alias、物理入口或投影：`yss-backend-scaffold-adapter`、`yss-application-layer-reference`、`yss-domain-layer-reference`、`yss-infrastructure-layer-reference`、`yss-web-layer-reference`。旧 `yss-mvc-scaffold-generator`、`yss-mvc-data-analysis-project-initializer`、`yss-mvc-design` 和 `yss-backend-scaffold-parent` 同样不作为 Backend Agent 能力分发；数据分析初始化使用 `yss-layered-mvc-scaffold-generator` 的 `mvc-data-analysis-v1` Profile，MVC 设计使用 `yss-technical-design`。
