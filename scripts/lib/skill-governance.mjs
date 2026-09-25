@@ -12,7 +12,7 @@ function fail(message) {
 
 export function validateSkillGovernance({ read = (relative) => readFileSync(path.join(ROOT, relative), "utf8"), exists = (relative) => existsSync(path.join(ROOT, relative)) } = {}) {
   const cursorRules = read(".cursorrules");
-  for (const marker of ["docs/process/harness-profile.yaml", "docs/agents/yss-skill-registry.yaml", "harness-orchestrator", ".cursor/skills"]) {
+  for (const marker of [".template-spec/process/harness-profile.yaml", ".template-spec/agents/yss-skill-registry.yaml", "harness-orchestrator", ".cursor/skills"]) {
     if (!cursorRules.includes(marker)) fail(`Cursor 薄入口缺少路由标记: ${marker}`);
   }
   for (const stalePath of [".agents/skills/page-module-development/", ".agents/skills/api-integration/", ".agents/skills/use-table-height/", ".agents/skills/use-tree-height/"]) {

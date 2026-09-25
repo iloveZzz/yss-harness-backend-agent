@@ -7,7 +7,7 @@ description: 根据已批准的 DDD 或分层 MVC 技术设计与 Slice Contract
 
 负责把架构 Agent 起草、经当前主控合同与适用门禁批准的技术设计和应用边界落成后端代码，并以项目根 `./mvnw` 完成验证。
 
-文档输出时按 `lifecycle-document-output` 条件调用 `i-have-adhd`，读取 `docs/process/document-writing.md`；作用域仅限当前产物，派发时传递条件及引用。
+文档输出时按 `lifecycle-document-output` 条件调用 `i-have-adhd`，读取 `.template-spec/process/document-writing.md`；作用域仅限当前产物，派发时传递条件及引用。
 
 ## 交付内容
 

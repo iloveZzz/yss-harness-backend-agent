@@ -5,22 +5,22 @@ description: "编译或重验 YSS Slice Implementation Contract、最小 Skill �
 
 # YSS Implementation Contract Compiler
 
-已有生命周期资产优先用 `scripts/contract view <资产> --kind <类型>` 阅读；执行任务用 `--profile task --unit <ID>`，绑定与校验明细用 `--profile full`。视图不授予执行权限，仍按本 Skill 的原始来源和批准门禁处理。类型、准备和迁移见 `docs/process/contract-reading.md`。
+已有生命周期资产优先用 `scripts/contract view <资产> --kind <类型>` 阅读；执行任务用 `--profile task --unit <ID>`，绑定与校验明细用 `--profile full`。视图不授予执行权限，仍按本 Skill 的原始来源和批准门禁处理。类型、准备和迁移见 `.template-spec/process/contract-reading.md`。
 
 本技能是确定性的实现合同编译器，不是生命周期主控。它消费已批准且版本当前的输入，输出 draft、blocked 或 ready-for-lifecycle-review 的合同草案，由 `harness-orchestrator` 批准、持久化并设置 ready-for-agent。
 
-文档输出时按 `lifecycle-document-output` 条件调用 `i-have-adhd`，读取 `docs/process/document-writing.md`；作用域仅限当前产物，派发时传递条件及引用。
+文档输出时按 `lifecycle-document-output` 条件调用 `i-have-adhd`，读取 `.template-spec/process/document-writing.md`；作用域仅限当前产物，派发时传递条件及引用。
 
 ## 输入
 
-采用专职前端 profile 或显式 `frontend_delivery` 时，按 `docs/process/frontend-backend-delivery.md` 核验战略与后端联合交付；缺任一输入只诊断和回交，正式实现与恢复从当前批准的 Slice Contract 重验接收摘要和真实服务。
+采用专职前端 profile 或显式 `frontend_delivery` 时，按 `.template-spec/process/frontend-backend-delivery.md` 核验战略与后端联合交付；缺任一输入只诊断和回交，正式实现与恢复从当前批准的 Slice Contract 重验接收摘要和真实服务。
 
 必须读取 yss-project.yaml、CONTEXT.md、Spec / 战略设计、Technical Design Contract、API / 数据 / UI 影响、实现仓库登记、允许写路径和验证命令。输入缺失、未批准或过期时返回 blocked。
 
 当 backend `scaffold_status=required` 时，还必须读取当前 `scaffold-architecture-decisions.yaml`。Harness Orchestrator 先基于领域复杂度给出 `domain-driven` / `layered-mvc` 推荐，并通过 `gate.backend-architecture-platform-approved` 取得用户对架构与精确 Spring Boot 版本的同一次逐项目确认；本体选择只作为子项目预填默认，编译器不得自行默认、提问或批准。确认 DDD 时绑定 `yss-ddd-scaffold-generator`，确认 MVC 时绑定 `yss-layered-mvc-scaffold-generator`，并把 decision ref / id / digest、精确平台配置、Profile、确定性模块闭包、批准且当前的 Technical Design、Data Architecture Decision v1、API Contract Decision v1 及真实工程合同批准记录写入 scaffold contract schema v4。既有工程核验并复用当前登记架构及固定工程基线/POM 中的实际版本，不重新询问或生成。API `required` 时工程批准还必须直接绑定冻结 OpenAPI YAML；`not-applicable` 时必须绑定影响评估、原因和证据。历史 v3 只允许补齐技术/数据/API 对账后的 Manifest 恢复审计，不得新生成。
 
 
-接入与导出先按 `docs/process/delivery-preflight.md` 执行对应阶段只读预检；既有工程身份按 `docs/process/existing-backend-architecture.md` 读取原始证据，不补造生成器来源。无 UI 改动可承接当前确认的 `existing-ui-baseline`，新设计仍走原型；当前批准后仅允许登记与合同交集内的输出增量。
+接入与导出先按 `.template-spec/process/delivery-preflight.md` 执行对应阶段只读预检；既有工程身份按 `.template-spec/process/existing-backend-architecture.md` 读取原始证据，不补造生成器来源。无 UI 改动可承接当前确认的 `existing-ui-baseline`，新设计仍走原型；当前批准后仅允许登记与合同交集内的输出增量。
 
 ## 编译结果
 
@@ -52,7 +52,7 @@ description: "编译或重验 YSS Slice Implementation Contract、最小 Skill �
 
 ## 战略交接快照包
 
-使用 `scripts/strategic-handoff export / verify / import`；源资产冻结、规则身份与批准绑定、目标术语对账和逐条承接合同以 `docs/process/strategic-handoff-package.md` 为准。来自导入包时，战术合同绑定 `strategic_handoff`；批准/流转前执行 `scripts/verify-strategic-handoff-consumption --root <target> <tactical>`，切片消费追加 `--slice <slice-id>`。存在延期时仅允许无依赖且核验通过的切片继续；未知依赖扩大阻断。
+使用 `scripts/strategic-handoff export / verify / import`；源资产冻结、规则身份与批准绑定、目标术语对账和逐条承接合同以 `.template-spec/process/strategic-handoff-package.md` 为准。来自导入包时，战术合同绑定 `strategic_handoff`；批准/流转前执行 `scripts/verify-strategic-handoff-consumption --root <target> <tactical>`，切片消费追加 `--slice <slice-id>`。存在延期时仅允许无依赖且核验通过的切片继续；未知依赖扩大阻断。
 
 ## Slice v3 准备与批准
 
@@ -60,7 +60,7 @@ description: "编译或重验 YSS Slice Implementation Contract、最小 Skill �
 
 ## 后端脚手架平台承接
 
-消费Harness Orchestrator已确认的架构与 `platform_configuration` v2；不得自行选择、批准或静默升级 Boot/Java。平台清单执行 `scripts/backend-platforms` 查询；只允许已验证 YSS 组合，新生成缺少配置或证据即阻断。决定、合同、Manifest 与下游架构身份须绑定同一平台及兼容摘要。详见 仓库共享合同 `docs/engineering/backend-platforms.md`。
+消费Harness Orchestrator已确认的架构与 `platform_configuration` v2；不得自行选择、批准或静默升级 Boot/Java。平台清单执行 `scripts/backend-platforms` 查询；只允许已验证 YSS 组合，新生成缺少配置或证据即阻断。决定、合同、Manifest 与下游架构身份须绑定同一平台及兼容摘要。详见 仓库共享合同 `.template-spec/engineering/backend-platforms.md`。
 
 后端 Slice 解析出 `component_binding: required` 的 capability 或其主 Skill 时，必须在同一平台兼容条目中逐项解析 `component_capabilities`。编译结果保存 `component_bindings` 与 `component_bindings_digest`；未登记、未验证、架构证据缺失、构件坐标冲突或摘要漂移均阻断。旧合同含组件 Skill 但没有组件绑定时直接 `stale`，重新编译并交生命周期批准，禁止自动补字段后沿用原批准。
 

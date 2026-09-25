@@ -5,7 +5,7 @@ description: "维护、校验、冻结或导出 YSS OpenAPI 3.1 设计合同；�
 
 # YSS OpenAPI Governance
 
-已有生命周期资产优先用 `scripts/contract view <资产> --kind <类型>` 阅读；执行任务用 `--profile task --unit <ID>`，绑定与校验明细用 `--profile full`。视图不授予执行权限，仍按本 Skill 的原始来源和批准门禁处理。类型、准备和迁移见 `docs/process/contract-reading.md`。
+已有生命周期资产优先用 `scripts/contract view <资产> --kind <类型>` 阅读；执行任务用 `--profile task --unit <ID>`，绑定与校验明细用 `--profile full`。视图不授予执行权限，仍按本 Skill 的原始来源和批准门禁处理。类型、准备和迁移见 `.template-spec/process/contract-reading.md`。
 
 本 skill 负责 YSS OpenAPI 的 **YAML-first** 工作流：
 
@@ -17,7 +17,7 @@ Spec / 设计输入 → OpenAPI YAML Draft → 审查与 Freeze → JSON 派生�
 
 YSS DTO 的可复用 HTTP/JSON 映射由 `.agents/skills/yss-dto/references/openapi-wire-profile.yaml` 单一维护。它描述公开 wire shape，不是 Java 字段或 getter 清单；本 skill 必须消费 profile，不能在治理文档、feature YAML 和 JSON 中各自发明 `SingleResult`、`PageResult` 或 `PageQuery` 字段表。
 
-文档输出时按 `lifecycle-document-output` 条件调用 `i-have-adhd`，读取 `docs/process/document-writing.md`；作用域仅限当前产物，派发时传递条件及引用。
+文档输出时按 `lifecycle-document-output` 条件调用 `i-have-adhd`，读取 `.template-spec/process/document-writing.md`；作用域仅限当前产物，派发时传递条件及引用。
 
 ## 边界与职责
 
@@ -68,7 +68,7 @@ pnpm exec redocly bundle \
 2. **运行结构与治理校验**
    - 先执行项目 lockfile 锁定版本的 `pnpm exec redocly lint`；CI 可以包装调用，但 validation record 必须记录这条实际命令与退出码。
    - 检查 YAML 可解析、`$ref` 可解析、路径参数完整、operationId 唯一、examples 合法、schema 命名稳定。
-   - 从 `docs/api/templates/openapi-draft-validation-record-template.yaml` 创建 `<feature>-validation.yaml`，记录 YAML SHA-256 与 lint 工具链；运行 `scripts/verify-openapi-draft-validation-record --root <project-root> <record>`。自定义解析脚本可以补充诊断，但不能代替锁定的 Redocly lint evidence。
+   - 从 `.template-spec/api/templates/openapi-draft-validation-record-template.yaml` 创建 `<feature>-validation.yaml`，记录 YAML SHA-256 与 lint 工具链；运行 `scripts/verify-openapi-draft-validation-record --root <project-root> <record>`。自定义解析脚本可以补充诊断，但不能代替锁定的 Redocly lint evidence。
    - 先运行 `scripts/verify-yss-dto-openapi-profile`，并记录 profile 版本；检查 `/api/v1/` 版本策略（或记录例外）、`x-yss-response-wrapper`、`YssResultMeta` + `allOf` 具体 schema、统一错误结构、分页、幂等 / 乐观锁和契约测试 seam。
    - 每个响应都必须落成具体 endpoint schema：`SingleResult` 的 `data` 是具体对象或显式 nullable schema，`MultiResult` / `PageResult` 的 `data` 是数组；Java 的 `SingleResult<T>` / `PageResult<T>` 只能作为语义说明，不能直接写成 OAS type 或 `$ref`。
    - `code` 按 profile 只允许 `string | integer | null`，`dataType` 按 profile 为 `string | null`；`offset`、`needTotalCount`、`tempTotalCount` 不得进入客户端分页输入；`totalPages` 只有目标 HTTP mapper / fixture 证明后才能进入契约。Spec 明确改变认证或授权行为时，把对应 `401` / `403`、资源过滤和错误语义作为普通 API 行为检查。
@@ -82,7 +82,7 @@ pnpm exec redocly bundle \
 4. **从冻结 YAML 派生 JSON**
    - 使用上面的锁定 `redocly bundle` 命令生成 `docs/.scratch/<feature>/api/<feature>.json`，JSON 不纳入人工编辑面。
    - 对输出 JSON 重新执行解析 / lint（按项目工具链），确认 bundle 未产生组件重名冲突或无法解析的引用。
-   - 写入 `docs/.scratch/<feature>/api/<feature>-json-export.md`，可从 `docs/api/templates/openapi-json-export-record-template.md` 创建。
+   - 写入 `docs/.scratch/<feature>/api/<feature>-json-export.md`，可从 `.template-spec/api/templates/openapi-json-export-record-template.md` 创建。
    - 记录 YAML SHA-256、JSON SHA-256、OAS 版本、Redocly CLI 版本与 lockfile 引用、完整命令、metafile、`$ref` 例外以及结果。
 
 5. **交给下游前端**

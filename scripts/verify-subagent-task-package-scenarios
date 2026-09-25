@@ -104,7 +104,7 @@ function packageBase(roleId, taskId, workUnitId, kind, contractFields, stageId) 
     runtime_id: "runtime.skill-projection",
     execution_state: "Worker",
     workflow_status: "not-started",
-    contract: { kind, contract_id: kind + "-" + taskId, contract_version: 1, status: "issued", contract_ref: "docs/process/lifecycle-registry.yaml", ...contractFields },
+    contract: { kind, contract_id: kind + "-" + taskId, contract_version: 1, status: "issued", contract_ref: ".template-spec/process/lifecycle-registry.yaml", ...contractFields },
     inputs: ["CONTEXT.md"],
     objective: "执行有界 Harness Agent 工作单元",
     allowed_write_paths: ["docs/.scratch/"],
@@ -120,7 +120,7 @@ function packageBase(roleId, taskId, workUnitId, kind, contractFields, stageId) 
 
 function lifecyclePackage() {
   const value = packageBase("role.architecture-agent", "task-tactical-design", "work-unit.technical-design", "lifecycle-work-unit", {
-    lifecycle_ref: "docs/process/lifecycle-registry.yaml",
+    lifecycle_ref: ".template-spec/process/lifecycle-registry.yaml",
     artifact_refs: ["artifact.tactical-design"],
     gate_refs: ["gate.technical-design-approved"],
     contract_id: "lifecycle-tactical-design"
