@@ -560,6 +560,8 @@ recipes:
   - governance.backend-spec-conformance
   - quality.java-code-style
 skill_dependencies:
+  java-backend-commit:
+    - { skill: git-commit-core, type: context-required }
   test-agent:
   - skill: i-have-adhd
     type: context-conditional
@@ -740,6 +742,12 @@ agent_runtime_roots:
   cursor: .cursor/skills
   pi: .pi/skills
 skills:
+- id: git-commit-core
+  layer: maintainer-only
+  maturity: supported
+  instance_default_discoverable: false
+  aliases: []
+  impacts: [template-maintenance]
 - id: alibaba-java-code-style
   layer: specialist
   maturity: supported
@@ -811,13 +819,6 @@ skills:
   aliases: []
   impacts:
   - discovery
-- id: grill-with-docs
-  layer: compatibility
-  maturity: supported
-  instance_default_discoverable: false
-  aliases: []
-  impacts:
-  - discovery
 - id: grilling
   layer: core
   maturity: supported
@@ -860,13 +861,6 @@ skills:
   aliases: []
   impacts:
   - lifecycle
-- id: improve-codebase-architecture
-  layer: compatibility
-  maturity: supported
-  instance_default_discoverable: false
-  aliases: []
-  impacts:
-  - quality
 - id: java-backend-commit
   layer: maintainer-only
   maturity: supported
@@ -937,13 +931,6 @@ skills:
   aliases: []
   impacts:
   - quality
-- id: to-questionnaire
-  layer: maintainer-only
-  maturity: supported
-  instance_default_discoverable: false
-  aliases: []
-  impacts:
-  - discovery
 - id: to-spec
   layer: compatibility
   maturity: supported
@@ -966,13 +953,6 @@ skills:
   impacts:
   - lifecycle
 - id: using-git-worktrees
-  layer: maintainer-only
-  maturity: supported
-  instance_default_discoverable: false
-  aliases: []
-  impacts:
-  - setup
-- id: wait-what
   layer: maintainer-only
   maturity: supported
   instance_default_discoverable: false

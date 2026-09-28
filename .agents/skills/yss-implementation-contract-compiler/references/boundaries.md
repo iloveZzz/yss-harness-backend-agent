@@ -112,6 +112,7 @@
 
 | Skill | Dependency | Type | Condition |
 | --- | --- | --- | --- |
+| `java-backend-commit` | `git-commit-core` | `context-required` | — |
 | `test-agent` | `i-have-adhd` | `context-conditional` | `lifecycle-document-output` |
 | `backend-agent` | `i-have-adhd` | `context-conditional` | `lifecycle-document-output` |
 | `architecture-agent` | `i-have-adhd` | `context-conditional` | `lifecycle-document-output` |

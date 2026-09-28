@@ -1,10 +1,4 @@
----
-name: improve-codebase-architecture
-description: 显式分析代码结构的维护成本、模块边界与可测试性，提出有证据的重构候选。
-disable-model-invocation: true
----
-
-# Improve Codebase Architecture
+# 显式架构审计模式
 
 Surface architectural friction and propose **deepening opportunities** — refactors that turn shallow modules into deep ones. The aim is testability and AI-navigability.
 
@@ -69,7 +63,7 @@ Once the user picks a candidate, run the `/grilling` skill to walk the decision 
 
 Side effects happen inline as decisions crystallize — run the `/domain-modeling` skill to keep the domain model current as you go:
 
-- **Naming a deepened module after a concept not in `CONTEXT.md`?** Add the term to `CONTEXT.md`. Create the file lazily if it doesn't exist.
+- **Naming a deepened module after a concept not in `CONTEXT.md`?** Add the term to `CONTEXT.md`. If the root contract is missing, stop and restore it before continuing.
 - **Sharpening a fuzzy term during the conversation?** Update `CONTEXT.md` right there.
 - **User rejects the candidate with a load-bearing reason?** Offer an ADR, framed as: _"Want me to record this as an ADR so future architecture reviews don't re-suggest it?"_ Only offer when the reason would actually be needed by a future explorer to avoid re-suggesting the same thing — skip ephemeral reasons ("not worth it right now") and self-evident ones.
-- **Want to explore alternative interfaces for the deepened module?** Run the `/codebase-design` skill and use its design-it-twice parallel sub-agent pattern.
+- **Want to explore alternative interfaces for the deepened module?** Run the `/codebase-design` skill and use its alternative interface design guidance within the authorized scope.
