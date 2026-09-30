@@ -2,13 +2,12 @@ schema_version: 1
 registry_id: yss.lifecycle
 status: active
 description: >-
-  harness-agent 的生命周期事实源。流程从已确认的上游输入进入按已确认架构组织的技术设计，经过统一 Slice
-  Implementation Contract，完成前后端垂直切片和独立测试验证。
+  harness-agent 的生命周期事实源。流程从已确认的上游输入进入按已确认架构组织的技术设计，经过统一 Slice Implementation Contract，完成前后端垂直切片和独立测试验证。
 id_policy:
   pattern: '^(stage|gate|artifact|work-unit|evidence)\.[a-z0-9][a-z0-9-]*$'
   published_ids_immutable: true
   baseline: .template-spec/process/lifecycle-registry-baseline.json
-  deprecated_ids: [stage.tactical-design, work-unit.tactical-design, gate.tactical-design-approved]
+  deprecated_ids: [ stage.tactical-design, work-unit.tactical-design, gate.tactical-design-approved ]
 
 stages:
   - id: stage.harness-entry
@@ -82,58 +81,58 @@ gates:
     name: 前端联合输入核验
     stage: stage.slice-contract
     trigger: 专职前端 profile 或显式 frontend_delivery 绑定的任务启动、恢复、合同编译、实现和验证；实际执行 scripts/verify-frontend-delivery，输入就绪不等于实现获批。
-    evidence: [evidence.fresh-verification]
+    evidence: [ evidence.fresh-verification ]
   - id: gate.repository-identity-valid
     name: 仓库身份有效
     stage: stage.harness-entry
     trigger: 每次进入 Harness。
-    evidence: [evidence.repository-identity-check]
+    evidence: [ evidence.repository-identity-check ]
   - id: gate.technical-design-approved
     name: Technical Design 批准
     stage: stage.technical-design
     trigger: 存在后端用例、规则、分层、状态、一致性或持久化设计影响。
-    evidence: [evidence.technical-design-review, evidence.approval-record]
+    evidence: [ evidence.technical-design-review, evidence.approval-record ]
   - id: gate.high-risk-architecture-confirmed
     name: 高风险架构确认
     stage: stage.technical-design
     trigger: 存在不可逆或跨边界高风险架构取舍。
-    evidence: [evidence.architecture-decision, evidence.approval-record]
+    evidence: [ evidence.architecture-decision, evidence.approval-record ]
   - id: gate.backend-architecture-platform-approved
     name: 后端架构与平台批准
     stage: stage.technical-design
     trigger: 新建后端工程进入 DDD / MVC 技术设计分支前，由用户在同一次决定中确认 domain-driven / layered-mvc 和精确 Spring Boot 版本；既有工程核验并复用当前登记架构及固定工程基线/POM 中的实际 Spring Boot 版本，记录 not-applicable，不重复询问。
-    evidence: [evidence.approval-record]
+    evidence: [ evidence.approval-record ]
   - id: gate.engineering-contract-approved
     name: 工程合同批准
     stage: stage.technical-design
     trigger: 进入实现仓库准备或生成后端脚手架前。
-    evidence: [evidence.technical-design-review, evidence.architecture-decision, evidence.approval-record]
-    requires_gates: [gate.backend-architecture-platform-approved]
+    evidence: [ evidence.technical-design-review, evidence.architecture-decision, evidence.approval-record ]
+    requires_gates: [ gate.backend-architecture-platform-approved ]
   - id: gate.slice-contract-approved
     name: Slice Contract 批准
     stage: stage.slice-contract
     trigger: 任一 Agent 进入切片实现前。
-    evidence: [evidence.contract-approval]
+    evidence: [ evidence.contract-approval ]
   - id: gate.slice-ready-for-agent
     name: 切片实现就绪
     stage: stage.slice-contract
     trigger: Slice Contract 满足完整就绪公式。
-    evidence: [evidence.contract-approval]
+    evidence: [ evidence.contract-approval ]
   - id: gate.openapi-freeze-confirmed
     name: OpenAPI Freeze 确认
     stage: stage.slice-contract
     trigger: 切片有 API 影响且契约进入实现。
-    evidence: [evidence.approval-record]
+    evidence: [ evidence.approval-record ]
   - id: gate.fresh-verification-passed
     name: Fresh Verification 通过
     stage: stage.verification
     trigger: 实现完成并准备进入合并前复核。
-    evidence: [evidence.fresh-verification, evidence.test-verification]
+    evidence: [ evidence.fresh-verification, evidence.test-verification ]
   - id: gate.merge-approved
     name: 合并批准
     stage: stage.verification
     trigger: 切片完成合并前裁决。
-    evidence: [evidence.approval-record, evidence.checkpoint-and-rollback]
+    evidence: [ evidence.approval-record, evidence.checkpoint-and-rollback ]
 
 artifacts:
   - id: artifact.technical-design
@@ -196,6 +195,10 @@ artifacts:
     name: Git Checkpoint
     stage: stage.verification
     trigger: 合并前或发生阻塞 / 责任变化时。
+  - id: artifact.business-ticket-set
+    name: 上游业务 Ticket 集
+    stage: stage.harness-entry
+    trigger: 只读消费已批准战略来源，核验业务 Ticket 与原 FR/AC、规则和场景，随后细化实现 Slice。
 
 work_units:
   - id: work-unit.harness-entry
