@@ -23,15 +23,50 @@ const apiDecision = write("api-contract-decision.json", apiValue);
 const technicalDesign = write("technical-design.json", { schema_version: 2, technical_design_id: "technical-design.backend", version: "v1", status: "approved" });
 const dataValue = { schema_version: 1, kind: "data-architecture-decision", decision_id: "data-architecture.backend", decision_version: "v1", status: "approved", current_version: true, impact: "not-applicable" };
 const dataDecision = write("data-architecture-decision.json", dataValue);
-const engineeringPackage = write("engineering-contract-package.json", { schema_version: 1, kind: "engineering-contract-package", project_id: "backend", technical_design: { ref: technicalDesign.ref, version: "v1", digest: technicalDesign.digest }, data_architecture_decision: { ref: dataDecision.ref, version: "v1", digest: dataDecision.digest, impact: "not-applicable" }, api_contract_decision: { ref: apiDecision.ref, version: "v1", digest: apiDecision.digest, impact: "not-applicable" } });
+// Synthetic authority is selected from current consumer inputs before the record exists.
+const engineeringScope = ["backend"];
+const engineeringDrafter = "synthetic-backend-drafter";
+const engineeringBasis = [technicalDesign, dataDecision, apiDecision, apiAssessment, apiEvidence].map(({ ref, digest }) => ({ ref, digest: digest.replace(/^sha256:/, "") }));
+const engineeringPackageValue = {
+  schema_version: 1,
+  kind: "engineering-contract-package",
+  project_id: "backend",
+  gate_id: "gate.engineering-contract-approved",
+  approval_scope: engineeringScope,
+  drafter_principal_ref: engineeringDrafter,
+  basis: engineeringBasis,
+  technical_design: { ref: technicalDesign.ref, version: "v1", digest: technicalDesign.digest },
+  data_architecture_decision: { ref: dataDecision.ref, version: "v1", digest: dataDecision.digest, impact: "not-applicable" },
+  api_contract_decision: { ref: apiDecision.ref, version: "v1", digest: apiDecision.digest, impact: "not-applicable" },
+};
+const engineeringPackage = write("engineering-contract-package.json", engineeringPackageValue);
+const engineeringContext = { subject_ref: engineeringPackage.file, subject_digest: engineeringPackage.digest, approval_scope: engineeringScope, drafter_principal_ref: engineeringDrafter, basis: engineeringBasis };
 const engineeringDecision = buildDecisionFixture(path.join(temp, "engineering-decision"), { boundary: "gate.engineering-contract-approved", scope: ["backend"], subjectRef: engineeringPackage.file });
-write("engineering-contract-approval.json", { schema_version: 1, gate_id: "gate.engineering-contract-approved", decision: "approved", actor_kind: "digital-human", role_id: "role.test-agent", runtime_id: "runtime.generic", principal_ref: "synthetic-test-reviewer", subject_ref: engineeringDecision.requirement.subject_ref, approval_scope: ["backend"], drafter_role_id: "role.architecture-agent", user_decision_ref: engineeringDecision.ref, artifact_bindings: [{ id: "technical-design.backend", version: "v1", digest: technicalDesign.digest }, { id: dataValue.decision_id, version: "v1", digest: dataDecision.digest }, { id: apiValue.decision_id, version: "v1", digest: apiDecision.digest }], evidence_refs: [apiEvidence.ref] });
+const engineeringApprovalValue = {
+  schema_version: 1,
+  gate_id: "gate.engineering-contract-approved",
+  decision: "approved",
+  actor_kind: "digital-human",
+  role_id: "role.test-agent",
+  runtime_id: "runtime.generic",
+  principal_ref: "synthetic-test-reviewer",
+  subject_ref: engineeringPackage.file,
+  subject_digest: engineeringPackage.digest,
+  approval_scope: engineeringScope,
+  basis: engineeringBasis,
+  drafter_role_id: "role.architecture-agent",
+  drafter_principal_ref: engineeringDrafter,
+  user_decision_ref: engineeringDecision.ref,
+  artifact_bindings: [{ id: "technical-design.backend", version: "v1", digest: technicalDesign.digest }, { id: dataValue.decision_id, version: "v1", digest: dataDecision.digest }, { id: apiValue.decision_id, version: "v1", digest: apiDecision.digest }],
+  evidence_refs: [apiEvidence.ref],
+};
+write("engineering-contract-approval.json", engineeringApprovalValue);
 const readable = new Set(["handoff-receipt.json", "context-reconciliation.json", "technical-design.json", "data-architecture-decision.json", "engineering-contract-approval.json", "repository-preparation.json", "backend-onboarding.json", apiDecision.ref]);
 const options = { root: temp, exists: (ref) => readable.has(ref) || existsSync(path.resolve(temp, ref)) };
 const designState = {
   strategic_handoff_consumption: { result: "inputs-verified", ready_for_agent: false, ref: "handoff-receipt.json" },
   context_reconciliation: { status: "reconciled", ref: "context-reconciliation.json" },
-  technical_design: { status: "approved", current_version: true, ref: technicalDesign.ref, version: "v1", digest: technicalDesign.digest },
+  technical_design: { status: "approved", current_version: true, ref: technicalDesign.ref, version: "v1", digest: technicalDesign.digest, approval_context: structuredClone(engineeringContext) },
   data_architecture_decision: { status: "approved", current_version: true, impact: "not-applicable", ref: dataDecision.ref, version: "v1", digest: dataDecision.digest },
   api_contract_decision: { status: "approved", current_version: true, impact: "not-applicable", ref: apiDecision.ref, version: "v1", digest: apiDecision.digest },
   engineering_contract_approval_ref: "engineering-contract-approval.json",
@@ -101,6 +136,68 @@ assert.equal(validateNextRoute("work-unit.slice-implementation", "work-unit.veri
 assert.equal(validateNextRoute("work-unit.technical-design", "work-unit.slice-implementation").result, "blocked");
 assert.equal(validateSliceContractReadiness(validContract).result, "allowed");
 assert.equal(validateImplementationEntry({ ...repositoryState, slice_contract: validContract, predecessor_work_unit: "work-unit.slice-contract", ready_for_agent: true }, options).result, "allowed");
+
+const assertEngineeringBlocked = (label, currentDesign = designState, currentRepository = repositoryState) => {
+  assert.equal(validateNextRoute("work-unit.technical-design", "work-unit.implementation-repository-preparation", currentDesign, options).result, "blocked", `${label}: design transition`);
+  assert.equal(validateNextRoute("work-unit.implementation-repository-preparation", "work-unit.slice-contract", currentRepository, options).result, "blocked", `${label}: repository transition`);
+  assert.equal(validateImplementationEntry({ ...currentRepository, slice_contract: validContract, predecessor_work_unit: "work-unit.slice-contract", ready_for_agent: true }, options).result, "blocked", `${label}: implementation entry`);
+};
+let currentApprovalCounterexamples = 0;
+for (const [label, mutate] of [
+  ["missing-current-context", (context, binding) => { delete binding.approval_context; }],
+  ["changed-current-subject", (context) => { context.subject_ref = technicalDesign.file; }],
+  ["changed-current-subject-digest", (context) => { context.subject_digest = `sha256:${"0".repeat(64)}`; }],
+  ["changed-current-scope", (context) => { context.approval_scope = ["another-backend"]; }],
+  ["changed-current-basis", (context) => { context.basis[0].digest = "0".repeat(64); }],
+  ["changed-current-author", (context) => { context.drafter_principal_ref = "another-drafter"; }],
+]) {
+  const candidateDesign = structuredClone(designState);
+  mutate(candidateDesign.technical_design.approval_context, candidateDesign.technical_design);
+  const candidateRepository = structuredClone(repositoryState);
+  candidateRepository.implementation_repository_preparation.projects[0].design_prerequisites.technical_design = structuredClone(candidateDesign.technical_design);
+  assertEngineeringBlocked(label, candidateDesign, candidateRepository);
+  currentApprovalCounterexamples += 1;
+}
+for (const [label, mutate] of [
+  ["missing-record-subject-digest", (record) => { delete record.subject_digest; }],
+  ["changed-record-subject-digest", (record) => { record.subject_digest = `sha256:${"0".repeat(64)}`; }],
+  ["changed-record-subject", (record) => { record.subject_ref = technicalDesign.file; }],
+  ["changed-record-scope", (record) => { record.approval_scope = ["another-backend"]; }],
+  ["missing-record-author", (record) => { delete record.drafter_principal_ref; }],
+  ["changed-record-author", (record) => { record.drafter_principal_ref = "another-drafter"; }],
+  ["self-signed-record", (record) => { record.principal_ref = engineeringDrafter; }],
+  ["changed-record-basis", (record) => { record.basis[0].digest = "0".repeat(64); }],
+  ["missing-technical-basis-coverage", (record) => { record.basis = record.basis.filter((asset) => asset.ref !== technicalDesign.ref); }],
+]) {
+  const candidate = structuredClone(engineeringApprovalValue);
+  mutate(candidate);
+  try {
+    write("engineering-contract-approval.json", candidate);
+    assertEngineeringBlocked(label);
+    currentApprovalCounterexamples += 1;
+  } finally {
+    write("engineering-contract-approval.json", engineeringApprovalValue);
+  }
+}
+for (const [label, mutate] of [
+  ["missing-package-gate", (value) => { delete value.gate_id; }],
+  ["changed-package-scope", (value) => { value.approval_scope = ["another-backend"]; }],
+  ["missing-package-basis", (value) => { delete value.basis; }],
+  ["changed-package-author", (value) => { value.drafter_principal_ref = "another-drafter"; }],
+]) {
+  const candidate = structuredClone(engineeringPackageValue);
+  mutate(candidate);
+  try {
+    write(engineeringPackage.ref, candidate);
+    assertEngineeringBlocked(label);
+    currentApprovalCounterexamples += 1;
+  } finally {
+    write(engineeringPackage.ref, engineeringPackageValue);
+  }
+}
+assert.equal(validateNextRoute("work-unit.technical-design", "work-unit.implementation-repository-preparation", designState, options).result, "allowed", "restored current fixture");
+assert.equal(validateNextRoute("work-unit.implementation-repository-preparation", "work-unit.slice-contract", legacyState, options).result, "allowed", "restored legacy current fixture");
+process.stdout.write(`工程批准当前绑定拒绝场景 ${currentApprovalCounterexamples}/${currentApprovalCounterexamples} 通过（每项覆盖三种消费入口）\n`);
 
 for (const mutate of [
   (value) => { value.status = "draft"; },

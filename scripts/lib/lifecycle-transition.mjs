@@ -1,3 +1,4 @@
+import {approvalExpectationForBoundAsset} from './approval-consumption.mjs';
 import {assertReadingTransition} from './reading-view-bundle.mjs';
 import { assertTrackingTransition } from './stage-tracking.mjs';
 import { validateBackendReview } from "./backend-review.mjs";
@@ -85,7 +86,7 @@ function apiApprovalReady(prerequisites, approvalRef, { root, projectId } = {}) 
     const api = validateApiContractDecision(apiBinding, { root });
     const approvalFile = path.isAbsolute(approvalRef) ? approvalRef : path.resolve(root, approvalRef);
     const approval = loadApprovalRecord(approvalFile);
-    validateApprovalRecord(approval, { requireApproved: true, root });
+    validateApprovalRecord(approval, { requireApproved: true, root, expected:approvalExpectationForBoundAsset('gate.engineering-contract-approved',prerequisites.technical_design,{root}) });
     const bound = (expected) => approval.artifact_bindings?.some((item) => item?.id === expected.id && item.version === expected.version && item.digest === expected.digest);
     if (approval.gate_id !== "gate.engineering-contract-approved" || (projectId && !approval.approval_scope?.includes(projectId))) return false;
     if (!bound(technical.expected) || !bound(data.expected)) return false;
