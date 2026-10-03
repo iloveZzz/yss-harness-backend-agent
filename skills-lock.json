@@ -21,7 +21,7 @@
       "revision": "c4d958f18cc947cb91cbe1bd48783fa4601cc18f"
     },
     "iloveZzz/yss-harness-design-agent": {
-      "revision": "4159f465477b30c64e605c4fa3ccf594b8d9ecb8"
+      "revision": "1db08cda684decc8f26529caa779c78eeed7e155"
     }
   },
   "skills": {
@@ -42,7 +42,7 @@
         "source": "tt-a1i/archify",
         "sourceType": "github",
         "skillPath": "archify/SKILL.md",
-        "effectiveHash": "0865af3bd9fadda40729b44880b008cec9ec007eed425408cb6ad7eb48ff558b",
+        "effectiveHash": "ff3fc7a0447f5afafededc71c5ea5c49160d092fe22526d48eec887fdae34912",
         "sourceRevision": "199360cc6687a7857b54dd188d4922b09e466a4b",
         "upstreamHash": "202082693c0b6cfe5c9c428f46f323f4159bc96c9c98220fed57167dab4c222b",
         "adaptationRef": ".template-source/agents/archify-integration.md",
@@ -81,7 +81,7 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/engineering/code-review/SKILL.md",
-        "effectiveHash": "4fe749f3b840dcbf2e609cf2c127e1b81bd7348c4a89e836735459956d6f62ff",
+        "effectiveHash": "f76af8dc898694c4dedeec8e66dd9f67e488d42adc627b746890d6a9cadb021b",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "12daafb9c4f77deb3c3303dc2e6f8a3c2a0ff7928fc004af959ba18b8bd38068",
         "adaptationRef": ".template-source/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
@@ -273,7 +273,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/llm-wiki/SKILL.md",
-        "effectiveHash": "99a5e9b26d2cf990c63320bce46886fa4f28f567f870124a5e56eadd54d85402",
+        "effectiveHash": "ee543fa503772b56615f0ca20c948568922b88882321f454df19eba338b82a7d",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -686,7 +686,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-research/SKILL.md",
-        "effectiveHash": "b2c43849d23dc787f5bf3533c0fadd9104655629325b6a3a81b9b2d5628a0b80",
+        "effectiveHash": "6e4b39adea7001211693b153477ded6bde1da869389e0c9a4eb852b3d3f6cb04",
         "targets": [
           ".agents/skills",
           ".codex/skills",
