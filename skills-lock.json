@@ -614,7 +614,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-implementation-contract-compiler/SKILL.md",
-        "effectiveHash": "e1694538e0d4635b68dca3c3b622be19fda37272ebee66f7a4466f0b76d8c564",
+        "effectiveHash": "1cc674f7ffc1c4eff69100b7fa623980dae30e9cc6c0966bfbde8a6b08f64bb3",
         "targets": [
           ".agents/skills",
           ".codex/skills",
