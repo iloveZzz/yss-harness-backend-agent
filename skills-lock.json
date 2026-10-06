@@ -150,7 +150,7 @@
         "source": "mattpocock/skills",
         "sourceType": "github",
         "skillPath": "skills/engineering/domain-modeling/SKILL.md",
-        "effectiveHash": "7e691aeef60ee61c423f224acd3c4481a8764d3d336c8c49585b36d1a9bca9be",
+        "effectiveHash": "ff65fbde6e6f0eeb7bee778f01f5cb2f99cc25160dd0b03b56f312a92dd4ba3b",
         "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
         "upstreamHash": "2bc3bb0a64ea9c6f5c3bcf78fc17f0fcdc7c062edc547ef006441de0b576d248",
         "adaptationRef": ".template-source/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
@@ -207,7 +207,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/harness-orchestrator/SKILL.md",
-        "effectiveHash": "c0481e039731e93161ddadcd6ceaa85be561c2ba759bd3de4f92cd182042e9be",
+        "effectiveHash": "56d19d944e1f7250e31f1f60e824eebfe7b83ffebff5d70025db665059608561",
         "targets": [
           ".agents/skills",
           ".codex/skills",
