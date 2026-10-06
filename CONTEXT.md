@@ -97,11 +97,11 @@ context_schema_version: 1
 | 实现仓库 | 承载前端、后端或其他运行时代码及其 Git、CI、MR / PR、测试命令和发布流水线的仓库。 | — | 不要把实现仓库的源码所有权混入研发管理仓库。 |
 | Git 子模块分层接入 | 将前端 / 后端实现仓以 Git submodule（gitlink，mode `160000`）挂到 `project-instance` 的 `apps/` 布局下，并登记 `repository_scope: git-submodule`。 | — | 不得与 `harness-apps` 同源 monorepo 或无 gitlink 的 `external-repository` 混用；禁止把实现源码复制进 Harness 冒充 submodule。 |
 | 跨仓库契约变更 | 需要两个或多个独立仓库协同实现、验证和按顺序发布的共享契约变化。 | — | 任一参与仓库未完成契约对齐和集成验证时，不得单独声称整体可发布。 |
-| 模板源仓库（`template-source`） | 承载可复用 Harness / 模板权威资产及其演进规则的仓库身份。本仓是 Harness Agent 五阶段模板源。 | — | 只管理可复用模板，不承载某个具体产品的研发生命周期资产。不要把仍使用旧八阶段入口的父目录或其他 submodule 当作本仓路由。 |
+| 模板源仓库（`template-source`） | 承载可复用 Harness / 模板权威资产及其演进规则的仓库身份。本仓是后端专职交付六阶段模板源。 | — | 只管理可复用模板，不承载某个具体产品的研发生命周期资产。不要把仍使用旧八阶段入口的父目录或其他 submodule 当作本仓路由。 |
 | 模板实例仓库（`project-instance`） | 由模板初始化后生成、承载某个具体产品研发生命周期资产的仓库身份。 | — | 不作为通用流程模板的权威来源。 |
 | 模板实例分发面 | 模板源中应随 CLI 快照进入 `project-instance` 的共享生命周期、模板、用户指南和验证资产集合。 | — | 不包含模板源审查、研究、发布路线、源仓库专属 ADR 或源仓库 LLM Wiki 编译树。本仓权威清单为 `.template-source/distribution/template.manifest.json`。 |
-| Harness Profile | 某个 Harness 模板源的受众、允许工作单元、禁止产物、上游输入和实例化 CLI 边界的机器可读配置。 | — | 不是角色表，也不替代生命周期注册表。本仓 `profile_id` 为 `harness.dev-agent-slice`。 |
-| 开发落地 Harness CLI | 将本仓五阶段 Harness 快照为 `project-instance` 的外部 npm CLI。 | — | 包名为 `create-yss-harness-dev`，入口 `npm create yss-harness-dev`。不要与全生命周期 CLI `create-yss-spec` 混用。 |
+| Harness Profile | 某个 Harness 模板源的受众、允许工作单元、禁止产物、上游输入和实例化 CLI 边界的机器可读配置。 | — | 不是角色表，也不替代生命周期注册表。本仓 `profile_id` 为 `harness.backend-delivery`。 |
+| 开发落地 Harness CLI | 统一 `yss` 的 `backend` Profile 将本仓六阶段后端交付 Harness 固定 Bundle 生成 `project-instance`，入口为 `yss init --profile backend --root`。 | — | 原生元数据为 `.yss.json`；`create-yss-harness-backend` / `.yss-harness-backend.json` 及更早 `create-yss-harness-dev` 仅作历史来源识别，旧实例先显式迁移或用匹配固定执行器恢复。 |
 | 模板源治理区 | 仅供 `template-source` 使用、保存审查证据、研究记录、跨仓契约、发布路线、源仓库治理决策和源仓库 LLM Wiki 编译树的归档区域。 | — | 不随 CLI 分发；不等于产品实例的研发管理资产。`wiki-root` 为 `.template-source/wiki`。 |
 | 仓库身份清单 | 显式声明仓库身份和清单结构版本的机器可读资产。 | — | 不承载项目名称、团队规模、Tracker 或其他易变业务配置。 |
 
