@@ -85,7 +85,7 @@ required_files:
 - scripts/verify-frontend-implementation-evidence
 - scripts/verify-frontend-implementation-evidence-scenarios
 - scripts/verify-scaffold-architecture-decisions
-- scripts/verify-scaffold-architecture-decision-scenarios
+- tests/scenarios/verify-scaffold-architecture-decision-scenarios.mjs
 - scripts/lib/task-package.mjs
 - scripts/lib/harness-profile.mjs
 - scripts/lib/entry-alignment.mjs
@@ -96,7 +96,7 @@ required_files:
 - scripts/lib/template-verification.mjs
 - scripts/verify-digital-human-task-package
 - scripts/verify-digital-human-task-package-scenarios
-- scripts/verify-subagent-task-package
+- scripts/verify-digital-human-task-package
 - scripts/verify-subagent-task-package-scenarios
 - scripts/verify-lifecycle-transition-scenarios
 - scripts/verify-maintenance-checkpoint
@@ -107,10 +107,10 @@ required_files:
 - scripts/lib/backend-scaffold-prerequisites.mjs
 - scripts/lib/api-contract-decision.mjs
 - scripts/lib/openapi-draft-validation.mjs
-- scripts/lib/api-contract-decision.test.mjs
+- tests/api-contract-decision.test.mjs
 - scripts/verify-openapi-draft-validation-record
 - scripts/lib/legacy-backend-scaffold-audit.mjs
-- scripts/lib/legacy-backend-scaffold-audit.test.mjs
+- tests/legacy-backend-scaffold-audit.test.mjs
 - scripts/audit-legacy-backend-scaffold
 - scripts/fixtures/backend-scaffold/design-prerequisites.mjs
 - scripts/fixtures/backend-scaffold/attach-design-prerequisites.mjs
@@ -148,7 +148,7 @@ syntax_files:
 - scripts/lib/instance-distribution.mjs
 - scripts/verify-digital-human-task-package
 - scripts/verify-digital-human-task-package-scenarios
-- scripts/verify-subagent-task-package
+- scripts/verify-digital-human-task-package
 - scripts/verify-subagent-task-package-scenarios
 - scripts/verify-maintenance-checkpoint
 - scripts/verify-maintenance-intensity-scenarios
@@ -168,10 +168,10 @@ syntax_files:
 - scripts/lib/backend-scaffold-prerequisites.mjs
 - scripts/lib/api-contract-decision.mjs
 - scripts/lib/openapi-draft-validation.mjs
-- scripts/lib/api-contract-decision.test.mjs
+- tests/api-contract-decision.test.mjs
 - scripts/verify-openapi-draft-validation-record
 - scripts/lib/legacy-backend-scaffold-audit.mjs
-- scripts/lib/legacy-backend-scaffold-audit.test.mjs
+- tests/legacy-backend-scaffold-audit.test.mjs
 - scripts/audit-legacy-backend-scaffold
 - scripts/fixtures/backend-scaffold/design-prerequisites.mjs
 - scripts/fixtures/backend-scaffold/attach-design-prerequisites.mjs
@@ -316,13 +316,13 @@ groups:
       - { run: "node .agents/skills/yss-technical-design/tests/run-scenarios.mjs" }
   frontend-delivery:
     commands:
-    - run: scripts/verify-frontend-delivery-scenarios
+    - run: node tests/scenarios/verify-frontend-delivery-scenarios.mjs
   strategic-handoff-package:
     commands:
     - run: scripts/verify-strategic-handoff-tools-lock
       when: template-source
     - run: node --check scripts/lib/strategic-handoff.mjs
-    - run: scripts/verify-strategic-handoff-package-scenarios
+    - run: node tests/scenarios/verify-strategic-handoff-package-scenarios.mjs
   hygiene:
     commands:
     - run: scripts/verify-governance-layout
@@ -364,7 +364,7 @@ groups:
     - run: scripts/verify-frontend-implementation-evidence --allow-template .template-spec/process/templates/frontend-implementation-verification-template.yaml
     - run: scripts/verify-frontend-implementation-evidence-scenarios
     - run: scripts/verify-scaffold-architecture-decisions --allow-template .template-spec/process/templates/scaffold-architecture-decisions-template.yaml
-    - run: scripts/verify-scaffold-architecture-decision-scenarios
+    - run: node tests/scenarios/verify-scaffold-architecture-decision-scenarios.mjs
     - run: scripts/verify-lifecycle-scenarios
     - run: scripts/verify-lifecycle-transition-scenarios
   profile:
@@ -388,11 +388,11 @@ groups:
     commands:
     - run: scripts/verify-implementation-path-scenarios
     - run: scripts/verify-repository-scope-scenarios
-    - run: scripts/verify-scaffold-generator-scenarios
+    - run: python3 tests/scenarios/verify-scaffold-generator-scenarios.py
     - run: node --test .agents/skills/yss-ddd-scaffold-generator/scripts/scaffold-generator.test.mjs
     - run: node --test .agents/skills/yss-layered-mvc-scaffold-generator/scripts/scaffold-generator.test.mjs
-    - run: node --test scripts/lib/legacy-backend-scaffold-audit.test.mjs
-    - run: node --test scripts/lib/api-contract-decision.test.mjs
+    - run: node --test tests/legacy-backend-scaffold-audit.test.mjs
+    - run: node --test tests/api-contract-decision.test.mjs
     - run: scripts/verify-prototype-backend-scaffold-scenarios
     - run: scripts/verify-matt-yss-integration-scenarios
       when: template-source
