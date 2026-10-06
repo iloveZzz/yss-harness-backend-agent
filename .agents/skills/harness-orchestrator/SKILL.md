@@ -23,7 +23,11 @@ description: 编排后端专职 Harness 的输入接收、合同、任务派发�
 
 ## 前端联合接收
 
-专职前端 profile 或显式 `frontend_delivery` 输入，先执行 `.template-spec/process/frontend-backend-delivery.md` 的实际校验；源战略与后端交付同时有效后才准备实现计划与合同，合同批准后再派发 Worker。接收、恢复与验收均重验，缺口回交权威方。通用研发 profile 未选择该路线时维持原行为。
+专职前端 profile 或显式 `frontend_delivery` 输入，按 `.template-spec/process/frontend-backend-delivery.md` 执行战略预检，再起草前端工程设计与实现计划。最终接收按实际后端依赖核验后端交付或有依据的 `backend-not-applicable`；合同批准且当前并满足就绪检查后才派发 Worker。接收、恢复与验收按规定边界重验，缺口回交权威方。通用研发 profile 未选择该路线时维持原行为。
+
+## 按影响面选择工作
+
+先按根 `AGENTS.md` 和 `.template-spec/process/harness-process-tailoring.md` 区分只读咨询、模板维护和产品行动。只读查询不创建 Ticket、checkpoint 或审查任务；模板日常维护由 `maintaining-skills` 自检，仅明确选择独立审查时路由 `work-unit.intensity-aware-review`。注册表有 `public_*` 时优先消费当前展示说明，旧字段保留兼容语义。下列产品流程用于选择当前缺失的工作，已有当前批准资产、登记、父票及 Slice 合同先核验复用，不重走全部阶段或要求未来产物。Fresh Verification 只覆盖当前工作及直接 / 传递依赖；证据复用和边界重验按裁剪合同执行。
 
 ## 主流程
 
@@ -33,7 +37,7 @@ description: 编排后端专职 Harness 的输入接收、合同、任务派发�
 4. 进入 `work-unit.implementation-repository-preparation`。新工程编译并批准 schema v4 scaffold contract，生成器在任何写入前核验技术/数据设计与批准记录，只生成机械骨架；既有工程完成 onboarding。聚合并校验 Preparation Result v2。
 5. 仓库准备完成后，汇总四角色分区并生成一个版本化 Slice Implementation Contract。
 6. 先调度 `test-agent` 建立测试 seam，再调度后端 Worker。
-7. 收集每个任务包的 `workflow-execution-result-v1`，重新执行 Fresh Verification。
+7. 收集每个任务包的 `workflow-execution-result-v1`，完成当前范围的 Fresh Verification；输入或边界变化时重跑受影响检查。
 8. 由独立 `test-agent` 返回验证结论；没有阻塞信号时才关闭后端任务，整体切片由统一管理方验收。
 
 ## 必须阻断的信号
