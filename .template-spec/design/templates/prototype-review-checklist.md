@@ -6,13 +6,13 @@
 
 | 输入 | 路径 / 链接 | 是否具备 |
 |---|---|---|
-| Spec | `docs/.scratch/<feature>/spec.md` |  |
-| 交互说明 | `docs/.scratch/<feature>/design/<feature>-interaction-spec.md` |  |
+| Spec | `.work/<feature>/spec.md` |  |
+| 交互说明 | `.work/<feature>/design/<feature>-interaction-spec.md` |  |
 | 原型 / 线框图 | `<链接或导出图片路径>` |  |
-| 状态矩阵 | `docs/.scratch/<feature>/design/<feature>-state-matrix.md` |  |
+| 状态矩阵 | `.work/<feature>/design/<feature>-state-matrix.md` |  |
 | 原型阶段合同 / Product Design 路由记录 | `yss-prototype-stage -> product-design:index -> <focused skill>` |  |
-| 原型验证清单 | `docs/.scratch/<feature>/verification/prototype-evidence.yaml` | 高保真完成后补齐 CLI 与浏览器验证 |
-| 现有 API 草案 | `docs/.scratch/<feature>/api/<feature>.yaml` | 可选 |
+| 原型验证清单 | `.work/<feature>/verification/prototype-evidence.yaml` | 高保真完成后补齐 CLI 与浏览器验证 |
+| 现有 API 草案 | `.work/<feature>/api/<feature>.yaml` | 可选 |
 
 ## 门禁清单
 

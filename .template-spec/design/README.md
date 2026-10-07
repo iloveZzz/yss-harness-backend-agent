@@ -46,8 +46,8 @@
 推荐目录：
 
 ```text
-docs/.scratch/<feature>/design/diagrams/
-docs/.scratch/<feature>/design/prototypes/
-docs/.scratch/<feature>/architecture/diagrams/
-docs/.scratch/<feature>/discovery/diagrams/
+.work/<feature>/design/diagrams/
+.work/<feature>/design/prototypes/
+.work/<feature>/architecture/diagrams/
+.work/<feature>/discovery/diagrams/
 ```
