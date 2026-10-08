@@ -119,7 +119,7 @@
 | `code-review` | `i-have-adhd` | `context-conditional` | `lifecycle-document-output` |
 | `yss-implementation-contract-compiler` | `i-have-adhd` | `context-conditional` | `lifecycle-document-output` |
 | `yss-openapi-governance` | `i-have-adhd` | `context-conditional` | `lifecycle-document-output` |
-| `yss-harness-upgrade` | `i-have-adhd` | `context-conditional` | `lifecycle-document-output` |
+| `setup-yss-harness` | `i-have-adhd` | `context-conditional` | `lifecycle-document-output` |
 | `yss-research` | `i-have-adhd` | `context-conditional` | `lifecycle-document-output` |
 | `harness-orchestrator` | `i-have-adhd` | `context-conditional` | `lifecycle-document-output` |
 | `yss-ddd-scaffold-generator` | `alibaba-java-code-style` | `context-required` | — |

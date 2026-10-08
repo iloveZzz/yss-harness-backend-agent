@@ -692,7 +692,7 @@ skill_dependencies:
       type: coordination-only
     - skill: code-review
       type: review-only
-  yss-harness-upgrade:
+  setup-yss-harness:
     - skill: i-have-adhd
       type: context-conditional
       when: lifecycle-document-output
@@ -925,6 +925,13 @@ skills:
   - id: maintaining-skills
     layer: core
     maturity: supported
+    instance_default_discoverable: true
+    aliases: []
+    impacts:
+      - template-maintenance
+  - id: publish-skills-sh
+    layer: core
+    maturity: verified
     instance_default_discoverable: true
     aliases: []
     impacts:
@@ -1203,7 +1210,7 @@ skills:
     impacts:
       - backend
       - quality
-  - id: yss-harness-upgrade
+  - id: setup-yss-harness
     layer: core
     maturity: supported
     instance_default_discoverable: true
