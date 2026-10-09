@@ -111,3 +111,7 @@ README、用户指南和 `CLAUDE.md` 只解释或指向上述事实，不定义�
 ## 13. 专职交付边界
 
 后端仅负责当前业务切片的真实接口交付。战略原件在上游维护；Freeze 前收集前端消费需求。交付使用 `scripts/backend-delivery`，合同见 `.template-spec/process/frontend-backend-delivery.md`。本仓 verification 通过只代表后端可交接，整体完成须统一管理方核验前端及端到端证据。
+
+## 本地业务分析与本端交付
+
+原始需求可在本项目完成目标与验收、Plan、业务边界和规则、Spec，再进入本端设计、实现、测试与独立审查；无需先创建独立 Spec/Design 工程。已有上游批准输入时复用当前来源，冲突回交权威方确认，禁止静默改写。小任务按主控合同 `request_triage.delivery_path` 与 `yss lifecycle route` 选择 daily；高风险或已正式绑定任务保留 governed。分析角色不授予另一端代码写入；本端交付完成不等于跨端业务验收。纯 UI 记录后端不适用的原因和当前依据；真实 API、数据与跨仓依赖必须对齐。独立脚手架只生成机械结构，不授予业务实施。

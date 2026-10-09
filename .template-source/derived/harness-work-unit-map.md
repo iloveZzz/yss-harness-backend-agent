@@ -13,7 +13,12 @@
 | `work-unit.verification` | project-instance | 独立验证 | 实现候选、合同、验收标准和测试 seam。 | Fresh Verification、Review 结果和 checkpoint。 | 测试 Agent 独立验证通过，且无阻塞信号。 |
 | `work-unit.ssot-update` | template-source | Harness 权威资产更新 | 模板维护变更合同。 | 权威文档、schema、脚本或技能。 | 权威资产可被校验器读取。 |
 | `work-unit.skill-projection-sync` | template-source | 技能投影同步 | .agents/skills 和 skills-lock.json。 | 各 Agent runtime root 的同步投影。 | scripts/sync-skills --check 通过。 |
-| `work-unit.intensity-aware-verification` | template-source | 分级 Fresh Verification | 变更仓库、维护强度和最低证据。 | 校验命令输出与维护证据。 | 日常按当前影响及依赖完成分级证据：L1 相关实际检查，L2 最小反例、自检和 Fresh Verification，L3 自检和 Fresh Verification；仅命中风险触发项补定向反例。等级不强制完整套件；main 集成验证和正式发布另核验完整适用集合。 |
-| `work-unit.intensity-aware-review` | template-source | 分级审查 | 变更 diff、维护强度和验证证据。 | 维护者自检结论与阻断项；按需记录独立审查结果。 | 日常完成维护者自检并处理适用阻断项；L2/L3 不自动要求独立审查或冻结候选，明确采用独立审查路径时执行其严格合同。 |
+| `work-unit.intensity-aware-verification` | template-source | 分级 Fresh Verification | 变更仓库、维护强度和最低证据。 | 校验命令输出与维护证据。 | 命中等级的结构、行为和压力验证通过。 |
+| `work-unit.intensity-aware-review` | template-source | 分级独立审查 | 变更 diff、维护强度和验证证据。 | self-check、聚焦审查或正式独立审查结论。 | 没有未处理阻断项。 |
 | `work-unit.release-and-rollback` | template-source | Harness Checkpoint 与回滚 | 已审查模板资产。 | Checkpoint、回滚点和发布说明。 | 变更边界和恢复动作可追溯。 |
+| `work-unit.plan-opportunity` | project-instance | 机会调研 | 用户问题、市场/竞品事实需求和现有上下文。 | Plan 机会结论、证据、替代方案和关键假设。 | 机会继续/停止建议可审查；事实已 research 或记录为假设。 |
+| `work-unit.plan-requirements` | project-instance | 需求分析 | 机会结论、用户反馈和领域词汇。 | 用户、MVP、非目标、成功标准、测试 seam 和未决项。 | frontier 清空；用户确认；无 runnable blocker。 |
+| `work-unit.domain-strategy-design` | project-instance | DDD 战略设计 | 已澄清的业务场景、领域词汇、约束和现有上下文。 | 子域、限界上下文、Context Map、统一语言、事件、核心领域概念候选和不变量。 | 边界、语义方向、规则所有权和关键场景可审查；无未解释冲突。 |
+| `work-unit.stage-decision` | project-instance | 阶段决策包综合 | Plan、DDD 战略设计以及产品经理负责的商业约束输入。 | 带版本、digest、证据和下游映射的阶段决策包。 | 必填字段、引用、影响面和下游消费验证通过；批准门禁完成。 |
+| `work-unit.spec-synthesis` | project-instance | Spec 综合 | 已确认的 Plan 记录和测试 seam。 | Spec、产品总体设计、功能架构及业务 Ticket 草案集合。 | Spec 和业务 Ticket 草案可审查，FR/AC 覆盖与依赖可读取；进入 ready-for-human，下游推进仍需 gate.spec-baseline-approved。 |
 <!-- lifecycle-registry:work-units:end -->
