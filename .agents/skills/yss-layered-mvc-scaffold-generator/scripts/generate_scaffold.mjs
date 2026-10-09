@@ -99,6 +99,7 @@ export function parseArgs(argv) {
     options[mapping.get(token)] = value;
   }
   if (options.help) return options;
+  if (!options.standalone && ["platformProfile", "springBootVersion", "javaVersion"].some(key => options[key] !== undefined)) fail("独立平台参数必须显式使用 --standalone，正式模式消费合同平台");
   const contractKeys = ["contractFile", "contractId", "contractVersion", "approvalRef", "compilerDraftRef", "persistedRef"];
   for (const key of mapping.values()) {
     if (["platformProfile", "springBootVersion", "javaVersion"].includes(key) || options.standalone && contractKeys.includes(key)) continue;

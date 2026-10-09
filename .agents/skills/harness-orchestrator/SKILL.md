@@ -10,7 +10,7 @@ description: 编排后端专职 Harness 的输入接收、合同、任务派发�
 
 本入口是后端专职协作方。本端职责终点由当前后端交付合同与实际 Backend Delivery 包验证决定；不写 Spec 主控的推进意图配置，不保存第二套整体进度。主控只汇总显式同功能 checkpoint 与当前 Receipt。后端可交付不等于完整业务验收；新增 v5 交付的 `strategic_bundle_ref` 必须指向完整不可变 delivery wrapper，裸 package 仅保留历史兼容读取。
 
-正式包终点按本端明确 checkpoint 与唯一登记 map 写入功能目录的 `backend-delivery.json`，无需 Spec 目标配置或后端专用执行范围。它必须核验当前 Slice、独立审查和当前构建提交；`local-evidence` 不能替代本端正式包。
+正式包终点按本端明确 checkpoint 与唯一登记 map 写入功能目录的 `backend-delivery.json`，无需 Spec 目标配置或后端专用执行范围。它必须核验当前 Slice、独立审查和当前构建提交；本地批准业务输入可显式使用 `local-evidence`，核验同一功能的当前 Slice、真实构建、契约/部署与独立 Fresh Verification；不伪造战略或后端交付包。有上游交接或对外接收要求时保留原正式包。
 
 后端新骨架必须消费注册表 architecture_profiles，并在工程基线、登记、Manifest、Slice/work unit 和结果中保持相同 architecture_identity。DDD/MVC 都固定本地/测试 H2，生产数据库 not-bound；不得添加默认外部驱动或数据源。配套技能按 `.template-spec/agents/backend-architecture-profiles.md` 分流，MVC 不加载 yss-domain。Profile 仍为 draft 时不得 ready-for-agent，也不得把结构测试当作真实首切片兼容证明。
 
@@ -27,7 +27,7 @@ description: 编排后端专职 Harness 的输入接收、合同、任务派发�
 
 ## 前端联合接收
 
-专职前端 profile 或显式 `frontend_delivery` 输入，按 `.template-spec/process/frontend-backend-delivery.md` 执行战略预检，再起草前端工程设计与实现计划。最终接收按实际后端依赖核验后端交付或有依据的 `backend-not-applicable`；合同批准且当前并满足就绪检查后才派发 Worker。接收、恢复与验收按规定边界重验，缺口回交权威方。通用研发 profile 未选择该路线时维持原行为。
+upstream 模式或显式 `frontend_delivery` 输入，按 `.template-spec/process/frontend-backend-delivery.md` 执行战略预检，再起草前端工程设计与实现计划。最终接收按实际后端依赖核验后端交付或有依据的 `backend-not-applicable`；合同批准且当前并满足就绪检查后才派发 Worker。接收、恢复与验收按规定边界重验，缺口回交权威方。通用研发 profile 未选择该路线时维持原行为。
 
 ## 按影响面选择工作
 
@@ -35,7 +35,7 @@ description: 编排后端专职 Harness 的输入接收、合同、任务派发�
 
 ## 主流程
 
-1. 校验上游输入、仓库身份、实现仓库、影响面和当前合同版本。
+1. 校验仓库身份和业务输入模式：standalone 从原始需求完成本端 Plan/Spec 的分析、独立审查与批准；upstream 核验当前上游批准输入，冲突回交权威方。随后按实际影响核验实现仓与当前合同版本。
 2. 在设计前完成 `gate.backend-architecture-platform-approved`：既有工程核验并沿用当前登记架构与固定工程基线/POM 中的实际 Spring Boot 版本，将该门禁记录为 `not-applicable`，不重复询问；新工程基于批准需求和工程约束推荐 `domain-driven` 或 `layered-mvc`，运行 `scripts/backend-platforms`，把架构、Boot 精确补丁、Java 和 YSS 父 POM/BOM 在同一次用户决定中展示；独立子项目可继承或覆盖，逐项目确认（可一次确认明确列出的多个项目），持久化 `scaffold-architecture-decisions.yaml`。不得从目录或默认值推断。
 3. 调度 `architecture-agent` 使用 `yss-technical-design`，按确认架构分别调用 DDD 或 MVC 专家，形成并审查批准且当前的 Technical Design；数据与 API 均按影响强制，API 命中时完成 OpenAPI 3.1 Draft、锁定 Redocly Validation、独立 Review 和 Freeze，不命中时形成可核验的 API Contract Decision `not-applicable`；随后由同一个 `gate.engineering-contract-approved` 原子批准技术、数据与 API 设计。
 4. 进入 `work-unit.implementation-repository-preparation`。新工程编译并批准 schema v4 scaffold contract，生成器在任何写入前核验技术/数据设计与批准记录，只生成机械骨架；既有工程完成 onboarding。聚合并校验 Preparation Result v2。

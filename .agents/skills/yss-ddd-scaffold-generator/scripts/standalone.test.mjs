@@ -73,3 +73,15 @@ test("独立一键入口保留骨架并记录缺少 Maven settings 的真实待�
     assert.equal(manifest.readiness.ready_for_agent, false);
   }
 });
+
+ test("独立模式拒绝混用合同、模糊平台和覆盖现有工程", async t => {
+ for(const skill of ["yss-ddd-scaffold-generator","yss-layered-mvc-scaffold-generator"]){
+  const root=await mkdtemp(path.join(os.tmpdir(),"yss-standalone-boundary-"));t.after(()=>rm(root,{recursive:true,force:true}));
+  const entry=path.resolve(scripts,"../../",skill,"scripts/generate_scaffold.mjs");
+  for(const extra of [["--contract-id","approved.fake"],["--spring-boot-version","3.5.x"],["--java-version","17"]]){
+   const result=spawnSync(process.execPath,[entry,...args(root),...extra],{encoding:"utf8"});assert.notEqual(result.status,0);await assert.rejects(stat(path.join(root,"demo-service")),{code:"ENOENT"});
+  }
+  assert.equal(spawnSync(process.execPath,[entry,...args(root)]).status,0);
+  const before=await readFile(path.join(root,"demo-service/pom.xml"));assert.notEqual(spawnSync(process.execPath,[entry,...args(root)]).status,0);assert.deepEqual(await readFile(path.join(root,"demo-service/pom.xml")),before);
+ }
+ });

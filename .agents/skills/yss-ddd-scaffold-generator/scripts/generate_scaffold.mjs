@@ -93,6 +93,7 @@ export function parseArgs(argv) {
     options[mapping.get(token)] = value;
   }
   if (options.help) return options;
+  if (!options.standalone && ["platformProfile", "springBootVersion", "javaVersion"].some(key => options[key] !== undefined)) fail("独立平台参数必须显式使用 --standalone，正式模式消费合同平台");
   for (const [flag, key] of mapping) {
     if (["platformProfile", "springBootVersion", "javaVersion"].includes(key) || options.standalone && key === "contractFile") continue;
     if (["database", "overwriteScope", "rollbackRef", "contractId", "contractVersion", "approvalRef", "compilerDraftRef", "persistedRef", "groupId", "projectVersion", "parentGroupId", "parentArtifactId", "parentVersion", "yssComponentsVersion"].includes(key)) continue;
