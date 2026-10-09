@@ -444,17 +444,50 @@ gate_policy:
     violations_or_missing_evidence: blocking
 user_decision_policy:
   schema_version: 1
+  required_capabilities:
+    - business-ticket-approval-v1
   default_responder: requester
   delegate_requires_requester_evidence: true
+  continuation:
+    capability: approved-scope-continuation-v1
+    source_boundary: delivery-scope
+    boundaries:
+      - gate.plan-approved
+      - gate.spec-baseline-approved
+      - gate.backend-architecture-platform-approved
+      - gate.engineering-contract-approved
+      - implementation-scope
+    material_changes:
+      - business-scope
+      - acceptance
+      - contract-commitments
+      - authorization
+      - risk-acceptance
+      - quality
+      - external-commitments
+    unknown_change: blocked
+    external_requirements: preserve-project-policy
+    external_policy_unconfirmed: no-automatic-continuation
   source_kinds:
     - platform-message
     - session-export
     - user-confirmation-file
   gates:
+    - gate.plan-approved
+    - gate.spec-baseline-approved
     - gate.backend-architecture-platform-approved
-  work_units: {}
+    - gate.engineering-contract-approved
+  work_units:
+    work-unit.implementation-repository-preparation: scaffold-choice
+    work-unit.slice-implementation: implementation-scope
+  work_unit_gates:
+    work-unit.spec-synthesis:
+      - gate.spec-baseline-approved
   conditional_decisions:
     - scaffold-choice
+    - external-input
+    - new-authorization
+    - risk-acceptance
   waiting_allows: independent-work-only
   expiry: basis-change-or-revocation-only
   record_schema: .template-spec/process/schemas/user-decision.schema.json
