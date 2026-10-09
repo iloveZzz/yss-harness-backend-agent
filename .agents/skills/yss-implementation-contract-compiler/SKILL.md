@@ -15,7 +15,7 @@ Slice v3 的当前执行结果须按 `references/yss-skill-execution-result.md` 
 
 ## 输入
 
-采用专职前端 profile 或显式 `frontend_delivery` 时，按 `.template-spec/process/frontend-backend-delivery.md` 核验战略与后端联合交付；缺任一输入只诊断和回交，正式实现与恢复从当前批准的 Slice Contract 重验接收摘要和真实服务。
+按 `.template-spec/process/frontend-backend-delivery.md` 区分来源：上游战略交接或显式 `frontend_delivery` 绑定须核验联合交付并冻结接收摘要；本地已批准资产须绑定当前功能 checkpoint 与 Spec，实际核验适用的设计和后端/API 依赖，不要求外部接收回执。纯 UI 无后端/API 影响时记录有理由的 not-applicable。无效的显式绑定不得回退本地路径；正式实现、生成和恢复仍须当前批准的 Slice Contract，接口或部署漂移使受影响证据失效。
 
 必须读取 yss-project.yaml、CONTEXT.md、Spec / 战略设计、Technical Design Contract、API / 数据 / UI 影响、实现仓库登记、允许写路径和验证命令。输入缺失、未批准或过期时返回 blocked。
 
