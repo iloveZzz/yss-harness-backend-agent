@@ -4,6 +4,8 @@
 
 本仓从通用研发 Harness 分出，继续共享校验工具和技能来源；运行时代码通过登记的实现仓接入。后端按业务切片交付已验证的冻结接口、构建与部署身份。
 
+可按需协作于一个 Spec 综合研发主控；主控必须绑定明确的同功能 checkpoint 与当前 Receipt。后端职责完成不等于整个业务验收，不改变本端实现范围。新增 Backend Delivery 的 `strategic_bundle_ref` 使用批准后的完整 v5 delivery wrapper；裸 package 仅作历史兼容读取。
+
 ## 初始化
 
 统一 CLI `yss` 使用 `backend` Profile 创建 `harness.backend-delivery` 实例。使用已验收的固定二进制，先运行 `yss bundle inspect --profile backend --json` 核对模板提交和 Bundle 来源。

@@ -30,11 +30,17 @@
 | `gate.high-risk-architecture-confirmed` | 高风险架构确认 | `stage.technical-design` | 存在不可逆或跨边界高风险架构取舍。 | 无 | `evidence.architecture-decision`、`evidence.approval-record` |
 | `gate.backend-architecture-platform-approved` | 后端架构与平台批准 | `stage.technical-design` | 新建后端工程进入 DDD / MVC 技术设计分支前，由用户在同一次决定中确认 domain-driven / layered-mvc 和精确 Spring Boot 版本；既有工程核验并复用当前登记架构及固定工程基线/POM 中的实际 Spring Boot 版本，记录 not-applicable，不重复询问。 | 无 | `evidence.approval-record` |
 | `gate.engineering-contract-approved` | 工程合同批准 | `stage.technical-design` | 进入实现仓库准备或生成后端脚手架前。 | `gate.backend-architecture-platform-approved` | `evidence.technical-design-review`、`evidence.architecture-decision`、`evidence.approval-record` |
-| `gate.slice-contract-approved` | Slice Contract 批准 | `stage.slice-contract` | 任一 Agent 进入切片实现前。 | 无 | `evidence.contract-approval` |
+| `gate.slice-contract-approved` | Slice Contract 批准 | `stage.slice-contract` | 任一 Agent 进入切片实现前。 | `check.design-reviewed` | `evidence.contract-approval` |
 | `gate.slice-ready-for-agent` | 切片实现就绪 | `stage.slice-contract` | Slice Contract 满足完整就绪公式。 | 无 | `evidence.contract-approval` |
 | `gate.openapi-freeze-confirmed` | OpenAPI Freeze 确认 | `stage.slice-contract` | 切片有 API 影响且契约进入实现。 | 无 | `evidence.approval-record` |
 | `gate.fresh-verification-passed` | Fresh Verification 通过 | `stage.verification` | 实现完成并准备进入合并前复核。 | 无 | `evidence.fresh-verification`、`evidence.test-verification` |
 | `gate.merge-approved` | 合并批准 | `stage.verification` | 切片完成合并前裁决。 | 无 | `evidence.approval-record`、`evidence.checkpoint-and-rollback` |
+
+### 2.1.1 内部专业检查
+
+| 稳定 ID | 检查 | 所属阶段 | 触发条件 | 必须留下的证据 |
+|---|---|---|---|---|
+| `check.design-reviewed` | Slice 工程设计独立审查 | `stage.slice-contract` | 当前编译并持久化的 Slice v3 在批准实施前；独立专业审查绑定当前合同 ID、版本、原字节摘要与审查主体，不复用旧工程设计批准。 | `evidence.contract-approval`、`evidence.approval-record` |
 
 ### 2.2 生命周期产物
 

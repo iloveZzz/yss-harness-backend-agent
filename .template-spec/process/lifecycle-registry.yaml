@@ -4,7 +4,7 @@ status: active
 description: >-
   harness-agent 的生命周期事实源。流程从已确认的上游输入进入按已确认架构组织的技术设计，经过统一 Slice Implementation Contract，完成前后端垂直切片和独立测试验证。
 id_policy:
-  pattern: '^(stage|gate|artifact|work-unit|evidence)\.[a-z0-9][a-z0-9-]*$'
+  pattern: '^(stage|gate|check|artifact|work-unit|evidence)\.[a-z0-9][a-z0-9-]*$'
   published_ids_immutable: true
   baseline: .template-spec/process/lifecycle-registry-baseline.json
   deprecated_ids: [ stage.tactical-design, work-unit.tactical-design, gate.tactical-design-approved ]
@@ -76,6 +76,13 @@ evidence:
     name: 实现仓库准备证据
     description: 设计门禁绑定、仓库接入或脚手架 Manifest、验证及历史恢复对账证据。
 
+checks:
+  - id: check.design-reviewed
+    name: Slice 工程设计独立审查
+    stage: stage.slice-contract
+    trigger: 当前编译并持久化的 Slice v3 在批准实施前；独立专业审查绑定当前合同 ID、版本、原字节摘要与审查主体，不复用旧工程设计批准。
+    evidence: [ evidence.contract-approval, evidence.approval-record ]
+
 gates:
   - id: gate.frontend-delivery-inputs-verified
     name: 前端联合输入核验
@@ -113,6 +120,7 @@ gates:
     stage: stage.slice-contract
     trigger: 任一 Agent 进入切片实现前。
     evidence: [ evidence.contract-approval ]
+    requires_checks: [ check.design-reviewed ]
   - id: gate.slice-ready-for-agent
     name: 切片实现就绪
     stage: stage.slice-contract
