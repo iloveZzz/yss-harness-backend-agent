@@ -3,7 +3,7 @@ export default {
   "schema_version": 1,
   "kind": "test-only-canonical-source",
   "source_repository": "yss-spec-project-template",
-  "source_head": "bc4606968ce59d1344250fb31eea2505037cde30",
+  "source_head": "cc0a3865d935d1d44c3e88b7e7cd8d5b5d99c41a",
   "source_state": "working-tree",
   "files": [
     {
@@ -927,7 +927,7 @@ export default {
       "path": "scripts/lib/source-context-snapshot.mjs",
       "source_path": "scripts/lib/source-context-snapshot.mjs",
       "storage_path": "scripts/lib/source-context-snapshot.mjs",
-      "sha256": "5589b4557f445a09a64087b0f21c0ab7b8ca0cc2a8d77687c5d24733888357ec",
+      "sha256": "0d98e2a705afbbff852f5de4a19cf6187434335f1a0ce044ea253ae628f20c4e",
       "mode": 420
     },
     {

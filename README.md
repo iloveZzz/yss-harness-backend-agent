@@ -4,6 +4,8 @@
 
 本仓从通用研发 Harness 分出，继续共享校验工具和技能来源；运行时代码通过登记的实现仓接入。后端按业务切片交付已验证的冻结接口、构建与部署身份。
 
+可按需协作于一个 Spec 综合研发主控；主控必须绑定明确的同功能 checkpoint 与当前 Receipt。后端职责完成不等于整个业务验收，不改变本端实现范围。新增 Backend Delivery 的 `strategic_bundle_ref` 使用批准后的完整 v5 delivery wrapper；裸 package 仅作历史兼容读取。
+
 ## 初始化
 
 统一 CLI `yss` 使用 `backend` Profile 创建 `harness.backend-delivery` 实例。使用已验收的固定二进制，先运行 `yss bundle inspect --profile backend --json` 核对模板提交和 Bundle 来源。
@@ -28,3 +30,7 @@ yss init --profile backend --root /absolute/path/to/project --apply --plan-file 
 首次使用请从[本仓手册](.template-spec/user-guide/后端子项目用户手册.md)开始；练习见[设备借用职责案例](.template-spec/user-guide/设备借用贯穿案例.md)，全部入口见[索引](.template-spec/user-guide/用户手册索引.md)。
 
 CLI 创建、接入、诊断、同步及恢复见 [CLI 使用说明](.template-spec/user-guide/CLI使用说明.md)。
+
+## 本地业务分析与本端交付
+
+原始需求可在本项目完成目标与验收、Plan、业务边界和规则、Spec，再进入本端设计、实现、测试与独立审查；无需先创建独立 Spec/Design 工程。已有上游批准输入时复用当前来源，冲突回交权威方确认，禁止静默改写。小任务按主控合同 `request_triage.delivery_path` 与 `yss lifecycle route` 选择 daily；高风险或已正式绑定任务保留 governed。分析角色不授予另一端代码写入；本端交付完成不等于跨端业务验收。纯 UI 记录后端不适用的原因和当前依据；真实 API、数据与跨仓依赖必须对齐。独立脚手架只生成机械结构，不授予业务实施。

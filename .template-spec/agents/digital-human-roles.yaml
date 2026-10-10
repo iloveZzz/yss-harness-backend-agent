@@ -67,6 +67,8 @@ orchestrator:
     - stage.slice-contract
     - stage.slice-implementation
     - stage.verification
+    - stage.plan
+    - stage.spec-architecture
   default_dual_hat: []
   draft_artifact_ids:
     - artifact.impact-assessment
@@ -88,7 +90,8 @@ orchestrator:
     - yss-ui
     - implement
   description: 负责四角色 Harness Agent 的入口、影响面、合同版本、任务包、状态转移、证据汇合和重路由。
-    不写业务代码，不替专业角色做领域或产品决策，不自行关闭独立验证门禁。
+    不写业务代码，不替专业角色做领域或产品决策，不自行关闭独立验证门禁。协作汇总只消费显式同功能 checkpoint 和当前 Receipt，不改写综合
+    Spec 的推进意图，不把后端职责完成宣布为整体业务验收。 本地需求先派发需求与产品分析角色；分析不扩大另一端代码写范围。
 roles:
   - id: role.architecture-agent
     name: 架构 Agent
@@ -225,6 +228,67 @@ roles:
       - implement
     description: 从战术设计和 Slice Contract 建立测试 seam、fixture 和失败基线，独立执行契约、集成、E2E 和 Fresh
       Verification；不修改产品范围、领域规则或生产实现来掩盖失败。
+  - id: role.requirements-manager
+    name: 需求经理
+    kind: digital-human
+    contract_version: 1
+    title: YSS 需求经理
+    stages:
+      - stage.plan
+      - stage.spec-architecture
+    draft_artifact_ids:
+      - artifact.plan-record
+      - artifact.spec
+      - artifact.business-ticket-set
+    core_skills:
+      - grilling
+      - domain-modeling
+      - yss-research
+      - competitive-intelligence
+    forbidden_skills:
+      - yss-domain
+      - yss-web-controller
+      - yss-repository
+      - yss-ddd-scaffold-generator
+      - yss-layered-mvc-scaffold-generator
+      - implement
+      - tdd
+    description: Own Plan language, users, MVP, non-goals, success criteria, test
+      seams, and Spec prose. Propose CONTEXT.md glossary entries. Do not freeze
+      visual prototypes, OpenAPI, or code. Do not guess unconfirmed business
+      rules. Hand off to the orchestrator when the frontier is empty.
+  - id: role.product-manager
+    name: 产品经理
+    kind: digital-human
+    contract_version: 1
+    title: YSS 产品经理
+    stages:
+      - stage.plan
+      - stage.spec-architecture
+    draft_artifact_ids:
+      - artifact.business-ticket-set
+      - artifact.product-overview
+      - artifact.functional-architecture
+    core_skills:
+      - yss-research
+      - competitive-intelligence
+    forbidden_skills:
+      - yss-domain
+      - yss-repository
+      - yss-web-controller
+      - yss-ddd-scaffold-generator
+      - yss-layered-mvc-scaffold-generator
+      - implement
+      - tdd
+    description: Own priority, product-design impact, interaction, state matrix,
+      prototype confirmation recommendation, and the commercial constraints,
+      delivery commitments, release window, and commercial non-goals for Plan
+      and release. May reject Spec scope. Do not write production code or freeze
+      OpenAPI alone. Do not independently approve external commercial contracts
+      or formal commitments; those require biological-human approval. Frontend
+      implementation uses the frontend-engineer role and yss-ui. Prototypes use
+      offline HTML/CSS/JavaScript and project DESIGN.md; production component
+      facts remain downstream.
 stage_groups:
   - id: group.harness-entry
     name: Harness 入口
@@ -271,6 +335,21 @@ stage_groups:
     members:
       - role.harness-orchestrator
       - role.architecture-agent
+      - role.test-agent
+  - id: group.plan
+    name: Plan
+    stage: stage.plan
+    members:
+      - role.harness-orchestrator
+      - role.requirements-manager
+      - role.product-manager
+  - id: group.spec
+    name: Spec
+    stage: stage.spec-architecture
+    members:
+      - role.harness-orchestrator
+      - role.requirements-manager
+      - role.product-manager
       - role.test-agent
 gate_policy:
   default_if_unlisted: reject-unlisted
@@ -322,8 +401,38 @@ gate_policy:
       implementer_must_differ: true
       capability_ids:
         - capability.implementation-assurance
-  dual_digital_human: []
-  check_reviews: []
+  dual_digital_human:
+    - gate: gate.plan-approved
+      capability_ids:
+        - capability.business-rules
+      drafter: role.requirements-manager
+      countersigners:
+        - role.product-manager
+    - gate: gate.spec-baseline-approved
+      capability_ids:
+        - capability.spec-acceptance
+      drafter: role.requirements-manager
+      countersigners:
+        - role.product-manager
+  check_reviews:
+    - gate: check.design-reviewed
+      countersigners:
+        - role.architecture-agent
+        - role.test-agent
+      capability_ids:
+        - capability.technical-design
+    - gate: check.domain-strategy-approved
+      capability_ids:
+        - capability.business-rules
+      drafter: role.requirements-manager
+      countersigners:
+        - role.product-manager
+    - gate: check.stage-decision-package-approved
+      capability_ids:
+        - capability.business-rules
+      drafter: role.requirements-manager
+      countersigners:
+        - role.product-manager
   automatic_checks: []
   product_digital_human_with_biological_veto: []
   review_execution:
@@ -333,19 +442,75 @@ gate_policy:
     adjacent_checks: one-review-with-per-check-conclusions
     suggestions: backlog-without-blocking
     violations_or_missing_evidence: blocking
+    review_bundles:
+      - bundle_id: review-bundle.plan
+        work_unit: work-unit.plan-requirements
+        aggregate_gate: gate.plan-approved
+        checks:
+          - check.domain-strategy-approved
+          - check.stage-decision-package-approved
+        check_order: domain-strategy-before-stage-decision
+        aggregate_professional_result: reuse-internal-check-conclusions
+        aggregate_additional_review_task: forbidden
+        review_control_ref: .agents/skills/harness-orchestrator/references/orchestration-contract.yaml#planning.review_control
+  continuation_reviews:
+    gate.plan-approved:
+      - role.product-manager
+    gate.spec-baseline-approved:
+      - role.product-manager
+    gate.backend-architecture-platform-approved:
+      - role.backend-agent
+    gate.engineering-contract-approved:
+      - role.backend-agent
+      - role.test-agent
+    implementation-scope:
+      - role.test-agent
 user_decision_policy:
   schema_version: 1
+  required_capabilities:
+    - business-ticket-approval-v1
   default_responder: requester
   delegate_requires_requester_evidence: true
+  continuation:
+    capability: approved-scope-continuation-v1
+    source_boundary: delivery-scope
+    boundaries:
+      - gate.plan-approved
+      - gate.spec-baseline-approved
+      - gate.backend-architecture-platform-approved
+      - gate.engineering-contract-approved
+      - implementation-scope
+    material_changes:
+      - business-scope
+      - acceptance
+      - contract-commitments
+      - authorization
+      - risk-acceptance
+      - quality
+      - external-commitments
+    unknown_change: blocked
+    external_requirements: preserve-project-policy
+    external_policy_unconfirmed: no-automatic-continuation
   source_kinds:
     - platform-message
     - session-export
     - user-confirmation-file
   gates:
+    - gate.plan-approved
+    - gate.spec-baseline-approved
     - gate.backend-architecture-platform-approved
-  work_units: {}
+    - gate.engineering-contract-approved
+  work_units:
+    work-unit.implementation-repository-preparation: scaffold-choice
+    work-unit.slice-implementation: implementation-scope
+  work_unit_gates:
+    work-unit.spec-synthesis:
+      - gate.spec-baseline-approved
   conditional_decisions:
     - scaffold-choice
+    - external-input
+    - new-authorization
+    - risk-acceptance
   waiting_allows: independent-work-only
   expiry: basis-change-or-revocation-only
   record_schema: .template-spec/process/schemas/user-decision.schema.json
@@ -355,6 +520,7 @@ review_capabilities:
     name: 后端技术设计与架构审查
     eligible_roles:
       - role.test-agent
+      - role.architecture-agent
     review_skills:
       - yss-technical-design
       - code-review
@@ -376,5 +542,18 @@ review_capabilities:
     eligible_roles:
       - role.test-agent
       - role.architecture-agent
+    review_skills:
+      - code-review
+  - id: capability.business-rules
+    name: 业务边界与规则审查
+    eligible_roles:
+      - role.product-manager
+    review_skills:
+      - domain-modeling
+      - yss-stage-decision
+  - id: capability.spec-acceptance
+    name: Spec 范围与验收审查
+    eligible_roles:
+      - role.product-manager
     review_skills:
       - code-review
