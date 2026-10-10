@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "wikiRoot": ".template-source/wiki",
   "compiledAt": "2026-09-04T06:27:55.184Z",
   "gitCommit": "7817258fc02d63c67b71fd820f5025168556fa4c",
@@ -11,7 +11,11 @@
       "livePath": "AGENTS.md",
       "rawPath": "raw/AGENTS.md",
       "role": "copy",
-      "sha256": "05deb268226acb432301a142ed804048041696582d559e9774a0788f5cef837e"
+      "sha256": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+      "originalDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+      "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+      "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+      "location": "AGENTS.md"
     },
     {
       "id": "CONTEXT.md",
@@ -19,7 +23,11 @@
       "livePath": "CONTEXT.md",
       "rawPath": "raw/CONTEXT.md",
       "role": "copy",
-      "sha256": "c512d1d6a276eadd4aaf3e509ebc67d53a7ae2f1227c6ddaae721cb11a320a73"
+      "sha256": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+      "originalDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+      "effectiveDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+      "rawDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+      "location": "CONTEXT.md"
     },
     {
       "id": "README.md",
@@ -27,7 +35,11 @@
       "livePath": "README.md",
       "rawPath": "raw/README.md",
       "role": "copy",
-      "sha256": "db00b8d95010007515eda5825968190295d4c8d69a64563f2cb0a45d80ac72ae"
+      "sha256": "70b19c000b65d00db8853c9c9ced353fb9738199696a25550b3a84ed655297f3",
+      "originalDigest": "70b19c000b65d00db8853c9c9ced353fb9738199696a25550b3a84ed655297f3",
+      "effectiveDigest": "70b19c000b65d00db8853c9c9ced353fb9738199696a25550b3a84ed655297f3",
+      "rawDigest": "70b19c000b65d00db8853c9c9ced353fb9738199696a25550b3a84ed655297f3",
+      "location": "README.md"
     },
     {
       "id": "yss-project.yaml",
@@ -35,7 +47,11 @@
       "livePath": "yss-project.yaml",
       "rawPath": "raw/yss-project.yaml",
       "role": "copy",
-      "sha256": "dae2ddacbb024ba25b70a18830fc26ab7d3dcd8aaa361cc8b3767d68307f98af"
+      "sha256": "dae2ddacbb024ba25b70a18830fc26ab7d3dcd8aaa361cc8b3767d68307f98af",
+      "originalDigest": "dae2ddacbb024ba25b70a18830fc26ab7d3dcd8aaa361cc8b3767d68307f98af",
+      "effectiveDigest": "dae2ddacbb024ba25b70a18830fc26ab7d3dcd8aaa361cc8b3767d68307f98af",
+      "rawDigest": "dae2ddacbb024ba25b70a18830fc26ab7d3dcd8aaa361cc8b3767d68307f98af",
+      "location": "yss-project.yaml"
     },
     {
       "id": "lifecycle-registry.yaml",
@@ -43,7 +59,11 @@
       "livePath": ".template-spec/process/lifecycle-registry.yaml",
       "rawPath": "raw/lifecycle-registry.yaml",
       "role": "copy",
-      "sha256": "5b1f79adff29f41dc940cd86b0bb645c17420ad3a0b974efeb20eb52c0701647"
+      "sha256": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+      "originalDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+      "effectiveDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+      "rawDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+      "location": ".template-spec/process/lifecycle-registry.yaml"
     },
     {
       "id": "harness-process-tailoring.md",
@@ -51,7 +71,11 @@
       "livePath": ".template-spec/process/harness-process-tailoring.md",
       "rawPath": "raw/harness-process-tailoring.md",
       "role": "copy",
-      "sha256": "f05a3485010857e9c98c02ba69f8f10a6160386cfcf41d46255241593784afd3"
+      "sha256": "6cd01602f067d44d461c4214726d9aa9ec2b892f0ac0c03d24b82ea5b04b0575",
+      "originalDigest": "6cd01602f067d44d461c4214726d9aa9ec2b892f0ac0c03d24b82ea5b04b0575",
+      "effectiveDigest": "6cd01602f067d44d461c4214726d9aa9ec2b892f0ac0c03d24b82ea5b04b0575",
+      "rawDigest": "6cd01602f067d44d461c4214726d9aa9ec2b892f0ac0c03d24b82ea5b04b0575",
+      "location": ".template-spec/process/harness-process-tailoring.md"
     },
     {
       "id": "maintenance-intensity.yaml",
@@ -59,7 +83,11 @@
       "livePath": ".template-source/process/maintenance-intensity.yaml",
       "rawPath": "raw/maintenance-intensity.yaml",
       "role": "copy",
-      "sha256": "6338e218860416a2a2ca9c187b5589bc1140b967dbac5f3ecea906adfb588a0f"
+      "sha256": "b4a8788abfd13ec799986a35c558a2e64653370dbe8cdf22e69c2a5160e99397",
+      "originalDigest": "b4a8788abfd13ec799986a35c558a2e64653370dbe8cdf22e69c2a5160e99397",
+      "effectiveDigest": "b4a8788abfd13ec799986a35c558a2e64653370dbe8cdf22e69c2a5160e99397",
+      "rawDigest": "b4a8788abfd13ec799986a35c558a2e64653370dbe8cdf22e69c2a5160e99397",
+      "location": ".template-source/process/maintenance-intensity.yaml"
     },
     {
       "id": "implementation-repo-integration.md",
@@ -67,7 +95,11 @@
       "livePath": ".template-spec/process/implementation-repo-integration.md",
       "rawPath": "raw/implementation-repo-integration.md",
       "role": "copy",
-      "sha256": "9f7745aca6814aea1c863bd4f55e606eef1698202b7ac93dbf0492080f49896a"
+      "sha256": "ca93f5928be6570beedc7756a624311e83c9559992d8a5343eefa8b7db7f5bf6",
+      "originalDigest": "ca93f5928be6570beedc7756a624311e83c9559992d8a5343eefa8b7db7f5bf6",
+      "effectiveDigest": "ca93f5928be6570beedc7756a624311e83c9559992d8a5343eefa8b7db7f5bf6",
+      "rawDigest": "ca93f5928be6570beedc7756a624311e83c9559992d8a5343eefa8b7db7f5bf6",
+      "location": ".template-spec/process/implementation-repo-integration.md"
     },
     {
       "id": "skills-maintenance.md",
@@ -75,7 +107,11 @@
       "livePath": ".template-source/agents/skills-maintenance.md",
       "rawPath": "raw/skills-maintenance.md",
       "role": "copy",
-      "sha256": "400b9bfdbb35764316a86bb48013d214b142243a0d064fc47cb041dfd3bd0adf"
+      "sha256": "c5bfcf2400adb22a80545407f33f2da8420d170a3545d4e912dd2928b7086c77",
+      "originalDigest": "c5bfcf2400adb22a80545407f33f2da8420d170a3545d4e912dd2928b7086c77",
+      "effectiveDigest": "c5bfcf2400adb22a80545407f33f2da8420d170a3545d4e912dd2928b7086c77",
+      "rawDigest": "c5bfcf2400adb22a80545407f33f2da8420d170a3545d4e912dd2928b7086c77",
+      "location": ".template-source/agents/skills-maintenance.md"
     },
     {
       "id": "yss-skill-registry.yaml",
@@ -83,7 +119,11 @@
       "livePath": ".template-spec/agents/yss-skill-registry.yaml",
       "rawPath": "raw/yss-skill-registry.yaml",
       "role": "copy",
-      "sha256": "bec5411f279557d68c86a2b47018d18bf6485ec5ae6314ac62400d53806a69bf"
+      "sha256": "c65b74bdafdcb3c5705e472f6c817ec1ce8bbc3c4771e379dc3db831b88e77dc",
+      "originalDigest": "c65b74bdafdcb3c5705e472f6c817ec1ce8bbc3c4771e379dc3db831b88e77dc",
+      "effectiveDigest": "c65b74bdafdcb3c5705e472f6c817ec1ce8bbc3c4771e379dc3db831b88e77dc",
+      "rawDigest": "c65b74bdafdcb3c5705e472f6c817ec1ce8bbc3c4771e379dc3db831b88e77dc",
+      "location": ".template-spec/agents/yss-skill-registry.yaml"
     },
     {
       "id": "issue-tracker.md",
@@ -91,7 +131,11 @@
       "livePath": ".template-spec/agents/issue-tracker.md",
       "rawPath": "raw/issue-tracker.md",
       "role": "copy",
-      "sha256": "260db9b67b39f8cba50fc1de7a7ae12abb9d246f3a4b85c0122a71f9fcf431f9"
+      "sha256": "b50594077e99c08e2fbf6f137fb5dc75e705097ddce7d5186b10fb288957df9b",
+      "originalDigest": "b50594077e99c08e2fbf6f137fb5dc75e705097ddce7d5186b10fb288957df9b",
+      "effectiveDigest": "b50594077e99c08e2fbf6f137fb5dc75e705097ddce7d5186b10fb288957df9b",
+      "rawDigest": "b50594077e99c08e2fbf6f137fb5dc75e705097ddce7d5186b10fb288957df9b",
+      "location": ".template-spec/agents/issue-tracker.md"
     },
     {
       "id": "triage-labels.md",
@@ -99,7 +143,11 @@
       "livePath": ".template-spec/agents/triage-labels.md",
       "rawPath": "raw/triage-labels.md",
       "role": "copy",
-      "sha256": "41f5eb2fe11388077c73dbac7d29cf83fb1da229248b6363c273a891d00705fd"
+      "sha256": "fae3c1d018392d77ea098112251aaf377ba51b07b31164a99bb70d541bb2ed9d",
+      "originalDigest": "fae3c1d018392d77ea098112251aaf377ba51b07b31164a99bb70d541bb2ed9d",
+      "effectiveDigest": "fae3c1d018392d77ea098112251aaf377ba51b07b31164a99bb70d541bb2ed9d",
+      "rawDigest": "fae3c1d018392d77ea098112251aaf377ba51b07b31164a99bb70d541bb2ed9d",
+      "location": ".template-spec/agents/triage-labels.md"
     },
     {
       "id": "create-yss-spec-repository-mode-contract",
@@ -107,7 +155,11 @@
       "livePath": ".template-source/contracts/create-yss-spec-repository-mode-contract.md",
       "rawPath": "raw/create-yss-spec-repository-mode-contract.md",
       "role": "copy",
-      "sha256": "6ea0ebee5fd9fdcf4838e931686746ede714b9833e790104e1fa5b4b58631daf"
+      "sha256": "4f625d3cfeb36ea8849989a6e7e7237ab6240cb41c6740af0ef751eec2fefda1",
+      "originalDigest": "4f625d3cfeb36ea8849989a6e7e7237ab6240cb41c6740af0ef751eec2fefda1",
+      "effectiveDigest": "4f625d3cfeb36ea8849989a6e7e7237ab6240cb41c6740af0ef751eec2fefda1",
+      "rawDigest": "4f625d3cfeb36ea8849989a6e7e7237ab6240cb41c6740af0ef751eec2fefda1",
+      "location": ".template-source/contracts/create-yss-spec-repository-mode-contract.md"
     },
     {
       "id": "spec-template.md",
@@ -115,7 +167,11 @@
       "livePath": ".template-spec/templates/spec-template.md",
       "rawPath": "raw/spec-template.md",
       "role": "copy",
-      "sha256": "10d12f0d4c7c148afd74876d057afebdf0a97b65a21cdf2b67ca14a3ce804115"
+      "sha256": "13e335ed217f5c45506ec618a49ff64573816de7e108b64c227711454b50261c",
+      "originalDigest": "13e335ed217f5c45506ec618a49ff64573816de7e108b64c227711454b50261c",
+      "effectiveDigest": "13e335ed217f5c45506ec618a49ff64573816de7e108b64c227711454b50261c",
+      "rawDigest": "13e335ed217f5c45506ec618a49ff64573816de7e108b64c227711454b50261c",
+      "location": ".template-spec/templates/spec-template.md"
     },
     {
       "id": "vertical-slice-ticket-template.md",
@@ -123,7 +179,11 @@
       "livePath": ".template-spec/templates/vertical-slice-ticket-template.md",
       "rawPath": "raw/vertical-slice-ticket-template.md",
       "role": "copy",
-      "sha256": "ce53258ca085b3b74adf56dd3d9cac2c01b4644d581f81886440d11682d02ae3"
+      "sha256": "63c1d2f128b135bff34ed7d9b538a889d8fc3f9d3ec29739aa39e53c58207e1c",
+      "originalDigest": "63c1d2f128b135bff34ed7d9b538a889d8fc3f9d3ec29739aa39e53c58207e1c",
+      "effectiveDigest": "63c1d2f128b135bff34ed7d9b538a889d8fc3f9d3ec29739aa39e53c58207e1c",
+      "rawDigest": "63c1d2f128b135bff34ed7d9b538a889d8fc3f9d3ec29739aa39e53c58207e1c",
+      "location": ".template-spec/templates/vertical-slice-ticket-template.md"
     },
     {
       "id": "skills-lock.json",
@@ -132,9 +192,17 @@
       "rawPath": "raw/skills-lock-names.md",
       "role": "extract",
       "extract": {
-        "kind": "skill-names"
+        "kind": "skill-names",
+        "version": "1",
+        "inputs": [
+          "skills-lock.json"
+        ]
       },
-      "sha256": "aeda1a392d62f91a2e83a15f79b5636bcda4ff25b68a18eaff2816f30409b142"
+      "sha256": "e0e2e4e137e37631931b3e4c55d64e50e0c57adb4ba168f12cd2340f9ed1c471",
+      "originalDigest": "e0e2e4e137e37631931b3e4c55d64e50e0c57adb4ba168f12cd2340f9ed1c471",
+      "effectiveDigest": "c8f35ee74141b01e7e96abc206b8f95c3d1ae15da9e17c2013735dd1611fca1e",
+      "rawDigest": "c8f35ee74141b01e7e96abc206b8f95c3d1ae15da9e17c2013735dd1611fca1e",
+      "location": "skills-lock.json"
     },
     {
       "id": "skill-migrations.md",
@@ -142,7 +210,11 @@
       "livePath": ".template-spec/agents/skill-migrations.md",
       "rawPath": "raw/skill-migrations.md",
       "role": "copy",
-      "sha256": "78c373a98df9b93b96758e7092e2890afb10d5266209a4fa515e50582c80b178"
+      "sha256": "0e6c69c1aa68f8f49624a9eb461acbfe60b91efe965f3fae17e310d191081463",
+      "originalDigest": "0e6c69c1aa68f8f49624a9eb461acbfe60b91efe965f3fae17e310d191081463",
+      "effectiveDigest": "0e6c69c1aa68f8f49624a9eb461acbfe60b91efe965f3fae17e310d191081463",
+      "rawDigest": "0e6c69c1aa68f8f49624a9eb461acbfe60b91efe965f3fae17e310d191081463",
+      "location": ".template-spec/agents/skill-migrations.md"
     },
     {
       "id": "yss-public-skills.json",
@@ -150,7 +222,44 @@
       "livePath": "yss-public-skills.json",
       "rawPath": "raw/yss-public-skills.json",
       "role": "copy",
-      "sha256": "4a817b069ac68ccef91ad572cfb4b7b337db3ede008c47cc9c66bcc2a4d2a63e"
+      "sha256": "4a817b069ac68ccef91ad572cfb4b7b337db3ede008c47cc9c66bcc2a4d2a63e",
+      "originalDigest": "4a817b069ac68ccef91ad572cfb4b7b337db3ede008c47cc9c66bcc2a4d2a63e",
+      "effectiveDigest": "4a817b069ac68ccef91ad572cfb4b7b337db3ede008c47cc9c66bcc2a4d2a63e",
+      "rawDigest": "4a817b069ac68ccef91ad572cfb4b7b337db3ede008c47cc9c66bcc2a4d2a63e",
+      "location": "yss-public-skills.json"
+    },
+    {
+      "id": "llm-wiki-entry",
+      "kind": "document",
+      "location": ".agents/skills/llm-wiki/SKILL.md",
+      "livePath": ".agents/skills/llm-wiki/SKILL.md",
+      "rawPath": "raw/llm-wiki-SKILL.md",
+      "originalDigest": "1594b44d0871700075f7c13aa0cb7bdea34c90a3a6fa16f29c0721536dc94edb",
+      "effectiveDigest": "1594b44d0871700075f7c13aa0cb7bdea34c90a3a6fa16f29c0721536dc94edb",
+      "rawDigest": "1594b44d0871700075f7c13aa0cb7bdea34c90a3a6fa16f29c0721536dc94edb",
+      "sha256": "1594b44d0871700075f7c13aa0cb7bdea34c90a3a6fa16f29c0721536dc94edb"
+    },
+    {
+      "id": "llm-wiki-schema",
+      "kind": "document",
+      "location": ".agents/skills/llm-wiki/references/schema.md",
+      "livePath": ".agents/skills/llm-wiki/references/schema.md",
+      "rawPath": "raw/llm-wiki-schema.md",
+      "originalDigest": "84ad615d6a585643403e4d5282fc135c3d44627d5736a794a75279a22fd713e8",
+      "effectiveDigest": "84ad615d6a585643403e4d5282fc135c3d44627d5736a794a75279a22fd713e8",
+      "rawDigest": "84ad615d6a585643403e4d5282fc135c3d44627d5736a794a75279a22fd713e8",
+      "sha256": "84ad615d6a585643403e4d5282fc135c3d44627d5736a794a75279a22fd713e8"
+    },
+    {
+      "id": "llm-wiki-transactions",
+      "kind": "document",
+      "location": ".agents/skills/llm-wiki/references/transactions.md",
+      "livePath": ".agents/skills/llm-wiki/references/transactions.md",
+      "rawPath": "raw/llm-wiki-transactions.md",
+      "originalDigest": "0811f816623d41c51cb241569835f4525008255c288e25eea5fc06e95b69209d",
+      "effectiveDigest": "0811f816623d41c51cb241569835f4525008255c288e25eea5fc06e95b69209d",
+      "rawDigest": "0811f816623d41c51cb241569835f4525008255c288e25eea5fc06e95b69209d",
+      "sha256": "0811f816623d41c51cb241569835f4525008255c288e25eea5fc06e95b69209d"
     }
   ],
   "articles": [
@@ -164,7 +273,179 @@
         "yss-project.yaml",
         "skill-migrations.md"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "480271811fc1d06fb83fd86a2895fe3a6eafb2d429afb52f04e46f1a65c79775",
+      "compiledFrom": {
+        "README.md": {
+          "effectiveDigest": "70b19c000b65d00db8853c9c9ced353fb9738199696a25550b3a84ed655297f3",
+          "rawDigest": "70b19c000b65d00db8853c9c9ced353fb9738199696a25550b3a84ed655297f3",
+          "extractorVersion": "identity-v1"
+        },
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        },
+        "CONTEXT.md": {
+          "effectiveDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "rawDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "extractorVersion": "identity-v1"
+        },
+        "yss-project.yaml": {
+          "effectiveDigest": "dae2ddacbb024ba25b70a18830fc26ab7d3dcd8aaa361cc8b3767d68307f98af",
+          "rawDigest": "dae2ddacbb024ba25b70a18830fc26ab7d3dcd8aaa361cc8b3767d68307f98af",
+          "extractorVersion": "identity-v1"
+        },
+        "skill-migrations.md": {
+          "effectiveDigest": "0e6c69c1aa68f8f49624a9eb461acbfe60b91efe965f3fae17e310d191081463",
+          "rawDigest": "0e6c69c1aa68f8f49624a9eb461acbfe60b91efe965f3fae17e310d191081463",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "480271811fc1d06fb83fd86a2895fe3a6eafb2d429afb52f04e46f1a65c79775",
+        "checkedAt": "2026-10-10T08:50:34.877Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 5,
+            "endLine": 15,
+            "excerptDigest": "6e2d345cb4110d03f68faa693db9d8c9c437029008bd4c364e5ff45d198d28a3",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 1. 仓库身份",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 16,
+            "endLine": 30,
+            "excerptDigest": "74dd631a954a1c0ef7ea449a2233cd8763cb068b537f5353df8d155d8e481ce8",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 2. 单一事实来源",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 7,
+            "endLine": 14,
+            "excerptDigest": "4728c0b02d18465ec2021b2f12c07685d1dc9673a32325d1fa783a5b6aa6eb34",
+            "claim": "本仓身份独立核验；template-source 不产产品资产；只读诊断不创建 Ticket、checkpoint 或批准；旧实例显式迁移",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 20,
+            "endLine": 28,
+            "excerptDigest": "7a450915fc5b4d4c9fa7d98c56749d408279b915f57c8a499d48611de95b696e",
+            "claim": "根 Context、Profile、生命周期、影响面、Registry 与实现仓登记分别持有事实；README 不另定义规则",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 54,
+            "endLine": 54,
+            "excerptDigest": "b660c765da9f609637434ef99295c6b75be0a6af21e222c51e0a33191bfd4038",
+            "claim": "日常资格唯一消费本地 harness-orchestrator request_triage.delivery_path；lifecycle route 核验任务、实现仓和完整 SHA，政策能力或资格未证明不得启用 daily",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 58,
+            "endLine": 58,
+            "excerptDigest": "e27fa2a29e21c581adba29585f672fc01350571c9e7a9283708766c2b56222e3",
+            "claim": "daily 只更新同一 Ticket/PR 并保留范围、验收、工程基线、Skills、实际测试、独立审查和回滚；无需阶段 checkpoint 或正式 Slice；verify-daily 失败、缺独立审查或阻断未关闭不能完成",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 60,
+            "endLine": 60,
+            "excerptDigest": "a70a7fbc190316cb0345ff4dceb2b2c58db9da217a28b8df0ec8dcfe15f81539",
+            "claim": "已有正式绑定任务不得降级；无关正式资产不阻断 daily；新排除风险保留证据并恢复 governed，超出兼容范围的 API 走正式 Draft、审查和 Freeze",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 64,
+            "endLine": 64,
+            "excerptDigest": "92b5836c40a0accb38f571ee7d496a0d6254c35a6ef09d8528e9bef203e7d946",
+            "claim": "governed 可从本地原始需求完成适用 Plan、业务规则和 Spec；上游批准输入先核验复用，冲突回交，阶段/Slice/门禁只用于 governed",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 70,
+            "endLine": 74,
+            "excerptDigest": "359c05a67fb47a6be2754ba98ab3a3e82900bcf4b2bcb6c8c4fe0e682c9a7b1a",
+            "claim": "正式路线复用当前批准输入，只推进本轮职责；API 按 Draft/审查/Freeze，四专业同一当前 Slice 合同，命中门禁不能裁剪",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 66,
+            "endLine": 68,
+            "excerptDigest": "0225cfba923646a0709a6c927b51a99a9a4dd5221bcf39963ae55a04fb050ad4",
+            "claim": "正式导航只推进本轮触发工作单元及依赖，生命周期本端终点为 work-unit.verification",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 24,
+            "endLine": 24,
+            "excerptDigest": "2d6614d3cb4ecb675dccfe80d4b0f861fad4d96491b4b5d4a201e3d6edfa7fa2",
+            "claim": "active Registry 由 Harness 编排器消费技能身份和路由；来源与投影使用 skills-lock.json",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "README.md",
+            "inputPath": "README.md",
+            "startLine": 1,
+            "endLine": 13,
+            "excerptDigest": "24be5b325571c063852a95999031d116bb20a32883d97b9c90a495dc64b07a46",
+            "claim": "README 说明本专职 Harness 的定位及初始化入口，不替代本地执行边界",
+            "risk": "general"
+          },
+          {
+            "sourceId": "CONTEXT.md",
+            "inputPath": "CONTEXT.md",
+            "startLine": 1,
+            "endLine": 15,
+            "excerptDigest": "04e7295a6a6fc15d0c503424b8e02cb1cf7cf6a70e287bf5323eb61c1c123f26",
+            "claim": "根 Context 持有稳定业务语言与消费约定，正文不能授予实现权限",
+            "risk": "general"
+          },
+          {
+            "sourceId": "yss-project.yaml",
+            "inputPath": "yss-project.yaml",
+            "startLine": 1,
+            "endLine": 2,
+            "excerptDigest": "eb0499a20732d9c1e73321545163bd02612dbe750ee9965ee6d3bd6392c57c0b",
+            "claim": "当前仓库身份为 schema_version 1、template-source",
+            "risk": "general"
+          },
+          {
+            "sourceId": "skill-migrations.md",
+            "inputPath": ".template-spec/agents/skill-migrations.md",
+            "startLine": 1,
+            "endLine": 9,
+            "excerptDigest": "a4de5cfdefc84cb088ac1b05975f43817c1d0fcfaad75a5d445f7c8f058454a6",
+            "claim": "技能更名与历史 Bundle 的来源独立，普通同步不自动追认旧批准",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "仓库身份与路由",
@@ -174,7 +455,106 @@
         "AGENTS.md",
         "create-yss-spec-repository-mode-contract"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "d132eb46d8631a293677567c44ea9e8a9aea03903c5fddf0b9366c13c94176e7",
+      "compiledFrom": {
+        "yss-project.yaml": {
+          "effectiveDigest": "dae2ddacbb024ba25b70a18830fc26ab7d3dcd8aaa361cc8b3767d68307f98af",
+          "rawDigest": "dae2ddacbb024ba25b70a18830fc26ab7d3dcd8aaa361cc8b3767d68307f98af",
+          "extractorVersion": "identity-v1"
+        },
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        },
+        "create-yss-spec-repository-mode-contract": {
+          "effectiveDigest": "4f625d3cfeb36ea8849989a6e7e7237ab6240cb41c6740af0ef751eec2fefda1",
+          "rawDigest": "4f625d3cfeb36ea8849989a6e7e7237ab6240cb41c6740af0ef751eec2fefda1",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "d132eb46d8631a293677567c44ea9e8a9aea03903c5fddf0b9366c13c94176e7",
+        "checkedAt": "2026-10-10T08:50:34.879Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 5,
+            "endLine": 15,
+            "excerptDigest": "6e2d345cb4110d03f68faa693db9d8c9c437029008bd4c364e5ff45d198d28a3",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 1. 仓库身份",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 7,
+            "endLine": 14,
+            "excerptDigest": "4728c0b02d18465ec2021b2f12c07685d1dc9673a32325d1fa783a5b6aa6eb34",
+            "claim": "本仓身份独立核验；template-source 不产产品资产；只读诊断不创建 Ticket、checkpoint 或批准；旧实例显式迁移",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 54,
+            "endLine": 54,
+            "excerptDigest": "b660c765da9f609637434ef99295c6b75be0a6af21e222c51e0a33191bfd4038",
+            "claim": "日常资格唯一消费本地 harness-orchestrator request_triage.delivery_path；lifecycle route 核验任务、实现仓和完整 SHA，政策能力或资格未证明不得启用 daily",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 58,
+            "endLine": 58,
+            "excerptDigest": "e27fa2a29e21c581adba29585f672fc01350571c9e7a9283708766c2b56222e3",
+            "claim": "daily 只更新同一 Ticket/PR 并保留范围、验收、工程基线、Skills、实际测试、独立审查和回滚；无需阶段 checkpoint 或正式 Slice；verify-daily 失败、缺独立审查或阻断未关闭不能完成",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 60,
+            "endLine": 60,
+            "excerptDigest": "a70a7fbc190316cb0345ff4dceb2b2c58db9da217a28b8df0ec8dcfe15f81539",
+            "claim": "已有正式绑定任务不得降级；无关正式资产不阻断 daily；新排除风险保留证据并恢复 governed，超出兼容范围的 API 走正式 Draft、审查和 Freeze",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 66,
+            "endLine": 68,
+            "excerptDigest": "0225cfba923646a0709a6c927b51a99a9a4dd5221bcf39963ae55a04fb050ad4",
+            "claim": "正式导航只推进本轮触发工作单元及依赖，生命周期本端终点为 work-unit.verification",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "yss-project.yaml",
+            "inputPath": "yss-project.yaml",
+            "startLine": 1,
+            "endLine": 2,
+            "excerptDigest": "eb0499a20732d9c1e73321545163bd02612dbe750ee9965ee6d3bd6392c57c0b",
+            "claim": "当前仓库身份为 schema_version 1、template-source",
+            "risk": "general"
+          },
+          {
+            "sourceId": "create-yss-spec-repository-mode-contract",
+            "inputPath": ".template-source/contracts/create-yss-spec-repository-mode-contract.md",
+            "startLine": 1,
+            "endLine": 5,
+            "excerptDigest": "bdee2ffb2c0a88063cd88f362fa8363b6dc8b208829817ab8ce437a28bd4c895",
+            "claim": "此旧 create-yss-spec 契约是历史或已退役绑定，不是当前 Harness 初始化及发布合同",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "Agent入口规则",
@@ -184,7 +564,169 @@
         "CONTEXT.md",
         "skill-migrations.md"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "0ecf49a17a496eea95a272b69800bb16a2b1e528604934aea8f589fbdf6c03a1",
+      "compiledFrom": {
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        },
+        "CONTEXT.md": {
+          "effectiveDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "rawDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "extractorVersion": "identity-v1"
+        },
+        "skill-migrations.md": {
+          "effectiveDigest": "0e6c69c1aa68f8f49624a9eb461acbfe60b91efe965f3fae17e310d191081463",
+          "rawDigest": "0e6c69c1aa68f8f49624a9eb461acbfe60b91efe965f3fae17e310d191081463",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "0ecf49a17a496eea95a272b69800bb16a2b1e528604934aea8f589fbdf6c03a1",
+        "checkedAt": "2026-10-10T08:50:34.883Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 5,
+            "endLine": 15,
+            "excerptDigest": "6e2d345cb4110d03f68faa693db9d8c9c437029008bd4c364e5ff45d198d28a3",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 1. 仓库身份",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 16,
+            "endLine": 30,
+            "excerptDigest": "74dd631a954a1c0ef7ea449a2233cd8763cb068b537f5353df8d155d8e481ce8",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 2. 单一事实来源",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 110,
+            "endLine": 120,
+            "excerptDigest": "5aa0401c0e78329fc5e216adb3f605ab41fafbaff01e027fdd4986014fbc022b",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 10. 审查、验证与 Git",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 7,
+            "endLine": 14,
+            "excerptDigest": "4728c0b02d18465ec2021b2f12c07685d1dc9673a32325d1fa783a5b6aa6eb34",
+            "claim": "本仓身份独立核验；template-source 不产产品资产；只读诊断不创建 Ticket、checkpoint 或批准；旧实例显式迁移",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 20,
+            "endLine": 28,
+            "excerptDigest": "7a450915fc5b4d4c9fa7d98c56749d408279b915f57c8a499d48611de95b696e",
+            "claim": "根 Context、Profile、生命周期、影响面、Registry 与实现仓登记分别持有事实；README 不另定义规则",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 54,
+            "endLine": 54,
+            "excerptDigest": "b660c765da9f609637434ef99295c6b75be0a6af21e222c51e0a33191bfd4038",
+            "claim": "日常资格唯一消费本地 harness-orchestrator request_triage.delivery_path；lifecycle route 核验任务、实现仓和完整 SHA，政策能力或资格未证明不得启用 daily",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 58,
+            "endLine": 58,
+            "excerptDigest": "e27fa2a29e21c581adba29585f672fc01350571c9e7a9283708766c2b56222e3",
+            "claim": "daily 只更新同一 Ticket/PR 并保留范围、验收、工程基线、Skills、实际测试、独立审查和回滚；无需阶段 checkpoint 或正式 Slice；verify-daily 失败、缺独立审查或阻断未关闭不能完成",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 60,
+            "endLine": 60,
+            "excerptDigest": "a70a7fbc190316cb0345ff4dceb2b2c58db9da217a28b8df0ec8dcfe15f81539",
+            "claim": "已有正式绑定任务不得降级；无关正式资产不阻断 daily；新排除风险保留证据并恢复 governed，超出兼容范围的 API 走正式 Draft、审查和 Freeze",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 64,
+            "endLine": 64,
+            "excerptDigest": "92b5836c40a0accb38f571ee7d496a0d6254c35a6ef09d8528e9bef203e7d946",
+            "claim": "governed 可从本地原始需求完成适用 Plan、业务规则和 Spec；上游批准输入先核验复用，冲突回交，阶段/Slice/门禁只用于 governed",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 70,
+            "endLine": 74,
+            "excerptDigest": "359c05a67fb47a6be2754ba98ab3a3e82900bcf4b2bcb6c8c4fe0e682c9a7b1a",
+            "claim": "正式路线复用当前批准输入，只推进本轮职责；API 按 Draft/审查/Freeze，四专业同一当前 Slice 合同，命中门禁不能裁剪",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 66,
+            "endLine": 68,
+            "excerptDigest": "0225cfba923646a0709a6c927b51a99a9a4dd5221bcf39963ae55a04fb050ad4",
+            "claim": "正式导航只推进本轮触发工作单元及依赖，生命周期本端终点为 work-unit.verification",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 112,
+            "endLine": 112,
+            "excerptDigest": "05d68846d8486b626c0a7a9fb87728e81f38d1cf0fe341540a5728e4ec90fd90",
+            "claim": "产品实现和专业审查由独立 Reviewer 执行，实施者不自审，Reviewer 不写实现；模板日常 self-check 消费维护规则",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 118,
+            "endLine": 119,
+            "excerptDigest": "30c4f69f64b6f1e8ee182c15350f2556d61b0a96394a9625d32d4f328ef91419",
+            "claim": "授权消费本地 harness-orchestrator user-decisions；有效范围授权复用，commit/push/publish 分别核验用户授权；返工或重要缺陷触发中文复盘",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "CONTEXT.md",
+            "inputPath": "CONTEXT.md",
+            "startLine": 1,
+            "endLine": 15,
+            "excerptDigest": "04e7295a6a6fc15d0c503424b8e02cb1cf7cf6a70e287bf5323eb61c1c123f26",
+            "claim": "根 Context 持有稳定业务语言与消费约定，正文不能授予实现权限",
+            "risk": "general"
+          },
+          {
+            "sourceId": "skill-migrations.md",
+            "inputPath": ".template-spec/agents/skill-migrations.md",
+            "startLine": 1,
+            "endLine": 9,
+            "excerptDigest": "a4de5cfdefc84cb088ac1b05975f43817c1d0fcfaad75a5d445f7c8f058454a6",
+            "claim": "技能更名与历史 Bundle 的来源独立，普通同步不自动追认旧批准",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "产品研发生命周期",
@@ -195,7 +737,129 @@
         "harness-process-tailoring.md",
         "skill-migrations.md"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "5d2ad62d6640ebef37e7fc616a5208edebaa14093c77909ce390bf6b95fafdc5",
+      "compiledFrom": {
+        "lifecycle-registry.yaml": {
+          "effectiveDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "rawDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "extractorVersion": "identity-v1"
+        },
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        },
+        "harness-process-tailoring.md": {
+          "effectiveDigest": "6cd01602f067d44d461c4214726d9aa9ec2b892f0ac0c03d24b82ea5b04b0575",
+          "rawDigest": "6cd01602f067d44d461c4214726d9aa9ec2b892f0ac0c03d24b82ea5b04b0575",
+          "extractorVersion": "identity-v1"
+        },
+        "skill-migrations.md": {
+          "effectiveDigest": "0e6c69c1aa68f8f49624a9eb461acbfe60b91efe965f3fae17e310d191081463",
+          "rawDigest": "0e6c69c1aa68f8f49624a9eb461acbfe60b91efe965f3fae17e310d191081463",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "5d2ad62d6640ebef37e7fc616a5208edebaa14093c77909ce390bf6b95fafdc5",
+        "checkedAt": "2026-10-10T08:50:34.885Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 52,
+            "endLine": 76,
+            "excerptDigest": "2deb5fe7fb575fad084e2dd7e4d53cebd33f96803404847380cdd14e994e23b5",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 5. `project-instance` 后端交付路由",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 54,
+            "endLine": 54,
+            "excerptDigest": "b660c765da9f609637434ef99295c6b75be0a6af21e222c51e0a33191bfd4038",
+            "claim": "日常资格唯一消费本地 harness-orchestrator request_triage.delivery_path；lifecycle route 核验任务、实现仓和完整 SHA，政策能力或资格未证明不得启用 daily",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 58,
+            "endLine": 58,
+            "excerptDigest": "e27fa2a29e21c581adba29585f672fc01350571c9e7a9283708766c2b56222e3",
+            "claim": "daily 只更新同一 Ticket/PR 并保留范围、验收、工程基线、Skills、实际测试、独立审查和回滚；无需阶段 checkpoint 或正式 Slice；verify-daily 失败、缺独立审查或阻断未关闭不能完成",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 60,
+            "endLine": 60,
+            "excerptDigest": "a70a7fbc190316cb0345ff4dceb2b2c58db9da217a28b8df0ec8dcfe15f81539",
+            "claim": "已有正式绑定任务不得降级；无关正式资产不阻断 daily；新排除风险保留证据并恢复 governed，超出兼容范围的 API 走正式 Draft、审查和 Freeze",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 64,
+            "endLine": 64,
+            "excerptDigest": "92b5836c40a0accb38f571ee7d496a0d6254c35a6ef09d8528e9bef203e7d946",
+            "claim": "governed 可从本地原始需求完成适用 Plan、业务规则和 Spec；上游批准输入先核验复用，冲突回交，阶段/Slice/门禁只用于 governed",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 70,
+            "endLine": 74,
+            "excerptDigest": "359c05a67fb47a6be2754ba98ab3a3e82900bcf4b2bcb6c8c4fe0e682c9a7b1a",
+            "claim": "正式路线复用当前批准输入，只推进本轮职责；API 按 Draft/审查/Freeze，四专业同一当前 Slice 合同，命中门禁不能裁剪",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 66,
+            "endLine": 68,
+            "excerptDigest": "0225cfba923646a0709a6c927b51a99a9a4dd5221bcf39963ae55a04fb050ad4",
+            "claim": "正式导航只推进本轮触发工作单元及依赖，生命周期本端终点为 work-unit.verification",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "lifecycle-registry.yaml",
+            "inputPath": ".template-spec/process/lifecycle-registry.yaml",
+            "startLine": 1,
+            "endLine": 8,
+            "excerptDigest": "e87349ae7febe76b25051035f35d322029072565a9d8e7301e7c30516490daad",
+            "claim": "active 生命周期注册表持有稳定 ID，本地执行仍受 Profile 允许范围限制",
+            "risk": "general"
+          },
+          {
+            "sourceId": "harness-process-tailoring.md",
+            "inputPath": ".template-spec/process/harness-process-tailoring.md",
+            "startLine": 1,
+            "endLine": 16,
+            "excerptDigest": "b10a1f69ffe065431219818d91caeaf5d9f051bdf2684d0ed07a8830be2823a4",
+            "claim": "裁剪按实际影响与最近可信阶段，正式业务实现要求当前 Slice；所有路径遵守写范围",
+            "risk": "general"
+          },
+          {
+            "sourceId": "skill-migrations.md",
+            "inputPath": ".template-spec/agents/skill-migrations.md",
+            "startLine": 1,
+            "endLine": 9,
+            "excerptDigest": "a4de5cfdefc84cb088ac1b05975f43817c1d0fcfaad75a5d445f7c8f058454a6",
+            "claim": "技能更名与历史 Bundle 的来源独立，普通同步不自动追认旧批准",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "条件强制门禁",
@@ -205,7 +869,115 @@
         "harness-process-tailoring.md",
         "AGENTS.md"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "8dc3ece2f007233f05586e18fa61e6f191331d2447b2980ad9187ec245b0a377",
+      "compiledFrom": {
+        "lifecycle-registry.yaml": {
+          "effectiveDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "rawDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "extractorVersion": "identity-v1"
+        },
+        "harness-process-tailoring.md": {
+          "effectiveDigest": "6cd01602f067d44d461c4214726d9aa9ec2b892f0ac0c03d24b82ea5b04b0575",
+          "rawDigest": "6cd01602f067d44d461c4214726d9aa9ec2b892f0ac0c03d24b82ea5b04b0575",
+          "extractorVersion": "identity-v1"
+        },
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "8dc3ece2f007233f05586e18fa61e6f191331d2447b2980ad9187ec245b0a377",
+        "checkedAt": "2026-10-10T08:50:34.887Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 52,
+            "endLine": 76,
+            "excerptDigest": "2deb5fe7fb575fad084e2dd7e4d53cebd33f96803404847380cdd14e994e23b5",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 5. `project-instance` 后端交付路由",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 77,
+            "endLine": 85,
+            "excerptDigest": "3ca827004a829a7c0ae78b04964cc2e5f48e6f0ee882ab0bc3abf21236476c5e",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 6. 正式 Ticket 与状态",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 64,
+            "endLine": 64,
+            "excerptDigest": "92b5836c40a0accb38f571ee7d496a0d6254c35a6ef09d8528e9bef203e7d946",
+            "claim": "governed 可从本地原始需求完成适用 Plan、业务规则和 Spec；上游批准输入先核验复用，冲突回交，阶段/Slice/门禁只用于 governed",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 70,
+            "endLine": 74,
+            "excerptDigest": "359c05a67fb47a6be2754ba98ab3a3e82900bcf4b2bcb6c8c4fe0e682c9a7b1a",
+            "claim": "正式路线复用当前批准输入，只推进本轮职责；API 按 Draft/审查/Freeze，四专业同一当前 Slice 合同，命中门禁不能裁剪",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 66,
+            "endLine": 68,
+            "excerptDigest": "0225cfba923646a0709a6c927b51a99a9a4dd5221bcf39963ae55a04fb050ad4",
+            "claim": "正式导航只推进本轮触发工作单元及依赖，生命周期本端终点为 work-unit.verification",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 81,
+            "endLine": 84,
+            "excerptDigest": "ec0d486e0a3b5ffe3e5d6aa092000f9e5855ea1189c1692f4400235f8b103a1e",
+            "claim": "正式父 Ticket 汇总批准、阻塞和证据；Slice 必须合同已批准且当前、门禁通过、阻塞清除才能 ready-for-agent；现有当前合同核验复用，Tracker 显式选择",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 112,
+            "endLine": 112,
+            "excerptDigest": "05d68846d8486b626c0a7a9fb87728e81f38d1cf0fe341540a5728e4ec90fd90",
+            "claim": "产品实现和专业审查由独立 Reviewer 执行，实施者不自审，Reviewer 不写实现；模板日常 self-check 消费维护规则",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "lifecycle-registry.yaml",
+            "inputPath": ".template-spec/process/lifecycle-registry.yaml",
+            "startLine": 1,
+            "endLine": 8,
+            "excerptDigest": "e87349ae7febe76b25051035f35d322029072565a9d8e7301e7c30516490daad",
+            "claim": "active 生命周期注册表持有稳定 ID，本地执行仍受 Profile 允许范围限制",
+            "risk": "general"
+          },
+          {
+            "sourceId": "harness-process-tailoring.md",
+            "inputPath": ".template-spec/process/harness-process-tailoring.md",
+            "startLine": 1,
+            "endLine": 16,
+            "excerptDigest": "b10a1f69ffe065431219818d91caeaf5d9f051bdf2684d0ed07a8830be2823a4",
+            "claim": "裁剪按实际影响与最近可信阶段，正式业务实现要求当前 Slice；所有路径遵守写范围",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "影响面分诊与流程裁剪",
@@ -215,7 +987,133 @@
         "lifecycle-registry.yaml",
         "AGENTS.md"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "51b9aa985782dd3abd0168d8615b817d2f98258a055081f0d7a7b74c10bb63c5",
+      "compiledFrom": {
+        "harness-process-tailoring.md": {
+          "effectiveDigest": "6cd01602f067d44d461c4214726d9aa9ec2b892f0ac0c03d24b82ea5b04b0575",
+          "rawDigest": "6cd01602f067d44d461c4214726d9aa9ec2b892f0ac0c03d24b82ea5b04b0575",
+          "extractorVersion": "identity-v1"
+        },
+        "lifecycle-registry.yaml": {
+          "effectiveDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "rawDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "extractorVersion": "identity-v1"
+        },
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "51b9aa985782dd3abd0168d8615b817d2f98258a055081f0d7a7b74c10bb63c5",
+        "checkedAt": "2026-10-10T08:50:34.890Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 5,
+            "endLine": 15,
+            "excerptDigest": "6e2d345cb4110d03f68faa693db9d8c9c437029008bd4c364e5ff45d198d28a3",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 1. 仓库身份",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 52,
+            "endLine": 76,
+            "excerptDigest": "2deb5fe7fb575fad084e2dd7e4d53cebd33f96803404847380cdd14e994e23b5",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 5. `project-instance` 后端交付路由",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 7,
+            "endLine": 14,
+            "excerptDigest": "4728c0b02d18465ec2021b2f12c07685d1dc9673a32325d1fa783a5b6aa6eb34",
+            "claim": "本仓身份独立核验；template-source 不产产品资产；只读诊断不创建 Ticket、checkpoint 或批准；旧实例显式迁移",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 54,
+            "endLine": 54,
+            "excerptDigest": "b660c765da9f609637434ef99295c6b75be0a6af21e222c51e0a33191bfd4038",
+            "claim": "日常资格唯一消费本地 harness-orchestrator request_triage.delivery_path；lifecycle route 核验任务、实现仓和完整 SHA，政策能力或资格未证明不得启用 daily",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 58,
+            "endLine": 58,
+            "excerptDigest": "e27fa2a29e21c581adba29585f672fc01350571c9e7a9283708766c2b56222e3",
+            "claim": "daily 只更新同一 Ticket/PR 并保留范围、验收、工程基线、Skills、实际测试、独立审查和回滚；无需阶段 checkpoint 或正式 Slice；verify-daily 失败、缺独立审查或阻断未关闭不能完成",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 60,
+            "endLine": 60,
+            "excerptDigest": "a70a7fbc190316cb0345ff4dceb2b2c58db9da217a28b8df0ec8dcfe15f81539",
+            "claim": "已有正式绑定任务不得降级；无关正式资产不阻断 daily；新排除风险保留证据并恢复 governed，超出兼容范围的 API 走正式 Draft、审查和 Freeze",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 64,
+            "endLine": 64,
+            "excerptDigest": "92b5836c40a0accb38f571ee7d496a0d6254c35a6ef09d8528e9bef203e7d946",
+            "claim": "governed 可从本地原始需求完成适用 Plan、业务规则和 Spec；上游批准输入先核验复用，冲突回交，阶段/Slice/门禁只用于 governed",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 70,
+            "endLine": 74,
+            "excerptDigest": "359c05a67fb47a6be2754ba98ab3a3e82900bcf4b2bcb6c8c4fe0e682c9a7b1a",
+            "claim": "正式路线复用当前批准输入，只推进本轮职责；API 按 Draft/审查/Freeze，四专业同一当前 Slice 合同，命中门禁不能裁剪",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 66,
+            "endLine": 68,
+            "excerptDigest": "0225cfba923646a0709a6c927b51a99a9a4dd5221bcf39963ae55a04fb050ad4",
+            "claim": "正式导航只推进本轮触发工作单元及依赖，生命周期本端终点为 work-unit.verification",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "harness-process-tailoring.md",
+            "inputPath": ".template-spec/process/harness-process-tailoring.md",
+            "startLine": 1,
+            "endLine": 16,
+            "excerptDigest": "b10a1f69ffe065431219818d91caeaf5d9f051bdf2684d0ed07a8830be2823a4",
+            "claim": "裁剪按实际影响与最近可信阶段，正式业务实现要求当前 Slice；所有路径遵守写范围",
+            "risk": "general"
+          },
+          {
+            "sourceId": "lifecycle-registry.yaml",
+            "inputPath": ".template-spec/process/lifecycle-registry.yaml",
+            "startLine": 1,
+            "endLine": 8,
+            "excerptDigest": "e87349ae7febe76b25051035f35d322029072565a9d8e7301e7c30516490daad",
+            "claim": "active 生命周期注册表持有稳定 ID，本地执行仍受 Profile 允许范围限制",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "模板维护流程",
@@ -225,7 +1123,70 @@
         "maintenance-intensity.yaml",
         "AGENTS.md"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "83ce8409d413e78a45777743b197955323cd835c20829c925d74678d6ba2ad94",
+      "compiledFrom": {
+        "harness-process-tailoring.md": {
+          "effectiveDigest": "6cd01602f067d44d461c4214726d9aa9ec2b892f0ac0c03d24b82ea5b04b0575",
+          "rawDigest": "6cd01602f067d44d461c4214726d9aa9ec2b892f0ac0c03d24b82ea5b04b0575",
+          "extractorVersion": "identity-v1"
+        },
+        "maintenance-intensity.yaml": {
+          "effectiveDigest": "b4a8788abfd13ec799986a35c558a2e64653370dbe8cdf22e69c2a5160e99397",
+          "rawDigest": "b4a8788abfd13ec799986a35c558a2e64653370dbe8cdf22e69c2a5160e99397",
+          "extractorVersion": "identity-v1"
+        },
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "83ce8409d413e78a45777743b197955323cd835c20829c925d74678d6ba2ad94",
+        "checkedAt": "2026-10-10T08:50:34.891Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 40,
+            "endLine": 51,
+            "excerptDigest": "6b2d787f762cbebb698e1d70d619c718d14e9a95590014b2b4943f91d12b6fe1",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 4. `template-source` 维护",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 42,
+            "endLine": 48,
+            "excerptDigest": "379c2e3ad5a9908c071874b263c6967ebfa816d9734f6c35d520503a3d3e43bc",
+            "claim": "模板源在既有授权内同步 Skill、投影、锁和分发；共享源仅经显式 Spec 更新；日常定向 verification 不冒充候选或发布资格",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "harness-process-tailoring.md",
+            "inputPath": ".template-spec/process/harness-process-tailoring.md",
+            "startLine": 1,
+            "endLine": 16,
+            "excerptDigest": "b10a1f69ffe065431219818d91caeaf5d9f051bdf2684d0ed07a8830be2823a4",
+            "claim": "裁剪按实际影响与最近可信阶段，正式业务实现要求当前 Slice；所有路径遵守写范围",
+            "risk": "general"
+          },
+          {
+            "sourceId": "maintenance-intensity.yaml",
+            "inputPath": ".template-source/process/maintenance-intensity.yaml",
+            "startLine": 1,
+            "endLine": 29,
+            "excerptDigest": "1c18e0f5e72026a7c2bd9ec821c8cd97fc14be7fc07d3e60129c294b332ccc26",
+            "claim": "强度按 L1/L2/L3 的已登记 trigger 判定，默认 L2，不定义独立审查授权",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "Spec基线",
@@ -236,7 +1197,129 @@
         "AGENTS.md",
         "lifecycle-registry.yaml"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "4825d0b8afad17437a855a598909010c8e3461e6229913cbeca9c6fb8959ddc7",
+      "compiledFrom": {
+        "spec-template.md": {
+          "effectiveDigest": "13e335ed217f5c45506ec618a49ff64573816de7e108b64c227711454b50261c",
+          "rawDigest": "13e335ed217f5c45506ec618a49ff64573816de7e108b64c227711454b50261c",
+          "extractorVersion": "identity-v1"
+        },
+        "CONTEXT.md": {
+          "effectiveDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "rawDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "extractorVersion": "identity-v1"
+        },
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        },
+        "lifecycle-registry.yaml": {
+          "effectiveDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "rawDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "4825d0b8afad17437a855a598909010c8e3461e6229913cbeca9c6fb8959ddc7",
+        "checkedAt": "2026-10-10T08:50:34.894Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 31,
+            "endLine": 39,
+            "excerptDigest": "c25d582ef94a3346c7d72062379f679601b102500c4b07400bf7ddff4f3463ca",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 3. 语言与 Context Contract",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 52,
+            "endLine": 76,
+            "excerptDigest": "2deb5fe7fb575fad084e2dd7e4d53cebd33f96803404847380cdd14e994e23b5",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 5. `project-instance` 后端交付路由",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 34,
+            "endLine": 36,
+            "excerptDigest": "9b7948aa4ea0b864ba88e0da6718f98f22146dfdad8c72308735bf9703863fb5",
+            "claim": "稳定术语先在唯一根 Context 登记；正式流转前对账摘要，缺失冲突或漂移阻断",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 64,
+            "endLine": 64,
+            "excerptDigest": "92b5836c40a0accb38f571ee7d496a0d6254c35a6ef09d8528e9bef203e7d946",
+            "claim": "governed 可从本地原始需求完成适用 Plan、业务规则和 Spec；上游批准输入先核验复用，冲突回交，阶段/Slice/门禁只用于 governed",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 70,
+            "endLine": 74,
+            "excerptDigest": "359c05a67fb47a6be2754ba98ab3a3e82900bcf4b2bcb6c8c4fe0e682c9a7b1a",
+            "claim": "正式路线复用当前批准输入，只推进本轮职责；API 按 Draft/审查/Freeze，四专业同一当前 Slice 合同，命中门禁不能裁剪",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 66,
+            "endLine": 68,
+            "excerptDigest": "0225cfba923646a0709a6c927b51a99a9a4dd5221bcf39963ae55a04fb050ad4",
+            "claim": "正式导航只推进本轮触发工作单元及依赖，生命周期本端终点为 work-unit.verification",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "spec-template.md",
+            "inputPath": ".template-spec/templates/spec-template.md",
+            "startLine": 1,
+            "endLine": 19,
+            "excerptDigest": "60e8209ea1da8343744f1fb538d356153ed6d89cfece63d0b0878e39a0a21ee8",
+            "claim": "Spec 默认 ready-for-human，业务 Ticket 草案与 Spec 同时形成",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "spec-template.md",
+            "inputPath": ".template-spec/templates/spec-template.md",
+            "startLine": 51,
+            "endLine": 77,
+            "excerptDigest": "8851ab187288791eebf42a5d52578b4aac83af124dd41305922378d1f7bf4564",
+            "claim": "验收可观察且仅产品设计影响触发原型，Draft 不作为稳定实现合同",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "CONTEXT.md",
+            "inputPath": "CONTEXT.md",
+            "startLine": 1,
+            "endLine": 15,
+            "excerptDigest": "04e7295a6a6fc15d0c503424b8e02cb1cf7cf6a70e287bf5323eb61c1c123f26",
+            "claim": "根 Context 持有稳定业务语言与消费约定，正文不能授予实现权限",
+            "risk": "general"
+          },
+          {
+            "sourceId": "lifecycle-registry.yaml",
+            "inputPath": ".template-spec/process/lifecycle-registry.yaml",
+            "startLine": 1,
+            "endLine": 8,
+            "excerptDigest": "e87349ae7febe76b25051035f35d322029072565a9d8e7301e7c30516490daad",
+            "claim": "active 生命周期注册表持有稳定 ID，本地执行仍受 Profile 允许范围限制",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "SpecDelta",
@@ -246,7 +1329,106 @@
         "AGENTS.md",
         "lifecycle-registry.yaml"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "a48552942aac097a06c8348d4b0b00bd0e974e03079bacda123577842e75faf3",
+      "compiledFrom": {
+        "CONTEXT.md": {
+          "effectiveDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "rawDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "extractorVersion": "identity-v1"
+        },
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        },
+        "lifecycle-registry.yaml": {
+          "effectiveDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "rawDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "a48552942aac097a06c8348d4b0b00bd0e974e03079bacda123577842e75faf3",
+        "checkedAt": "2026-10-10T08:50:34.896Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 52,
+            "endLine": 76,
+            "excerptDigest": "2deb5fe7fb575fad084e2dd7e4d53cebd33f96803404847380cdd14e994e23b5",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 5. `project-instance` 后端交付路由",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 64,
+            "endLine": 64,
+            "excerptDigest": "92b5836c40a0accb38f571ee7d496a0d6254c35a6ef09d8528e9bef203e7d946",
+            "claim": "governed 可从本地原始需求完成适用 Plan、业务规则和 Spec；上游批准输入先核验复用，冲突回交，阶段/Slice/门禁只用于 governed",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 70,
+            "endLine": 74,
+            "excerptDigest": "359c05a67fb47a6be2754ba98ab3a3e82900bcf4b2bcb6c8c4fe0e682c9a7b1a",
+            "claim": "正式路线复用当前批准输入，只推进本轮职责；API 按 Draft/审查/Freeze，四专业同一当前 Slice 合同，命中门禁不能裁剪",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 66,
+            "endLine": 68,
+            "excerptDigest": "0225cfba923646a0709a6c927b51a99a9a4dd5221bcf39963ae55a04fb050ad4",
+            "claim": "正式导航只推进本轮触发工作单元及依赖，生命周期本端终点为 work-unit.verification",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 58,
+            "endLine": 58,
+            "excerptDigest": "e27fa2a29e21c581adba29585f672fc01350571c9e7a9283708766c2b56222e3",
+            "claim": "daily 只更新同一 Ticket/PR 并保留范围、验收、工程基线、Skills、实际测试、独立审查和回滚；无需阶段 checkpoint 或正式 Slice；verify-daily 失败、缺独立审查或阻断未关闭不能完成",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 60,
+            "endLine": 60,
+            "excerptDigest": "a70a7fbc190316cb0345ff4dceb2b2c58db9da217a28b8df0ec8dcfe15f81539",
+            "claim": "已有正式绑定任务不得降级；无关正式资产不阻断 daily；新排除风险保留证据并恢复 governed，超出兼容范围的 API 走正式 Draft、审查和 Freeze",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "lifecycle-registry.yaml",
+            "inputPath": ".template-spec/process/lifecycle-registry.yaml",
+            "startLine": 326,
+            "endLine": 329,
+            "excerptDigest": "168b404fa0f16e422371c74753ef892ea4e54990a410e1b0aab77a32c43ad524",
+            "claim": "Spec Delta 触发为已有冻结 Spec 的高风险行为变化",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "CONTEXT.md",
+            "inputPath": "CONTEXT.md",
+            "startLine": 1,
+            "endLine": 15,
+            "excerptDigest": "04e7295a6a6fc15d0c503424b8e02cb1cf7cf6a70e287bf5323eb61c1c123f26",
+            "claim": "根 Context 持有稳定业务语言与消费约定，正文不能授予实现权限",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "OpenAPI契约",
@@ -256,7 +1438,124 @@
         "CONTEXT.md",
         "lifecycle-registry.yaml"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "b5634628e694ff49a80c7c9421c00d7e9824960071b2277923be52b1ec03e4a2",
+      "compiledFrom": {
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        },
+        "CONTEXT.md": {
+          "effectiveDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "rawDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "extractorVersion": "identity-v1"
+        },
+        "lifecycle-registry.yaml": {
+          "effectiveDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "rawDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "b5634628e694ff49a80c7c9421c00d7e9824960071b2277923be52b1ec03e4a2",
+        "checkedAt": "2026-10-10T08:50:34.900Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 52,
+            "endLine": 76,
+            "excerptDigest": "2deb5fe7fb575fad084e2dd7e4d53cebd33f96803404847380cdd14e994e23b5",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 5. `project-instance` 后端交付路由",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 129,
+            "endLine": 133,
+            "excerptDigest": "ebe4ccc35c7e8fe9dabfa218508ec65753c09931c34ce6f8624041be14203426",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 13. 专职交付边界",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 64,
+            "endLine": 64,
+            "excerptDigest": "92b5836c40a0accb38f571ee7d496a0d6254c35a6ef09d8528e9bef203e7d946",
+            "claim": "governed 可从本地原始需求完成适用 Plan、业务规则和 Spec；上游批准输入先核验复用，冲突回交，阶段/Slice/门禁只用于 governed",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 70,
+            "endLine": 74,
+            "excerptDigest": "359c05a67fb47a6be2754ba98ab3a3e82900bcf4b2bcb6c8c4fe0e682c9a7b1a",
+            "claim": "正式路线复用当前批准输入，只推进本轮职责；API 按 Draft/审查/Freeze，四专业同一当前 Slice 合同，命中门禁不能裁剪",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 66,
+            "endLine": 68,
+            "excerptDigest": "0225cfba923646a0709a6c927b51a99a9a4dd5221bcf39963ae55a04fb050ad4",
+            "claim": "正式导航只推进本轮触发工作单元及依赖，生命周期本端终点为 work-unit.verification",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 131,
+            "endLine": 133,
+            "excerptDigest": "08df80c2693a2dca9b154bb1bd84a159b1f13071e54b7109acd6eed5322a48bc",
+            "claim": "后端只交接本端真实接口，Freeze 前收集前端消费需求；本端通过不表示整体完成，统一管理方核验端到端，分析角色不获另一端写范围",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 58,
+            "endLine": 58,
+            "excerptDigest": "e27fa2a29e21c581adba29585f672fc01350571c9e7a9283708766c2b56222e3",
+            "claim": "daily 只更新同一 Ticket/PR 并保留范围、验收、工程基线、Skills、实际测试、独立审查和回滚；无需阶段 checkpoint 或正式 Slice；verify-daily 失败、缺独立审查或阻断未关闭不能完成",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 60,
+            "endLine": 60,
+            "excerptDigest": "a70a7fbc190316cb0345ff4dceb2b2c58db9da217a28b8df0ec8dcfe15f81539",
+            "claim": "已有正式绑定任务不得降级；无关正式资产不阻断 daily；新排除风险保留证据并恢复 governed，超出兼容范围的 API 走正式 Draft、审查和 Freeze",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "CONTEXT.md",
+            "inputPath": "CONTEXT.md",
+            "startLine": 1,
+            "endLine": 15,
+            "excerptDigest": "04e7295a6a6fc15d0c503424b8e02cb1cf7cf6a70e287bf5323eb61c1c123f26",
+            "claim": "根 Context 持有稳定业务语言与消费约定，正文不能授予实现权限",
+            "risk": "general"
+          },
+          {
+            "sourceId": "lifecycle-registry.yaml",
+            "inputPath": ".template-spec/process/lifecycle-registry.yaml",
+            "startLine": 1,
+            "endLine": 8,
+            "excerptDigest": "e87349ae7febe76b25051035f35d322029072565a9d8e7301e7c30516490daad",
+            "claim": "active 生命周期注册表持有稳定 ID，本地执行仍受 Profile 允许范围限制",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "产品设计影响与原型",
@@ -266,7 +1565,88 @@
         "AGENTS.md",
         "lifecycle-registry.yaml"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "92c8da4fd1fb25db94dc9ee707afa463f05b0d7bc10a1bc6f2256c51f96c735c",
+      "compiledFrom": {
+        "CONTEXT.md": {
+          "effectiveDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "rawDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "extractorVersion": "identity-v1"
+        },
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        },
+        "lifecycle-registry.yaml": {
+          "effectiveDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "rawDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "92c8da4fd1fb25db94dc9ee707afa463f05b0d7bc10a1bc6f2256c51f96c735c",
+        "checkedAt": "2026-10-10T08:50:34.901Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 86,
+            "endLine": 96,
+            "excerptDigest": "475657362e302f7462981ad4e1f51f7177bde7e0147aab37bcd6fc76fd8e3d30",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 7. 实现边界与正式门禁",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 97,
+            "endLine": 103,
+            "excerptDigest": "c9eb4f8abd96ce63217725cd671e9a0a21e77d6567a5fb39783ba01494cc1026",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 8. 专项入口",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 100,
+            "endLine": 100,
+            "excerptDigest": "b7e44fcdda0537b514acc15ef094bbffe86bce6f967ca3c8fe741ad7f03aa316",
+            "claim": "后端只读消费页面与接口需求，原型原件与生产前端由各自所有者维护；本仓不构建前端或产品原型",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 66,
+            "endLine": 68,
+            "excerptDigest": "0225cfba923646a0709a6c927b51a99a9a4dd5221bcf39963ae55a04fb050ad4",
+            "claim": "正式导航只推进本轮触发工作单元及依赖，生命周期本端终点为 work-unit.verification",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "CONTEXT.md",
+            "inputPath": "CONTEXT.md",
+            "startLine": 1,
+            "endLine": 15,
+            "excerptDigest": "04e7295a6a6fc15d0c503424b8e02cb1cf7cf6a70e287bf5323eb61c1c123f26",
+            "claim": "根 Context 持有稳定业务语言与消费约定，正文不能授予实现权限",
+            "risk": "general"
+          },
+          {
+            "sourceId": "lifecycle-registry.yaml",
+            "inputPath": ".template-spec/process/lifecycle-registry.yaml",
+            "startLine": 1,
+            "endLine": 8,
+            "excerptDigest": "e87349ae7febe76b25051035f35d322029072565a9d8e7301e7c30516490daad",
+            "claim": "active 生命周期注册表持有稳定 ID，本地执行仍受 Profile 允许范围限制",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "垂直切片Ticket",
@@ -279,7 +1659,202 @@
         "triage-labels.md",
         "lifecycle-registry.yaml"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "5845d3efcd697cb39e0618b2bfe622078a379238e42f250e1e52946b54e453da",
+      "compiledFrom": {
+        "vertical-slice-ticket-template.md": {
+          "effectiveDigest": "63c1d2f128b135bff34ed7d9b538a889d8fc3f9d3ec29739aa39e53c58207e1c",
+          "rawDigest": "63c1d2f128b135bff34ed7d9b538a889d8fc3f9d3ec29739aa39e53c58207e1c",
+          "extractorVersion": "identity-v1"
+        },
+        "CONTEXT.md": {
+          "effectiveDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "rawDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "extractorVersion": "identity-v1"
+        },
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        },
+        "issue-tracker.md": {
+          "effectiveDigest": "b50594077e99c08e2fbf6f137fb5dc75e705097ddce7d5186b10fb288957df9b",
+          "rawDigest": "b50594077e99c08e2fbf6f137fb5dc75e705097ddce7d5186b10fb288957df9b",
+          "extractorVersion": "identity-v1"
+        },
+        "triage-labels.md": {
+          "effectiveDigest": "fae3c1d018392d77ea098112251aaf377ba51b07b31164a99bb70d541bb2ed9d",
+          "rawDigest": "fae3c1d018392d77ea098112251aaf377ba51b07b31164a99bb70d541bb2ed9d",
+          "extractorVersion": "identity-v1"
+        },
+        "lifecycle-registry.yaml": {
+          "effectiveDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "rawDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "5845d3efcd697cb39e0618b2bfe622078a379238e42f250e1e52946b54e453da",
+        "checkedAt": "2026-10-10T08:50:34.906Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 52,
+            "endLine": 76,
+            "excerptDigest": "2deb5fe7fb575fad084e2dd7e4d53cebd33f96803404847380cdd14e994e23b5",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 5. `project-instance` 后端交付路由",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 77,
+            "endLine": 85,
+            "excerptDigest": "3ca827004a829a7c0ae78b04964cc2e5f48e6f0ee882ab0bc3abf21236476c5e",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 6. 正式 Ticket 与状态",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 66,
+            "endLine": 68,
+            "excerptDigest": "0225cfba923646a0709a6c927b51a99a9a4dd5221bcf39963ae55a04fb050ad4",
+            "claim": "正式导航只推进本轮触发工作单元及依赖，生命周期本端终点为 work-unit.verification",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 64,
+            "endLine": 64,
+            "excerptDigest": "92b5836c40a0accb38f571ee7d496a0d6254c35a6ef09d8528e9bef203e7d946",
+            "claim": "governed 可从本地原始需求完成适用 Plan、业务规则和 Spec；上游批准输入先核验复用，冲突回交，阶段/Slice/门禁只用于 governed",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 70,
+            "endLine": 74,
+            "excerptDigest": "359c05a67fb47a6be2754ba98ab3a3e82900bcf4b2bcb6c8c4fe0e682c9a7b1a",
+            "claim": "正式路线复用当前批准输入，只推进本轮职责；API 按 Draft/审查/Freeze，四专业同一当前 Slice 合同，命中门禁不能裁剪",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 81,
+            "endLine": 84,
+            "excerptDigest": "ec0d486e0a3b5ffe3e5d6aa092000f9e5855ea1189c1692f4400235f8b103a1e",
+            "claim": "正式父 Ticket 汇总批准、阻塞和证据；Slice 必须合同已批准且当前、门禁通过、阻塞清除才能 ready-for-agent；现有当前合同核验复用，Tracker 显式选择",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 90,
+            "endLine": 90,
+            "excerptDigest": "a4809a5d057859afbf8342fec1d4bbd9f1475f0504837f742967b30b5c72d7b8",
+            "claim": "正式切片编译器只编译最小技能集与合同草案，不批准、不设置状态、不宣布完成；工程登记先核验复用",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 101,
+            "endLine": 101,
+            "excerptDigest": "335267c513c4339ef027cf584eee9ba2750a69483f7e2c02b98bced6f5a7586b",
+            "claim": "业务行为默认 behavior-tdd；Bug/回退先复现再 tdd，不适用时记录理由及可执行验证",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 58,
+            "endLine": 58,
+            "excerptDigest": "e27fa2a29e21c581adba29585f672fc01350571c9e7a9283708766c2b56222e3",
+            "claim": "daily 只更新同一 Ticket/PR 并保留范围、验收、工程基线、Skills、实际测试、独立审查和回滚；无需阶段 checkpoint 或正式 Slice；verify-daily 失败、缺独立审查或阻断未关闭不能完成",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 60,
+            "endLine": 60,
+            "excerptDigest": "a70a7fbc190316cb0345ff4dceb2b2c58db9da217a28b8df0ec8dcfe15f81539",
+            "claim": "已有正式绑定任务不得降级；无关正式资产不阻断 daily；新排除风险保留证据并恢复 governed，超出兼容范围的 API 走正式 Draft、审查和 Freeze",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "vertical-slice-ticket-template.md",
+            "inputPath": ".template-spec/templates/vertical-slice-ticket-template.md",
+            "startLine": 1,
+            "endLine": 20,
+            "excerptDigest": "ab6ed1e241f353962ce790e38131376fb39710bb00705b73c4cea9cba59df3f5",
+            "claim": "切片模板默认 ready-for-human，贯穿所有受影响层；Design 仅历史读取",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "vertical-slice-ticket-template.md",
+            "inputPath": ".template-spec/templates/vertical-slice-ticket-template.md",
+            "startLine": 64,
+            "endLine": 72,
+            "excerptDigest": "b23ebda22de14b843da2aae5da9e7f9257fc0ed658a9aff152e00df93fcec0ca",
+            "claim": "历史模板的 Router/编译器不授 ready-for-agent；controlled-generation 仅允许机械生成，业务行为使用 behavior-tdd；Design 不在本地产出或实施此模板",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "vertical-slice-ticket-template.md",
+            "inputPath": ".template-spec/templates/vertical-slice-ticket-template.md",
+            "startLine": 114,
+            "endLine": 114,
+            "excerptDigest": "6847041b9070bb22b00a4bb7f4877416c1b5dac823029214fb330294a50d0d73",
+            "claim": "drift、violation 或新影响暂停受影响工作，不能先实现再补合同；Design 仅历史读取",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "CONTEXT.md",
+            "inputPath": "CONTEXT.md",
+            "startLine": 1,
+            "endLine": 15,
+            "excerptDigest": "04e7295a6a6fc15d0c503424b8e02cb1cf7cf6a70e287bf5323eb61c1c123f26",
+            "claim": "根 Context 持有稳定业务语言与消费约定，正文不能授予实现权限",
+            "risk": "general"
+          },
+          {
+            "sourceId": "issue-tracker.md",
+            "inputPath": ".template-spec/agents/issue-tracker.md",
+            "startLine": 1,
+            "endLine": 28,
+            "excerptDigest": "20f1b6127eae1fe74f560f94a5a85fcc06c41aa84100bcf296a736b8cdf339c2",
+            "claim": "当前 local-markdown root 为 .work，旧实例按实际 tracker.root 使用根",
+            "risk": "general"
+          },
+          {
+            "sourceId": "triage-labels.md",
+            "inputPath": ".template-spec/agents/triage-labels.md",
+            "startLine": 3,
+            "endLine": 15,
+            "excerptDigest": "ace13626cfd3078497fac5e2769b4fbed74248a6ae376374762ba857c79ebc6d",
+            "claim": "Ticket 使用五态标签，不等同数字人角色或临时执行状态",
+            "risk": "general"
+          },
+          {
+            "sourceId": "lifecycle-registry.yaml",
+            "inputPath": ".template-spec/process/lifecycle-registry.yaml",
+            "startLine": 1,
+            "endLine": 8,
+            "excerptDigest": "e87349ae7febe76b25051035f35d322029072565a9d8e7301e7c30516490daad",
+            "claim": "active 生命周期注册表持有稳定 ID，本地执行仍受 Profile 允许范围限制",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "切片实现合同",
@@ -289,7 +1864,142 @@
         "AGENTS.md",
         "lifecycle-registry.yaml"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "c7aa2c7e94060c3c084091ad61b15a49d18bfdda3f1c8a3ebba62e932f38dfd7",
+      "compiledFrom": {
+        "CONTEXT.md": {
+          "effectiveDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "rawDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "extractorVersion": "identity-v1"
+        },
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        },
+        "lifecycle-registry.yaml": {
+          "effectiveDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "rawDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "c7aa2c7e94060c3c084091ad61b15a49d18bfdda3f1c8a3ebba62e932f38dfd7",
+        "checkedAt": "2026-10-10T08:50:34.908Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 52,
+            "endLine": 76,
+            "excerptDigest": "2deb5fe7fb575fad084e2dd7e4d53cebd33f96803404847380cdd14e994e23b5",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 5. `project-instance` 后端交付路由",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 86,
+            "endLine": 96,
+            "excerptDigest": "475657362e302f7462981ad4e1f51f7177bde7e0147aab37bcd6fc76fd8e3d30",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 7. 实现边界与正式门禁",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 66,
+            "endLine": 68,
+            "excerptDigest": "0225cfba923646a0709a6c927b51a99a9a4dd5221bcf39963ae55a04fb050ad4",
+            "claim": "正式导航只推进本轮触发工作单元及依赖，生命周期本端终点为 work-unit.verification",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 64,
+            "endLine": 64,
+            "excerptDigest": "92b5836c40a0accb38f571ee7d496a0d6254c35a6ef09d8528e9bef203e7d946",
+            "claim": "governed 可从本地原始需求完成适用 Plan、业务规则和 Spec；上游批准输入先核验复用，冲突回交，阶段/Slice/门禁只用于 governed",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 70,
+            "endLine": 74,
+            "excerptDigest": "359c05a67fb47a6be2754ba98ab3a3e82900bcf4b2bcb6c8c4fe0e682c9a7b1a",
+            "claim": "正式路线复用当前批准输入，只推进本轮职责；API 按 Draft/审查/Freeze，四专业同一当前 Slice 合同，命中门禁不能裁剪",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 81,
+            "endLine": 84,
+            "excerptDigest": "ec0d486e0a3b5ffe3e5d6aa092000f9e5855ea1189c1692f4400235f8b103a1e",
+            "claim": "正式父 Ticket 汇总批准、阻塞和证据；Slice 必须合同已批准且当前、门禁通过、阻塞清除才能 ready-for-agent；现有当前合同核验复用，Tracker 显式选择",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 90,
+            "endLine": 90,
+            "excerptDigest": "a4809a5d057859afbf8342fec1d4bbd9f1475f0504837f742967b30b5c72d7b8",
+            "claim": "正式切片编译器只编译最小技能集与合同草案，不批准、不设置状态、不宣布完成；工程登记先核验复用",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 91,
+            "endLine": 92,
+            "excerptDigest": "0c876f7117ca4bf18da52aa3dc348f0e2f4a887dbcbb1a46a1023a94f8f585c3",
+            "claim": "脚手架只生成本端机械骨架，须当前确认架构和持久化批准 schema v4 合同；既有工程不覆盖，业务实现回批准 Slice 合同",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 95,
+            "endLine": 95,
+            "excerptDigest": "f76a6d6611fc1c8a4bfdca1fb8a680e2233fe9fd56d8160ed770c067e21238a9",
+            "claim": "路径越界、缺必要证据或未验证时停止受影响实现；violation 定向修复复验，drift/new_impacts 先调查并使受影响合同 stale",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 131,
+            "endLine": 133,
+            "excerptDigest": "08df80c2693a2dca9b154bb1bd84a159b1f13071e54b7109acd6eed5322a48bc",
+            "claim": "后端只交接本端真实接口，Freeze 前收集前端消费需求；本端通过不表示整体完成，统一管理方核验端到端，分析角色不获另一端写范围",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "CONTEXT.md",
+            "inputPath": "CONTEXT.md",
+            "startLine": 66,
+            "endLine": 66,
+            "excerptDigest": "017d5e0acb4d3a0b137dbb6f73d81f7265e02b408b6573877dc34710c06f5cc5",
+            "claim": "统一合同四分区及共同信息，四个 Agent 消费同一 contract_id/contract_version",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "lifecycle-registry.yaml",
+            "inputPath": ".template-spec/process/lifecycle-registry.yaml",
+            "startLine": 1,
+            "endLine": 8,
+            "excerptDigest": "e87349ae7febe76b25051035f35d322029072565a9d8e7301e7c30516490daad",
+            "claim": "active 生命周期注册表持有稳定 ID，本地执行仍受 Profile 允许范围限制",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "YSS路由与合同编译",
@@ -299,7 +2009,133 @@
         "CONTEXT.md",
         "yss-skill-registry.yaml"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "615e1b0f17cc99dfb81e1909b926ad089caa000e4d329337fedf3ad9ae68ce30",
+      "compiledFrom": {
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        },
+        "CONTEXT.md": {
+          "effectiveDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "rawDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "extractorVersion": "identity-v1"
+        },
+        "yss-skill-registry.yaml": {
+          "effectiveDigest": "c65b74bdafdcb3c5705e472f6c817ec1ce8bbc3c4771e379dc3db831b88e77dc",
+          "rawDigest": "c65b74bdafdcb3c5705e472f6c817ec1ce8bbc3c4771e379dc3db831b88e77dc",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "615e1b0f17cc99dfb81e1909b926ad089caa000e4d329337fedf3ad9ae68ce30",
+        "checkedAt": "2026-10-10T08:50:34.911Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 16,
+            "endLine": 30,
+            "excerptDigest": "74dd631a954a1c0ef7ea449a2233cd8763cb068b537f5353df8d155d8e481ce8",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 2. 单一事实来源",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 52,
+            "endLine": 76,
+            "excerptDigest": "2deb5fe7fb575fad084e2dd7e4d53cebd33f96803404847380cdd14e994e23b5",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 5. `project-instance` 后端交付路由",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 66,
+            "endLine": 68,
+            "excerptDigest": "0225cfba923646a0709a6c927b51a99a9a4dd5221bcf39963ae55a04fb050ad4",
+            "claim": "正式导航只推进本轮触发工作单元及依赖，生命周期本端终点为 work-unit.verification",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 24,
+            "endLine": 24,
+            "excerptDigest": "2d6614d3cb4ecb675dccfe80d4b0f861fad4d96491b4b5d4a201e3d6edfa7fa2",
+            "claim": "active Registry 由 Harness 编排器消费技能身份和路由；来源与投影使用 skills-lock.json",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 54,
+            "endLine": 54,
+            "excerptDigest": "b660c765da9f609637434ef99295c6b75be0a6af21e222c51e0a33191bfd4038",
+            "claim": "日常资格唯一消费本地 harness-orchestrator request_triage.delivery_path；lifecycle route 核验任务、实现仓和完整 SHA，政策能力或资格未证明不得启用 daily",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 58,
+            "endLine": 58,
+            "excerptDigest": "e27fa2a29e21c581adba29585f672fc01350571c9e7a9283708766c2b56222e3",
+            "claim": "daily 只更新同一 Ticket/PR 并保留范围、验收、工程基线、Skills、实际测试、独立审查和回滚；无需阶段 checkpoint 或正式 Slice；verify-daily 失败、缺独立审查或阻断未关闭不能完成",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 60,
+            "endLine": 60,
+            "excerptDigest": "a70a7fbc190316cb0345ff4dceb2b2c58db9da217a28b8df0ec8dcfe15f81539",
+            "claim": "已有正式绑定任务不得降级；无关正式资产不阻断 daily；新排除风险保留证据并恢复 governed，超出兼容范围的 API 走正式 Draft、审查和 Freeze",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 90,
+            "endLine": 90,
+            "excerptDigest": "a4809a5d057859afbf8342fec1d4bbd9f1475f0504837f742967b30b5c72d7b8",
+            "claim": "正式切片编译器只编译最小技能集与合同草案，不批准、不设置状态、不宣布完成；工程登记先核验复用",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 42,
+            "endLine": 48,
+            "excerptDigest": "379c2e3ad5a9908c071874b263c6967ebfa816d9734f6c35d520503a3d3e43bc",
+            "claim": "模板源在既有授权内同步 Skill、投影、锁和分发；共享源仅经显式 Spec 更新；日常定向 verification 不冒充候选或发布资格",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "yss-skill-registry.yaml",
+            "inputPath": ".template-spec/agents/yss-skill-registry.yaml",
+            "startLine": 1,
+            "endLine": 11,
+            "excerptDigest": "d5f3b234ea14f5c7429ba0399ef7bc6fee62f65cf465a2837e3529f13227da42",
+            "claim": "active Registry 持有技能身份与发现面，编译器和本端编排器消费 canonical 技能",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "CONTEXT.md",
+            "inputPath": "CONTEXT.md",
+            "startLine": 1,
+            "endLine": 15,
+            "excerptDigest": "04e7295a6a6fc15d0c503424b8e02cb1cf7cf6a70e287bf5323eb61c1c123f26",
+            "claim": "根 Context 持有稳定业务语言与消费约定，正文不能授予实现权限",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "YSS工程技能体系",
@@ -312,7 +2148,13 @@
         "yss-public-skills.json",
         "skill-migrations.md"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": null,
+      "compiledFrom": {},
+      "compiledDependencies": {},
+      "verification": null,
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "Matt技能体系",
@@ -323,7 +2165,120 @@
         "AGENTS.md",
         "skills-lock.json"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "5b732e30b6d5d1460b8d2fc863ac38aed6bc8f393afa4ca7910cc54ac6113ce9",
+      "compiledFrom": {
+        "CONTEXT.md": {
+          "effectiveDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "rawDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "extractorVersion": "identity-v1"
+        },
+        "skills-maintenance.md": {
+          "effectiveDigest": "c5bfcf2400adb22a80545407f33f2da8420d170a3545d4e912dd2928b7086c77",
+          "rawDigest": "c5bfcf2400adb22a80545407f33f2da8420d170a3545d4e912dd2928b7086c77",
+          "extractorVersion": "identity-v1"
+        },
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        },
+        "skills-lock.json": {
+          "effectiveDigest": "c8f35ee74141b01e7e96abc206b8f95c3d1ae15da9e17c2013735dd1611fca1e",
+          "rawDigest": "c8f35ee74141b01e7e96abc206b8f95c3d1ae15da9e17c2013735dd1611fca1e",
+          "extractorVersion": "skill-names:1:"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "5b732e30b6d5d1460b8d2fc863ac38aed6bc8f393afa4ca7910cc54ac6113ce9",
+        "checkedAt": "2026-10-10T08:50:34.913Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 97,
+            "endLine": 103,
+            "excerptDigest": "c9eb4f8abd96ce63217725cd671e9a0a21e77d6567a5fb39783ba01494cc1026",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 8. 专项入口",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 99,
+            "endLine": 99,
+            "excerptDigest": "06d011dc8456f867beb65079d82b0d7df2901352d1767eca289cfe86cd1914d6",
+            "claim": "技术事实使用 yss-research，竞品与市场或用户口碑事实使用 competitive-intelligence",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 54,
+            "endLine": 54,
+            "excerptDigest": "b660c765da9f609637434ef99295c6b75be0a6af21e222c51e0a33191bfd4038",
+            "claim": "日常资格唯一消费本地 harness-orchestrator request_triage.delivery_path；lifecycle route 核验任务、实现仓和完整 SHA，政策能力或资格未证明不得启用 daily",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 58,
+            "endLine": 58,
+            "excerptDigest": "e27fa2a29e21c581adba29585f672fc01350571c9e7a9283708766c2b56222e3",
+            "claim": "daily 只更新同一 Ticket/PR 并保留范围、验收、工程基线、Skills、实际测试、独立审查和回滚；无需阶段 checkpoint 或正式 Slice；verify-daily 失败、缺独立审查或阻断未关闭不能完成",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 60,
+            "endLine": 60,
+            "excerptDigest": "a70a7fbc190316cb0345ff4dceb2b2c58db9da217a28b8df0ec8dcfe15f81539",
+            "claim": "已有正式绑定任务不得降级；无关正式资产不阻断 daily；新排除风险保留证据并恢复 governed，超出兼容范围的 API 走正式 Draft、审查和 Freeze",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 118,
+            "endLine": 119,
+            "excerptDigest": "30c4f69f64b6f1e8ee182c15350f2556d61b0a96394a9625d32d4f328ef91419",
+            "claim": "授权消费本地 harness-orchestrator user-decisions；有效范围授权复用，commit/push/publish 分别核验用户授权；返工或重要缺陷触发中文复盘",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "CONTEXT.md",
+            "inputPath": "CONTEXT.md",
+            "startLine": 1,
+            "endLine": 15,
+            "excerptDigest": "04e7295a6a6fc15d0c503424b8e02cb1cf7cf6a70e287bf5323eb61c1c123f26",
+            "claim": "根 Context 持有稳定业务语言与消费约定，正文不能授予实现权限",
+            "risk": "general"
+          },
+          {
+            "sourceId": "skills-maintenance.md",
+            "inputPath": ".template-source/agents/skills-maintenance.md",
+            "startLine": 5,
+            "endLine": 13,
+            "excerptDigest": "92070caf493a6b05afb0598908efddbafa2151b71b8712f70f4a84830f2e9515",
+            "claim": "共享内容、平台专属来源、投影与锁各按其事实所有权维护",
+            "risk": "general"
+          },
+          {
+            "sourceId": "skills-lock.json",
+            "inputPath": "skills-lock.json",
+            "startLine": 1,
+            "endLine": 12,
+            "excerptDigest": "320dd07ae94fdc7926bfafe29a94854af01c235bb474ebecfd424801bfb0221b",
+            "claim": "当前锁的版本、canonicalRoot 与来源元数据是技能来源记录；名称摘录是派生视图",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "技能投影与锁定",
@@ -335,7 +2290,116 @@
         "yss-skill-registry.yaml",
         "skill-migrations.md"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "a07dea5c0d1557aa49642ff2f89109165a2d63363988232ac4521ba865a82ad6",
+      "compiledFrom": {
+        "skills-maintenance.md": {
+          "effectiveDigest": "c5bfcf2400adb22a80545407f33f2da8420d170a3545d4e912dd2928b7086c77",
+          "rawDigest": "c5bfcf2400adb22a80545407f33f2da8420d170a3545d4e912dd2928b7086c77",
+          "extractorVersion": "identity-v1"
+        },
+        "skills-lock.json": {
+          "effectiveDigest": "c8f35ee74141b01e7e96abc206b8f95c3d1ae15da9e17c2013735dd1611fca1e",
+          "rawDigest": "c8f35ee74141b01e7e96abc206b8f95c3d1ae15da9e17c2013735dd1611fca1e",
+          "extractorVersion": "skill-names:1:"
+        },
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        },
+        "yss-skill-registry.yaml": {
+          "effectiveDigest": "c65b74bdafdcb3c5705e472f6c817ec1ce8bbc3c4771e379dc3db831b88e77dc",
+          "rawDigest": "c65b74bdafdcb3c5705e472f6c817ec1ce8bbc3c4771e379dc3db831b88e77dc",
+          "extractorVersion": "identity-v1"
+        },
+        "skill-migrations.md": {
+          "effectiveDigest": "0e6c69c1aa68f8f49624a9eb461acbfe60b91efe965f3fae17e310d191081463",
+          "rawDigest": "0e6c69c1aa68f8f49624a9eb461acbfe60b91efe965f3fae17e310d191081463",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "a07dea5c0d1557aa49642ff2f89109165a2d63363988232ac4521ba865a82ad6",
+        "checkedAt": "2026-10-10T08:50:34.915Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 16,
+            "endLine": 30,
+            "excerptDigest": "74dd631a954a1c0ef7ea449a2233cd8763cb068b537f5353df8d155d8e481ce8",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 2. 单一事实来源",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 40,
+            "endLine": 51,
+            "excerptDigest": "6b2d787f762cbebb698e1d70d619c718d14e9a95590014b2b4943f91d12b6fe1",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 4. `template-source` 维护",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 24,
+            "endLine": 24,
+            "excerptDigest": "2d6614d3cb4ecb675dccfe80d4b0f861fad4d96491b4b5d4a201e3d6edfa7fa2",
+            "claim": "active Registry 由 Harness 编排器消费技能身份和路由；来源与投影使用 skills-lock.json",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 42,
+            "endLine": 48,
+            "excerptDigest": "379c2e3ad5a9908c071874b263c6967ebfa816d9734f6c35d520503a3d3e43bc",
+            "claim": "模板源在既有授权内同步 Skill、投影、锁和分发；共享源仅经显式 Spec 更新；日常定向 verification 不冒充候选或发布资格",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "yss-skill-registry.yaml",
+            "inputPath": ".template-spec/agents/yss-skill-registry.yaml",
+            "startLine": 1,
+            "endLine": 11,
+            "excerptDigest": "d5f3b234ea14f5c7429ba0399ef7bc6fee62f65cf465a2837e3529f13227da42",
+            "claim": "active Registry 持有技能身份与发现面，编译器和本端编排器消费 canonical 技能",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "skills-maintenance.md",
+            "inputPath": ".template-source/agents/skills-maintenance.md",
+            "startLine": 5,
+            "endLine": 13,
+            "excerptDigest": "92070caf493a6b05afb0598908efddbafa2151b71b8712f70f4a84830f2e9515",
+            "claim": "共享内容、平台专属来源、投影与锁各按其事实所有权维护",
+            "risk": "general"
+          },
+          {
+            "sourceId": "skills-lock.json",
+            "inputPath": "skills-lock.json",
+            "startLine": 1,
+            "endLine": 12,
+            "excerptDigest": "320dd07ae94fdc7926bfafe29a94854af01c235bb474ebecfd424801bfb0221b",
+            "claim": "当前锁的版本、canonicalRoot 与来源元数据是技能来源记录；名称摘录是派生视图",
+            "risk": "general"
+          },
+          {
+            "sourceId": "skill-migrations.md",
+            "inputPath": ".template-spec/agents/skill-migrations.md",
+            "startLine": 1,
+            "endLine": 9,
+            "excerptDigest": "a4de5cfdefc84cb088ac1b05975f43817c1d0fcfaad75a5d445f7c8f058454a6",
+            "claim": "技能更名与历史 Bundle 的来源独立，普通同步不自动追认旧批准",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "实现仓库与跨仓库契约",
@@ -344,7 +2408,110 @@
         "implementation-repo-integration.md",
         "AGENTS.md"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "259a520b83afef6c31e6c44847eb7a1456ea17994f84f44176e68f13e8df953b",
+      "compiledFrom": {
+        "implementation-repo-integration.md": {
+          "effectiveDigest": "ca93f5928be6570beedc7756a624311e83c9559992d8a5343eefa8b7db7f5bf6",
+          "rawDigest": "ca93f5928be6570beedc7756a624311e83c9559992d8a5343eefa8b7db7f5bf6",
+          "extractorVersion": "identity-v1"
+        },
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "259a520b83afef6c31e6c44847eb7a1456ea17994f84f44176e68f13e8df953b",
+        "checkedAt": "2026-10-10T08:50:34.917Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 86,
+            "endLine": 96,
+            "excerptDigest": "475657362e302f7462981ad4e1f51f7177bde7e0147aab37bcd6fc76fd8e3d30",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 7. 实现边界与正式门禁",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 104,
+            "endLine": 109,
+            "excerptDigest": "16da5da78c4fa5e5c71c5e4f18de784ff17c381eff94e547171bb751db86c200",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 9. 工作区与实现仓边界",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 129,
+            "endLine": 133,
+            "excerptDigest": "ebe4ccc35c7e8fe9dabfa218508ec65753c09931c34ce6f8624041be14203426",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 13. 专职交付边界",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 66,
+            "endLine": 68,
+            "excerptDigest": "0225cfba923646a0709a6c927b51a99a9a4dd5221bcf39963ae55a04fb050ad4",
+            "claim": "正式导航只推进本轮触发工作单元及依赖，生命周期本端终点为 work-unit.verification",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 106,
+            "endLine": 108,
+            "excerptDigest": "979720e18c38bce972fac8469b38b16b98aed414d2c172ef90255d3e1292054b",
+            "claim": "运行时代码优先登记 external-repository；当前仓 apps 或 git-submodule 须明确选择并按项目根/批准写范围核验，禁止复制冒充挂载或覆盖空 gitlink",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 94,
+            "endLine": 94,
+            "excerptDigest": "5c4c23f42d225e0b0b006c6dd8651081dc6d8244ffea60cb0ac65ca68479ef07",
+            "claim": "本端验证优先项目根 ./mvnw",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 91,
+            "endLine": 92,
+            "excerptDigest": "0c876f7117ca4bf18da52aa3dc348f0e2f4a887dbcbb1a46a1023a94f8f585c3",
+            "claim": "脚手架只生成本端机械骨架，须当前确认架构和持久化批准 schema v4 合同；既有工程不覆盖，业务实现回批准 Slice 合同",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 131,
+            "endLine": 133,
+            "excerptDigest": "08df80c2693a2dca9b154bb1bd84a159b1f13071e54b7109acd6eed5322a48bc",
+            "claim": "后端只交接本端真实接口，Freeze 前收集前端消费需求；本端通过不表示整体完成，统一管理方核验端到端，分析角色不获另一端写范围",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "implementation-repo-integration.md",
+            "inputPath": ".template-spec/process/implementation-repo-integration.md",
+            "startLine": 7,
+            "endLine": 24,
+            "excerptDigest": "a1284a65231c388947ea163fd47fc555856ab4f28853edfae11f5774992b7a1b",
+            "claim": "实现仓按真实项目根、scope、批准路径与验证命令登记，目录名称不授予写权限",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "LLM Wiki",
@@ -353,9 +2520,140 @@
         "AGENTS.md",
         "CONTEXT.md",
         "yss-skill-registry.yaml",
-        "skills-maintenance.md"
+        "skills-maintenance.md",
+        "llm-wiki-entry",
+        "llm-wiki-schema",
+        "llm-wiki-transactions"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "bd8fc222074fec3fe71c961c9f364ee910984ada0e6eb719afa023c10b365452",
+      "compiledFrom": {
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        },
+        "CONTEXT.md": {
+          "effectiveDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "rawDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "extractorVersion": "identity-v1"
+        },
+        "yss-skill-registry.yaml": {
+          "effectiveDigest": "c65b74bdafdcb3c5705e472f6c817ec1ce8bbc3c4771e379dc3db831b88e77dc",
+          "rawDigest": "c65b74bdafdcb3c5705e472f6c817ec1ce8bbc3c4771e379dc3db831b88e77dc",
+          "extractorVersion": "identity-v1"
+        },
+        "skills-maintenance.md": {
+          "effectiveDigest": "c5bfcf2400adb22a80545407f33f2da8420d170a3545d4e912dd2928b7086c77",
+          "rawDigest": "c5bfcf2400adb22a80545407f33f2da8420d170a3545d4e912dd2928b7086c77",
+          "extractorVersion": "identity-v1"
+        },
+        "llm-wiki-entry": {
+          "effectiveDigest": "1594b44d0871700075f7c13aa0cb7bdea34c90a3a6fa16f29c0721536dc94edb",
+          "rawDigest": "1594b44d0871700075f7c13aa0cb7bdea34c90a3a6fa16f29c0721536dc94edb",
+          "extractorVersion": "identity-v1"
+        },
+        "llm-wiki-schema": {
+          "effectiveDigest": "84ad615d6a585643403e4d5282fc135c3d44627d5736a794a75279a22fd713e8",
+          "rawDigest": "84ad615d6a585643403e4d5282fc135c3d44627d5736a794a75279a22fd713e8",
+          "extractorVersion": "identity-v1"
+        },
+        "llm-wiki-transactions": {
+          "effectiveDigest": "0811f816623d41c51cb241569835f4525008255c288e25eea5fc06e95b69209d",
+          "rawDigest": "0811f816623d41c51cb241569835f4525008255c288e25eea5fc06e95b69209d",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "bd8fc222074fec3fe71c961c9f364ee910984ada0e6eb719afa023c10b365452",
+        "checkedAt": "2026-10-10T08:50:34.920Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 5,
+            "endLine": 15,
+            "excerptDigest": "6e2d345cb4110d03f68faa693db9d8c9c437029008bd4c364e5ff45d198d28a3",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 1. 仓库身份",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 7,
+            "endLine": 14,
+            "excerptDigest": "4728c0b02d18465ec2021b2f12c07685d1dc9673a32325d1fa783a5b6aa6eb34",
+            "claim": "本仓身份独立核验；template-source 不产产品资产；只读诊断不创建 Ticket、checkpoint 或批准；旧实例显式迁移",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 42,
+            "endLine": 48,
+            "excerptDigest": "379c2e3ad5a9908c071874b263c6967ebfa816d9734f6c35d520503a3d3e43bc",
+            "claim": "模板源在既有授权内同步 Skill、投影、锁和分发；共享源仅经显式 Spec 更新；日常定向 verification 不冒充候选或发布资格",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "llm-wiki-entry",
+            "inputPath": ".agents/skills/llm-wiki/SKILL.md",
+            "startLine": 1,
+            "endLine": 39,
+            "excerptDigest": "67ab7c7e9fa3dfafb3ff0136d2d47fac0edabb1ce4043ae8cf457c1db337daa7",
+            "claim": "LLM Wiki 是中间表示，live 事实源；写入统一事务，查询不编译",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "llm-wiki-schema",
+            "inputPath": ".agents/skills/llm-wiki/references/schema.md",
+            "startLine": 1,
+            "endLine": 49,
+            "excerptDigest": "7e811f322d38b57c4c7bc2758bf20e44cfccd6ab632509596cffc7770c2aabf2",
+            "claim": "schema v2 绑定编译证据，v1 不追认历史 current",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "llm-wiki-transactions",
+            "inputPath": ".agents/skills/llm-wiki/references/transactions.md",
+            "startLine": 1,
+            "endLine": 42,
+            "excerptDigest": "094ff641e9c3ef39dd3e5fd8585e710445cea60e06a27980a4371c86d76fc8f1",
+            "claim": "所有写入统一 plan/apply/verify/finalize；template-source 原字节与事务记录使用仓外维护存储",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "CONTEXT.md",
+            "inputPath": "CONTEXT.md",
+            "startLine": 1,
+            "endLine": 15,
+            "excerptDigest": "04e7295a6a6fc15d0c503424b8e02cb1cf7cf6a70e287bf5323eb61c1c123f26",
+            "claim": "根 Context 持有稳定业务语言与消费约定，正文不能授予实现权限",
+            "risk": "general"
+          },
+          {
+            "sourceId": "yss-skill-registry.yaml",
+            "inputPath": ".template-spec/agents/yss-skill-registry.yaml",
+            "startLine": 1,
+            "endLine": 11,
+            "excerptDigest": "d5f3b234ea14f5c7429ba0399ef7bc6fee62f65cf465a2837e3529f13227da42",
+            "claim": "当前注册表 active，身份与发现面不同于锁文件的来源完整性",
+            "risk": "general"
+          },
+          {
+            "sourceId": "skills-maintenance.md",
+            "inputPath": ".template-source/agents/skills-maintenance.md",
+            "startLine": 5,
+            "endLine": 13,
+            "excerptDigest": "92070caf493a6b05afb0598908efddbafa2151b71b8712f70f4a84830f2e9515",
+            "claim": "共享内容、平台专属来源、投影与锁各按其事实所有权维护",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "Ticket与流程状态",
@@ -366,7 +2664,120 @@
         "CONTEXT.md",
         "AGENTS.md"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "0bdf2fc38775f29b124d54b4abfb8f2d9724971f8b7c8ff6fe97479d5d2bd45f",
+      "compiledFrom": {
+        "issue-tracker.md": {
+          "effectiveDigest": "b50594077e99c08e2fbf6f137fb5dc75e705097ddce7d5186b10fb288957df9b",
+          "rawDigest": "b50594077e99c08e2fbf6f137fb5dc75e705097ddce7d5186b10fb288957df9b",
+          "extractorVersion": "identity-v1"
+        },
+        "triage-labels.md": {
+          "effectiveDigest": "fae3c1d018392d77ea098112251aaf377ba51b07b31164a99bb70d541bb2ed9d",
+          "rawDigest": "fae3c1d018392d77ea098112251aaf377ba51b07b31164a99bb70d541bb2ed9d",
+          "extractorVersion": "identity-v1"
+        },
+        "CONTEXT.md": {
+          "effectiveDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "rawDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "extractorVersion": "identity-v1"
+        },
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "0bdf2fc38775f29b124d54b4abfb8f2d9724971f8b7c8ff6fe97479d5d2bd45f",
+        "checkedAt": "2026-10-10T08:50:34.922Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 77,
+            "endLine": 85,
+            "excerptDigest": "3ca827004a829a7c0ae78b04964cc2e5f48e6f0ee882ab0bc3abf21236476c5e",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 6. 正式 Ticket 与状态",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 110,
+            "endLine": 120,
+            "excerptDigest": "5aa0401c0e78329fc5e216adb3f605ab41fafbaff01e027fdd4986014fbc022b",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 10. 审查、验证与 Git",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 81,
+            "endLine": 84,
+            "excerptDigest": "ec0d486e0a3b5ffe3e5d6aa092000f9e5855ea1189c1692f4400235f8b103a1e",
+            "claim": "正式父 Ticket 汇总批准、阻塞和证据；Slice 必须合同已批准且当前、门禁通过、阻塞清除才能 ready-for-agent；现有当前合同核验复用，Tracker 显式选择",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 58,
+            "endLine": 58,
+            "excerptDigest": "e27fa2a29e21c581adba29585f672fc01350571c9e7a9283708766c2b56222e3",
+            "claim": "daily 只更新同一 Ticket/PR 并保留范围、验收、工程基线、Skills、实际测试、独立审查和回滚；无需阶段 checkpoint 或正式 Slice；verify-daily 失败、缺独立审查或阻断未关闭不能完成",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 60,
+            "endLine": 60,
+            "excerptDigest": "a70a7fbc190316cb0345ff4dceb2b2c58db9da217a28b8df0ec8dcfe15f81539",
+            "claim": "已有正式绑定任务不得降级；无关正式资产不阻断 daily；新排除风险保留证据并恢复 governed，超出兼容范围的 API 走正式 Draft、审查和 Freeze",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 118,
+            "endLine": 119,
+            "excerptDigest": "30c4f69f64b6f1e8ee182c15350f2556d61b0a96394a9625d32d4f328ef91419",
+            "claim": "授权消费本地 harness-orchestrator user-decisions；有效范围授权复用，commit/push/publish 分别核验用户授权；返工或重要缺陷触发中文复盘",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "issue-tracker.md",
+            "inputPath": ".template-spec/agents/issue-tracker.md",
+            "startLine": 1,
+            "endLine": 28,
+            "excerptDigest": "20f1b6127eae1fe74f560f94a5a85fcc06c41aa84100bcf296a736b8cdf339c2",
+            "claim": "当前 tracker.root 为 .work，既有实例按实际配置使用根",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "triage-labels.md",
+            "inputPath": ".template-spec/agents/triage-labels.md",
+            "startLine": 3,
+            "endLine": 15,
+            "excerptDigest": "ace13626cfd3078497fac5e2769b4fbed74248a6ae376374762ba857c79ebc6d",
+            "claim": "Ticket 五态不是数字人角色或临时工作状态",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "CONTEXT.md",
+            "inputPath": "CONTEXT.md",
+            "startLine": 1,
+            "endLine": 15,
+            "excerptDigest": "04e7295a6a6fc15d0c503424b8e02cb1cf7cf6a70e287bf5323eb61c1c123f26",
+            "claim": "根 Context 持有稳定业务语言与消费约定，正文不能授予实现权限",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "Fresh验证与独立审查",
@@ -377,7 +2788,147 @@
         "maintenance-intensity.yaml",
         "CONTEXT.md"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "28cfb3a07caee08228704303742ab94d35d673a5b0174a52af6c4d32c4c4a663",
+      "compiledFrom": {
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        },
+        "harness-process-tailoring.md": {
+          "effectiveDigest": "6cd01602f067d44d461c4214726d9aa9ec2b892f0ac0c03d24b82ea5b04b0575",
+          "rawDigest": "6cd01602f067d44d461c4214726d9aa9ec2b892f0ac0c03d24b82ea5b04b0575",
+          "extractorVersion": "identity-v1"
+        },
+        "maintenance-intensity.yaml": {
+          "effectiveDigest": "b4a8788abfd13ec799986a35c558a2e64653370dbe8cdf22e69c2a5160e99397",
+          "rawDigest": "b4a8788abfd13ec799986a35c558a2e64653370dbe8cdf22e69c2a5160e99397",
+          "extractorVersion": "identity-v1"
+        },
+        "CONTEXT.md": {
+          "effectiveDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "rawDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "28cfb3a07caee08228704303742ab94d35d673a5b0174a52af6c4d32c4c4a663",
+        "checkedAt": "2026-10-10T08:50:34.926Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 110,
+            "endLine": 120,
+            "excerptDigest": "5aa0401c0e78329fc5e216adb3f605ab41fafbaff01e027fdd4986014fbc022b",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 10. 审查、验证与 Git",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 125,
+            "endLine": 128,
+            "excerptDigest": "eca19532a426ece27eb79c4333777738a4e232e259c6dc5d338b6ce66fdf3340",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 12. 测试质量基线",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 112,
+            "endLine": 112,
+            "excerptDigest": "05d68846d8486b626c0a7a9fb87728e81f38d1cf0fe341540a5728e4ec90fd90",
+            "claim": "产品实现和专业审查由独立 Reviewer 执行，实施者不自审，Reviewer 不写实现；模板日常 self-check 消费维护规则",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 113,
+            "endLine": 114,
+            "excerptDigest": "07f13ab92dbfb48b1a2f3a0870f42939cee1211032343ee6f7afcdfc29f1196b",
+            "claim": "Fresh Verification 只跑当前范围及依赖；证据保存命令/退出码/边界，输入/schema/参数/仓根不变才复用，正式边界重验，局部完成不等于整体完成",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 58,
+            "endLine": 58,
+            "excerptDigest": "e27fa2a29e21c581adba29585f672fc01350571c9e7a9283708766c2b56222e3",
+            "claim": "daily 只更新同一 Ticket/PR 并保留范围、验收、工程基线、Skills、实际测试、独立审查和回滚；无需阶段 checkpoint 或正式 Slice；verify-daily 失败、缺独立审查或阻断未关闭不能完成",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 60,
+            "endLine": 60,
+            "excerptDigest": "a70a7fbc190316cb0345ff4dceb2b2c58db9da217a28b8df0ec8dcfe15f81539",
+            "claim": "已有正式绑定任务不得降级；无关正式资产不阻断 daily；新排除风险保留证据并恢复 governed，超出兼容范围的 API 走正式 Draft、审查和 Freeze",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 127,
+            "endLine": 127,
+            "excerptDigest": "71261c45b52a821c3cdb4c3cf555fbae93f4717820aed1d1f7a32e881da989ec",
+            "claim": "覆盖率数字是推荐基线，只有项目测试策略采纳才成为 CI 门禁；未定义关键流程不能宣称100% E2E",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 94,
+            "endLine": 94,
+            "excerptDigest": "5c4c23f42d225e0b0b006c6dd8651081dc6d8244ffea60cb0ac65ca68479ef07",
+            "claim": "本端验证优先项目根 ./mvnw",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 66,
+            "endLine": 68,
+            "excerptDigest": "0225cfba923646a0709a6c927b51a99a9a4dd5221bcf39963ae55a04fb050ad4",
+            "claim": "正式导航只推进本轮触发工作单元及依赖，生命周期本端终点为 work-unit.verification",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "harness-process-tailoring.md",
+            "inputPath": ".template-spec/process/harness-process-tailoring.md",
+            "startLine": 1,
+            "endLine": 16,
+            "excerptDigest": "b10a1f69ffe065431219818d91caeaf5d9f051bdf2684d0ed07a8830be2823a4",
+            "claim": "裁剪按实际影响与最近可信阶段，正式业务实现要求当前 Slice；所有路径遵守写范围",
+            "risk": "general"
+          },
+          {
+            "sourceId": "maintenance-intensity.yaml",
+            "inputPath": ".template-source/process/maintenance-intensity.yaml",
+            "startLine": 1,
+            "endLine": 29,
+            "excerptDigest": "1c18e0f5e72026a7c2bd9ec821c8cd97fc14be7fc07d3e60129c294b332ccc26",
+            "claim": "强度按 L1/L2/L3 的已登记 trigger 判定，默认 L2，不定义独立审查授权",
+            "risk": "general"
+          },
+          {
+            "sourceId": "CONTEXT.md",
+            "inputPath": "CONTEXT.md",
+            "startLine": 1,
+            "endLine": 15,
+            "excerptDigest": "04e7295a6a6fc15d0c503424b8e02cb1cf7cf6a70e287bf5323eb61c1c123f26",
+            "claim": "根 Context 持有稳定业务语言与消费约定，正文不能授予实现权限",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "模板发布门禁与验证",
@@ -388,7 +2939,102 @@
         "skills-maintenance.md",
         "harness-process-tailoring.md"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "7ed1369e5a8812dfb25a058b9ebdd3d9edbc952986e68a46c3b75aa2234398b8",
+      "compiledFrom": {
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        },
+        "README.md": {
+          "effectiveDigest": "70b19c000b65d00db8853c9c9ced353fb9738199696a25550b3a84ed655297f3",
+          "rawDigest": "70b19c000b65d00db8853c9c9ced353fb9738199696a25550b3a84ed655297f3",
+          "extractorVersion": "identity-v1"
+        },
+        "skills-maintenance.md": {
+          "effectiveDigest": "c5bfcf2400adb22a80545407f33f2da8420d170a3545d4e912dd2928b7086c77",
+          "rawDigest": "c5bfcf2400adb22a80545407f33f2da8420d170a3545d4e912dd2928b7086c77",
+          "extractorVersion": "identity-v1"
+        },
+        "harness-process-tailoring.md": {
+          "effectiveDigest": "6cd01602f067d44d461c4214726d9aa9ec2b892f0ac0c03d24b82ea5b04b0575",
+          "rawDigest": "6cd01602f067d44d461c4214726d9aa9ec2b892f0ac0c03d24b82ea5b04b0575",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "7ed1369e5a8812dfb25a058b9ebdd3d9edbc952986e68a46c3b75aa2234398b8",
+        "checkedAt": "2026-10-10T08:50:34.928Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 40,
+            "endLine": 51,
+            "excerptDigest": "6b2d787f762cbebb698e1d70d619c718d14e9a95590014b2b4943f91d12b6fe1",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 4. `template-source` 维护",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 110,
+            "endLine": 120,
+            "excerptDigest": "5aa0401c0e78329fc5e216adb3f605ab41fafbaff01e027fdd4986014fbc022b",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 10. 审查、验证与 Git",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 42,
+            "endLine": 48,
+            "excerptDigest": "379c2e3ad5a9908c071874b263c6967ebfa816d9734f6c35d520503a3d3e43bc",
+            "claim": "模板源在既有授权内同步 Skill、投影、锁和分发；共享源仅经显式 Spec 更新；日常定向 verification 不冒充候选或发布资格",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 118,
+            "endLine": 119,
+            "excerptDigest": "30c4f69f64b6f1e8ee182c15350f2556d61b0a96394a9625d32d4f328ef91419",
+            "claim": "授权消费本地 harness-orchestrator user-decisions；有效范围授权复用，commit/push/publish 分别核验用户授权；返工或重要缺陷触发中文复盘",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "README.md",
+            "inputPath": "README.md",
+            "startLine": 1,
+            "endLine": 13,
+            "excerptDigest": "24be5b325571c063852a95999031d116bb20a32883d97b9c90a495dc64b07a46",
+            "claim": "README 说明本专职 Harness 的定位及初始化入口，不替代本地执行边界",
+            "risk": "general"
+          },
+          {
+            "sourceId": "skills-maintenance.md",
+            "inputPath": ".template-source/agents/skills-maintenance.md",
+            "startLine": 5,
+            "endLine": 13,
+            "excerptDigest": "92070caf493a6b05afb0598908efddbafa2151b71b8712f70f4a84830f2e9515",
+            "claim": "共享内容、平台专属来源、投影与锁各按其事实所有权维护",
+            "risk": "general"
+          },
+          {
+            "sourceId": "harness-process-tailoring.md",
+            "inputPath": ".template-spec/process/harness-process-tailoring.md",
+            "startLine": 1,
+            "endLine": 16,
+            "excerptDigest": "b10a1f69ffe065431219818d91caeaf5d9f051bdf2684d0ed07a8830be2823a4",
+            "claim": "裁剪按实际影响与最近可信阶段，正式业务实现要求当前 Slice；所有路径遵守写范围",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     },
     {
       "id": "复盘与权威资产修订",
@@ -398,7 +3044,98 @@
         "lifecycle-registry.yaml",
         "CONTEXT.md"
       ],
-      "humanOwned": false
+      "humanOwned": false,
+      "articleDigest": "3f026b492fa3d1c94cc478c84cabfae6203961f791bb36beaac172c41b19e76c",
+      "compiledFrom": {
+        "AGENTS.md": {
+          "effectiveDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "rawDigest": "1c807079a0cde15441ff577ab6863cabc89d0557ab1440801c916349185e0437",
+          "extractorVersion": "identity-v1"
+        },
+        "lifecycle-registry.yaml": {
+          "effectiveDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "rawDigest": "6fa2b28b4838182e46f5f5b0b4222382153dbe89e5ede7245e23bef5dbd54a85",
+          "extractorVersion": "identity-v1"
+        },
+        "CONTEXT.md": {
+          "effectiveDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "rawDigest": "b23dbb08148aae203b0c0a834c1684164deb020b4e82436eb5b25008f15e2b80",
+          "extractorVersion": "identity-v1"
+        }
+      },
+      "compiledDependencies": {},
+      "verification": {
+        "articleDigest": "3f026b492fa3d1c94cc478c84cabfae6203961f791bb36beaac172c41b19e76c",
+        "checkedAt": "2026-10-10T08:50:34.930Z",
+        "evidence": [
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 110,
+            "endLine": 120,
+            "excerptDigest": "5aa0401c0e78329fc5e216adb3f605ab41fafbaff01e027fdd4986014fbc022b",
+            "claim": "本页路由、授权及完成边界依据当前入口的 ## 10. 审查、验证与 Git",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 118,
+            "endLine": 119,
+            "excerptDigest": "30c4f69f64b6f1e8ee182c15350f2556d61b0a96394a9625d32d4f328ef91419",
+            "claim": "授权消费本地 harness-orchestrator user-decisions；有效范围授权复用，commit/push/publish 分别核验用户授权；返工或重要缺陷触发中文复盘",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 20,
+            "endLine": 28,
+            "excerptDigest": "7a450915fc5b4d4c9fa7d98c56749d408279b915f57c8a499d48611de95b696e",
+            "claim": "根 Context、Profile、生命周期、影响面、Registry 与实现仓登记分别持有事实；README 不另定义规则",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 66,
+            "endLine": 68,
+            "excerptDigest": "0225cfba923646a0709a6c927b51a99a9a4dd5221bcf39963ae55a04fb050ad4",
+            "claim": "正式导航只推进本轮触发工作单元及依赖，生命周期本端终点为 work-unit.verification",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "AGENTS.md",
+            "inputPath": "AGENTS.md",
+            "startLine": 95,
+            "endLine": 95,
+            "excerptDigest": "f76a6d6611fc1c8a4bfdca1fb8a680e2233fe9fd56d8160ed770c067e21238a9",
+            "claim": "路径越界、缺必要证据或未验证时停止受影响实现；violation 定向修复复验，drift/new_impacts 先调查并使受影响合同 stale",
+            "risk": "critical"
+          },
+          {
+            "sourceId": "lifecycle-registry.yaml",
+            "inputPath": ".template-spec/process/lifecycle-registry.yaml",
+            "startLine": 1,
+            "endLine": 8,
+            "excerptDigest": "e87349ae7febe76b25051035f35d322029072565a9d8e7301e7c30516490daad",
+            "claim": "active 生命周期注册表持有稳定 ID，本地执行仍受 Profile 允许范围限制",
+            "risk": "general"
+          },
+          {
+            "sourceId": "CONTEXT.md",
+            "inputPath": "CONTEXT.md",
+            "startLine": 1,
+            "endLine": 15,
+            "excerptDigest": "04e7295a6a6fc15d0c503424b8e02cb1cf7cf6a70e287bf5323eb61c1c123f26",
+            "claim": "根 Context 持有稳定业务语言与消费约定，正文不能授予实现权限",
+            "risk": "general"
+          }
+        ]
+      },
+      "dependsOnArticles": [],
+      "aliases": []
     }
-  ]
+  ],
+  "feedback": []
 }

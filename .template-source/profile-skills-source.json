@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "profile": "backend",
-  "sourceCommit": "de5c20555b71cc6a00ffcf32350fe513d9941a28",
-  "sourceState": "committed",
+  "sourceCommit": "26b9be5ff43883bf8b26997b6b158e552684ace1",
+  "sourceState": "working-tree",
   "configurationPath": ".template-source/profile-skill-sync.json",
-  "configurationHash": "2f556d8dc3b75bd442953a9a60536c3a3ab73dea23bc36789fb55abe37e7e680",
-  "skillsDigest": "cc5aa3975eff8cb1281db1396dea67a659933fd0311ce92947457a05cfc029c6",
+  "configurationHash": "6cb4a8f922c3fa24131ad7a8c0229d57b6e33801ae915621b417c1facb34fc08",
+  "skillsDigest": "8a484b9311e89c34e76253ccd08d887f98c6309a90b97c042542a8e35cdd867a",
   "generatedRoots": [
     ".agents/skills/alibaba-java-code-style",
     ".agents/skills/archify",
