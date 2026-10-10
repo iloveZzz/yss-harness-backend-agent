@@ -30,7 +30,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/alibaba-java-code-style/SKILL.md",
-        "effectiveHash": "5f99b6a10a168656d0a4f80a507647e7a87243c15924c0b3df10f514953fb4d7",
+        "effectiveHash": "cd21cf9dbca7418212ff0c0cbec0b9791a0ae8c200fdd90e52243b964a558aa8",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -506,7 +506,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-application/SKILL.md",
-        "effectiveHash": "63e81e857077b9d5d9314461dd7dc194c46c066fe2fd95b81bf56aae6e62b420",
+        "effectiveHash": "f41aee7dab6dca9bf579a97bf015d654e0fec92a2776a57ea56a2e7e813b4c29",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -554,7 +554,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-ddd-scaffold-generator/SKILL.md",
-        "effectiveHash": "4b13f22651ca3fb7df8ba51d29f60c6d4d1b1242f43cbf680aa00da87b16b30e",
+        "effectiveHash": "1650e68de72ebd85715bf5bbe72b8d44027a448e60af04c767e6627694e5a0ec",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -578,7 +578,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-domain/SKILL.md",
-        "effectiveHash": "17d3b9dc213e591cf65436e253e92e965268dbf7f108cd4b2fcf4f11657b1c0f",
+        "effectiveHash": "15f31ee5ce4483b739204237072a6e23faf11992b8a1f6ed80ab8a0dc155ff56",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -590,7 +590,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-dto/SKILL.md",
-        "effectiveHash": "8c4475a2f1d91ca3bd6fab3c268e6f7e6e35c9702a169ccc6ec533bfe53b5edb",
+        "effectiveHash": "9fbed589f019f1c82dd5ae6a92e241bf2d199391f2ae0c1c0c1ef326fa69f87b",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -626,7 +626,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-implementation-contract-compiler/SKILL.md",
-        "effectiveHash": "bb48681a76dbbc4a01831f44d37548b45e6be8a86f77611e4f9803eb1d60c94d",
+        "effectiveHash": "54b22a83f757a5475c3024da4de911a31e484c8d2c2ee943d707a95529a73e08",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -638,7 +638,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-layered-mvc-scaffold-generator/SKILL.md",
-        "effectiveHash": "853e8b18a8fa02fc22148556a93fcf63e67bc7dd10a95ef1769e297ad90575a3",
+        "effectiveHash": "93376d48d4b1f02ffe24016b6c413fc19d20ac78c3e9811f5707396c81695af1",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -686,7 +686,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-repository/SKILL.md",
-        "effectiveHash": "9e6cae0ac3326992708db4b4a2cb79b5de2842e90cfc0ed181ddc595087c50ed",
+        "effectiveHash": "ecb98d71e71cda5c32571cb3e5cd7fa240a52386fccbb0f00b10d3e300504a60",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -746,7 +746,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-tactical-design/SKILL.md",
-        "effectiveHash": "454ff1cd028bf629ec6981f00c607ed3012fa8c2fc0322495bc003808e8a8eca",
+        "effectiveHash": "c655661ac522d76ced91b99753c3d9bbc1a524b43b81e9a4d9a32ca9f73dfa4d",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -758,7 +758,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-technical-design/SKILL.md",
-        "effectiveHash": "b27349dc51bc98e0045028a2fd7103ad2b15264ab4f4c3f99d726945be6bc6ad",
+        "effectiveHash": "805680f0569f42b3896eb4d39fceb2317209439df4e8c84182a4ff68c2deb44c",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -806,7 +806,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-web-controller/SKILL.md",
-        "effectiveHash": "6f2820e32d874a13920a76b6b4652f3b8bc8b813950009e0a488ddb9edd0ebc2",
+        "effectiveHash": "f29884c85f7783d8191b7416592dabc650a978ebb4f50ebb7b51152a126813d4",
         "targets": [
           ".agents/skills",
           ".codex/skills",

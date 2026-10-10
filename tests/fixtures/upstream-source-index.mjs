@@ -3,7 +3,7 @@ export default {
   "schema_version": 1,
   "kind": "test-only-canonical-source",
   "source_repository": "yss-spec-project-template",
-  "source_head": "3c2b2b2fd4ff675b320a385bf3309bd1b913862c",
+  "source_head": "bc4606968ce59d1344250fb31eea2505037cde30",
   "source_state": "working-tree",
   "files": [
     {
@@ -924,10 +924,17 @@ export default {
       "mode": 420
     },
     {
+      "path": "scripts/lib/source-context-snapshot.mjs",
+      "source_path": "scripts/lib/source-context-snapshot.mjs",
+      "storage_path": "scripts/lib/source-context-snapshot.mjs",
+      "sha256": "5589b4557f445a09a64087b0f21c0ab7b8ca0cc2a8d77687c5d24733888357ec",
+      "mode": 420
+    },
+    {
       "path": "scripts/lib/validation-phase.mjs",
       "source_path": "scripts/lib/validation-phase.mjs",
       "storage_path": "scripts/lib/validation-phase.mjs",
-      "sha256": "5a08dc611ef1ad75786c26010ebc1cb25e34c51b0d1a41db17101ffb52daf425",
+      "sha256": "dde9922ff0d1bee8276e6254bb6a932bac5e516f9196de55bb39e3524b279702",
       "mode": 420
     },
     {
