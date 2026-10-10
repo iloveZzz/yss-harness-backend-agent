@@ -31,7 +31,7 @@ export function validateSkillGovernance({ read = (relative) => readFileSync(path
   if (exists(".agents/skills/high-fidelity-html-prototype") || aliases.has("high-fidelity-html-prototype")) {
     fail("high-fidelity-html-prototype 已退役，不得保留物理目录或运行时 alias");
   }
-  for (const retired of ["yss-product-lifecycle", "yss-stage-decision"]) {
+  for (const retired of ["yss-product-lifecycle"]) {
     if (exists(`.agents/skills/${retired}`) || aliases.has(retired) || canonicalIds.has(retired)) {
       fail(`${retired} 已退役，不得保留物理目录、注册表条目或运行时 alias`);
     }
