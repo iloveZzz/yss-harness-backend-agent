@@ -189,7 +189,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/harness-orchestrator/SKILL.md",
-        "effectiveHash": "191708aa1afecc696c49b69fbe2c14ca66fe63f5cfbb16706e685df996875015",
+        "effectiveHash": "ccabd360258033ddfb319c6b2f1c7bfbd216adb9f5bd13398267600bd7f449f6",
         "targets": [
           ".agents/skills",
           ".codex/skills",
