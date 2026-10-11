@@ -364,7 +364,7 @@ groups:
     commands:
     - run: scripts/verify-digital-human-roles
     - run: scripts/verify-digital-human-roles-scenarios
-    - run: scripts/verify-approval-record .template-spec/templates/approval-record-template.yaml
+    - run: scripts/verify-approval-record --history .template-spec/templates/approval-record-template.yaml
   lifecycle:
     commands:
     - run: scripts/verify-lifecycle-registry
