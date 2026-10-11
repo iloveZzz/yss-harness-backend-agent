@@ -12,7 +12,7 @@ function ensure(condition, message) { if (!condition) throw new TypeError(messag
 function exists(relative) { return existsSync(path.join(root, relative)); }
 function parse(relative) { return parseDocument(read(relative), { uniqueKeys: true }).toJS({ maxAliasCount: 0 }); }
 
-const newRoles = ["role.architecture-agent", "role.frontend-agent", "role.backend-agent", "role.test-agent"];
+const newRoles = ["role.architecture-agent", "role.frontend-agent", "role.backend-agent", "role.test-agent", "role.requirements-manager", "role.product-manager"];
 
 function verifyHarnessContract() {
   const contract = parse(".agents/skills/harness-orchestrator/references/orchestration-contract.yaml");
@@ -29,7 +29,7 @@ function verifyReplacementBoundary() {
   validateDefaultDigitalHumanRoles();
   ensure(JSON.stringify(roles.roles.map((role) => role.id)) === JSON.stringify(newRoles), "旧角色仍然进入默认角色集合");
   const serialized = read(".template-spec/agents/digital-human-roles.yaml");
-  for (const legacy of ["requirements-manager", "product-manager", "business", "project-manager", "frontend-engineer", "backend-engineer", "test-engineer"]) {
+  for (const legacy of ["business", "project-manager", "frontend-engineer", "backend-engineer", "test-engineer"]) {
     ensure(!serialized.includes("role." + legacy), "旧角色残留: " + legacy);
   }
   const migrations = read(".template-spec/agents/skill-migrations.md");
@@ -91,7 +91,7 @@ export function runScenario(name) {
     ensure(result.status === 0, result.stderr || result.stdout);
     const registry = parse(".template-spec/process/lifecycle-registry.yaml");
     ensure(registry.status === "active", "新生命周期必须为 active");
-    ensure(JSON.stringify(registry.stages.map((stage) => stage.id)) === JSON.stringify(["stage.harness-entry", "stage.technical-design", "stage.implementation-repository-preparation", "stage.slice-contract", "stage.slice-implementation", "stage.verification"]), "生命周期阶段缺少实现仓库准备");
+    ensure(JSON.stringify(registry.stages.map((stage) => stage.id)) === JSON.stringify(["stage.harness-entry", "stage.technical-design", "stage.implementation-repository-preparation", "stage.slice-contract", "stage.slice-implementation", "stage.verification", "stage.plan", "stage.spec-architecture"]), "生命周期阶段缺少实现仓库准备");
     ensure(lifecycleTransitionContract.next_routes["work-unit.technical-design"]?.includes("work-unit.implementation-repository-preparation"), "技术设计后未固定进入实现仓库准备");
     ensure(lifecycleTransitionContract.next_routes["work-unit.slice-contract"].includes("work-unit.slice-implementation"), "Slice Contract 后未允许进入实现");
     ensure(validateNextRoute("work-unit.slice-implementation", "work-unit.verification").result === "allowed", "实现后未允许进入独立验证");

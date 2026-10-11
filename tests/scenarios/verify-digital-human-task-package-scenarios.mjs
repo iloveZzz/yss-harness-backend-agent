@@ -9,7 +9,7 @@ import { generateTaskPackageDefaults, validateTaskPackage, validateTaskPackageSe
 import { isTemplateSource } from "../../scripts/lib/repository-mode.mjs";
 import { buildDecisionFixture } from "../../scripts/fixtures/user-decision/build-fixture.mjs";
 
-const scratchDir = "docs/.scratch";
+const scratchDir = ".work";
 const fixtureDir = `${scratchDir}/_verify-task-package`;
 const contractRef = `${fixtureDir}/slice-contract.json`;
 const evidenceRef = `${fixtureDir}/evidence.json`;
@@ -97,7 +97,7 @@ function writeFixtures() {
   const dataDigest = `sha256:${createHash("sha256").update(readFileSync(path.join(ROOT, dataDecisionRef))).digest("hex")}`;
   const engineeringPackage = { schema_version: 1, kind: "engineering-contract-package", project_id: "backend", gate_id:"gate.engineering-contract-approved", approval_scope:["backend"], drafter_principal_ref:"synthetic-architecture-drafter", basis:[{ref:technicalDesignRef,digest:technicalDigest},{ref:dataDecisionRef,digest:dataDigest},{ref:apiDecisionRef,digest:apiDigest}], technical_design: { ref: technicalDesignRef, version: "v1", digest: technicalDigest }, data_architecture_decision: { ref: dataDecisionRef, version: "v1", digest: dataDigest, impact: "not-applicable" }, api_contract_decision: { ref: apiDecisionRef, version: "v1", digest: apiDigest, impact: "not-applicable" } };
   writeFileSync(path.join(ROOT, engineeringPackageRef), `${JSON.stringify(engineeringPackage, null, 2)}\n`);
-  const decision = buildDecisionFixture(path.join(ROOT, fixtureDir, "engineering-decision"), { boundary: "gate.engineering-contract-approved", scope: ["backend"], subjectRef: path.join(ROOT, engineeringPackageRef) });
+  const decision = buildDecisionFixture(path.join(ROOT, fixtureDir, "engineering-decision"), { boundary: "gate.engineering-contract-approved", scope: ["backend"], subjectRef: engineeringPackageRef });
   writeFileSync(path.join(ROOT, engineeringApprovalRef), `${JSON.stringify({ schema_version: 1, gate_id: "gate.engineering-contract-approved", decision: "approved", actor_kind: "digital-human", role_id: "role.test-agent", runtime_id: "runtime.generic", principal_ref: "synthetic-test-reviewer", drafter_principal_ref:"synthetic-architecture-drafter", subject_digest:createHash("sha256").update(readFileSync(path.join(ROOT,engineeringPackageRef))).digest("hex"),basis:engineeringPackage.basis.map(x=>({ref:x.ref,digest:x.digest.replace(/^sha256:/,"" )})), subject_ref:engineeringPackageRef, approval_scope: decision.requirement.scope, drafter_role_id: "role.architecture-agent", user_decision_ref: decision.ref, artifact_bindings: [{ id: technicalDesign.technical_design_id, version: "v1", digest: technicalDigest }, { id: dataDecision.decision_id, version: "v1", digest: dataDigest }, { id: apiDecision.decision_id, version: "v1", digest: apiDigest }], evidence_refs: [evidenceRef] }, null, 2)}\n`);
 }
 
@@ -114,7 +114,7 @@ function packageBase(roleId, taskId, workUnitId, kind, contractFields, stageId) 
     contract: { kind, contract_id: kind + "-" + taskId, contract_version: 1, status: "issued", contract_ref: ".template-spec/process/lifecycle-registry.yaml", ...contractFields },
     inputs: ["CONTEXT.md"],
     objective: "执行有界 Harness Agent 工作单元",
-    allowed_write_paths: ["docs/.scratch/"],
+    allowed_write_paths: [".work/"],
     forbidden_actions: ["不得越过 Orchestrator 门禁"],
     expected_outputs: ["结构化工作结果"],
     expected_evidence_files: [evidenceRef],

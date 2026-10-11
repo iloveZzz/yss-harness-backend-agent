@@ -586,6 +586,10 @@ skill_dependencies:
     - skill: i-have-adhd
       type: context-conditional
       when: lifecycle-document-output
+  setup-yss-harness:
+    - skill: i-have-adhd
+      type: context-conditional
+      when: lifecycle-document-output
   yss-research:
     - skill: i-have-adhd
       type: context-conditional
@@ -692,10 +696,6 @@ skill_dependencies:
       type: coordination-only
     - skill: code-review
       type: review-only
-  setup-yss-harness:
-    - skill: i-have-adhd
-      type: context-conditional
-      when: lifecycle-document-output
 invocation_contract:
   schema_version: 2
   runtime_metadata_version: 1
