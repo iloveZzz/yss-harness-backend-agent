@@ -75,8 +75,8 @@ required_files:
 - .agents/skills/yss-layered-mvc-scaffold-generator/scripts/generate_and_verify_scaffold.mjs
 - .agents/skills/yss-layered-mvc-scaffold-generator/scripts/scaffold-generator.test.mjs
 - scripts/repository-mode
-- scripts/implementation-path-policy
-- scripts/repository-scope-policy
+- scripts/lib/implementation-path-policy.mjs
+- scripts/lib/repository-scope-policy.mjs
 - scripts/sync-skills
 - scripts/update-skill-lock
 - scripts/generate-lifecycle-artifacts
