@@ -800,13 +800,6 @@ skills:
     aliases: []
     impacts:
       - backend
-  - id: archify
-    layer: specialist
-    maturity: supported
-    instance_default_discoverable: false
-    aliases: []
-    impacts:
-      - quality
   - id: architecture-agent
     layer: core
     maturity: supported

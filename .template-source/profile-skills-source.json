@@ -1,14 +1,13 @@
 {
   "schemaVersion": 1,
   "profile": "backend",
-  "sourceCommit": "a3d81b1b43ee0b740d9eb621667c82b1faeb99c0",
+  "sourceCommit": "58066731e1db2e0e6392acbc62991037ad4331dc",
   "sourceState": "committed",
   "configurationPath": ".template-source/profile-skill-sync.json",
-  "configurationHash": "8b4e207f007d25a2ffcfe499c4fe3b9b5c6ad42bafe3a3ad9c1d245479d971d1",
-  "skillsDigest": "9e924954f24cd1a46aaf3bdedaeb3ae836ffb498217e419a99349e594c56a4a9",
+  "configurationHash": "8ec7fe1bf00eb2e7c45892594b4390010952bc7534a410647f8f6a5c9b17dfba",
+  "skillsDigest": "c9a6a60d97804ba0c5cf776952b1523a9f9afd807d2160cbf1c199c1475438f3",
   "generatedRoots": [
     ".agents/skills/alibaba-java-code-style",
-    ".agents/skills/archify",
     ".agents/skills/codebase-design",
     ".agents/skills/cross-repo-implementation-routing",
     ".agents/skills/diagnosing-bugs",
