@@ -656,7 +656,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-openapi-governance/SKILL.md",
-        "effectiveHash": "f302c7ea0dc5db20b28b1b5d877d6f3605f3c3fe7c3cd9bd32e1c01675ffe327",
+        "effectiveHash": "5f39950acda57f18bc29718673bb498dc96b3b7431fca1066590bd2ffa0af114",
         "targets": [
           ".agents/skills",
           ".codex/skills",

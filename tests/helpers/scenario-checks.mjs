@@ -91,7 +91,7 @@ export function runScenario(name) {
     ensure(result.status === 0, result.stderr || result.stdout);
     const registry = parse(".template-spec/process/lifecycle-registry.yaml");
     ensure(registry.status === "active", "新生命周期必须为 active");
-    ensure(JSON.stringify(registry.stages.map((stage) => stage.id)) === JSON.stringify(["stage.harness-entry", "stage.technical-design", "stage.implementation-repository-preparation", "stage.slice-contract", "stage.slice-implementation", "stage.verification"]), "生命周期阶段缺少实现仓库准备");
+    ensure(JSON.stringify(registry.stages.map((stage) => stage.id)) === JSON.stringify(["stage.harness-entry", "stage.technical-design", "stage.implementation-repository-preparation", "stage.slice-contract", "stage.slice-implementation", "stage.verification", "stage.plan", "stage.spec-architecture"]), "生命周期阶段缺少实现仓库准备");
     ensure(lifecycleTransitionContract.next_routes["work-unit.technical-design"]?.includes("work-unit.implementation-repository-preparation"), "技术设计后未固定进入实现仓库准备");
     ensure(lifecycleTransitionContract.next_routes["work-unit.slice-contract"].includes("work-unit.slice-implementation"), "Slice Contract 后未允许进入实现");
     ensure(validateNextRoute("work-unit.slice-implementation", "work-unit.verification").result === "allowed", "实现后未允许进入独立验证");
