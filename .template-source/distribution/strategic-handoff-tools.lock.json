@@ -2,7 +2,7 @@
   "schema_version": 1,
   "target_id": "yss-harness-backend-agent",
   "source_repository": "yss-spec-project-template",
-  "source_revision": "26d0cbb4eef241b46c2dc3713c3e33bb8297c74c",
+  "source_revision": "58066731e1db2e0e6392acbc62991037ad4331dc",
   "source_state": "committed",
   "transformation_set": [
     "backend-wire-command",
@@ -623,6 +623,6 @@
     "tests/scenarios/verify-strategic-handoff-package-scenarios.mjs": "sha256:2674f132a7f3d41797b578ff7bd21c718c3d5b855095f8637716589918347d82",
     "scripts/lib/visual-baseline-contract.mjs": "sha256:d8d48020975b66b789460797fd37da40a69e626c682d999fc76ae32b66486ca9",
     ".agents/skills/harness-orchestrator/references/orchestration-contract.yaml": "sha256:106abd278f0086256ede3513828201f929776e875bc3264dea85d824a86933d5",
-    ".template-spec/agents/yss-skill-registry.yaml": "sha256:0faec1b6d5b775e3fbeda924c9cb856748c6f5a969f8a287e2d946f914e2d701"
+    ".template-spec/agents/yss-skill-registry.yaml": "sha256:4f8a09e531a5707085c6fca6625566c02e8ad22b806bf2ff3c64dc609cf0b9be"
   }
 }
