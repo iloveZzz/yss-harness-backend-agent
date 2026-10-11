@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "profile": "backend",
-  "sourceCommit": "a3009babc7d8b49f8a0694ee2d3e4b7742ec5391",
+  "sourceCommit": "a62ae00c3c66a22891539bc5a37b9f6991b80d18",
   "sourceState": "committed",
   "configurationPath": ".template-source/profile-skill-sync.json",
   "configurationHash": "8ec7fe1bf00eb2e7c45892594b4390010952bc7534a410647f8f6a5c9b17dfba",
-  "skillsDigest": "589d7eff07523476525518272663de89fb32c66efcd794832aa072b417125952",
+  "skillsDigest": "e7975e5cdc6a72eb1ef844ea4086f0396db61033eeec16d356f2c38df76b5642",
   "generatedRoots": [
     ".agents/skills/alibaba-java-code-style",
     ".agents/skills/codebase-design",
