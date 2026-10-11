@@ -189,7 +189,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/harness-orchestrator/SKILL.md",
-        "effectiveHash": "191708aa1afecc696c49b69fbe2c14ca66fe63f5cfbb16706e685df996875015",
+        "effectiveHash": "ccabd360258033ddfb319c6b2f1c7bfbd216adb9f5bd13398267600bd7f449f6",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -536,7 +536,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-ddd-scaffold-generator/SKILL.md",
-        "effectiveHash": "45cecbbd214846416d7c05a4f39b16675d749fbb3eba319c3f310850b125a3d8",
+        "effectiveHash": "f5fc5920b7b1e07ecba799c54c32260946c51421f6cc5294762a24f76e84a897",
         "targets": [
           ".agents/skills",
           ".codex/skills",
@@ -620,7 +620,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-layered-mvc-scaffold-generator/SKILL.md",
-        "effectiveHash": "2f5c67ec9eb772b344973e324ac23b0a5bd8188a487f0a6bcaf76da80c67908c",
+        "effectiveHash": "66b6e57fcbba25dfe107b389e7041c1e5a4e8b350699f8bf94e6c8b5b5c9d384",
         "targets": [
           ".agents/skills",
           ".codex/skills",
