@@ -23,7 +23,7 @@ const allowed = (relative, line) => relative === ".template-spec/agents/skill-mi
   || relative.includes("/.template-source/evidence/")
   || relative.includes("/tests/")
   // The resolver names this retired ID only to reject it and return its replacement.
-  || (relative === "scripts/lib/skill-registry.mjs" && line.includes('const replacementSkill = requestedId === "grill-me"'))
+  || (relative === "scripts/lib/skill-registry.mjs" && line.includes('const replacementSkill = ({ "grill-me":'))
   || relative.endsWith("scripts/verify-retired-skill-ids")
   || relative.endsWith("scripts/lib/skill-supply-chain.mjs")
   || relative.endsWith("scripts/lib/implementation-contract-compiler.mjs");
