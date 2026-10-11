@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "profile": "backend",
-  "sourceCommit": "8b92c3e1dc76c82dc2b0f2d53acfd9dda689b3f8",
+  "sourceCommit": "b4782ccb7682937d9d49f719227f1c557675acfd",
   "sourceState": "committed",
   "configurationPath": ".template-source/profile-skill-sync.json",
-  "configurationHash": "b4d4e3eb168c75002dfdd4aafbf59423ebff88ed32f1c13807720bf46416066e",
-  "skillsDigest": "3f28d3b016b7ed29d7d688b9c3800df06dcaca96668a0fcd1f1aaa4ffe8871d9",
+  "configurationHash": "d931b3eca88cab5b3ed1d6a3c1bfbf9c7c703935ca322316520f5a3a74dba8c7",
+  "skillsDigest": "e455320f1e6d8df2411ac06bbe4ffba7ae85f375913a6b13fc13796cef11ae40",
   "generatedRoots": [
     ".agents/skills/alibaba-java-code-style",
     ".agents/skills/codebase-design",
@@ -41,7 +41,6 @@
     ".agents/skills/yss-web-controller",
     ".agents/skills/yss-research",
     ".agents/skills/yss-ddd-scaffold-generator",
-    ".agents/skills/yss-layered-mvc-scaffold-generator",
     ".agents/skills/yss-dto",
     ".agents/skills/code-review",
     ".agents/skills/yss-mybatis",
@@ -63,6 +62,7 @@
     ".agents/skills/yss-openapi-governance",
     ".agents/skills/prototype",
     ".agents/skills/triage",
-    ".agents/skills/yss-stage-decision"
+    ".agents/skills/yss-stage-decision",
+    ".agents/skills/yss-layered-mvc-scaffold-generator"
   ]
 }
