@@ -728,7 +728,7 @@
         "source": "iloveZzz/yss-harness-design-agent",
         "sourceType": "git-submodule",
         "skillPath": ".agents/skills/yss-stage-decision/SKILL.md",
-        "effectiveHash": "eedd584d1c26f17306c7602ddbf5a4947232fe8671d1d3b1d19677b9bea79a6d",
+        "effectiveHash": "607d6407129097082b7a0a318ec700ba14a89ece12f5f01caa92d403a8f95b08",
         "sourceRevision": "79e66e694a378d78f06c63399a494d0a69543ba3",
         "upstreamHash": "77fa3075f90966821881998ff5fa9d674672bd2568e70b8d877402efeb360453",
         "adaptationRef": ".template-source/agents/strategic-design-skills-integration.md",
@@ -743,7 +743,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-tactical-design/SKILL.md",
-        "effectiveHash": "c655661ac522d76ced91b99753c3d9bbc1a524b43b81e9a4d9a32ca9f73dfa4d",
+        "effectiveHash": "53ed5c2d618bf61c5005def284db5e9f296a4ceb7fd2167cb70326b5fc96bd60",
         "targets": [
           ".agents/skills",
           ".codex/skills",
