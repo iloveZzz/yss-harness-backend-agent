@@ -3,7 +3,7 @@ export default {
   "schema_version": 1,
   "kind": "test-only-canonical-source",
   "source_repository": "yss-spec-project-template",
-  "source_head": "81d16094bf0eb5874940fb90d4662a69bead84c2",
+  "source_head": "57a0d41897d3c0cc4543db2b06c2b0e44ba65fd0",
   "source_state": "working-tree",
   "files": [
     {
