@@ -86,10 +86,6 @@
       "scripts/lib/template-verification.mjs",
       "scripts/lib/maintenance-counterexample.mjs"
     ],
-    "excludePathSuffixes": [
-      "tests",
-      "test"
-    ],
     "renderPaths": [
       "README.md",
       "yss-project.yaml"
